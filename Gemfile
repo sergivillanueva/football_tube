@@ -47,3 +47,4 @@ end
 gem 'simple_form'
 gem 'country_select'
 gem 'slim'
+gem 'carrierwave'
