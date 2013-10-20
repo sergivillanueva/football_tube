@@ -13,6 +13,7 @@ class TeamsController < ApplicationController
   end
   
   def index
+    @teams = Team.all
   end
   
   private
