@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131020111504) do
+ActiveRecord::Schema.define(version: 20131020173538) do
 
   create_table "matches", force: true do |t|
     t.integer  "home_score",   limit: 1, null: false
@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 20131020111504) do
   end
 
   create_table "teams", force: true do |t|
-    t.string   "name",        null: false
+    t.string   "name",         null: false
     t.string   "nick_names"
     t.string   "emblem"
-    t.string   "nationality"
+    t.string   "country_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
