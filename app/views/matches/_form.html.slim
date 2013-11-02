@@ -1,0 +1,8 @@
+= simple_form_for @match do |f|
+   = f.input :home_team_id, collection: Team.all
+   = f.input :away_team_id, collection: Team.all
+   = f.input :home_score
+   = f.input :away_score
+   = f.input :playing_date
+   
+   = f.button :submit
