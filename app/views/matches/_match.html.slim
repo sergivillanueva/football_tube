@@ -2,10 +2,8 @@ tr
   td
     img src="#{match.home_team.logo.thumb.url}" alt="#{match.home_team.name}" title="#{match.home_team.name}"
   td
-    = match.home_score
+    = show_result match
   td
     img src="#{match.away_team.logo.thumb.url}" alt="#{match.away_team.name}" title="#{match.away_team.name}"
-  td
-    = match.away_score
   td
     = match.playing_date
