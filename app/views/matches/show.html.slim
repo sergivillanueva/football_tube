@@ -1,0 +1,6 @@
+.home_team
+  img src="#{@match.home_team.logo.url}" alt="#{@match.home_team.name}" title="#{@match.home_team.name}"
+.away_team
+  img src="#{@match.away_team.logo.url}" alt="#{@match.away_team.name}" title="#{@match.away_team.name}"
+.result
+  = show_result @match
