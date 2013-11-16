@@ -1,5 +1,6 @@
 tr
   td = team.name
-  td = team.country_name
+  td
+    div class="flag flag-#{team.country_code}" title=team.country_name
   td
     img src="#{team.logo.thumb.url}" alt="#{team.name}" title="#{team.name}"
