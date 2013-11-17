@@ -16,6 +16,11 @@ class TeamsController < ApplicationController
     @teams = Team.all
   end
   
+  def search
+    teams = Team.where("name like '%#{params[:name]}%'")
+    render json: teams.to_json
+  end
+  
   private
   
   def team_params

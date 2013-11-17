@@ -1,8 +1,32 @@
-= simple_form_for @match do |f|
-   = f.input :home_team_id, collection: Team.all
-   = f.input :away_team_id, collection: Team.all
-   = f.input :home_score
-   = f.input :away_score
-   = f.input :playing_date
+#match_form
+  = simple_form_for @match do |f|
+    .teams.clearfix
+      .team_details
+        .logo.blank
+          img style="display:none;"
+        = f.input :home_team_name
+      .team_details
+        .logo.blank
+          img class="logo"
+        = f.input :away_team_name
+    = f.input :home_score
+    = f.input :away_score
+    = f.input :playing_date
+     
+    = f.button :submit
    
-   = f.button :submit
+javascript:
+  $(document).ready(function () {
+    $("#match_home_team_name, #match_away_team_name").autocomplete({
+      source: function (request, response) {
+        $.getJSON("/teams/search", {
+          name: request.term,
+        }, response );
+      },
+      minLength: 2,
+      select: function(event, ui) {
+        var logoElement = $(this).closest(".team_details").find(".logo img");
+        $(logoElement).hide().attr("src", ui.item.logo).fadeIn();                
+      }      
+    });
+   });

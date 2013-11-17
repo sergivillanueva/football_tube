@@ -10,6 +10,12 @@
  *
  *= require_self
  *= require_tree .
- */
+ *= require flags
+ *= require jquery.ui.autocomplete
+ *= require bootstrap
+*/
+ @import "bootstrap";
+ @import "matches";
  
- require "flags"
+ 
+ 
