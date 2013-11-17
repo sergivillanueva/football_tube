@@ -1,6 +1,6 @@
 = simple_form_for @team do |f|
    = f.input :name
-   = country_select("team", "country_code", nil, iso_codes: true)
+   = f.input :country_id, collection: Country.all
    = f.input :logo, as: :file
    
    = f.button :submit

@@ -1,9 +1,7 @@
 class Team < ActiveRecord::Base
-  mount_uploader :logo, LogoUploader
+  belongs_to :country
   
-  def country_name
-    ::CountrySelect::COUNTRIES[country_code]
-  end
+  mount_uploader :logo, LogoUploader
   
   def as_json(options={})
     { 

@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131101174849) do
+ActiveRecord::Schema.define(version: 20131117182202) do
+
+  create_table "countries", force: true do |t|
+    t.string  "name"
+    t.string  "code"
+    t.integer "priority", limit: 1, default: 0
+  end
 
   create_table "matches", force: true do |t|
     t.integer  "home_score",   limit: 1, null: false
@@ -30,6 +36,7 @@ ActiveRecord::Schema.define(version: 20131101174849) do
     t.string   "country_code"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "country_id"
   end
 
 end
