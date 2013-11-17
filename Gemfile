@@ -46,7 +46,6 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'simple_form'
-gem 'country_select'
 gem 'slim'
 gem 'carrierwave'
 gem 'mini_magick', '3.5.0'
