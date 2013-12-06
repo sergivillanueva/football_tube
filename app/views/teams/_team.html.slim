@@ -1,6 +1,7 @@
 tr
   td = team.name
   td
-    div class="flag flag-#{team.country.code}" title=team.country.name
+    - if team.country.present?
+      div class="flag flag-#{team.country.code}" title=team.country.name
   td
     img src="#{team.logo.thumb.url}" alt="#{team.name}" title="#{team.name}"
