@@ -12,11 +12,24 @@
     = f.input :home_score
     = f.input :away_score
     = f.input :playing_date
-     
+    
+    .players.clearfix
+      .home_players
+        = f.simple_fields_for :home_player_participations do |g|
+          .player
+            = g.input :player_name, input_html: { class: "player_name" }
+            = g.input :side, as: :hidden
+      .away_players
+        = f.simple_fields_for :away_player_participations do |g|
+          .player
+            = g.input :player_name, input_html: { class: "player_name" }
+            = g.input :side, as: :hidden
+            
     = f.button :submit
    
 javascript:
   $(document).ready(function () {
+    /* Team name autocomplete */
     $("#match_home_team_name, #match_away_team_name").autocomplete({
       source: function (request, response) {
         $.getJSON("/teams/search", {
@@ -27,6 +40,18 @@ javascript:
       select: function(event, ui) {
         var logoElement = $(this).closest(".team_details").find(".logo img");
         $(logoElement).hide().attr("src", ui.item.logo).fadeIn();                
+      }      
+    });
+    
+    /* Player name autocomplete */
+    $(".player_name").autocomplete({
+      source: function (request, response) {
+        $.getJSON("/players/search", {
+          name: request.term,
+        }, response );
+      },
+      minLength: 2,
+      select: function(event, ui) {
       }      
     });
    });
