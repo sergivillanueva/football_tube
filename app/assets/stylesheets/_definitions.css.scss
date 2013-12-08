@@ -1,0 +1,6 @@
+$wrapper_width: 980px;
+
+@mixin wrapper {
+  width: $wrapper_width;
+  margin: auto;
+}
