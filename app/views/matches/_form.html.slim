@@ -2,7 +2,7 @@
   = simple_form_for @match do |f|
     .teams.clearfix
       .team_details
-        .logo.blank
+        .logo.blank     
           img style="display:none;"
         = f.input :home_team_name
       .team_details
@@ -19,6 +19,7 @@
           .player
             = g.input :player_name, input_html: { class: "player_name" }
             = g.input :side, as: :hidden
+            = g.input :team_number
       .away_players
         = f.simple_fields_for :away_player_participations do |g|
           .player

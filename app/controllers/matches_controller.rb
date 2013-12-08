@@ -39,6 +39,6 @@ class MatchesController < ApplicationController
   private
   
   def match_params
-    params.require(:match).permit(:home_score, :away_score, :playing_date, :home_team_name, :away_team_name, home_player_participations_attributes: [:player_name, :side, :player_id], away_player_participations_attributes: [:player_name, :side, :player_id])
+    params.require(:match).permit(:home_score, :away_score, :playing_date, :home_team_name, :away_team_name, home_player_participations_attributes: [:player_name, :side, :player_id, :team_number], away_player_participations_attributes: [:player_name, :side, :player_id])
   end
 end
