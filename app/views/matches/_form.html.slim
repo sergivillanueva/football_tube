@@ -58,7 +58,7 @@ javascript:
     .each(function (i) {
       $(this).data("ui-autocomplete")._renderItem = function(ul, item) {
         return $( "<li>" )
-          .append( "<a> <span style='display:inline-block;' class='flag flag-" + item.country_code + "'></span> <b>" + item.name + "</b>, " + item.full_name + "</a>" )
+          .append( "<a> <span style='display:inline-block;' class='flag flag-" + item.country_code + "'></span> <b>" + item.name + "</b>, " + item.full_name + " (" + item.birthday + ")" + "</a>" )
           .appendTo( ul );
       };
     });
