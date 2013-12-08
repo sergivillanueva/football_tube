@@ -6,7 +6,7 @@ class Player < ActiveRecord::Base
   def as_json(options={})
     { 
       value: self.name,
-      label: self.name
+      label: "#{self.full_name}, #{self.name}"
     }
   end
 end
