@@ -9,6 +9,10 @@ class LogoUploader < CarrierWave::Uploader::Base
     process :resize_to_fit => [60, 60]
   end
   
+  version :mini do
+    process :resize_to_fit => [20, 20]
+  end  
+  
   
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
