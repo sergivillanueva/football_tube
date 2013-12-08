@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131208105425) do
+ActiveRecord::Schema.define(version: 20131208112316) do
 
   create_table "countries", force: true do |t|
     t.string  "name"
@@ -36,6 +36,7 @@ ActiveRecord::Schema.define(version: 20131208105425) do
     t.string   "side"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "team_number", limit: 1
   end
 
   create_table "players", force: true do |t|
