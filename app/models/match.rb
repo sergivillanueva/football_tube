@@ -11,4 +11,8 @@ class Match < ActiveRecord::Base
   
   accepts_nested_attributes_for :home_player_participations
   accepts_nested_attributes_for :away_player_participations
+  
+  def result
+    "#{self.home_score} : #{self.away_score}"
+  end
 end

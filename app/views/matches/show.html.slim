@@ -3,4 +3,4 @@
 .away_team
   img src="#{@match.away_team.logo.url}" alt="#{@match.away_team.name}" title="#{@match.away_team.name}"
 .result
-  = show_result @match
+  = @match.result
