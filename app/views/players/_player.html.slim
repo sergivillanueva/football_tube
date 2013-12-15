@@ -1,0 +1,8 @@
+tr
+  td
+    - if player.country.present?
+      div class="flag flag-#{player.country.code}" title=player.country.name
+  td = player.name
+  td = player.full_name
+  td = player.birthday
+  td = link_to t("edit"), edit_player_path(player)

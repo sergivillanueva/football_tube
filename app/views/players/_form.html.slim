@@ -1,0 +1,7 @@
+= simple_form_for @player do |f|
+  = f.input :name
+  = f.input :full_name
+  = f.input :country_id, collection: Country.all
+  = f.input :birthday, start_year: 1900
+  
+  = f.button :submit
