@@ -9,16 +9,17 @@ class Match < ActiveRecord::Base
   has_one :home_coach, -> {where side: "home", role: "coach"}, class_name: PlayerParticipation
   has_one :away_coach, -> {where side: "away", role: "coach"}, class_name: PlayerParticipation
   
+  has_many :player_participations
   has_many :players, through: :player_participations
   
   attr_accessor :home_team_name, :away_team_name
   
-  accepts_nested_attributes_for :home_starters
-  accepts_nested_attributes_for :away_starters
-  accepts_nested_attributes_for :home_reserves
-  accepts_nested_attributes_for :away_reserves
-  accepts_nested_attributes_for :home_coach
-  accepts_nested_attributes_for :away_coach
+  accepts_nested_attributes_for :home_starters, :reject_if => proc { |p| p['player_name'].blank? }
+  accepts_nested_attributes_for :away_starters, :reject_if => proc { |p| p['player_name'].blank? }
+  accepts_nested_attributes_for :home_reserves, :reject_if => proc { |p| p['player_name'].blank? }
+  accepts_nested_attributes_for :away_reserves, :reject_if => proc { |p| p['player_name'].blank? }
+  accepts_nested_attributes_for :home_coach, :reject_if => proc { |p| p['player_name'].blank? }
+  accepts_nested_attributes_for :away_coach, :reject_if => proc { |p| p['player_name'].blank? }
     
   def result
     "#{self.home_score} : #{self.away_score}"
