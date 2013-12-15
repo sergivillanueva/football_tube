@@ -3,6 +3,8 @@ class Player < ActiveRecord::Base
   has_many :matches, through: :player_participations
   belongs_to :country
   
+  validates :name, presence: true  
+  
   def as_json(options={})
     { 
       value: self.name,
