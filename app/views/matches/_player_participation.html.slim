@@ -1,0 +1,11 @@
+tr.player
+  td.country width="5%"
+    - if player_participation.player.country.present?
+      div class="flag flag-#{player_participation.player.country.code}" title=player_participation.player.country.name
+  td.team_number width="5%"
+    = player_participation.team_number
+  td.name width="30%"
+    = player_participation.player.name
+  td.age width="5%"
+    = player_participation.player.age_at(player_participation.match.playing_date)
+    

@@ -1,12 +1,61 @@
 #match
-  .home_team
-    img src="#{@match.home_team.logo.url}" alt="#{@match.home_team.name}" title="#{@match.home_team.name}"
-  .away_team
-    img src="#{@match.away_team.logo.url}" alt="#{@match.away_team.name}" title="#{@match.away_team.name}"
-  = link_to t(".show_result"), "#", id: "show_result"
-  .result style="display:none;"
-    = @match.result
+  .teams.clearfix
+    .team_details
+      .logo
+        img src="#{@match.home_team.logo.url}" alt="#{@match.home_team.name}" title="#{@match.home_team.name}"
+    .team_details
+      .logo
+        img src="#{@match.away_team.logo.url}" alt="#{@match.away_team.name}" title="#{@match.away_team.name}"        
   
+  .playing_date
+    = @match.playing_date
+  
+  .result        
+    = link_to t(".show_result"), "#", id: "show_result"
+    span style="display:none;"
+      = @match.result
+    
+  .players
+    table width="100%" style="margin:auto;"
+      thead
+      tbody
+        tr.starters
+          td width="45%"
+            table width="100%"
+              tbody 
+                = render partial: "player_participation", collection: @match.home_starters, as: :player_participation
+          td width="10%"
+          td width="45%"
+            table width="100%"
+              tbody 
+                = render partial: "player_participation", collection: @match.away_starters, as: :player_participation
+        tr
+          td colspan=3 height="15px"
+
+        tr.coaches             
+          td width="45%"
+            table width="100%"
+              tbody
+                = render partial: "player_participation", object: @match.home_coach, as: :player_participation
+          td width="10%"
+          td width="45%"
+            table width="100%"
+              tbody
+                = render partial: "player_participation", object: @match.away_coach, as: :player_participation
+        tr
+          td colspan=3 height="15px"
+          
+        tr.reserves              
+          td width="45%"
+            table width="100%"
+              tbody
+                = render partial: "player_participation", collection: @match.home_reserves, as: :player_participation
+          td width="10%"
+          td width="45%"
+            table width="100%"
+              tbody
+                = render partial: "player_participation", collection: @match.away_reserves, as: :player_participation
+    
 javascript:
   $(document).ready(function () {
     $("#match").on("click", "#show_result", function (e) {
