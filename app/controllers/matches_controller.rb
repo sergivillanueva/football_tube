@@ -2,9 +2,15 @@ class MatchesController < ApplicationController
   def new
     @match = Match.new
     11.times do
-      @match.home_player_participations.build({ side: "home" })
-      @match.away_player_participations.build({ side: "away" })
+      @match.home_starters.build({ side: "home", role: "starter" }) #TODO check if params are needed
+      @match.away_starters.build({ side: "away", role: "starter" })
     end
+    6.times do
+      @match.home_reserves.build({ side: "home", role: "reserve" })
+      @match.away_reserves.build({ side: "away", role: "reserve" })
+    end
+    @match.build_home_coach
+    @match.build_away_coach
   end
     
   def create
