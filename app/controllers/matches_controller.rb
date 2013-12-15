@@ -14,25 +14,28 @@ class MatchesController < ApplicationController
   end
     
   def create
+    # Assign teams
     home_team = Team.find_or_create_by({ name: params[:match][:home_team_name] })
     away_team = Team.find_or_create_by({ name: params[:match][:away_team_name] })
     
-    %w(home_starters_attributes home_reserves_attributes away_starters_attributes away_reserves_attributes).each do |attributes|
-      params[:match][attributes].each do |player_participation|
+    # Assign player and secure side and role attributes for players
+    players_attributes.each do |attributes|
+      params[:match][attributes[:key]].each do |player_participation|
         player = Player.find_or_create_by({ name: player_participation[1][:player_name] })
-        player_participation[1].merge!({ player_id: player.id })
+        player_participation[1].merge!({ player_id: player.id, side: attributes[:side], role: attributes[:role] })
         match_params.merge!(Hash.new(key: player_participation[0], value: player_participation[1]))
       end
     end
     
-    %w(home_coach_attributes away_coach_attributes).each do |attributes|
-      player_participation = params[:match][attributes]
+    # Assign player and secure side and role attributes for coaches
+    coaches_attributes.each do |attributes|
+      player_participation = params[:match][attributes[:key]]
       player = Player.find_or_create_by({ name: player_participation[:player_name] })
-      player_participation.merge!({ player_id: player.id })
-      match_params.merge!(Hash.new(key: attributes, value: player_participation))
+      player_participation.merge!({ player_id: player.id, side: attributes[:side], role: attributes[:role] })
+      match_params.merge!(Hash.new(key: attributes[:key], value: player_participation))
     end
     
-    @match = Match.new match_params.merge!({ home_team: home_team, away_team: away_team })
+    @match = Match.new match_params.merge({ home_team_id: home_team.id, away_team_id: away_team.id })
     
     if @match.save
       redirect_to matches_path
@@ -57,7 +60,9 @@ class MatchesController < ApplicationController
       :away_score, 
       :playing_date, 
       :home_team_name, 
-      :away_team_name, 
+      :away_team_name,
+      :home_team_id,
+      :away_team_id,
       home_starters_attributes: [:player_name, :side, :player_id, :team_number, :role],
       away_starters_attributes: [:player_name, :side, :player_id, :team_number, :role],
       home_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role],
@@ -65,5 +70,17 @@ class MatchesController < ApplicationController
       home_coach_attributes: [:player_name, :side, :player_id, :role],
       away_coach_attributes: [:player_name, :side, :player_id, :role]
     )
+  end
+  
+  def players_attributes
+    [ { key: "home_starters_attributes", side: "home", role: "starter" },
+      { key: "home_reserves_attributes", side: "home", role: "reserve" },
+      { key: "away_starters_attributes", side: "away", role: "starter" },
+      { key: "away_reserves_attributes", side: "away", role: "reserve" } ]
+  end
+  
+  def coaches_attributes
+    [ { key: "home_coach_attributes", side: "home", role: "coach" },
+      { key: "away_coach_attributes", side: "away", role: "coach" } ]
   end
 end
