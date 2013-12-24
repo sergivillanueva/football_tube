@@ -17,6 +17,9 @@
         .logo
           img src="#{@match.away_team.logo.url}" alt="#{@match.away_team.name}" title="#{@match.away_team.name}"        
     
+    .competition
+      = @match.competition.name
+      
     .playing_date
       = @match.playing_date
     
