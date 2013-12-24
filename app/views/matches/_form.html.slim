@@ -11,6 +11,7 @@
         = f.input :away_team_name, input_html: { class: "team_name" }
     = f.input :home_score
     = f.input :away_score
+    = f.input :competition_name, input_html: { class: "competition_name" }
     = f.input :playing_date, start_year: 1900
     
     .players.clearfix
@@ -99,8 +100,6 @@ javascript:
         }, response );
       },
       minLength: 2,
-      select: function(event, ui) {
-      }      
     })
     .each(function (i) {
       $(this).data("ui-autocomplete")._renderItem = function(ul, item) {
@@ -108,6 +107,16 @@ javascript:
           .append( "<a> <span style='display:inline-block;' class='flag flag-" + item.country_code + "'></span> <b>" + item.name + "</b>, " + item.full_name + " (" + item.birthday + ")" + "</a>" )
           .appendTo( ul );
       };
+    });
+    
+    /* Competition name autocomplete */
+    $(".competition_name").autocomplete({
+      source: function (request, response) {
+        $.getJSON("/competitions/search", {
+          name: request.term,
+        }, response );
+      },
+      minLength: 2,
     });
     
     /* Add reserves */

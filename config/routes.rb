@@ -6,6 +6,9 @@ FootballTube::Application.routes.draw do
   resources :players do
     get "search", on: :collection
   end
+  resources :competitions do
+    get "search", on: :collection
+  end
   
   root 'teams#new'
     

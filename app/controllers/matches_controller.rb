@@ -18,6 +18,9 @@ class MatchesController < ApplicationController
     home_team = Team.find_or_create_by({ name: params[:match][:home_team_name] })
     away_team = Team.find_or_create_by({ name: params[:match][:away_team_name] })
     
+    # Assign competition
+    competition = Competition.find_or_create_by({ name: params[:match][:competition_name] })
+    
     # Assign player and secure side and role attributes for players
     players_attributes.each do |attributes|
       params[:match][attributes[:key]].each do |player_participation|
@@ -35,7 +38,11 @@ class MatchesController < ApplicationController
       match_params.merge!(Hash.new(key: attributes[:key], value: player_participation))
     end
     
-    @match = Match.new match_params.merge({ home_team_id: home_team.id, away_team_id: away_team.id })
+    @match = Match.new match_params.merge({ 
+      home_team_id: home_team.id, 
+      away_team_id: away_team.id,
+      competition_id: competition.id
+    })
     
     if @match.save
       redirect_to matches_path
@@ -64,6 +71,7 @@ class MatchesController < ApplicationController
       :away_team_name,
       :home_team_id,
       :away_team_id,
+      :competition_name,
       home_starters_attributes: [:player_name, :side, :player_id, :team_number, :role],
       away_starters_attributes: [:player_name, :side, :player_id, :team_number, :role],
       home_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role],

@@ -1,6 +1,7 @@
 class Match < ActiveRecord::Base
   belongs_to :home_team, class_name: Team
   belongs_to :away_team, class_name: Team
+  belongs_to :competition
   
   has_many :home_starters, -> { where side: "home", role: "starter" }, class_name: PlayerParticipation
   has_many :away_starters, -> { where side: "away", role: "starter" }, class_name: PlayerParticipation
@@ -12,7 +13,7 @@ class Match < ActiveRecord::Base
   has_many :player_participations, dependent: :destroy
   has_many :players, through: :player_participations
   
-  attr_accessor :home_team_name, :away_team_name
+  attr_accessor :home_team_name, :away_team_name, :competition_name
   
   accepts_nested_attributes_for :home_starters, :reject_if => proc { |p| p['player_name'].blank? }
   accepts_nested_attributes_for :away_starters, :reject_if => proc { |p| p['player_name'].blank? }
