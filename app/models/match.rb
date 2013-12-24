@@ -25,4 +25,8 @@ class Match < ActiveRecord::Base
   def result
     "#{self.home_score} : #{self.away_score}"
   end
+  
+  def related_matches
+    Match.where(competition: self.competition).reject{|m| m == self}  
+  end
 end

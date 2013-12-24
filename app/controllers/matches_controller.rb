@@ -57,7 +57,7 @@ class MatchesController < ApplicationController
   
   def show
     @match = Match.find params[:id]
-    @related_matches = []
+    @related_matches = @match.related_matches
   end
   
   private
