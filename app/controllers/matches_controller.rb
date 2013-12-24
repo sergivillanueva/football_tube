@@ -50,6 +50,7 @@ class MatchesController < ApplicationController
   
   def show
     @match = Match.find params[:id]
+    @related_matches = []
   end
   
   private
