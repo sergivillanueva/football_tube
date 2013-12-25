@@ -10,6 +10,8 @@ FootballTube::Application.routes.draw do
     get "search", on: :collection
   end
   
-  root 'teams#new'
+  get "search" => "search#search_by_player"
+  
+  root 'pages#home'
     
 end

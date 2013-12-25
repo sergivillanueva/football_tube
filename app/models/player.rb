@@ -11,7 +11,8 @@ class Player < ActiveRecord::Base
       full_name: self.full_name,
       name: self.name,
       country_code: self.country.try(:code),
-      birthday: self.birthday
+      birthday: self.birthday,
+      id: self.id
     }
   end
   
