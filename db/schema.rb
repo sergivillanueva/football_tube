@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131224145041) do
+ActiveRecord::Schema.define(version: 20131225005632) do
 
   create_table "competitions", force: true do |t|
     t.string   "name"
@@ -57,10 +57,9 @@ ActiveRecord::Schema.define(version: 20131224145041) do
   end
 
   create_table "teams", force: true do |t|
-    t.string   "name",         null: false
+    t.string   "name",       null: false
     t.string   "nick_names"
     t.string   "logo"
-    t.string   "country_code"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "country_id"
