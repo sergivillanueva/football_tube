@@ -18,7 +18,7 @@ class MatchDecorator < Draper::Decorator
   end
   
   def playing_date
-    object.playing_date
+    l object.playing_date, format: :long
   end
     
   def competition_name
