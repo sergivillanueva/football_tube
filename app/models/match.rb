@@ -21,10 +21,6 @@ class Match < ActiveRecord::Base
   accepts_nested_attributes_for :away_reserves, :reject_if => proc { |p| p['player_name'].blank? }
   accepts_nested_attributes_for :home_coach, :reject_if => proc { |p| p['player_name'].blank? }
   accepts_nested_attributes_for :away_coach, :reject_if => proc { |p| p['player_name'].blank? }
-    
-  def result
-    "#{self.home_score} : #{self.away_score}"
-  end
   
   def related_matches
     Match.where(competition: self.competition).reject{|m| m == self}  

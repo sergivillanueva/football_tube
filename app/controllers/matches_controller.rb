@@ -1,4 +1,6 @@
 class MatchesController < ApplicationController
+  decorates_assigned :match
+
   def new
     @match = Match.new
     11.times do
@@ -52,11 +54,11 @@ class MatchesController < ApplicationController
   end
   
   def index
-    @matches = Match.all
+    @matches = Match.all.decorate
   end
   
   def show
-    @match = Match.find params[:id]
+    @match = Match.find(params[:id])
     @related_matches = @match.related_matches
   end
   

@@ -12,24 +12,24 @@
     .teams.clearfix
       .team_details
         .logo
-          img src="#{@match.home_team.logo.url}" alt="#{@match.home_team.name}" title="#{@match.home_team.name}"
+          = match.home_team_logo
       .team_details
         .logo
-          img src="#{@match.away_team.logo.url}" alt="#{@match.away_team.name}" title="#{@match.away_team.name}"        
+          = match.away_team_logo        
     
     .competition
-      = @match.competition.name
+      = match.competition_name
     
     .venue
-      = @match.venue
+      = match.venue
         
     .playing_date
-      = @match.playing_date
+      = match.playing_date
     
     .result        
       = link_to t(".show_result"), "#", id: "show_result"
       span style="display:none;"
-        = @match.result
+        = match.result
       
     .players
       table width="100%" style="margin:auto;"

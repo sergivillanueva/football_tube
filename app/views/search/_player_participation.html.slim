@@ -2,9 +2,10 @@ tr
   td.playing_date
     = player_participation.match.playing_date
   td.match
-    = player_participation.match 
+    = link_to player_participation.match do
+      = player_participation.match.result_with_logos
   td.competition
-    = player_participation.match.competition.name
+    = player_participation.match.competition_name
   td.season
     = "TODO"
   td.role

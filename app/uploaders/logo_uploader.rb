@@ -3,8 +3,10 @@
 class LogoUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-  process :resize_to_fit => [200, 200]
-
+  version :medium do
+    process :resize_to_fit => [200, 200]
+  end
+  
   version :thumb do
     process :resize_to_fit => [60, 60]
   end
