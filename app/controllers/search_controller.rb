@@ -9,6 +9,19 @@ class SearchController < ApplicationController
       return
     end
     
-    render :search
+    render :search_by_player
+  end
+  
+  def search_by_team
+    @team_name = params[:team_name]
+    if params[:team_id].present?
+      @matches = Match.where("home_team_id = #{params[:team_id]} OR away_team_id = #{params[:team_id]}").decorate  
+    else
+      @teams = Team.where("name like '%#{params[:team_name]}%' OR nick_names like '%#{params[:team_name]}%'").decorate
+      render :team_results
+      return
+    end
+    
+    render :search_by_team
   end
 end

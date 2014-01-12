@@ -1,7 +1,14 @@
-= form_tag search_path, method: :get do
+h5 = t(".search_by_player")
+= form_tag search_by_player_path, method: :get do
   = text_field_tag :player_name
   = hidden_field_tag :player_id
   = submit_tag t('.search')
+
+h5 = t(".search_by_team")
+= form_tag search_by_team_path, method: :get do
+  = text_field_tag :team_name
+  = hidden_field_tag :team_id
+  = submit_tag t(".search")
   
 javascript:
   $(document).ready(function () {  
@@ -21,6 +28,26 @@ javascript:
       $(this).data("ui-autocomplete")._renderItem = function(ul, item) {
         return $( "<li>" )
           .append( "<a> <span style='display:inline-block;' class='flag flag-" + item.country_code + "'></span> <b>" + item.name + "</b>, " + item.full_name + " (" + item.birthday + ")" + "</a>" )
+          .appendTo( ul );
+      };
+    });
+    
+    /* Team name autocomplete */
+    $("#team_name").autocomplete({
+      source: function (request, response) {
+        $.getJSON("/teams/search", {
+          name: request.term,
+        }, response );
+      },
+      minLength: 2,
+      select: function (event, ui) {
+        $("#team_id").val(ui.item.id);                
+      }      
+    })
+    .each(function (i) {
+      $(this).data("ui-autocomplete")._renderItem = function(ul, item) {
+        return $( "<li>" )
+          .append( "<a> <img src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
           .appendTo( ul );
       };
     });

@@ -5,6 +5,7 @@ class Team < ActiveRecord::Base
   
   def as_json(options={})
     { 
+      id: self.id,
       value: self.name,
       name: self.name,
       logo: self.logo.url,

@@ -1,0 +1,12 @@
+h4 = t(".search_by_team")
+
+table width="100%" style="margin:auto;"
+  thead
+    tr
+      th
+      th = t(".name")
+      th = t(".full_name")
+      th
+      
+  tbody
+    = render partial: "search/team", collection: @teams

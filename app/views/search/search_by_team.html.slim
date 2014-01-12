@@ -1,0 +1,13 @@
+h4 = t(".matches_found_for", name: @player_name)
+- # TODO search by player name: use different search results views?
+
+table width="100%" style="margin:auto;"
+  thead
+    tr
+      th = t(".playing_date")
+      th = t(".match")
+      th = t(".competition")
+      th = t(".season")
+      
+  tbody
+    = render partial: "search/match", collection: @matches
