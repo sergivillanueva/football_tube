@@ -1,7 +1,8 @@
-= simple_form_for @player do |f|
+= simple_form_for @player, html: {class: "form-horizontal"} do |f|
   = f.input :name
   = f.input :full_name
   = f.input :country_id, collection: Country.all
   = f.input :birthday, start_year: 1900
   
-  = f.button :submit
+  = f.button :submit, class: "btn-primary"
+  = link_to "Cancel", players_path, class: "btn btn-default"

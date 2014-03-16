@@ -3,4 +3,5 @@
    = f.input :country_id, collection: Country.all
    = f.input :logo, as: :file
    
-   = f.button :submit
+   = f.button :submit, class: "btn-primary"
+   = link_to "Cancel", teams_path, class: "btn btn-default"
