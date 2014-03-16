@@ -1,5 +1,5 @@
 #match_form
-  = simple_form_for @match, { class: "" } do |f|
+  = simple_form_for @match do |f|
     .teams.clearfix
       .team_details
         .logo.blank     
@@ -21,18 +21,20 @@
           h3 = t(".line_up")
           = f.simple_fields_for :home_starters do |g|
             .player class=g.object.role
-              = g.input :player_name, input_html: { class: "player_name" }, label: false
+              .row
+                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }
+                = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}
               = g.input :side, as: :hidden
-              = g.input :team_number, label: false
               = g.input :role, as: :hidden
         = link_to t(".add_reserves"), "#", class: "add_reserves"
         .reserves style="display:none;"
           h3 = t(".reserves")
           = f.simple_fields_for :home_reserves do |g|
             .player class=g.object.role
-              = g.input :player_name, input_html: { class: "player_name" }, label: false
+              .row
+                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }
+                = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}              
               = g.input :side, as: :hidden
-              = g.input :team_number, label: false
               = g.input :role, as: :hidden
         .coach
           h3 = t(".coach")
@@ -47,18 +49,21 @@
           h3 = t(".line_up")
           = f.simple_fields_for :away_starters do |g|
             .player class=g.object.role
-              = g.input :player_name, input_html: { class: "player_name" }, label: false
+              .row
+                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }
+                = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}
               = g.input :side, as: :hidden
-              = g.input :team_number, label: false
-              = g.input :role, as: :hidden         
+              = g.input :role, as: :hidden
+              
         = link_to t(".add_reserves"), "#", class: "add_reserves"
         .reserves style="display:none;"
           h3 = t(".reserves")
           = f.simple_fields_for :away_reserves do |g|
             .player class=g.object.role
-              = g.input :player_name, input_html: { class: "player_name" }, label: false
+              .row
+                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }
+                = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}              
               = g.input :side, as: :hidden
-              = g.input :team_number, label: false
               = g.input :role, as: :hidden
         .coach
           h3 = t(".coach")
