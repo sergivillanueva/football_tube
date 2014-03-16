@@ -55,3 +55,4 @@ gem 'carrierwave'
 gem 'mini_magick', '3.5.0'
 gem 'bootstrap-sass', '~> 3.0.2.0'
 gem 'draper', '~> 1.3'
+gem "twitter-bootstrap-rails"

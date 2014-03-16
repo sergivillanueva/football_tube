@@ -1,5 +1,5 @@
 #match_form
-  = simple_form_for @match do |f|
+  = simple_form_for @match, { class: "" } do |f|
     .teams.clearfix
       .team_details
         .logo.blank     
@@ -68,7 +68,7 @@
               = g.input :side, as: :hidden
               = g.input :role, as: :hidden
               
-    = f.button :submit
+    = f.button :submit, class: "btn-primary"
    
 javascript:
   $(document).ready(function () {

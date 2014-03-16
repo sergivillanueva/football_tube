@@ -4,3 +4,8 @@ $wrapper_width: 980px;
   width: $wrapper_width;
   margin: auto;
 }
+  
+#wrapper {
+  @include wrapper;
+  min-height: 100%;
+}
