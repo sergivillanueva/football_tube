@@ -12,13 +12,13 @@
   = link_to "Competitions", "#"
 
 h5 = t(".search_by_player")
-= form_tag search_by_player_path, method: :get do
+= form_tag search_by_player_path, method: :get, class: "form-inline" do
   = text_field_tag :player_name
   = hidden_field_tag :player_id
   = submit_tag t('.search')
 
 h5 = t(".search_by_team")
-= form_tag search_by_team_path, method: :get do
+= form_tag search_by_team_path, method: :get, class: "form-inline" do
   = text_field_tag :team_name
   = hidden_field_tag :team_id
   = submit_tag t(".search")
