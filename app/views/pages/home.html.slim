@@ -1,3 +1,14 @@
+.new_match style="float:right;"
+  = link_to "New match", new_match_path, class: "btn btn-success"
+
+.admin
+  h5 = "Admin links"
+  = link_to "Players", players_path
+  br
+  = link_to "Teams", teams_path  
+  br
+  = link_to "Competitions", "#"
+
 h5 = t(".search_by_player")
 = form_tag search_by_player_path, method: :get do
   = text_field_tag :player_name
