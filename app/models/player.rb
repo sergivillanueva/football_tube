@@ -17,8 +17,10 @@ class Player < ActiveRecord::Base
   end
   
   def age_at date
-    age = date.year - self.birthday.year
-    age -= 1 if date < birthday + age.years
-    age
+    if self.birthday.present?
+      age = date.year - self.birthday.year
+      age -= 1 if date < birthday + age.years
+      age
+    end
   end
 end
