@@ -54,7 +54,7 @@ class MatchesController < ApplicationController
   end
   
   def index
-    @matches = Match.all.decorate
+    @matches = Match.order(:playing_date).decorate
   end
   
   def show
