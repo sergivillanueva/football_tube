@@ -8,5 +8,5 @@ tr
   td
     = match.playing_date
   td
-    = link_to "view", match
-    = link_to "delete", delete_match, class: "btn btn-alert", :"data-confirm" => "Are you sure?"
+    = link_to "view", match, class: "btn btn-link"
+    = link_to "delete", match_path(match), method: :delete, class: "btn btn-danger", :"data-confirm" => "Are you sure?"
