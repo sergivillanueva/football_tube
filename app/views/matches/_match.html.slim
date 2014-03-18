@@ -9,3 +9,4 @@ tr
     = match.playing_date
   td
     = link_to "view", match
+    = link_to "delete", delete_match, class: "btn btn-alert", :"data-confirm" => "Are you sure?"

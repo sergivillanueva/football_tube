@@ -61,6 +61,12 @@ class MatchesController < ApplicationController
     @match = Match.find(params[:id])
     @related_matches = @match.related_matches
   end
+
+  def destroy
+    @match = Match.find(params[:id])
+    @match.destroy
+    redirect_to matches_path, notice: "Match deleted"
+  end
   
   private
   
