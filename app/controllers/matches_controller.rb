@@ -57,12 +57,18 @@ class MatchesController < ApplicationController
   end
   
   def index
-    @matches = Match.all.decorate
+    @matches = Match.order(:playing_date).decorate
   end
   
   def show
     @match = Match.find(params[:id])
     @related_matches = @match.related_matches
+  end
+
+  def destroy
+    @match = Match.find(params[:id])
+    @match.destroy
+    redirect_to matches_path, notice: "Match deleted"
   end
   
   private
