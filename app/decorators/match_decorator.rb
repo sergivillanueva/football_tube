@@ -22,7 +22,7 @@ class MatchDecorator < Draper::Decorator
   end
     
   def competition_name
-    object.competition.name
+    object.competition.name if object.competition.present?
   end
   
   def venue

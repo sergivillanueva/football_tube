@@ -23,6 +23,6 @@ class Match < ActiveRecord::Base
   accepts_nested_attributes_for :away_coach, :reject_if => proc { |p| p['player_name'].blank? }
   
   def related_matches
-    Match.where(competition: self.competition).reject{|m| m == self}  
+    Match.where(competition: self.competition).reject{|m| m == self} if self.competition.present? 
   end
 end
