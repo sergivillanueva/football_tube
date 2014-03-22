@@ -26,7 +26,10 @@ class MatchesController < ApplicationController
     # Assign player and secure side and role attributes for players
     players_attributes.each do |attributes|
       params[:match][attributes[:key]].each do |player_participation|
-        player = Player.find_or_create_by({ name: player_participation[1][:player_name] })
+        #Find player or create a new one
+        name = player_participation[1][:player_name]           
+        player = player_participation[1][:new_player] == "false" ? Player.find_by({ name: name }) : Player.create({ name: name })
+        
         player_participation[1].merge!({ player_id: player.id, side: attributes[:side], role: attributes[:role] })
         match_params.merge!(Hash.new(key: player_participation[0], value: player_participation[1]))
       end
@@ -75,12 +78,12 @@ class MatchesController < ApplicationController
       :away_team_id,
       :competition_name,
       :language,
-      home_starters_attributes: [:player_name, :side, :player_id, :team_number, :role],
-      away_starters_attributes: [:player_name, :side, :player_id, :team_number, :role],
-      home_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role],
-      away_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role],
-      home_coach_attributes: [:player_name, :side, :player_id, :role],
-      away_coach_attributes: [:player_name, :side, :player_id, :role]
+      home_starters_attributes: [:player_name, :side, :player_id, :team_number, :role, :new_player],
+      away_starters_attributes: [:player_name, :side, :player_id, :team_number, :role, :new_player],
+      home_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role, :new_player],
+      away_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role, :new_player],
+      home_coach_attributes: [:player_name, :side, :player_id, :role, :new_player],
+      away_coach_attributes: [:player_name, :side, :player_id, :role, :new_player]
     )
   end
   
