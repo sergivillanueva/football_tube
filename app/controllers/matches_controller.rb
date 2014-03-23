@@ -38,8 +38,12 @@ class MatchesController < ApplicationController
     # Assign player and secure side and role attributes for coaches
     coaches_attributes.each do |attributes|
       player_participation = params[:match][attributes[:key]]
-      player = Player.find_or_create_by({ name: player_participation[:player_name] })
-      player_participation.merge!({ player_id: player.id, side: attributes[:side], role: attributes[:role] })
+
+      #Find player or create a new one      
+      player_id = player_participation[:player_id]
+      player_id = Player.create({ name: player_participation[:player_name] }).id unless player_id.present?
+      
+      player_participation.merge!({ player_id: player_id, side: attributes[:side], role: attributes[:role] })
       match_params.merge!(Hash.new(key: attributes[:key], value: player_participation))
     end
     
