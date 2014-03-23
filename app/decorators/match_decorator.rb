@@ -9,12 +9,14 @@ class MatchDecorator < Draper::Decorator
     "#{home_team_logo "thumb"} #{result} #{away_team_logo "thumb"}".html_safe
   end
   
-  def home_team_logo size = "medium"
-    h.image_tag object.home_team.logo.send(size).url, alt: object.home_team.name, title: object.home_team.name
+  def home_team_logo size = nil
+    image = size.nil? ? object.home_team.logo.url : object.home_team.logo.send(size).url
+    h.image_tag image, alt: object.home_team.name, title: object.home_team.name
   end
   
-  def away_team_logo size = "medium"
-    h.image_tag object.away_team.logo.try(size).url, alt: object.away_team.name, title: object.away_team.name
+  def away_team_logo size = nil
+    image = size.nil? ? object.away_team.logo.url : object.away_team.logo.send(size).url
+    h.image_tag image, alt: object.away_team.name, title: object.away_team.name
   end
   
   def playing_date
