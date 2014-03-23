@@ -8,6 +8,10 @@ class MatchDecorator < Draper::Decorator
   def result_with_logos
     "#{home_team_logo "thumb"} #{result} #{away_team_logo "thumb"}".html_safe
   end
+
+  def title
+    "#{object.home_team.name} vs. #{object.away_team.name}"
+  end
   
   def home_team_logo size = nil
     image = size.nil? ? object.home_team.logo.url : object.home_team.logo.send(size).url
