@@ -1,5 +1,6 @@
-= simple_form_for @team do |f|
+= simple_form_for @team, html: {class: "form-horizontal"} do |f|
    = f.input :name
+   = f.input :nick_names, hint: "Comma-separated values (eg. Nápoles, Naples)"
    = f.input :country_id, collection: Country.all
    = f.input :logo, as: :file
    
