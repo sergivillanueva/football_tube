@@ -7,41 +7,13 @@ class MatchesController < ApplicationController
   end
     
   def create
-    # Assign teams
-    home_team = Team.find_or_create_by({ name: params[:match][:home_team_name] })
-    away_team = Team.find_or_create_by({ name: params[:match][:away_team_name] })
-    
-    # Assign competition
-    competition = Competition.find_or_create_by({ name: params[:match][:competition_name] })
-    
-    # Assign player and secure side and role attributes for players
-    players_attributes.each do |attributes|
-      params[:match][attributes[:key]].each do |player_participation|
-        #Find player or create a new one
-        player_id = player_participation[1][:player_id]
-        player_id = Player.create({ name: player_participation[1][:player_name] }).id unless player_id.present?
-        
-        player_participation[1].merge!({ player_id: player_id, side: attributes[:side], role: attributes[:role] })
-        match_params.merge!(Hash.new(key: player_participation[0], value: player_participation[1]))
-      end
-    end
-    
-    # Assign player and secure side and role attributes for coaches
-    coaches_attributes.each do |attributes|
-      player_participation = params[:match][attributes[:key]]
-
-      #Find player or create a new one      
-      player_id = player_participation[:player_id]
-      player_id = Player.create({ name: player_participation[:player_name] }).id unless player_id.present?
-      
-      player_participation.merge!({ player_id: player_id, side: attributes[:side], role: attributes[:role] })
-      match_params.merge!(Hash.new(key: attributes[:key], value: player_participation))
-    end
+    assign_players_to_match
+    assign_coaches_to_match
     
     @match = Match.new match_params.merge({ 
-      home_team_id: home_team.id, 
-      away_team_id: away_team.id,
-      competition_id: competition.id
+      home_team_id: Team.find_or_create_by({ name: params[:match][:home_team_name] }).id, 
+      away_team_id: Team.find_or_create_by({ name: params[:match][:away_team_name] }).id,
+      competition_id: Competition.find_or_create_by({ name: params[:match][:competition_name] }).id
     })
     
     if @match.save
@@ -59,14 +31,15 @@ class MatchesController < ApplicationController
 
     assign_players_to_match
     assign_coaches_to_match
-        
-    @match.update_attributes match_params.merge({ 
+    
+    # Assign teams and competition    
+    match_params.merge!({ 
       home_team_id: Team.find_or_create_by({ name: params[:match][:home_team_name] }).id, 
       away_team_id: Team.find_or_create_by({ name: params[:match][:away_team_name] }).id,
       competition_id: Competition.find_or_create_by({ name: params[:match][:competition_name] }).id
     })
     
-    if @match.valid?
+    if @match.update_attributes match_params
       redirect_to matches_path
     else
       render :edit
