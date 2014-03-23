@@ -2,16 +2,22 @@
   = simple_form_for @match do |f|
     .teams.clearfix
       .team_details
-        .logo.blank     
-          img style="display:none;"
-        = f.input :home_team_name, input_html: { class: "team_name" }
+        .logo.blank
+          - if f.object.home_team.present?
+            = f.object.decorate.home_team_logo
+          - else
+            img style="display:none;"
+        = f.input :home_team_name, input_html: { class: "team_name", value: f.object.home_team.present? ? f.object.home_team.name : "" }
       .team_details
         .logo.blank
-          img class="logo"
-        = f.input :away_team_name, input_html: { class: "team_name" }
+          - if f.object.away_team.present?
+            = f.object.decorate.away_team_logo
+          - else
+            img style="display:none;"
+        = f.input :away_team_name, input_html: { class: "team_name", value: f.object.away_team.present? ? f.object.away_team.name : ""  }
     = f.input :home_score
     = f.input :away_score
-    = f.input :competition_name, input_html: { class: "competition_name" }
+    = f.input :competition_name, input_html: { class: "competition_name", value: f.object.competition.present? ? f.object.competition.name : "" }
     = f.input :playing_date, start_year: 1900
     = f.input :language, as: :select, collection: languages_for_select
     
@@ -22,7 +28,7 @@
           = f.simple_fields_for :home_starters do |g|
             .player class=g.object.role
               .row
-                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }
+                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }
                 = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}
               = g.input :side, as: :hidden
               = g.input :role, as: :hidden
@@ -34,7 +40,7 @@
           = f.simple_fields_for :home_reserves do |g|
             .player class=g.object.role
               .row
-                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }
+                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }
                 = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}              
               = g.input :side, as: :hidden
               = g.input :role, as: :hidden
@@ -44,7 +50,7 @@
           h3 = t(".coach")
           = f.simple_fields_for :home_coach do |g|
             .player class=g.object.role
-              = g.input :player_name, input_html: { class: "player_name" }, label: false
+              = g.input :player_name, input_html: { class: "player_name", value: g.object.player.present? ? g.object.player.name : "" }, label: false
               = g.input :side, as: :hidden
               = g.input :role, as: :hidden
               = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
@@ -55,7 +61,7 @@
           = f.simple_fields_for :away_starters do |g|
             .player class=g.object.role
               .row
-                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }
+                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }
                 = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}
               = g.input :side, as: :hidden
               = g.input :role, as: :hidden
@@ -67,7 +73,7 @@
           = f.simple_fields_for :away_reserves do |g|
             .player class=g.object.role
               .row
-                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }
+                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }
                 = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}              
               = g.input :side, as: :hidden
               = g.input :role, as: :hidden
@@ -77,7 +83,7 @@
           h3 = t(".coach")
           = f.simple_fields_for :away_coach do |g|
             .player class=g.object.role
-              = g.input :player_name, input_html: { class: "player_name" }, label: false
+              = g.input :player_name, input_html: { class: "player_name", value: g.object.player.present? ? g.object.player.name : "" }, label: false
               = g.input :side, as: :hidden
               = g.input :role, as: :hidden
               = g.input :player_id, as: :hidden, input_html: { class: "player_id" }

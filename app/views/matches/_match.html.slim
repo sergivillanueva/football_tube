@@ -9,4 +9,5 @@ tr
     = match.playing_date
   td
     = link_to "view", match, class: "btn btn-link"
+    = link_to "edit", edit_match_path(match), class: "btn btn-link"
     = link_to "delete", match_path(match), method: :delete, class: "btn btn-danger", :"data-confirm" => "Are you sure?"
