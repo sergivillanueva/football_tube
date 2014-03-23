@@ -30,7 +30,7 @@ class TeamsController < ApplicationController
   end
   
   def search
-    teams = Team.where("name like '%#{params[:name]}%'")
+    teams = Team.where("name like '%#{params[:name]}%' OR nick_names like '%#{params[:name]}%'")
     render json: teams.to_json
   end
   
