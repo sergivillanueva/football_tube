@@ -58,6 +58,9 @@ class MatchesController < ApplicationController
   def edit
     @match = Match.find(params[:id])
     build_player_participations
+    13.times do 
+      @match.goals.build
+    end
   end
 
   def destroy
@@ -84,7 +87,8 @@ class MatchesController < ApplicationController
       home_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role],
       away_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role],
       home_coach_attributes: [:player_name, :side, :player_id, :role, :new_player],
-      away_coach_attributes: [:player_name, :side, :player_id, :role, :new_player]
+      away_coach_attributes: [:player_name, :side, :player_id, :role, :new_player],
+      goals_attributes: [:player_participation_id, :minute]
     )
   end
   
