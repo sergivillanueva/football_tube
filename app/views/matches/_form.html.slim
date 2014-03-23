@@ -26,7 +26,7 @@
                 = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}
               = g.input :side, as: :hidden
               = g.input :role, as: :hidden
-              = g.input :new_player, as: :hidden, input_html: { class: "new_player" }
+              = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
 
         = link_to t(".add_reserves"), "#", class: "add_reserves"
         .reserves style="display:none;"
@@ -38,7 +38,7 @@
                 = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}              
               = g.input :side, as: :hidden
               = g.input :role, as: :hidden
-              = g.input :new_player, as: :hidden, input_html: { class: "new_player" }
+              = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
 
         .coach
           h3 = t(".coach")
@@ -47,7 +47,7 @@
               = g.input :player_name, input_html: { class: "player_name" }, label: false
               = g.input :side, as: :hidden
               = g.input :role, as: :hidden
-              = g.input :new_player, as: :hidden, input_html: { class: "new_player" }
+              = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
                    
       .away_players
         .starters
@@ -59,7 +59,7 @@
                 = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}
               = g.input :side, as: :hidden
               = g.input :role, as: :hidden
-              = g.input :new_player, as: :hidden, input_html: { class: "new_player" }
+              = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
               
         = link_to t(".add_reserves"), "#", class: "add_reserves"
         .reserves style="display:none;"
@@ -71,7 +71,7 @@
                 = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}              
               = g.input :side, as: :hidden
               = g.input :role, as: :hidden
-              = g.input :new_player, as: :hidden, input_html: { class: "new_player" }
+              = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
 
         .coach
           h3 = t(".coach")
@@ -80,7 +80,7 @@
               = g.input :player_name, input_html: { class: "player_name" }, label: false
               = g.input :side, as: :hidden
               = g.input :role, as: :hidden
-              = g.input :new_player, as: :hidden, input_html: { class: "new_player" }
+              = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
               
     = f.button :submit, class: "btn-primary"
    
@@ -116,7 +116,7 @@ javascript:
       },
       minLength: 2,
       select: function(event, ui) {
-        $(this).closest(".player").find(".new_player").val("false");    
+        $(this).closest(".player").find(".player_id").val(ui.item.id);    
       }
     })
     .each(function (i) {
