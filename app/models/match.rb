@@ -12,6 +12,7 @@ class Match < ActiveRecord::Base
   
   has_many :player_participations, dependent: :destroy
   has_many :players, through: :player_participations
+  has_many :goals
   
   attr_accessor :home_team_name, :away_team_name, :competition_name
   
@@ -21,6 +22,7 @@ class Match < ActiveRecord::Base
   accepts_nested_attributes_for :away_reserves, :reject_if => proc { |p| p['player_name'].blank? }
   accepts_nested_attributes_for :home_coach, :reject_if => proc { |p| p['player_name'].blank? }
   accepts_nested_attributes_for :away_coach, :reject_if => proc { |p| p['player_name'].blank? }
+  accepts_nested_attributes_for :goals, :reject_if => proc { |p| p['player_participation_id'].blank? }
   
   def related_matches
     Match.where(competition: self.competition).limit(5).reject{|m| m == self} if self.competition.present? 
