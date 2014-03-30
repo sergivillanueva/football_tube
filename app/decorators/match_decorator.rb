@@ -37,5 +37,9 @@ class MatchDecorator < Draper::Decorator
 
   def language
     I18n.t(".language.#{object.language}")
+  end
+
+  def goals
+    object.goals
   end  
 end

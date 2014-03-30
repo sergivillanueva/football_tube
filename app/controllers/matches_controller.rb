@@ -40,6 +40,10 @@ class MatchesController < ApplicationController
     })
     
     if @match.update_attributes match_params
+      # Check goals since match players may have been changed
+      @match.goals.each do |goal|
+        goal.destroy unless @match.players.include? goal.player
+      end
       redirect_to matches_path
     else
       render :edit
@@ -58,7 +62,7 @@ class MatchesController < ApplicationController
   def edit
     @match = Match.find(params[:id])
     build_player_participations
-    @match.total_score.times do 
+    (@match.total_score - @match.goals.count).times do 
       @match.goals.build
     end
   end
@@ -88,7 +92,7 @@ class MatchesController < ApplicationController
       away_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role],
       home_coach_attributes: [:player_name, :side, :player_id, :role, :new_player],
       away_coach_attributes: [:player_name, :side, :player_id, :role, :new_player],
-      goals_attributes: [:player_participation_id, :minute]
+      goals_attributes: [:id, :player_id, :minute]
     )
   end
   
