@@ -1,6 +1,7 @@
 class Player < ActiveRecord::Base
   has_many :player_participations
   has_many :matches, through: :player_participations
+  has_many :goals
   belongs_to :country
   
   validates :name, presence: true  
