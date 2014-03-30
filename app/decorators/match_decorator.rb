@@ -41,5 +41,13 @@ class MatchDecorator < Draper::Decorator
 
   def goals
     object.goals
-  end  
+  end
+
+  def home_players
+    object.home_players.map{|player_participation| player_participation.player}
+  end
+
+  def away_players
+    object.away_players.map{|player_participation| player_participation.player}
+  end
 end

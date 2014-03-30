@@ -30,6 +30,10 @@
       = link_to t(".show_result"), "#", id: "show_result"
       span style="display:none;"
         = match.result
+        .goals
+          - match.goals.each do |goal|
+            div class="goal #{match.home_players.include?(goal.player) ? "home" : "away"}"
+              = "#{goal.player.name} #{goal.minute}'"
       
     .players
       table width="100%" style="margin:auto;"
