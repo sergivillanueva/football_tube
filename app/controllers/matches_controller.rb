@@ -86,6 +86,7 @@ class MatchesController < ApplicationController
       :away_team_id,
       :competition_name,
       :language,
+      :venue,
       home_starters_attributes: [:player_name, :side, :player_id, :team_number, :role],
       away_starters_attributes: [:player_name, :side, :player_id, :team_number, :role],
       home_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role],
