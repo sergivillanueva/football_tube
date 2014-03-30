@@ -3,6 +3,8 @@ class Match < ActiveRecord::Base
   belongs_to :away_team, class_name: Team
   belongs_to :competition
   
+  has_many :home_players, -> { where side: "home" }, class_name: PlayerParticipation
+  has_many :away_players, -> { where side: "away" }, class_name: PlayerParticipation  
   has_many :home_starters, -> { where side: "home", role: "starter" }, class_name: PlayerParticipation
   has_many :away_starters, -> { where side: "away", role: "starter" }, class_name: PlayerParticipation
   has_many :home_reserves, -> { where side: "home", role: "reserve" }, class_name: PlayerParticipation
