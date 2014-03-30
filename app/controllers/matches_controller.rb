@@ -58,7 +58,7 @@ class MatchesController < ApplicationController
   def edit
     @match = Match.find(params[:id])
     build_player_participations
-    13.times do 
+    @match.total_score.times do 
       @match.goals.build
     end
   end

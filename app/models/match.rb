@@ -27,4 +27,8 @@ class Match < ActiveRecord::Base
   def related_matches
     Match.where(competition: self.competition).limit(5).reject{|m| m == self} if self.competition.present? 
   end
+
+  def total_score
+    self.home_score + self.away_score
+  end
 end

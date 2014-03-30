@@ -22,9 +22,11 @@
     = f.input :language, as: :select, collection: languages_for_select
 
     - unless @match.new_record?
+      h3 = t(".goals")
       = f.simple_fields_for :goals do |g|
-        = g.input :player_participation_id, collection: @match.player_participations.map{|p| [p.player.name, p.id]}, selected: :selected_player_participation_id, include_blank: true
-        = g.input :minute
+        .row
+          = g.input :player_participation_id, collection: @match.player_participations.map{|p| [p.player.name, p.id]}, selected: :selected_player_participation_id, include_blank: true, wrapper_html: { class: "span3" }, input_html: { style: "width:100%;"}, label: t(".player")
+          = g.input :minute, wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}
     
     .players.clearfix
       .home_players
