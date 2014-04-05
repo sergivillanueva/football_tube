@@ -93,7 +93,7 @@ class MatchesController < ApplicationController
       away_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role],
       home_coach_attributes: [:player_name, :side, :player_id, :role, :new_player],
       away_coach_attributes: [:player_name, :side, :player_id, :role, :new_player],
-      goals_attributes: [:id, :player_id, :minute]
+      goals_attributes: [:id, :player_id, :minute, :own_goal]
     )
   end
   
