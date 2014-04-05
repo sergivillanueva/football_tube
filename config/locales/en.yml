@@ -23,4 +23,7 @@ en:
   pages:
     home:
       search: Search
+  matches:
+    show:
+      own_goal: Own goal
 
