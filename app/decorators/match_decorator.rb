@@ -35,6 +35,10 @@ class MatchDecorator < Draper::Decorator
     object.venue
   end
 
+  def leg
+    object.leg
+  end
+
   def language
     I18n.t(".language.#{object.language}")
   end
