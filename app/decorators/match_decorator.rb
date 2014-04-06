@@ -39,6 +39,10 @@ class MatchDecorator < Draper::Decorator
     object.leg
   end
 
+  def season
+    object.season
+  end
+
   def language
     I18n.t(".language.#{object.language}")
   end
