@@ -3,6 +3,7 @@ tr
     - if competition.country.present?
       div class="flag flag-#{competition.country.code}" title=competition.country.name
   td = competition.name
-  td = competition.kind
+  / TODO use a decorator for this
+  td = t("competitions.kind.#{competition.kind}") if competition.kind.present?
   
   td = link_to t("edit"), edit_competition_path(competition)

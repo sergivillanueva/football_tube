@@ -1,6 +1,6 @@
 = simple_form_for @competition, html: {class: "form-horizontal"} do |f|
   = f.input :name
-  = f.input :kind
+  = f.input :kind, collection: options_for_competition_kind
   = f.input :country_id, collection: Country.all
     
   = f.button :submit, class: "btn-primary"
