@@ -1,5 +1,6 @@
 class Competition < ActiveRecord::Base
   has_many :matches
+  belongs_to :country
   
   validates :name, presence: true  
   

@@ -1,0 +1,8 @@
+tr
+  td
+    - if competition.country.present?
+      div class="flag flag-#{competition.country.code}" title=competition.country.name
+  td = competition.name
+  td = competition.kind
+  
+  td = link_to t("edit"), edit_competition_path(competition)

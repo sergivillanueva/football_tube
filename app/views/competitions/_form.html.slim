@@ -1,0 +1,7 @@
+= simple_form_for @competition, html: {class: "form-horizontal"} do |f|
+  = f.input :name
+  = f.input :kind
+  = f.input :country_id, collection: Country.all
+    
+  = f.button :submit, class: "btn-primary"
+  = link_to "Cancel", competitions_path, class: "btn btn-default"
