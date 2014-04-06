@@ -11,20 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140405113502) do
-
-  create_table "competition_types", force: true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
+ActiveRecord::Schema.define(version: 20140406180230) do
 
   create_table "competitions", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "competition_type_id"
     t.integer  "country_id"
+    t.string   "kind"
   end
 
   create_table "countries", force: true do |t|
