@@ -5,5 +5,7 @@ tr
   td = competition.name
   / TODO use a decorator for this
   td = t("competitions.kind.#{competition.kind}") if competition.kind.present?
-  
-  td = link_to t("edit"), edit_competition_path(competition)
+  td = competition.matches.count
+  td 
+     = link_to t("edit"), edit_competition_path(competition), class: "btn btn-link"
+     = link_to "delete", competition_path(competition), method: :delete, class: "btn btn-danger", :"data-confirm" => "Are you sure?"
