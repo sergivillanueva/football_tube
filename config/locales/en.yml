@@ -5,7 +5,7 @@ en:
       
   matches:
     show:
-      own_goal: Own goal
+      own_goal: o.g.
       
   competitions:
     kind:
