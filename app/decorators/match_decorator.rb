@@ -35,8 +35,8 @@ class MatchDecorator < Draper::Decorator
     object.venue
   end
 
-  def leg
-    object.leg
+  def stage
+    object.stage
   end
 
   def season
