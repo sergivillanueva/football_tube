@@ -44,7 +44,7 @@ class MatchDecorator < Draper::Decorator
   end
 
   def language
-    I18n.t(".language.#{object.language}")
+    I18n.t("languages.#{object.language}") if object.language.present?
   end
 
   def goals

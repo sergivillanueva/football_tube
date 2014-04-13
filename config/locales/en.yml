@@ -23,3 +23,9 @@ en:
       local_supercup: Local Supercup
       friendly: Friendly      
  
+  languages:
+    spanish: Spanish
+    english: English
+    argentinean: Argentinian
+    mexican: Mexican
+    other: Other
