@@ -51,7 +51,7 @@ class MatchesController < ApplicationController
   end
 
   def index
-    @matches = Match.order(:playing_date).decorate
+    @matches = Match.includes(:away_team).includes(:home_team).order(:playing_date).decorate
   end
   
   def show
