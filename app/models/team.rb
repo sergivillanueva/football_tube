@@ -1,4 +1,7 @@
 class Team < ActiveRecord::Base
+  has_many :home_matches, foreign_key: :home_team_id, class_name: Match
+  has_many :away_matches, foreign_key: :away_team_id, class_name: Match
+
   belongs_to :country
   
   mount_uploader :logo, LogoUploader
@@ -12,4 +15,9 @@ class Team < ActiveRecord::Base
       logo_mini: self.logo.mini.url
     }
   end
+
+  def matches
+    self.home_matches + self.away_matches
+  end
+
 end
