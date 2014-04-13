@@ -33,13 +33,13 @@ class MatchesController < ApplicationController
     assign_coaches_to_match
     
     # Assign teams and competition    
-    match_params.merge!({ 
+    new_match_params = match_params.merge({ 
       home_team_id: Team.find_or_create_by({ name: params[:match][:home_team_name] }).id, 
       away_team_id: Team.find_or_create_by({ name: params[:match][:away_team_name] }).id,
       competition_id: Competition.find_or_create_by({ name: params[:match][:competition_name] }).id
     })
-    
-    if @match.update_attributes match_params
+
+    if @match.update_attributes new_match_params
       # Check goals since match players may have been changed
       @match.goals.each do |goal|
         goal.destroy unless @match.players.include? goal.player
