@@ -1,6 +1,6 @@
 tr
   td.country
-    = team.country.flag
+    = team.country.flag if team.country.present?
   td.name
     = team.name
   td
