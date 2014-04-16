@@ -1,12 +1,17 @@
 class PlayersController < ApplicationController
-  
+  before_filter :check_uncompleted_param, only: :index
+
   def search
     players = Player.where("name like '%#{params[:name]}%' OR full_name like '%#{params[:name]}%'")
     render json: players.to_json
   end
   
   def index
-    @players = Player.order("name").paginate(:page => params[:page], :per_page => 500)
+    if @only_uncompleted == true
+      @players = Player.uncompleted.order("name").paginate(:page => params[:page], :per_page => 500)
+    else
+      @players = Player.order("name").paginate(:page => params[:page], :per_page => 500)
+    end
   end
   
   def edit
@@ -26,5 +31,10 @@ class PlayersController < ApplicationController
   
   def player_params
     params.require(:player).permit(:full_name, :name, :country_id, :birthday)
-  end    
+  end
+
+  def check_uncompleted_param
+    @only_uncompleted = true
+    @only_uncompleted = false if !params[:uncompleted].nil? && params[:uncompleted] == false
+  end
 end

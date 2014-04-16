@@ -4,8 +4,10 @@ class Player < ActiveRecord::Base
   has_many :goals
   belongs_to :country
   
-  validates :name, presence: true  
-  
+  validates :name, presence: true
+
+  scope :uncompleted, -> { where("full_name = '' OR birthday = ''") }
+
   def as_json(options={})
     { 
       value: self.name,
