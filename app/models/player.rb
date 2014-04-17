@@ -6,7 +6,7 @@ class Player < ActiveRecord::Base
   
   validates :name, presence: true
 
-  scope :uncompleted, -> { where("full_name = '' OR birthday = ''") }
+  scope :uncompleted, -> { where("full_name = '' OR full_name IS NULL OR birthday = '' OR birthday IS NULL") }
 
   def as_json(options={})
     { 
