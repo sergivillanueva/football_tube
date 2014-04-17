@@ -13,10 +13,15 @@
       .team_details
         .logo
           = match.home_team_logo "medium"
+          .name
+            = match.home_team_name.mb_chars.upcase.to_s
+            
       .team_details
         .logo
           = match.away_team_logo "medium"
-    
+          .name
+            = match.away_team_name.mb_chars.upcase.to_s
+          
     .competition
       = match.competition_name
 
