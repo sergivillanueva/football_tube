@@ -1,7 +1,7 @@
 .controls
   = link_to_if @only_uncompleted == false, t(".uncompleted"), players_path
-  |
-  = link_to_if @only_uncompleted == true, t(".all"), players_path(uncompleted: false)
+  = " | "
+  = link_to_if @only_uncompleted == true, t(".all"), players_path(uncompleted: 0)
 
 table.table
   thead

@@ -35,6 +35,6 @@ class PlayersController < ApplicationController
 
   def check_uncompleted_param
     @only_uncompleted = true
-    @only_uncompleted = false if !params[:uncompleted].nil? && params[:uncompleted] == false
+    @only_uncompleted = false if !params[:uncompleted].nil? && params[:uncompleted] == "0"
   end
 end
