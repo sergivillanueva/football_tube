@@ -57,3 +57,4 @@ gem 'bootstrap-sass', '~> 3.0.2.0'
 gem 'draper', '~> 1.3'
 gem "twitter-bootstrap-rails"
 gem 'will_paginate', '~> 3.0'
+gem "fog", "~> 1.3.1"
