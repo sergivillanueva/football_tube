@@ -24,6 +24,12 @@
     = f.input :playing_date, start_year: 1900
     = f.input :language, as: :select, collection: languages_for_select
 
+    / TODO: manage video file(s) upload
+    .videos style="display:none;"
+      h3 = t(".upload_files")
+      = f.simple_fields_for :videos do |g|
+        = g.input :source_file, as: :file
+
     - unless @match.new_record?
       h3 = t(".goals")
       = f.simple_fields_for :goals do |g|

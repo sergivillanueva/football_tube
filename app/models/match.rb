@@ -27,6 +27,7 @@ class Match < ActiveRecord::Base
   accepts_nested_attributes_for :home_coach, :reject_if => proc { |p| p['player_name'].blank? }
   accepts_nested_attributes_for :away_coach, :reject_if => proc { |p| p['player_name'].blank? }
   accepts_nested_attributes_for :goals, :reject_if => proc { |p| p['player_id'].blank? }
+  accepts_nested_attributes_for :videos, :reject_if => proc { |p| p['source_file'].blank? }
   
   def related_matches
     Match.where(competition: self.competition).limit(5).reject{|m| m == self} if self.competition.present? 
