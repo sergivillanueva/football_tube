@@ -58,3 +58,4 @@ gem 'draper', '~> 1.3'
 gem "twitter-bootstrap-rails"
 gem 'will_paginate', '~> 3.0'
 gem "fog", "~> 1.3.1"
+gem "nokogiri"
