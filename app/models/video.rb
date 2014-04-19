@@ -1,4 +1,4 @@
 class Video < ActiveRecord::Base
   belongs_to :match
-  mount_uploader :file, VideoUploader
+  mount_uploader :source_file, VideoUploader
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140418232848) do
+ActiveRecord::Schema.define(version: 20140419104240) do
 
   create_table "competitions", force: true do |t|
     t.string   "name"
@@ -80,7 +80,7 @@ ActiveRecord::Schema.define(version: 20140418232848) do
   end
 
   create_table "videos", force: true do |t|
-    t.string   "file"
+    t.string   "source_file"
     t.integer  "match_id"
     t.datetime "created_at"
     t.datetime "updated_at"
