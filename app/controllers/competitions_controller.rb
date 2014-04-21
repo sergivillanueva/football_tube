@@ -1,4 +1,6 @@
 class CompetitionsController < ApplicationController
+  before_action :authenticate_user!
+
   def search
     competitions = Competition.where("name like '%#{params[:name]}%'")
     render json: competitions.to_json

@@ -1,5 +1,6 @@
 class MatchesController < ApplicationController
   decorates_assigned :match
+  before_action :authenticate_user!, except: :show
 
   def new
     @match = Match.new

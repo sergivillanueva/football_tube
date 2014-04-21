@@ -1,5 +1,6 @@
 class PlayersController < ApplicationController
   before_filter :check_uncompleted_param, only: :index
+  before_action :authenticate_user!, except: :search
 
   def search
     players = Player.where("name like '%#{params[:name]}%' OR full_name like '%#{params[:name]}%'")
