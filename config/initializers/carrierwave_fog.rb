@@ -1,8 +1,8 @@
 CarrierWave.configure do |config|
   config.fog_credentials = {
     :provider               => 'AWS',                        # required
-    :aws_access_key_id      => 'AKIAIGRY56WOCGZAR4XQ',                        # required
-    :aws_secret_access_key  => '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',                        # required
+    :aws_access_key_id      => '',                        # required
+    :aws_secret_access_key  => '',                        # required
   }
   config.fog_directory  = 'footballia'                     # required
   config.fog_public     = false
