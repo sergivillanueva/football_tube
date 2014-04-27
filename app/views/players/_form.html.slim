@@ -2,7 +2,7 @@
   = f.input :name
   = f.input :full_name
   = f.input :country_id, collection: Country.all
-  = f.input :birthday, start_year: 1880, include_blank: true
+  = f.input :birthday, start_year: 1880, end_year: Date.today.year, include_blank: true
   
   = f.button :submit, class: "btn-primary"
   = link_to "Cancel", players_path, class: "btn btn-default"
