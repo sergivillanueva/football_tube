@@ -1,6 +1,6 @@
 module MatchesHelper
   def languages_for_select
-  	%w(spanish english argentinean mexican other).map do |l|
+  	%w(no_commentary english russian swedish french spanish german catalan dutch spanish_mex italian spanish_arg portuguese_bra english_usa polish serbian portuguese romanian spanish_col basque galician).map do |l|
   	  [I18n.t("languages.#{l}"), l]
   	end
   end
