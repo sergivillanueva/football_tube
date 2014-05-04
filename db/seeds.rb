@@ -258,6 +258,7 @@ Country.find_or_create_by({ code: "wf", name: "Wallis and Futuna" })
 Country.find_or_create_by({ code: "eh", name: "Western Sahara" })
 Country.find_or_create_by({ code: "ye", name: "Yemen" })
 Country.find_or_create_by({ code: "zm", name: "Zambia" })
+Country.find_or_create_by({ code: "zw", name: "Zimbabwe" })
 
 # Non-ISO-3166 countries
 
