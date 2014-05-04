@@ -2,6 +2,7 @@ class Match < ActiveRecord::Base
   belongs_to :home_team, class_name: Team
   belongs_to :away_team, class_name: Team
   belongs_to :competition
+  belongs_to :user
   
   has_many :home_players, -> { where side: "home" }, class_name: PlayerParticipation
   has_many :away_players, -> { where side: "away" }, class_name: PlayerParticipation  
