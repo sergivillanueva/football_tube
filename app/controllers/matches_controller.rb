@@ -15,7 +15,8 @@ class MatchesController < ApplicationController
     @match = Match.new match_params.merge({ 
       home_team_id: Team.find_or_create_by({ name: params[:match][:home_team_name] }).id, 
       away_team_id: Team.find_or_create_by({ name: params[:match][:away_team_name] }).id,
-      competition_id: Competition.find_or_create_by({ name: params[:match][:competition_name] }).id
+      competition_id: Competition.find_or_create_by({ name: params[:match][:competition_name] }).id,
+      user_id: current_user.id
     })
     
     if @match.save
