@@ -8,12 +8,13 @@
 </head>
 <body>
   <div id="header">
-    <div id="wrapper">
-      <%= render "shared/header" %>    
-    </div>
+    <%= render "shared/header" %>    
   </div>
-  <div id="wrapper">
-    <div id="main">
+  <div class="wrapper">
+    <div id="main" class="clearfix">
+      <div id="search">
+        <%= render "shared/search" %>
+      </div>
       <div id="content">
         <% if notice %>
           <p class="alert alert-success"><%= notice %></p>
@@ -25,6 +26,9 @@
       </div>
     </div>
   </div>
-  <%= render "shared/header" %>
+  <div class="vertical-banner">
+    <%= image_tag "fake_vertical_banner.jpg", style: "position:absolute;top:165px;right:0px;" %>
+  </div>
+  <%= render "shared/footer" %>
 </body>
 </html>

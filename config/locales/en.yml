@@ -1,7 +1,6 @@
 en:
   pages:
     home:
-      search: Search
       
   matches:
     show:
@@ -50,3 +49,8 @@ en:
     spanish_col: Spanish (COL)
     basque: Basque
     galician: Galician
+
+  shared:
+    search:
+      search_player: Search player
+      search_team: Search team
