@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :search
 
   def new
     @team = Team.new
