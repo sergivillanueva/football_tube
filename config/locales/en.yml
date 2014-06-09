@@ -36,6 +36,11 @@ en:
       international: International
       domestic: Domestic
       friendly: Friendly
+    zone:
+      world: World
+      europe: Europe
+      south_america: South America
+      concacaf: CONCACAF
  
   languages:
     spanish: Spanish
