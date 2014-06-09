@@ -64,3 +64,9 @@ ul
                 ul
                   - competitions[1].each do |c|
                     li = link_to c.name, search_by_competition_path(competition_id: c.id)
+  
+  - if @friendly.present?
+    li 
+      = t("competitions.scope.friendly")
+      ul
+        li = link_to t("competition.scope.friendly"), search_by_competition_path(competition_id: @friendly.first.id)
