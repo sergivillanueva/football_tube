@@ -35,7 +35,7 @@ ul
               = t("competitions.zone.#{zone}")
             ul
               - @national_teams_competitions[zone].each do |competition|
-                li = link_to t("competitions.kind.#{competition.kind}"), "#"
+                li = link_to competition.name, "#"
 
   - if @international_competitions.present?                
     li 
@@ -47,7 +47,7 @@ ul
               = t("competitions.zone.#{zone}")
             ul
               - @international_competitions[zone].each do |competition|
-                li = link_to t("competitions.kind.#{competition.kind}"), "#"
+                li = link_to competition.name, "#"
 
   - if @domestic_competitions.present?
     li 
@@ -63,4 +63,4 @@ ul
                   = competitions[0]
                 ul
                   - competitions[1].each do |c|
-                    li = link_to t("competitions.kind.#{c.kind}"), "#"
+                    li = link_to c.name, "#"
