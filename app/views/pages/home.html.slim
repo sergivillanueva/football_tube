@@ -24,4 +24,43 @@
   = link_to "Competitions", competitions_path
 
 h5 = t(".browse_competitions")
-  - #TODO
+ul
+  - if @national_teams_competitions.present?
+    li 
+      = t("competitions.scope.national_teams")
+      ul
+        - %w(world europe south_america).each do |zone|
+          - if @national_teams_competitions[zone].present?
+            li 
+              = t("competitions.zone.#{zone}")
+            ul
+              - @national_teams_competitions[zone].each do |competition|
+                li = link_to t("competitions.kind.#{competition.kind}"), "#"
+
+  - if @international_competitions.present?                
+    li 
+      = t("competitions.scope.international")
+      ul
+        - %w(world europe south_america).each do |zone|
+          - if @international_competitions[zone].present?
+            li 
+              = t("competitions.zone.#{zone}")
+            ul
+              - @international_competitions[zone].each do |competition|
+                li = link_to t("competitions.kind.#{competition.kind}"), "#"
+
+  - if @domestic_competitions.present?
+    li 
+      = t("competitions.scope.domestic")
+      ul
+        - %w(europe south_america concacaf).each do |zone|
+          - if @domestic_competitions[zone].present?
+            li 
+              = t("competitions.zone.#{zone}")
+            ul
+              - @domestic_competitions[zone].group_by{|c| c.country.try(:name)}.each do |competitions|
+                li 
+                  = competitions[0]
+                ul
+                  - competitions[1].each do |c|
+                    li = link_to t("competitions.kind.#{c.kind}"), "#"
