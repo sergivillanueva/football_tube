@@ -12,7 +12,7 @@ module CompetitionsHelper
   	{
   	  t("competitions.scope.national_teams") => national_teams_competitions_kinds.map{|l| [I18n.t("competitions.kind.#{l}"), l]},
   	  t("competitions.scope.international") => international_competitions_kinds.map{|l| [I18n.t("competitions.kind.#{l}"), l]}, 
-  	  t("competitions.scope.domestic") => international_competitions_kinds.map{|l| [I18n.t("competitions.kind.#{l}"), l]}, 
+  	  t("competitions.scope.domestic") => domestic_competitions_kinds.map{|l| [I18n.t("competitions.kind.#{l}"), l]}, 
   	  'friendly' => [[I18n.t("competitions.kind.friendly"), 'friendly']]
   	}
   end
