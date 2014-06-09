@@ -17,7 +17,7 @@ module CompetitionsHelper
   	}
   end
   def options_for_competition_scope
-  	%w(national_teams international domestic).map do |s|
+  	%w(national_teams international domestic friendly).map do |s|
   	  [t("competitions.scope.#{s}"), s]
   	end
   end
