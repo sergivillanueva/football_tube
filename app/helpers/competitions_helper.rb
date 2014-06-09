@@ -17,12 +17,12 @@ module CompetitionsHelper
   	}
   end
   def options_for_competition_scope
-  	%w(national_teams international domestic).each do |s|
+  	%w(national_teams international domestic).map do |s|
   	  [t("competitions.scope.#{s}"), s]
   	end
   end
   def options_for_competition_zone
-  	%w(world europe south_america).each do |z|
+  	%w(world europe south_america).map do |z|
   	  [t("competitions.zone.#{z}"), z]
   	end  	
   end
