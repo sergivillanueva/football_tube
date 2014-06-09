@@ -45,6 +45,6 @@ class CompetitionsController < ApplicationController
   private
   
   def competition_params
-    params.require(:competition).permit(:name, :kind, :country_id)
+    params.require(:competition).permit(:name, :kind, :country_id, :zone, :scope)
   end
 end

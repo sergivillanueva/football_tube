@@ -1,6 +1,8 @@
 class Competition < ActiveRecord::Base
   has_many :matches
   belongs_to :country
+
+  scope :completed, -> { where.not(kind: nil) }
   
   validates :name, presence: true  
   

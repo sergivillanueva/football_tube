@@ -10,17 +10,31 @@ en:
     kind:
       league_1: League 1
       league_2: League 2
-      local_cup: Cup
+      cup: Cup
       champions_league: European Cup / Champions League
       cup_winners_cup: Cup Winners' Cup
       uefa_cup: UEFA Cup
       world_cup: World Cup
+      world_cup_u20: U-20 World Cup
       euro: Euro
+      euro_u21: U-21 Euro
+      copa_america: Copa America
       african_cup: African Cup
+      confederations_cup: Confederations Cup
+      olympic_games: Olympic Games
+      mundialito: Mundialito
       international_supercup: International Supercup
       european_supercup: European Supercup
-      local_supercup: Local Supercup
-      friendly: Friendly      
+      supercup: Supercup
+      international_cup: International Cup
+      libertadores: Copa Libertadores
+      conmebol: Copa CONMEBOL
+      mercosur: Copa Mercosur
+      friendly: Friendly
+    scope:
+      national_teams: National teams
+      international: International
+      domestic: Domestic
  
   languages:
     spanish: Spanish
