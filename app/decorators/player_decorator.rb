@@ -10,6 +10,6 @@ class PlayerDecorator < Draper::Decorator
   end
   
   def player_participations_search_link
-    h.link_to I18n.t(".search"), h.search_by_player_path(player_id: object.id)
+    h.link_to I18n.t(".search.search"), h.search_by_player_path(player_id: object.id)
   end
 end
