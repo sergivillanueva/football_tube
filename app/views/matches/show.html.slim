@@ -42,7 +42,11 @@
         .goals
           - match.goals.each do |goal|
             div class="goal #{goal.side}"
-              = "#{goal.player.name} #{goal.minute}' #{"(#{t(".own_goal")})" if goal.own_goal?}"
+              span title=goal.player.full_name
+                = goal.player.name
+              span = "#{goal.minute}'"
+              - if goal.own_goal?
+                span = "(#{t(".own_goal")})"
       
     .players
       table width="100%" style="margin:auto;"
