@@ -1,0 +1,6 @@
+div class="goal #{goal.side}"
+  span title=goal.player.full_name
+    = goal.player.name
+  span = "#{goal.minute}'"
+  - if goal.own_goal?
+    span = "(#{t(".own_goal")})"

@@ -40,9 +40,7 @@
       span style="display:none;"
         = match.result
         .goals
-          - match.goals.each do |goal|
-            div class="goal #{goal.side}"
-              = "#{goal.player.name} #{goal.minute}' #{"(#{t(".own_goal")})" if goal.own_goal?}"
+          = render partial: "goal", collection: match.goals
       
     .players
       table width="100%" style="margin:auto;"
