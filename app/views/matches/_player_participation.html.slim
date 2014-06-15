@@ -5,8 +5,7 @@ tr.player
   td.team_number width="5%"
     = player_participation.team_number
   td.name width="30%"
-    span title=player_participation.player.full_name
-      = player_participation.player.name
+    = link_to player_participation.player.name, search_by_player_path(player_id: player_participation.player_id), title: player_participation.player.full_name
   td.age width="5%"
     = player_participation.player.age_at(player_participation.match.playing_date)
     
