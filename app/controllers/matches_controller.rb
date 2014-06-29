@@ -54,7 +54,7 @@ class MatchesController < ApplicationController
   end
 
   def index
-    @matches = Match.includes(:away_team).includes(:home_team).order(:playing_date).decorate
+    @matches = Match.includes(:away_team).includes(:home_team).order("created_at DESC").paginate(:page => params[:page], :per_page => 20).decorate
   end
   
   def show

@@ -9,5 +9,5 @@ tr
   td = t("competitions.zone.#{competition.zone}") if competition.zone.present?  
   td = competition.matches.count
   td 
-     = link_to t("edit"), edit_competition_path(competition), class: "btn btn-link"
-     = link_to "delete", competition_path(competition), method: :delete, class: "btn btn-danger", :"data-confirm" => "Are you sure?"
+     = link_to "", edit_competition_path(competition), class: "ui-icon ui-icon-pencil", title: "edit"
+     = link_to "", competition_path(competition), method: :delete, class: "ui-icon ui-icon-trash", :"data-confirm" => "Are you sure?", title: "delete"

@@ -3,7 +3,7 @@ module CompetitionsHelper
   	%w(world_cup world_cup_u20 euro euro_u21 copa_america african_cup international_supercup confederations_cup olympic_games mundialito)
   end
   def international_competitions_kinds
-  	%w(champions_league cup_winners_cup uefa_cup international_cup libertadores conmebol mercosur)
+  	%w(champions_league cup_winners_cup uefa_cup international_cup libertadores conmebol mercosur supercup)
   end
   def domestic_competitions_kinds
   	%w(league_1 league_2 cup supercup)
@@ -22,7 +22,7 @@ module CompetitionsHelper
   	end
   end
   def options_for_competition_zone
-  	%w(world europe south_america).map do |z|
+  	%w(world europe south_america concacaf africa asia oceania).map do |z|
   	  [t("competitions.zone.#{z}"), z]
   	end  	
   end

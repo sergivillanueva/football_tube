@@ -41,6 +41,9 @@ en:
       europe: Europe
       south_america: South America
       concacaf: CONCACAF
+      asia: Asia
+      africa: Africa
+      oceania: Oceania
  
   languages:
     spanish: Spanish
