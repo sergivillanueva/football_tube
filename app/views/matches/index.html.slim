@@ -7,8 +7,9 @@ table.table
       th = "Competition"
       th = "Stage"
       th = "Playing date"
+      th = "Uploaded"
       th
  
   tbody
     = render @matches
-        
+    = will_paginate @matches

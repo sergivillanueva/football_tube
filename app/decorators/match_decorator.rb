@@ -1,5 +1,6 @@
-class MatchDecorator < Draper::Decorator
+class MatchDecorator < ApplicationDecorator
   decorates_association :player_participation
+  delegate :current_page, :total_pages, :limit_value
     
   def result
     "#{object.home_score} : #{object.away_score}"
@@ -65,6 +66,10 @@ class MatchDecorator < Draper::Decorator
   
   def away_team_name
     object.away_team.name
+  end
+
+  def created_at
+    l object.created_at.to_date, format: :long
   end
 
 end
