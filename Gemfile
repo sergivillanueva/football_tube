@@ -60,4 +60,4 @@ gem 'will_paginate', '~> 3.0'
 gem "fog", "~> 1.3.1"
 gem "nokogiri"
 gem "devise"
-gem 'jwplayer-rails'
+gem 'jwplayer-rails', :git => 'git://github.com/dutgriff/jwplayer-rails.git'
