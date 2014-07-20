@@ -68,6 +68,7 @@ class MatchesController < ApplicationController
     (@match.total_score - @match.goals.count).times do 
       @match.goals.build
     end
+    @match.videos.build unless @match.videos.any?
   end
 
   def destroy
