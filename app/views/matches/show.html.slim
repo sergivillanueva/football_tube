@@ -1,7 +1,10 @@
 #match
   .clearfix
     .video
-      = image_tag src="fake_video.jpg", { style: "width:100%" }
+      - if match.object.videos.any?
+        = video_tag march.videos.first.source_file.url, { controls: true, style: "width:100%" }
+      - else
+        = image_tag src="fake_video.jpg", { style: "width:100%" }
     .related_matches
       h5 = t(".related_matches")
       = render(partial: "related_match", collection: @related_matches, as: :match) || t(".no_results")
