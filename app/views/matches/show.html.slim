@@ -1,10 +1,15 @@
 #match
   .clearfix
     .video
-      - if match.object.videos.any?
-        = video_tag match.object.videos.first.source_file.url, { controls: true, style: "width:100%" }
+      - if match.video.present?
+        / 
+          = video_tag match.video.source_file.url, { controls: true, style: "width:100%" }
+        
+        = jwplayer
+
       - else
         = image_tag src="fake_video.jpg", { style: "width:100%" }
+        
     .related_matches
       h5 = t(".related_matches")
       = render(partial: "related_match", collection: @related_matches, as: :match) || t(".no_results")
@@ -96,3 +101,17 @@ javascript:
       e.preventDefault();
     });
   });
+
+- if match.video.present?
+  javascript:
+    $(document).ready(function () {
+      /* Video player */
+      jwplayer("jwplayer").setup({
+        file: "#{match.video.source_file.url}",
+        height: 360,
+        advertising: {
+          client: "vast",
+          tag: "http://adserver.com/vastTag.xml"
+        },
+        width: "100%"
+      });
