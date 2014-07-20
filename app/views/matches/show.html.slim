@@ -2,7 +2,7 @@
   .clearfix
     .video
       - if match.object.videos.any?
-        = video_tag march.videos.first.source_file.url, { controls: true, style: "width:100%" }
+        = video_tag match.object.videos.first.source_file.url, { controls: true, style: "width:100%" }
       - else
         = image_tag src="fake_video.jpg", { style: "width:100%" }
     .related_matches
