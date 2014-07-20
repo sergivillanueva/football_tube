@@ -9,7 +9,7 @@
 
       - else
         = image_tag src="fake_video.jpg", { style: "width:100%" }
-        
+
     .related_matches
       h5 = t(".related_matches")
       = render(partial: "related_match", collection: @related_matches, as: :match) || t(".no_results")
@@ -115,3 +115,4 @@ javascript:
         },
         width: "100%"
       });
+    });      

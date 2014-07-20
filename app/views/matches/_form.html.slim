@@ -25,7 +25,7 @@
     = f.input :language, as: :select, collection: languages_for_select
 
     / TODO: manage video file(s) upload
-    .videos style="display:none;"
+    .videos
       h3 = t(".upload_files")
       = f.simple_fields_for :videos do |g|
         = g.input :source_file, as: :file
