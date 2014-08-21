@@ -10,5 +10,5 @@ class VideoUploader < CarrierWave::Uploader::Base
   # storage :file
   storage :fog
 
-  process encode_video: [:mp4, resolution: "200x200" ]
+  process encode_video: [:mp4, resolution: :same,  custom: '-qscale 128' ]
 end
