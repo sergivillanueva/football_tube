@@ -10,5 +10,5 @@ class VideoUploader < CarrierWave::Uploader::Base
   # storage :file
   storage :fog
 
-  process encode_video: [:mp4, resolution: :same,  custom: '-vcodec libx264 -preset ultrafast' ]
+  process encode_video: [:mp4, resolution: :same,  custom: '-vcodec libx264 -acodec libfdk_aac -preset ultrafast' ]
 end
