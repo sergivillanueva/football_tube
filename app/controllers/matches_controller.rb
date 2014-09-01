@@ -136,7 +136,7 @@ class MatchesController < ApplicationController
   def assign_players_to_match
     # Assign player and secure side and role attributes for players
     players_attributes.each do |attributes|
-      params[:match][attributes[:key]].each do |player_participation|
+      params[:match][attributes[:key]] && params[:match][attributes[:key]].each do |player_participation|
         #Find player or create a new one
         player_id = player_participation[1][:player_id]
         player_id = Player.create({ name: player_participation[1][:player_name] }).id unless player_id.present?
