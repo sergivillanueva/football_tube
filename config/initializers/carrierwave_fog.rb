@@ -7,5 +7,5 @@ CarrierWave.configure do |config|
   }
   config.fog_directory  = 'footballia'                     # required
   config.fog_public     = true
-  config.fog_attributes = { :multipart_chunk_size => 104857600 }
+  #config.fog_attributes = { :multipart_chunk_size => 104857600 }
 end
