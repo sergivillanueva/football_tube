@@ -12,7 +12,4 @@ class VideoUploader < CarrierWave::Uploader::Base
 
   #process encode_video: [:mp4, resolution: :same,  custom: '-vcodec libx264 -acodec libfdk_aac -preset ultrafast' ]
 
-  def filename
-    super.chomp(File.extname(super)) + '.mp4'
-  end
 end
