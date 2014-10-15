@@ -109,6 +109,7 @@ javascript:
       jwplayer("jwplayer").setup({
         file: "#{match.video.source_file.url}",
         height: 360,
+        flashplayer: "#{asset_path('jwplayer/jwplayer.flash.swf')}",
         advertising: {
           client: "vast",
           tag: "http://adserver.com/vastTag.xml"
