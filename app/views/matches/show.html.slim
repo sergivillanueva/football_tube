@@ -29,13 +29,10 @@
             = match.away_team_name.mb_chars.upcase.to_s
           
     .competition
-      = match.competition_name
+      = "#{match.competition_name} #{match.season}"
 
     .stage
       = match.stage
-
-    .season
-      = match.season
     
     .venue
       = match.venue
