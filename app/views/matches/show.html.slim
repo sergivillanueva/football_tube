@@ -29,7 +29,7 @@
             = link_to match.away_team_name.mb_chars.upcase.to_s, search_by_team_path(team_id: match.object.away_team_id), title: match.away_team_name
           
     .competition
-      = "#{match.competition_name} #{match.season}"
+      = "#{link_to(match.competition_name, search_by_competition_path(competition_id: match.object.competition.id))} #{match.season}".html_safe
 
     .stage
       = match.stage
