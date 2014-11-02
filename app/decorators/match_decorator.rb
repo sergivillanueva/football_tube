@@ -72,8 +72,8 @@ class MatchDecorator < ApplicationDecorator
     l object.created_at.to_date, format: :long
   end
 
-  def video
-    object.videos.first
+  def videos
+    object.videos
   end
 
 end
