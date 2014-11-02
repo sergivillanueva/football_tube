@@ -3,7 +3,17 @@ class PlayersController < ApplicationController
   before_action :authenticate_user!, except: :search
 
   def search
-    players = Player.where("name like '%#{params[:name]}%' OR full_name like '%#{params[:name]}%'")
+    name_where_clause = []
+    full_name_where_clause = []
+    
+    params[:name].split.each do |word|
+      name_where_clause << "name LIKE '%#{word}%'"
+      full_name_where_clause << "full_name LIKE '%#{word}%'"
+    end
+    
+    where_clause = "(#{name_where_clause.join(" AND ")}) OR (#{full_name_where_clause.join(" AND ")})"
+    
+    players = Player.where(where_clause)
     render json: players.to_json
   end
   

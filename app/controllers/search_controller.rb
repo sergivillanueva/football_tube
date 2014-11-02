@@ -3,7 +3,17 @@ class SearchController < ApplicationController
     if params[:player_id].present?
       @player_participations = PlayerParticipation.joins(:match).where(player_id: params[:player_id]).order("matches.playing_date").decorate  
     else
-      @players = Player.where("name like '%#{params[:player_name]}%' OR full_name like '%#{params[:player_name]}%'").decorate
+      name_where_clause = []
+      full_name_where_clause = []
+
+      params[:player_name].split.each do |word|
+        name_where_clause << "name LIKE '%#{word}%'"
+        full_name_where_clause << "full_name LIKE '%#{word}%'"
+      end
+
+      where_clause = "(#{name_where_clause.join(" AND ")}) OR (#{full_name_where_clause.join(" AND ")})"
+
+      @players = Player.where(where_clause).decorate
       render :player_results
       return
     end
