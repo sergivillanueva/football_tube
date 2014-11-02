@@ -108,7 +108,7 @@ javascript:
       /* Video player */
       jwplayer("jwplayer").setup({
         height: "360",
-        width: "100%"
+        width: "100%",
         flashplayer: "#{asset_path('flash.swf')}",
         advertising: {
           client: "vast",
@@ -124,7 +124,7 @@ javascript:
           playlist: #{raw match.videos.map{|v| { file: v.source_file.url}}.to_json}
         });
       });
-      
+
   - else
     javascript:
       $(document).ready(function () {
