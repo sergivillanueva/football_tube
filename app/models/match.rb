@@ -10,6 +10,7 @@ class Match < ActiveRecord::Base
   has_many :away_starters, -> { where side: "away", role: "starter" }, class_name: PlayerParticipation
   has_many :home_reserves, -> { where side: "home", role: "reserve" }, class_name: PlayerParticipation
   has_many :away_reserves, -> { where side: "away", role: "reserve" }, class_name: PlayerParticipation
+
   has_one :home_coach, -> {where side: "home", role: "coach"}, class_name: PlayerParticipation
   has_one :away_coach, -> {where side: "away", role: "coach"}, class_name: PlayerParticipation
   
@@ -36,5 +37,9 @@ class Match < ActiveRecord::Base
 
   def total_score
     self.home_score + self.away_score
+  end
+
+  def possible_scorers
+    self.players.where(:"player_participations.role" => %w(starter reserve)).order("side DESC, role DESC")
   end
 end
