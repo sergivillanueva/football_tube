@@ -24,58 +24,60 @@
     = "#{@competitions_count} #{t(".competitions")}"
 
 - if @last_match_with_video.present?
-  h5 = t("last_match")
-  .video
-    = jwplayer
-  = link_to t(".match_page"), @last_match_with_video
+  .last_match
+    h5 = t("last_match")
+    .video
+      = jwplayer
+    = link_to t(".match_page"), @last_match_with_video
 
-h5 = t(".browse_competitions")
-ul
-  - if @national_teams_competitions.present?
-    li 
-      = t("competitions.scope.national_teams")
-      ul
-        - %w(world europe south_america).each do |zone|
-          - if @national_teams_competitions[zone].present?
-            li 
-              = t("competitions.zone.#{zone}")
-            ul
-              - @national_teams_competitions[zone].each do |competition|
-                li = link_to competition.name, search_by_competition_path(competition_id: competition.id)
+.browse_competitions
+  h5 = t(".browse_competitions")
+  ul
+    - if @national_teams_competitions.present?
+      li 
+        = t("competitions.scope.national_teams")
+        ul
+          - %w(world europe south_america).each do |zone|
+            - if @national_teams_competitions[zone].present?
+              li 
+                = t("competitions.zone.#{zone}")
+              ul
+                - @national_teams_competitions[zone].each do |competition|
+                  li = link_to competition.name, search_by_competition_path(competition_id: competition.id)
 
-  - if @international_competitions.present?                
-    li 
-      = t("competitions.scope.international")
-      ul
-        - %w(world europe south_america).each do |zone|
-          - if @international_competitions[zone].present?
-            li 
-              = t("competitions.zone.#{zone}")
-            ul
-              - @international_competitions[zone].each do |competition|
-                li = link_to competition.name, search_by_competition_path(competition_id: competition.id)
+    - if @international_competitions.present?                
+      li 
+        = t("competitions.scope.international")
+        ul
+          - %w(world europe south_america).each do |zone|
+            - if @international_competitions[zone].present?
+              li 
+                = t("competitions.zone.#{zone}")
+              ul
+                - @international_competitions[zone].each do |competition|
+                  li = link_to competition.name, search_by_competition_path(competition_id: competition.id)
 
-  - if @domestic_competitions.present?
-    li 
-      = t("competitions.scope.domestic")
-      ul
-        - %w(europe south_america concacaf).each do |zone|
-          - if @domestic_competitions[zone].present?
-            li 
-              = t("competitions.zone.#{zone}")
-            ul
-              - @domestic_competitions[zone].group_by{|c| c.country.try(:name)}.each do |competitions|
-                li 
-                  = competitions[0]
-                ul
-                  - competitions[1].each do |c|
-                    li = link_to c.name, search_by_competition_path(competition_id: c.id)
-  
-  - if @friendly.present?
-    li 
-      = t("competitions.scope.friendly")
-      ul
-        li = link_to t("competition.scope.friendly"), search_by_competition_path(competition_id: @friendly.first.id)
+    - if @domestic_competitions.present?
+      li 
+        = t("competitions.scope.domestic")
+        ul
+          - %w(europe south_america concacaf).each do |zone|
+            - if @domestic_competitions[zone].present?
+              li 
+                = t("competitions.zone.#{zone}")
+              ul
+                - @domestic_competitions[zone].group_by{|c| c.country.try(:name)}.each do |competitions|
+                  li 
+                    = competitions[0]
+                  ul
+                    - competitions[1].each do |c|
+                      li = link_to c.name, search_by_competition_path(competition_id: c.id)
+    
+    - if @friendly.present?
+      li 
+        = t("competitions.scope.friendly")
+        ul
+          li = link_to t("competition.scope.friendly"), search_by_competition_path(competition_id: @friendly.first.id)
 
 - if @last_match_with_video.present?
   = render "shared/videos", { videos: @last_match_with_video.videos }
