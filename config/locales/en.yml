@@ -1,6 +1,10 @@
 en:
   pages:
     home:
+      matches: total registered matches
+      players: total players in our database
+      goals: total scored goals
+      competitions: total competitions among our matches    
       
   matches:
     goal:
