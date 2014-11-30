@@ -23,6 +23,12 @@
   br
   = link_to "Competitions", competitions_path
 
+- if @last_match_with_video.present?
+  h5 = t("last_match")
+  .video
+    = jwplayer
+  = link_to t(".match_page"), @last_match_with_video
+
 h5 = t(".browse_competitions")
 ul
   - if @national_teams_competitions.present?
@@ -70,3 +76,6 @@ ul
       = t("competitions.scope.friendly")
       ul
         li = link_to t("competition.scope.friendly"), search_by_competition_path(competition_id: @friendly.first.id)
+
+- if @last_match_with_video.present?
+  = render "shared/videos", { videos: @last_match_with_video.videos }
