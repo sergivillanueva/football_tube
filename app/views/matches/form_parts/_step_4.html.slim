@@ -1,7 +1,7 @@
 - unless @match.new_record?
   h3 = t(".goals")
   = f.simple_fields_for :goals do |g|
-    .row
-      = g.association :player, collection: @match.possible_scorers.map{|p| [p.name, p.id]}, selected: lambda {|l| l[0] == g.object.player.try(:name)}, include_blank: true, wrapper_html: { class: "span3" }, input_html: { style: "width:100%;"}, label: t(".player")
-      = g.input :minute, wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}
-      = g.input :own_goal, as: :boolean, wrapper_html: { class: "span1" }
+    .row-fluid
+      = g.association :player, collection: @match.possible_scorers.map{|p| [p.name, p.id]}, selected: lambda {|l| l[0] == g.object.player.try(:name)}, include_blank: true, wrapper_html: { class: "span5" }, input_html: { style: "width:100%;" }, label: t(".player")
+      = g.input :minute, wrapper_html: { class: "span1 offset1" }, input_html: { style: "width:100%;" }
+      = g.input :own_goal, as: :boolean, wrapper_html: { class: "span2 offset1" }
