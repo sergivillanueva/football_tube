@@ -100,32 +100,4 @@ javascript:
   });
 
 - if match.videos.any?
-  javascript:
-    $(document).ready(function () {
-      /* Video player */
-      jwplayer("jwplayer").setup({
-        height: "360",
-        width: "100%",
-        flashplayer: "#{asset_path('flash.swf')}",
-        advertising: {
-          client: "vast",
-          tag: "http://adserver.com/vastTag.xml"
-        }
-      });
-    });
-
-  - if match.videos.size > 1
-    javascript:
-      $(document).ready(function () {
-        jwplayer("jwplayer").setup({
-          playlist: #{raw match.videos.map{|v| { file: v.source_file.url}}.to_json}
-        });
-      });
-
-  - else
-    javascript:
-      $(document).ready(function () {
-        jwplayer("jwplayer").setup({
-          file: "#{match.videos.first.source_file.url}"
-        });
-      });
+  = render "shared/videos", { videos: match.videos }

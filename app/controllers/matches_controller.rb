@@ -20,7 +20,8 @@ class MatchesController < ApplicationController
     })
     
     if @match.save
-      redirect_to matches_path
+      #Redirect to edit to set goals
+      redirect_to edit_match_path(@match, set_goals: true)
     else
       render :new
     end
@@ -69,6 +70,7 @@ class MatchesController < ApplicationController
       @match.goals.build
     end
     @match.videos.build unless @match.videos.any?
+    @step = 4 if params[:set_goals].present?
   end
 
   def destroy

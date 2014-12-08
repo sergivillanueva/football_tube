@@ -1,0 +1,99 @@
+.row-fluid.match_score
+  .span6
+    .row-fluid
+	  .span3
+	    .home_team_logo
+	      - if f.object.home_team.present?
+            = f.object.decorate.home_team_logo "thumb"
+          - else
+            img style="display:none;"
+	  .span4
+	    .row
+	      .span5
+	        = f.input :home_score, input_html: { style: "width:70%;" }, label: false
+	      .span1 style="line-height:35px;"
+	        | :
+	      .span5
+	        = f.input :away_score, input_html: { style: "width:70%;" }, label: false
+	  .span3	
+	    .away_team_logo
+	      - if f.object.away_team.present?
+            = f.object.decorate.away_team_logo "thumb"
+          - else
+            img style="display:none;"
+
+.row-fluid.players
+  .span6.home_players
+    .starters
+      h3 = t(".home_team_line_up")
+      = f.simple_fields_for :home_starters do |g|
+        .row-fluid.player class=g.object.role
+          = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: "Player name", wrapper_html: { class: "span6" }, disabled: g.object.player_id.present? ? true : false
+          = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span2 offset1" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
+          = link_to t(".delete"), "#", class: "delete_player span2 offset1" if g.object.player_id.present? 
+
+          = g.input :side, as: :hidden
+          = g.input :role, as: :hidden
+          = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
+          
+
+    = link_to t(".add_reserves"), "#", class: "add_reserves"
+    .reserves style="display:none;"
+      h3 = t(".reserves")
+      = f.simple_fields_for :home_reserves do |g|
+        .row-fluid.player class=g.object.role
+          = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: "Player name", wrapper_html: { class: "span6" }, disabled: g.object.player_id.present? ? true : false
+          = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span2 offset1" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
+          = link_to t(".delete"), "#", class: "delete_player span2 offset1" if g.object.player_id.present? 
+
+          = g.input :side, as: :hidden
+          = g.input :role, as: :hidden
+          = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
+
+    .coach
+      h3 = t(".coach")
+      = f.simple_fields_for :home_coach do |g|
+        .player class=g.object.role
+          = g.input :player_name, input_html: { class: "player_name", value: g.object.player.present? ? g.object.player.name : "" }, label: false, disabled: g.object.player_id.present? ? true : false
+          = link_to t(".delete"), "#", class: "delete_player span2 offset1" if g.object.player_id.present? 
+
+          = g.input :side, as: :hidden
+          = g.input :role, as: :hidden
+          = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
+               
+  .span6.away_players
+    .starters
+      h3 = t(".away_team_line_up")
+      = f.simple_fields_for :away_starters do |g|
+        .row-fluid.player class=g.object.role
+          = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: "Player name", wrapper_html: { class: "span6" }, disabled: g.object.player_id.present? ? true : false
+          = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span2 offset1" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
+          = link_to t(".delete"), "#", class: "delete_player span2 offset1" if g.object.player_id.present? 
+
+          = g.input :side, as: :hidden
+          = g.input :role, as: :hidden
+          = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
+          
+    = link_to t(".add_reserves"), "#", class: "add_reserves"
+    .reserves style="display:none;"
+      h3 = t(".reserves")
+      = f.simple_fields_for :away_reserves do |g|
+        .row-fluid.player class=g.object.role
+          = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: "Player name", wrapper_html: { class: "span6" }, disabled: g.object.player_id.present? ? true : false
+          = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span2 offset1" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
+          = link_to t(".delete"), "#", class: "delete_player span2 offset1" if g.object.player_id.present? 
+
+          = g.input :side, as: :hidden
+          = g.input :role, as: :hidden
+          = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
+
+    .coach
+      h3 = t(".coach")
+      = f.simple_fields_for :away_coach do |g|
+        .player class=g.object.role
+          = g.input :player_name, input_html: { class: "player_name", value: g.object.player.present? ? g.object.player.name : "" }, label: false, disabled: g.object.player_id.present? ? true : false
+          = link_to t(".delete"), "#", class: "delete_player span2 offset1" if g.object.player_id.present? 
+
+          = g.input :side, as: :hidden
+          = g.input :role, as: :hidden
+          = g.input :player_id, as: :hidden, input_html: { class: "player_id" }

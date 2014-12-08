@@ -1,10 +1,18 @@
 en:
   pages:
     home:
+      matches: total registered matches
+      players: total players in our database
+      goals: total scored goals
+      competitions: total competitions among our matches    
       
   matches:
     goal:
       own_goal: o.g.
+    form:
+      next: "Next step &#8594;"
+      prev: "&#8592; Previous step"
+      cancel: Cancel
       
   competitions:
     kind:

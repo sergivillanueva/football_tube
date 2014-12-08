@@ -42,4 +42,13 @@ class Match < ActiveRecord::Base
   def possible_scorers
     self.players.where(:"player_participations.role" => %w(starter reserve)).order("side DESC, role DESC")
   end
+
+  def can_have_players_set?
+    return false if self.new_record?
+    return self.home_team.present? && self.away_team.present?
+  end
+
+  def can_have_goals_set?
+    return can_have_players_set? && self.home_score.present? && self.away_score.present?
+  end
 end

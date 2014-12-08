@@ -12,7 +12,8 @@ class Team < ActiveRecord::Base
       value: self.name,
       name: self.name,
       logo: self.logo.url,
-      logo_mini: self.logo.mini.url
+      logo_mini: self.logo.mini.url,
+      logo_thumb: self.logo.thumb.url
     }
   end
 

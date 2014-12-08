@@ -1,125 +1,61 @@
 #match_form
   = simple_form_for @match do |f|
-    .teams.clearfix
-      .team_details
-        .logo.blank
-          - if f.object.home_team.present?
-            = f.object.decorate.home_team_logo
-          - else
-            img style="display:none;"
-        = f.input :home_team_name, input_html: { class: "team_name", value: f.object.home_team.present? ? f.object.home_team.name : "" }
-      .team_details
-        .logo.blank
-          - if f.object.away_team.present?
-            = f.object.decorate.away_team_logo
-          - else
-            img style="display:none;"
-        = f.input :away_team_name, input_html: { class: "team_name", value: f.object.away_team.present? ? f.object.away_team.name : ""  }
-    = f.input :home_score
-    = f.input :away_score
-    = f.input :competition_name, input_html: { class: "competition_name", value: f.object.competition.present? ? f.object.competition.name : "" }
-    = f.input :stage
-    = f.input :season, collection: options_for_match_season
-    = f.input :venue
-    = f.input :playing_date, start_year: 1900
-    = f.input :language, as: :select, collection: languages_for_select
+    .tabbable
+      ul.nav.nav-tabs
+        li.active.step_1_tab = link_to t(".step_1"), "#step_1", :"data-toggle" => 'tab'
+        li class="step_2_tab #{"disabled" if !f.object.can_have_players_set?}" 
+          = link_to t(".step_2"), "#step_2", { :"data-toggle" => "#{"tab" if f.object.can_have_players_set?}" }
+        li class="step_3_tab #{"disabled" if !f.object.can_have_players_set?}" 
+          = link_to t(".step_3"), "#step_3", { :"data-toggle" => "#{"tab" if f.object.can_have_players_set?}" }
+        li class="step_4_tab #{"disabled" if !f.object.can_have_players_set?}" 
+          = link_to t(".step_4"), "#step_4", { :"data-toggle" => "#{"tab" if f.object.can_have_goals_set?}" }
+        
+      
+      / TODO : Refactor this please!
 
-    / TODO: manage video file(s) upload
-    .videos
-      h3 = t(".upload_files")
-      = f.simple_fields_for :videos do |g|
-        = g.input :source_file, as: :file
+      .tab-content
+        .tab-pane.active#step_1
+          = render "matches/form_parts/step_1", { f: f }
+          .form_buttons
+            - if f.object.new_record?
+              = link_to t(".next").html_safe, "#step_2", class: "btn btn-primary next_step"
+              = link_to t(".cancel"), root_path, class: "btn btn-default"
+            - else
+              = f.button :submit, class: "btn-primary"    
+              = link_to t(".cancel"), root_path, class: "btn btn-default"
 
-    - unless @match.new_record?
-      h3 = t(".goals")
-      = f.simple_fields_for :goals do |g|
-        .row
-          = g.association :player, collection: @match.possible_scorers.map{|p| [p.name, p.id]}, selected: lambda {|l| l[0] == g.object.player.try(:name)}, include_blank: true, wrapper_html: { class: "span3" }, input_html: { style: "width:100%;"}, label: t(".player")
-          = g.input :minute, wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}
-          = g.input :own_goal, as: :boolean, wrapper_html: { class: "span1" }
-    
-    .players.clearfix
-      .home_players
-        .starters
-          h3 = t(".line_up")
-          = f.simple_fields_for :home_starters do |g|
-            .player class=g.object.role
-              .row
-                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }, disabled: g.object.player_id.present? ? true : false
-                = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
-                = link_to t(".delete"), "#", class: "delete_player span1" if g.object.player_id.present? 
+        .tab-pane#step_2
+          = render "matches/form_parts/step_2", { f: f }
+          .form_buttons
+            - if f.object.new_record?
+              = link_to t(".prev").html_safe, "#step_1", class: "btn btn-primary prev_step"
+              = link_to t(".next").html_safe, "#step_3", class: "btn btn-primary next_step"
+              = link_to t(".cancel"), root_path, class: "btn btn-default"
+            - else
+              = f.button :submit, class: "btn-primary"    
+              = link_to t(".cancel"), root_path, class: "btn btn-default"
 
-              = g.input :side, as: :hidden
-              = g.input :role, as: :hidden
-              = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
+        .tab-pane#step_3
+          = render "matches/form_parts/step_3", { f: f }     
+          .form_buttons
+            - if f.object.new_record?
+              = link_to t(".prev").html_safe, "#step_2", class: "btn btn-primary prev_step"
+              = f.submit t(".next").html_safe, class: "btn btn-primary"    
+              = link_to t(".cancel"), root_path, class: "btn btn-default"
+            - else
+              - if !f.object.can_have_goals_set?
+                = link_to t(".prev").html_safe, "#step_2", class: "btn btn-primary prev_step"
+                = link_to t(".next").html_safe, "#step_4", class: "btn btn-primary next_step"
+                = link_to t(".cancel"), root_path, class: "btn btn-default"                
+              - else
+                = f.button :submit, class: "btn-primary"    
+                = link_to t(".cancel"), root_path, class: "btn btn-default"
               
-
-        = link_to t(".add_reserves"), "#", class: "add_reserves"
-        .reserves style="display:none;"
-          h3 = t(".reserves")
-          = f.simple_fields_for :home_reserves do |g|
-            .player class=g.object.role
-              .row
-                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }, disabled: g.object.player_id.present? ? true : false
-                = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
-                = link_to t(".delete"), "#", class: "delete_player span1" if g.object.player_id.present? 
-
-              = g.input :side, as: :hidden
-              = g.input :role, as: :hidden
-              = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
-
-        .coach
-          h3 = t(".coach")
-          = f.simple_fields_for :home_coach do |g|
-            .player class=g.object.role
-              = g.input :player_name, input_html: { class: "player_name", value: g.object.player.present? ? g.object.player.name : "" }, label: false, disabled: g.object.player_id.present? ? true : false
-              = link_to t(".delete"), "#", class: "delete_player span1" if g.object.player_id.present? 
-
-              = g.input :side, as: :hidden
-              = g.input :role, as: :hidden
-              = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
-                   
-      .away_players
-        .starters
-          h3 = t(".line_up")
-          = f.simple_fields_for :away_starters do |g|
-            .player class=g.object.role
-              .row
-                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }, disabled: g.object.player_id.present? ? true : false
-                = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
-                = link_to t(".delete"), "#", class: "delete_player span1" if g.object.player_id.present? 
-
-              = g.input :side, as: :hidden
-              = g.input :role, as: :hidden
-              = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
-              
-        = link_to t(".add_reserves"), "#", class: "add_reserves"
-        .reserves style="display:none;"
-          h3 = t(".reserves")
-          = f.simple_fields_for :away_reserves do |g|
-            .player class=g.object.role
-              .row
-                = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: "Player name", wrapper_html: { class: "span3" }, disabled: g.object.player_id.present? ? true : false
-                = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span1" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
-                = link_to t(".delete"), "#", class: "delete_player span1" if g.object.player_id.present? 
-
-              = g.input :side, as: :hidden
-              = g.input :role, as: :hidden
-              = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
-
-        .coach
-          h3 = t(".coach")
-          = f.simple_fields_for :away_coach do |g|
-            .player class=g.object.role
-              = g.input :player_name, input_html: { class: "player_name", value: g.object.player.present? ? g.object.player.name : "" }, label: false, disabled: g.object.player_id.present? ? true : false
-              = link_to t(".delete"), "#", class: "delete_player span1" if g.object.player_id.present? 
-
-              = g.input :side, as: :hidden
-              = g.input :role, as: :hidden
-              = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
-              
-    = f.button :submit, class: "btn-primary"
-    = link_to "Cancel", root_path, class: "btn btn-default"
+        .tab-pane#step_4
+          = render "matches/form_parts/step_4", { f: f }
+          .form_buttons          
+            = f.button :submit, class: "btn-primary"
+            = link_to t(".cancel"), root_path, class: "btn btn-default"            
    
 javascript:
   $(document).ready(function () {
@@ -133,7 +69,17 @@ javascript:
       minLength: 2,
       select: function(event, ui) {
         var logoElement = $(this).closest(".team_details").find(".logo img");
-        $(logoElement).hide().attr("src", ui.item.logo).fadeIn();                
+        var scoreLogoElement = $(this).closest("#match_form").find(".match_score");
+
+        if ($(this).attr("id") == "match_home_team_name") {
+          scoreLogoElement = $(scoreLogoElement).find(".home_team_logo img");
+        }
+        else {
+          scoreLogoElement = $(scoreLogoElement).find(".away_team_logo img");
+        }
+
+        $(logoElement).hide().attr("src", ui.item.logo).fadeIn();
+        $(scoreLogoElement).hide().attr("src", ui.item.logo_thumb).fadeIn();
       }      
     })
     .each(function (i) {
@@ -192,4 +138,21 @@ javascript:
       $(this).find(':disabled').removeAttr('disabled');
     });
 
+    /* Steps */
+    $(".form_buttons .next_step, .form_buttons .prev_step").on("click", function (e) {
+      var target = $(this).attr("href");
+
+      /* Enable step 2 if both teams are set */
+      if (target == "#step_2" && $("#match_home_team_name").val() && $("#match_away_team_name").val()) {
+        $(".nav-tabs .step_2_tab, .nav-tabs .step_3_tab").removeClass("disabled").find("a").attr("data-toggle", "tab");
+      }
+      $(".nav-tabs a[href='" + target + "']").trigger("click");
+    });
+
    });
+
+- if @step.present?
+  javascript:
+    $(document).ready(function () {
+      $(".nav-tabs a[href='#step_#{@step}']").trigger("click");
+    });
