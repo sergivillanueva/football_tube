@@ -16,9 +16,10 @@
           = render "matches/form_parts/step_3", { f: f }
         .tab-pane#step_4
           = render "matches/form_parts/step_4", { f: f }
-              
-    = f.button :submit, class: "btn-primary"
-    = link_to "Cancel", root_path, class: "btn btn-default"
+            
+    .form_buttons          
+      = f.button :submit, class: "btn-primary"
+      = link_to "Cancel", root_path, class: "btn btn-default"
    
 javascript:
   $(document).ready(function () {
@@ -41,7 +42,7 @@ javascript:
         else {
           scoreLogoElement = $(scoreLogoElement).find(".away_team_logo img");
         }
-        
+
         $(logoElement).hide().attr("src", ui.item.logo).fadeIn();
         $(scoreLogoElement).hide().attr("src", ui.item.logo_thumb).fadeIn();
       }      
