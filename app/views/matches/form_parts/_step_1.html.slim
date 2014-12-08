@@ -1,12 +1,12 @@
-.teams.clearfix
-  .team_details
+.row-fluid.teams
+  .span6.team_details
     .logo.blank
       - if f.object.home_team.present?
         = f.object.decorate.home_team_logo
       - else
         img style="display:none;"
     = f.input :home_team_name, input_html: { class: "team_name", value: f.object.home_team.present? ? f.object.home_team.name : "" }
-  .team_details
+  .span6.team_details
     .logo.blank
       - if f.object.away_team.present?
         = f.object.decorate.away_team_logo
@@ -19,4 +19,3 @@
   h3 = t(".upload_files")
   = f.simple_fields_for :videos do |g|
     = g.input :source_file, as: :file
-    

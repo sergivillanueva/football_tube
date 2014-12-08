@@ -1,5 +1,20 @@
-= f.input :home_score
-= f.input :away_score
+.row-fluid.match_score
+  .span6
+    .row-fluid
+	  .span3
+	    .home_team_logo
+	      img style="display:none;"
+	  .span4
+	    .row
+	      .span5
+	        = f.input :home_score, input_html: { style: "width:70%;" }, label: false
+	      .span1 style="line-height:35px;"
+	        | :
+	      .span5
+	        = f.input :away_score, input_html: { style: "width:70%;" }, label: false
+	  .span3	
+	    .away_team_logo
+	      img style="display:none;"
 
 .players.clearfix
   .home_players

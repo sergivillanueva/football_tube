@@ -31,8 +31,19 @@ javascript:
       },
       minLength: 2,
       select: function(event, ui) {
+        console.log($(this).attr("id"));
         var logoElement = $(this).closest(".team_details").find(".logo img");
-        $(logoElement).hide().attr("src", ui.item.logo).fadeIn();                
+        var scoreLogoElement = $(this).closest("#match_form").find(".match_score");
+
+        if ($(this).attr("id") == "match_home_team_name") {
+          scoreLogoElement = $(scoreLogoElement).find(".home_team_logo img");
+        }
+        else {
+          scoreLogoElement = $(scoreLogoElement).find(".away_team_logo img");
+        }
+        
+        $(logoElement).hide().attr("src", ui.item.logo).fadeIn();
+        $(scoreLogoElement).hide().attr("src", ui.item.logo_thumb).fadeIn();
       }      
     })
     .each(function (i) {
