@@ -25,10 +25,21 @@
 
 - if @last_match_with_video.present?
   .last_match
-    h5 = t("last_match")
+    h5 = t(".last_match")
     .video
       = jwplayer
-    = link_to t(".match_page"), @last_match_with_video
+    p.text-center style="margin-top:20px;" = link_to @last_match_with_video.decorate.title_with_logos, @last_match_with_video
+
+
+- if @best_matches.present?
+  .best_matches
+    h5 = t(".best_matches")
+    .row-fluid
+      - @best_matches.each do |match|
+        .span3
+          = link_to match, title: match.title do
+            img src="#{asset_path "logo.jpg"}"
+            p.text-center = match.title_with_logos "mini"
 
 .browse_competitions
   h5 = t(".browse_competitions")
