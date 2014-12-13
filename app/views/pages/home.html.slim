@@ -35,11 +35,8 @@
   .best_matches
     h5 = t(".best_matches")
     .row-fluid
-      - @best_matches.each do |match|
-        .span3
-          = link_to match, title: match.title do
-            img src="#{asset_path "logo.jpg"}"
-            p.text-center = match.title_with_logos "mini"
+      = render partial: "match", collection: @best_matches, as: :match
+
 
 .browse_competitions
   h5 = t(".browse_competitions")
