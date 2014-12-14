@@ -36,7 +36,7 @@
   .best_matches
     h5 = t(".best_matches")
     .row-fluid
-      = render partial: "match", collection: @best_matches, as: :match
+      = render partial: "matches/embed", collection: @best_matches, as: :match
 
 
 .browse_competitions

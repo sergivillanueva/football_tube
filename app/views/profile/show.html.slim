@@ -19,3 +19,8 @@ h4 = t(".profile")
           = current_user.country.name
 
 = link_to t(".edit"), edit_user_registration_path
+
+.matches
+    h5 = t(".matches")
+    .row-fluid
+      = render partial: "matches/embed", collection: current_user.matches.decorate, as: :match
