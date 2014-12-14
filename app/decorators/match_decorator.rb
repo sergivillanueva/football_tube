@@ -80,4 +80,7 @@ class MatchDecorator < ApplicationDecorator
     object.videos
   end
 
+  def language
+    object.language
+  end
 end
