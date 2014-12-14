@@ -19,6 +19,8 @@ class Match < ActiveRecord::Base
   has_many :goals
 
   has_many :videos
+
+  scope :with_videos, -> { joins(:videos).select('matches.id').group('matches.id').having('count(videos.id) > 0') }
   
   attr_accessor :home_team_name, :away_team_name, :competition_name
   
