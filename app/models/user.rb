@@ -6,6 +6,8 @@ class User < ActiveRecord::Base
 
   has_many :matches
 
+  mount_uploader :avatar, AvatarUploader
+
   def admin?
   	self.role == "admin"
   end
