@@ -9,6 +9,8 @@ class PagesController < ApplicationController
     @friendly = competitions["friendly"] if competitions["friendly"].present?
 
     @last_match_with_video = Video.last.match
+    @best_matches = Match.decorate.first(4)
+
     @matches_count = Match.count
     @players_count = Player.count
     @goals_count = Goal.count

@@ -1,0 +1,31 @@
+h4 = t(".profile")
+
+.row-fluid.profile
+  .span6
+  	- if current_user.avatar.present?
+      = image_tag current_user.avatar.medium.url, title: current_user.name, alt: current_user.name
+    - else
+      = t(".no_avatar")
+  .span6
+  	.nick_name
+      label = t(".nick_name")
+      = current_user.nick_name
+    .email
+      label = t(".email")
+      = current_user.email
+    .country
+      label = t(".country")
+      - if current_user.country.present?
+        .row-fluid
+          .span1
+            div class="flag flag-#{current_user.country.code}" title=current_user.country.name
+          .span11
+            = current_user.country.name
+
+= link_to t(".edit"), edit_user_registration_path
+
+.matches
+    h5 = t(".matches")
+    - current_user.matches.decorate.to_a.in_groups_of(4, false) do |matches|
+      .row-fluid style="margin-bottom:20px;"
+        = render partial: "matches/embed", collection: matches, as: :match

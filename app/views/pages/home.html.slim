@@ -8,7 +8,8 @@
   - if user_signed_in?
     = "Hi, #{current_user.email}!"
     br
-    = link_to t(".logout"), destroy_user_session_path, method: :delete
+    = link_to t(".profile"), profile_path, class: "btn btn-link"
+    = link_to t(".logout"), destroy_user_session_path, method: :delete, class: "btn btn-link"
   - else
     = link_to t(".login"), new_user_session_path, class: "btn btn-link"
     = link_to t(".register"), new_user_registration_path, class: "btn btn-link"  
@@ -25,10 +26,18 @@
 
 - if @last_match_with_video.present?
   .last_match
-    h5 = t("last_match")
+    h5 = t(".last_match")
     .video
       = jwplayer
-    = link_to t(".match_page"), @last_match_with_video
+    p.text-center style="margin-top:20px;" = link_to @last_match_with_video.decorate.title_with_logos, @last_match_with_video
+
+
+- if @best_matches.present?
+  .best_matches
+    h5 = t(".best_matches")
+    .row-fluid
+      = render partial: "matches/embed", collection: @best_matches, as: :match
+
 
 .browse_competitions
   h5 = t(".browse_competitions")
