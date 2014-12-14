@@ -5,6 +5,15 @@ class ApplicationController < ActionController::Base
   
   before_action :configure_permitted_parameters, if: :devise_controller?
 
+  #TODO use cancancan gem for this and let user crud her own stuff
+  before_action :check_user, only: [:update, :edit, :destroy]
+
+  private
+
+  def check_user
+  	redirect_to root_path unless current_user.admin?
+  end
+
   protected
 
   def configure_permitted_parameters
