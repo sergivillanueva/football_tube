@@ -1,23 +1,34 @@
-javascript:
-  $(document).ready(function () {
-    /* Video player */
-    jwplayer("jwplayer").setup({
-      height: "360",
-      width: "100%",
-      image: "#{asset_path "logo.jpg"}",
-      flashplayer: "#{asset_path('flash.swf')}",
-      advertising: {
-        client: "vast",
-        tag: "http://adserver.com/vastTag.xml"
-      },
-      file: "#{videos.first.source_file.url}"
-    });
-  });
-
+/ TODO refactor this: set general options and then set file or playlist attribute depending on match.videos.count
 - if videos.size > 1
   javascript:
     $(document).ready(function () {
-      jwplayer().load([{
+      /* Video player */
+      jwplayer("jwplayer").setup({
+        height: "360",
+        width: "100%",
+        image: "#{asset_path "logo.jpg"}",
+        flashplayer: "#{asset_path('flash.swf')}",
+        advertising: {
+          client: "vast",
+          tag: "http://adserver.com/vastTag.xml"
+        },
+        file: "#{videos.first.source_file.url}"
+      });
+    });
+
+- else
+  javascript:
+    $(document).ready(function () {
+      /* Video player */
+      jwplayer("jwplayer").setup({
+        height: "360",
+        width: "100%",
+        image: "#{asset_path "logo.jpg"}",
+        flashplayer: "#{asset_path('flash.swf')}",
+        advertising: {
+          client: "vast",
+          tag: "http://adserver.com/vastTag.xml"
+        },
         playlist: #{raw videos.map{|v| { file: v.source_file.url}}.to_json}
-      }]);
+      });
     });
