@@ -1,0 +1,21 @@
+h4 = t(".profile")
+
+.row-fluid.profile
+  .span6
+    = image_tag current_user.avatar.medium.url, title: current_user.name, alt: current_user.name
+  .span6
+  	.nick_name
+      label = t(".nick_name")
+      = current_user.nick_name
+    .email
+      label = t(".email")
+      = current_user.email
+    .country
+      label = t(".country")
+      .row-fluid
+        .span1
+          div class="flag flag-#{current_user.country.code}" title=current_user.country.name
+        .span11
+          = current_user.country.name
+
+= link_to t(".edit"), edit_user_registration_path
