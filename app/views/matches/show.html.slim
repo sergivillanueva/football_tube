@@ -27,7 +27,7 @@
           = match.away_team_logo "medium"
           .name
             = link_to match.away_team_name.mb_chars.upcase.to_s, search_by_team_path(team_id: match.object.away_team_id), title: match.away_team_name
-          
+    
     .competition
       = "#{link_to match.competition_name, search_by_competition_path(competition_id: match.object.competition.id), title: match.competition_name} #{match.season}".html_safe
 
@@ -39,6 +39,9 @@
         
     .playing_date
       = match.playing_date
+    
+    .rating
+      = rating_for @match
     
     .result        
       = link_to t(".show_result"), "#", id: "show_result"
@@ -89,7 +92,7 @@
               table width="100%"
                 tbody
                   = render partial: "player_participation", collection: @match.away_reserves
-      
+          
 javascript:
   $(document).ready(function () {
     $("#match").on("click", "#show_result", function (e) {

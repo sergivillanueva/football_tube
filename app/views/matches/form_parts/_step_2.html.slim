@@ -97,3 +97,13 @@
           = g.input :side, as: :hidden
           = g.input :role, as: :hidden
           = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
+
+.row-fluid.form_buttons
+  .span12
+    - if f.object.new_record?
+      = link_to t("matches.form.prev").html_safe, "#step_1", class: "btn btn-primary prev_step"
+      = link_to t("matches.form.next").html_safe, "#step_3", class: "btn btn-primary next_step"
+      = link_to t("matches.form.cancel"), root_path, class: "btn btn-default"
+    - else
+      = f.button :submit, class: "btn-primary"    
+      = link_to t("matches.form.cancel"), root_path, class: "btn btn-default"          

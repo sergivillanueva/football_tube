@@ -1,4 +1,5 @@
 / TODO refactor this: set general options and then set file or playlist attribute depending on match.videos.count
+
 - if videos.size == 1
   javascript:
     $(document).ready(function () {
@@ -29,6 +30,6 @@
           client: "vast",
           tag: "http://adserver.com/vastTag.xml"
         },
-        playlist: #{raw videos.map{|v| { file: v.source_file.url}}.to_json}
+        playlist: #{raw videos.map{|v| { image: "#{asset_path "logo.jpg"}", file: v.source_file.url}}.to_json}
       });
     });

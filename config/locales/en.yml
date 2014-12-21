@@ -91,3 +91,11 @@ en:
   search:
     search: Search
     results: "%{n} matches found"
+
+  rating:
+    bad: Bad
+    poor: Poor
+    regular: Regular
+    good: Good
+    gorgeous: Gorgeous
+    not_rated: Not rated yet!

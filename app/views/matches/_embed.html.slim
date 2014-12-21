@@ -2,3 +2,5 @@
   = link_to match, title: match.title do
     img src="#{asset_path "logo.jpg"}"
     p.text-center style="margin-top:10px;" = match.title_with_logos "mini"
+  .mini-rating
+    = rating_for match.object, nil, noRatedMsg: t("rating.not_rated")

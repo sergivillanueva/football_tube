@@ -9,7 +9,7 @@ class PagesController < ApplicationController
     @friendly = competitions["friendly"] if competitions["friendly"].present?
 
     @last_match_with_video = Video.last.match
-    @best_matches = Match.decorate.first(4)
+    @best_matches = Match.joins("LEFT JOIN rating_caches ON (matches.id = rating_caches.cacheable_id) AND (rating_caches.cacheable_type = 'Match')").order("rating_caches.avg DESC").limit(4).decorate
 
     @matches_count = Match.count
     @players_count = Player.count

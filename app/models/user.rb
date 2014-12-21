@@ -8,6 +8,8 @@ class User < ActiveRecord::Base
   belongs_to :country
 
   mount_uploader :avatar, AvatarUploader
+  
+  ratyrate_rater
 
   def admin?
   	self.role == "admin"

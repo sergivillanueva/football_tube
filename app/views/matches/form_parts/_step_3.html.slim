@@ -4,3 +4,17 @@
 = f.input :venue
 = f.input :playing_date, start_year: 1900
 = f.input :language, as: :select, collection: languages_for_select
+
+.row-fluid.form_buttons
+  .span12
+	- if f.object.new_record?
+	  = link_to t("matches.form.prev").html_safe, "#step_2", class: "btn btn-primary prev_step"
+	  = f.submit t("matches.form.next").html_safe, class: "btn btn-primary"  
+	- else
+	  - if !f.object.can_have_goals_set?
+	    = link_to t("matches.form.prev").html_safe, "#step_2", class: "btn btn-primary prev_step"
+	    = link_to t("matches.form.next").html_safe, "#step_4", class: "btn btn-primary next_step"
+	  - else
+	    = f.button :submit, class: "btn-primary"    
+	    
+    = link_to t("matches.form.cancel"), root_path, class: "btn btn-default"                	    

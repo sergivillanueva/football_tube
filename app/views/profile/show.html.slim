@@ -29,3 +29,8 @@ h4 = t(".profile")
     - current_user.matches.decorate.to_a.in_groups_of(4, false) do |matches|
       .row-fluid style="margin-bottom:20px;"
         = render partial: "matches/embed", collection: matches, as: :match
+
+javascript:
+  $(document).ready(function () {
+    $(".star").raty('set', { readOnly: true });
+  });        
