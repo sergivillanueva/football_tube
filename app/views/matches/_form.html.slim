@@ -10,52 +10,18 @@
         li class="step_4_tab #{"disabled" if !f.object.can_have_players_set?}" 
           = link_to t(".step_4"), "#step_4", { :"data-toggle" => "#{"tab" if f.object.can_have_goals_set?}" }
         
-      
-      / TODO : Refactor this please!
-
       .tab-content
         .tab-pane.active#step_1
           = render "matches/form_parts/step_1", { f: f }
-          .form_buttons
-            - if f.object.new_record?
-              = link_to t(".next").html_safe, "#step_2", class: "btn btn-primary next_step"
-              = link_to t(".cancel"), root_path, class: "btn btn-default"
-            - else
-              = f.button :submit, class: "btn-primary"    
-              = link_to t(".cancel"), root_path, class: "btn btn-default"
 
         .tab-pane#step_2
           = render "matches/form_parts/step_2", { f: f }
-          .form_buttons
-            - if f.object.new_record?
-              = link_to t(".prev").html_safe, "#step_1", class: "btn btn-primary prev_step"
-              = link_to t(".next").html_safe, "#step_3", class: "btn btn-primary next_step"
-              = link_to t(".cancel"), root_path, class: "btn btn-default"
-            - else
-              = f.button :submit, class: "btn-primary"    
-              = link_to t(".cancel"), root_path, class: "btn btn-default"
 
         .tab-pane#step_3
           = render "matches/form_parts/step_3", { f: f }     
-          .form_buttons
-            - if f.object.new_record?
-              = link_to t(".prev").html_safe, "#step_2", class: "btn btn-primary prev_step"
-              = f.submit t(".next").html_safe, class: "btn btn-primary"    
-              = link_to t(".cancel"), root_path, class: "btn btn-default"
-            - else
-              - if !f.object.can_have_goals_set?
-                = link_to t(".prev").html_safe, "#step_2", class: "btn btn-primary prev_step"
-                = link_to t(".next").html_safe, "#step_4", class: "btn btn-primary next_step"
-                = link_to t(".cancel"), root_path, class: "btn btn-default"                
-              - else
-                = f.button :submit, class: "btn-primary"    
-                = link_to t(".cancel"), root_path, class: "btn btn-default"
-              
+
         .tab-pane#step_4
           = render "matches/form_parts/step_4", { f: f }
-          .form_buttons          
-            = f.button :submit, class: "btn-primary"
-            = link_to t(".cancel"), root_path, class: "btn btn-default"            
    
 javascript:
   $(document).ready(function () {
