@@ -1,4 +1,5 @@
 FootballTube::Application.routes.draw do
+  post '/rate' => 'rater#create', :as => 'rate'
   devise_for :users
   resources :matches
   resources :teams do
