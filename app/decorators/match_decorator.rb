@@ -14,8 +14,8 @@ class MatchDecorator < ApplicationDecorator
     "#{object.home_team.name} vs. #{object.away_team.name}"
   end
 
-  def title_with_logos size = "thumb"
-    "#{home_team_logo size} vs. #{away_team_logo size}".html_safe    
+  def title_with_logos size = "thumb", full = false
+    "#{home_team_logo size} #{full ? title : 'vs.'} #{away_team_logo size}".html_safe    
   end
 
   def title_with_flags
@@ -69,11 +69,19 @@ class MatchDecorator < ApplicationDecorator
   end
   
   def home_team_name
-    object.home_team.name
+    object.home_team.name.mb_chars
   end
   
   def away_team_name
-    object.away_team.name
+    object.away_team.name.mb_chars
+  end
+
+  def home_team_name_with_flag
+    "#{object.home_team.country.decorate.flag if object.home_team.country} #{home_team_name}".html_safe
+  end
+
+  def away_team_name_with_flag
+    "#{object.away_team.country.decorate.flag if object.away_team.country} #{away_team_name}".html_safe
   end
 
   def created_at

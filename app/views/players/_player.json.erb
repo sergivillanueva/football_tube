@@ -1,0 +1,9 @@
+{
+  "name": "<%= player.name %>",
+  "full_name": "<%= player.full_name %>",
+  "birthday": "<%= player.birthday %>",
+  "country_code": "<%= player.country.present? ? "<div class='flag flag-#{player.country.code}' title='#{player.country.name}'</div>".html_safe : ""%>",
+  "edit_link": "<%= raw link_to('', edit_player_path(player), class: 'ui-icon ui-icon-pencil', title: 'edit').gsub("\"", "\\\"").html_safe %>"
+}
+
+  
