@@ -1,7 +1,7 @@
 {
-  "home_team": "<%= match.home_team_logo("thumb").gsub("\"", "\\\"").html_safe %>",
+  "home_team": "<%= match.home_team_name %> <%= match.home_team_logo("mini").gsub("\"", "\\\"").html_safe %>",
   "result": "<%= link_to(match.result, match, title: "view").gsub("\"", "\\\"").html_safe %>",
-  "away_team": "<%= match.away_team_logo("thumb").gsub("\"", "\\\"").html_safe %>",
+  "away_team": "<%= "#{match.away_team_name} #{match.away_team_logo("mini").gsub("\"", "\\\"")}".html_safe %>",
   "competition": "<%= match.competition_name %>",
   "stage": "<%= match.stage %>",
   "playing_date": "<%= match.playing_date %>",
