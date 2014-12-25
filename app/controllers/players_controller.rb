@@ -18,10 +18,12 @@ class PlayersController < ApplicationController
   end
   
   def index
-    if @only_uncompleted == true
-      @players = Player.uncompleted.order("name").paginate(:page => params[:page], :per_page => 500)
-    else
-      @players = Player.order("name").paginate(:page => params[:page], :per_page => 500)
+    respond_to do |format|
+      format.html
+      format.json do
+        @players = @only_uncompleted ? Player.uncompleted : Player.all
+        render "players/index"
+      end
     end
   end
   
