@@ -14,8 +14,8 @@ class MatchDecorator < ApplicationDecorator
     "#{object.home_team.name} vs. #{object.away_team.name}"
   end
 
-  def title_with_logos size = "thumb"
-    "#{home_team_logo size} vs. #{away_team_logo size}".html_safe    
+  def title_with_logos size = "thumb", full = false
+    "#{home_team_logo size} #{full ? title : 'vs.'} #{away_team_logo size}".html_safe    
   end
 
   def title_with_flags
