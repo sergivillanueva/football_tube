@@ -17,7 +17,7 @@ javascript:
     $('.table').dataTable( {
       "ajax": "#{players_path(format: :json, uncompleted: params["uncompleted"])}",
       "columns": [
-        { "data": "country_code", "orderable": false },
+        { "data": "country", "orderable": false },
         { "data": "name" },
         { "data": "full_name" },
         { "data": "birthday" },
