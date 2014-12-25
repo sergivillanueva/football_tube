@@ -20,14 +20,22 @@
         .logo
           = match.home_team_logo "medium"
           .name
-            = link_to match.home_team_name.mb_chars.upcase.to_s, search_by_team_path(team_id: match.object.home_team_id), title: match.home_team_name
+            = link_to search_by_team_path(team_id: match.object.home_team_id), title: match.home_team_name do
+              - if match.object.competition.scope == "international"
+                = match.home_team_name_with_flag
+              - else
+                = match.home_team_name
             
       .team_details
         .logo
           = match.away_team_logo "medium"
           .name
-            = link_to match.away_team_name.mb_chars.upcase.to_s, search_by_team_path(team_id: match.object.away_team_id), title: match.away_team_name
-    
+            = link_to search_by_team_path(team_id: match.object.away_team_id), title: match.away_team_name do
+              - if match.object.competition.scope == "international"
+                = match.away_team_name_with_flag
+              - else
+                = match.away_team_name
+                  
     .competition
       = "#{link_to match.competition_name, search_by_competition_path(competition_id: match.object.competition.id), title: match.competition_name} #{match.season}".html_safe
 
