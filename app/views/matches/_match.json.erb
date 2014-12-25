@@ -1,0 +1,12 @@
+{
+  "home_team": "<%= match.home_team_logo("thumb").gsub("\"", "\\\"").html_safe %>",
+  "result": "<%= link_to(match.result, match, title: "view").gsub("\"", "\\\"").html_safe %>",
+  "away_team": "<%= match.away_team_logo("thumb").gsub("\"", "\\\"").html_safe %>",
+  "competition": "<%= match.competition_name %>",
+  "stage": "<%= match.stage %>",
+  "playing_date": "<%= match.playing_date %>",
+  "language": "<%= match.language %>",
+  "created_at": "<%= match.created_at %>",
+  "edit_link": "<%= link_to('', edit_match_path(match), class: 'ui-icon ui-icon-pencil', title: 'edit').gsub("\"", "\\\"").html_safe %>",
+  "delete_link": "<%= link_to('', match_path(match), method: :delete, class: 'ui-icon ui-icon-trash', :"data-confirm" => "Are you sure?", title: 'delete').gsub("\"", "\\\"").html_safe %>"
+}
