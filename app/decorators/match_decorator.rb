@@ -17,6 +17,10 @@ class MatchDecorator < ApplicationDecorator
   def title_with_logos size = "thumb"
     "#{home_team_logo size} vs. #{away_team_logo size}".html_safe    
   end
+
+  def title_with_flags
+    "#{object.home_team.country.decorate.flag if object.home_team.country} #{title} #{object.away_team.country.decorate.flag if object.away_team.country}".html_safe
+  end
   
   def home_team_logo size = nil
     image = size.nil? ? object.home_team.logo.url : object.home_team.logo.send(size).url
