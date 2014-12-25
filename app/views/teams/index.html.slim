@@ -4,9 +4,22 @@ table.table
       th = "Country"
       th = "Name"
       th = "Logo"
+      th = "Created At"
       th
- 
-  tbody
-    = render @teams
-    = will_paginate @teams
-        
+
+javascript:
+  $(document).ready(function() {
+    $('.table').dataTable( {
+      "ajax": "#{teams_path(format: :json)}",
+      "columns": [
+        { "data": "country", "orderable": false },
+        { "data": "name" },
+        { "data": "logo" },
+        { "data": "created_at" },
+        { "data": "edit_link", "orderable": false }
+      ],
+      "pageLength": 50,
+      "deferRender": true,
+      "order": [3, "desc"]
+    });
+  });
