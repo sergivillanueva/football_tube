@@ -10,7 +10,26 @@ table.table
       th = "Language"
       th = "Uploaded"
       th
- 
-  tbody
-    = render @matches
-    = will_paginate @matches
+      th
+
+javascript:
+  $(document).ready(function() {
+    $('.table').dataTable( {
+      "ajax": "#{matches_path(format: :json)}",
+      "columns": [
+        { "data": "home_team", "orderable": false },
+        { "data": "result", "orderable": false },
+        { "data": "away_team", "orderable": false },
+        { "data": "competition" },
+        { "data": "stage" },
+        { "data": "playing_date" },
+        { "data": "language" },
+        { "data": "created_at" },
+        { "data": "edit_link", "orderable": false },
+        { "data": "delete_link", "orderable": false }
+      ],
+      "pageLength": 50,
+      "deferRender": true,
+      "order": [7, 'desc']
+    });
+  });      

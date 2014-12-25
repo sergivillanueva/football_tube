@@ -17,14 +17,15 @@ javascript:
     $('.table').dataTable( {
       "ajax": "#{players_path(format: :json, uncompleted: params["uncompleted"])}",
       "columns": [
-        { "data": "country_code" },
+        { "data": "country", "orderable": false },
         { "data": "name" },
         { "data": "full_name" },
         { "data": "birthday" },
         { "data": "edit_link", "orderable": false }
       ],
       "pageLength": 50,
-      "deferRender": true
+      "deferRender": true,
+      "order": [1, "asc"]
     });
   });    
         

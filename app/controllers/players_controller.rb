@@ -21,7 +21,7 @@ class PlayersController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        @players = @only_uncompleted ? Player.uncompleted : Player.all
+        @players = @only_uncompleted ? Player.uncompleted.includes(:country) : Player.includes(:country)
         render "players/index"
       end
     end

@@ -27,8 +27,14 @@ class TeamsController < ApplicationController
     end
   end
 
-  def index
-    @teams = Team.all.order("created_at DESC").paginate(:page => params[:page], :per_page => 20)
+  def index    
+    respond_to do |format|
+      format.html
+      format.json do
+        @teams = Team.includes(:country)
+        render "teams/index"
+      end
+    end
   end
   
   def search
