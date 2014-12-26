@@ -1,5 +1,6 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!, except: :search
+  before_action :check_search_term, only: :search
 
   def new
     @team = Team.new
@@ -38,7 +39,7 @@ class TeamsController < ApplicationController
   end
   
   def search
-    teams = Team.where("name like '%#{params[:name]}%' OR nick_names like '%#{params[:name]}%'")
+    teams = Team.where("name like ? OR nick_names like ?", "%#{params[:name]}%", "%#{params[:name]}%")
     render json: teams.to_json
   end
   
@@ -46,5 +47,9 @@ class TeamsController < ApplicationController
   
   def team_params
     params.require(:team).permit(:name, :nick_names, :logo, :country_id)
+  end
+
+  def check_search_term
+    render(nothing: true) unless params[:name].present?
   end
 end
