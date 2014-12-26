@@ -1,7 +1,7 @@
 {
-  "country": "<%= team.country.present? ? "<div class='flag flag-#{team.country.code}' title='#{team.country.name}'</div>".html_safe : "" %>",
+  "country": <%= raw (team.country.present? ? "<div class='flag flag-#{team.country.code}' title='#{team.country.name}'</div>" : "").to_json %>,
   "name": "<%= team.name %>",
-  "logo": "<%= image_tag(team.logo.thumb.url, alt: team.name, title: team.name).gsub("\"", "\\\"").html_safe %>",
+  "logo": <%= raw image_tag(team.logo.thumb.url, alt: team.name, title: team.name).to_json %>,
   "created_at": "<%= team.created_at %>",
-  "edit_link": "<%= link_to('', edit_team_path(team), class: 'ui-icon ui-icon-pencil', title: 'edit').gsub("\"", "\\\"").html_safe %>"
+  "edit_link": <%= raw link_to('', edit_team_path(team), class: 'ui-icon ui-icon-pencil', title: 'edit').to_json %>
 }
