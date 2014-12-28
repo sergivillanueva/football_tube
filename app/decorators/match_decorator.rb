@@ -14,6 +14,14 @@ class MatchDecorator < ApplicationDecorator
     "#{object.home_team.name} vs. #{object.away_team.name}"
   end
 
+  def full_title
+    h.content_tag :div, class: "row-fluid" do
+      h.content_tag(:div, home_team_name, class: "span5", style: "text-align:right;") +
+      h.content_tag(:div, "#{home_team_logo "mini"} - #{away_team_logo "mini"}".html_safe, class: "span2", style: "text-align:center;") +
+      h.content_tag(:div, away_team_name, class: "span5")
+    end.html_safe
+  end
+
   def title_with_logos size = "thumb", full = false
     "#{home_team_logo size} #{full ? title : 'vs.'} #{away_team_logo size}".html_safe    
   end

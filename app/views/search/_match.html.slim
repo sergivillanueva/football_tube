@@ -2,8 +2,7 @@ tr
   td.playing_date
     = match.playing_date
   td.match
-    = link_to match do
-      = match.title_with_logos "mini", true
+    = link_to match.full_title,match
   td.competition
     = match.competition_name
   td.season
