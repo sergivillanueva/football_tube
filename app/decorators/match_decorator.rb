@@ -16,9 +16,9 @@ class MatchDecorator < ApplicationDecorator
 
   def full_title
     h.content_tag :div, class: "row-fluid" do
-      h.content_tag(:div, home_team_name, class: "span5", style: "text-align:right;") +
-      h.content_tag(:div, "#{home_team_logo "mini"} - #{away_team_logo "mini"}".html_safe, class: "span2", style: "text-align:center;") +
-      h.content_tag(:div, away_team_name, class: "span5")
+      h.content_tag(:div, home_team_name, class: "span4", style: "text-align:right;") +
+      h.content_tag(:div, "#{home_team_logo "mini"} - #{away_team_logo "mini"}".html_safe, class: "span4", style: "text-align:center;") +
+      h.content_tag(:div, away_team_name, class: "span4")
     end.html_safe
   end
 
