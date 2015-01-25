@@ -4,7 +4,8 @@ en:
       matches: total registered matches
       players: total players in our database
       goals: total scored goals
-      competitions: total competitions among our matches    
+      competitions: total competitions among our matches
+      matches_with_video: matches with video
       
   matches:
     goal:

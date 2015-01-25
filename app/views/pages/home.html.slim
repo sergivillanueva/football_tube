@@ -19,7 +19,7 @@
 
 .figures
   .matches
-    = "#{@matches_count} #{t(".matches")}"
+    = "#{@matches_count} #{t(".matches")} (#{@matches_with_videos_count} #{t(".matches_with_video")}: #{number_to_percentage @matches_with_videos_count/@matches_count.to_f * 100})"
   .players
     = "#{@players_count} #{t(".players")}"
   .goals
