@@ -1,0 +1,14 @@
+- if player_participations.blank?
+  = t(".no_results")
+- else
+  table width="100%" style="margin:auto;"
+    thead
+      tr
+        th = t(".playing_date")
+        th = t(".match")
+        th = t(".competition")
+        th = t(".season")
+        th = t(".language")
+        
+    tbody
+      = render partial: "search/player_participation", collection: player_participations

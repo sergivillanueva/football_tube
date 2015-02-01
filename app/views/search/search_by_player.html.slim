@@ -1,15 +1,17 @@
 h4 = t("search.results", n: @player_participations.size, term: @term)
 - # TODO search by player name: use different search results views?
 
-table width="100%" style="margin:auto;"
-  thead
-    tr
-      th = t(".playing_date")
-      th = t(".match")
-      th = t(".competition")
-      th = t(".season")
-      th = t(".language")
-      th = t(".role")
-      
-  tbody
-    = render partial: "search/player_participation", collection: @player_participations
+ul.nav.nav-tabs
+  li.active 
+    = link_to t(".starter"), "#matches_as_starter", "data-toggle" => "tab" 
+  li 
+    = link_to t(".coach"), "#matches_as_coach", "data-toggle" => "tab" 
+
+.tab-content
+  #matches_as_starter.tab-pane.fade.active.in
+    .tab-content
+      = render partial: "search/player_participations", locals: { player_participations: @player_participations.select{|p| p.role == 'starter'} } 
+
+  #matches_as_coach.tab-pane.fade
+    .tab-content
+      = render partial: "search/player_participations", locals: { player_participations: @player_participations.select{|p| p.role == 'coach'} }  
