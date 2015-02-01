@@ -46,6 +46,7 @@ class SearchController < ApplicationController
   end
 
   def search_by_competition
+    @term = Competition.find(params[:competition_id]).name
     @matches = Match.where(competition_id: params[:competition_id]).order("playing_date").decorate
   end
 

@@ -1,14 +1,18 @@
-h4 = t("search.results", n: @matches.count)
+h4 = t("search.results", n: @matches.size, term: @term)
 - # TODO search by player name: use different search results views?
 
-table width="100%" style="margin:auto;"
-  thead
-    tr
-      th = t(".playing_date")
-      th = t(".match")
-      th = t(".competition")
-      th = t(".season")
-      th = t(".language")
+- if @matches.blank?
+  = t("no_results")
+
+- else
+  table width="100%" style="margin:auto;"
+    thead
+      tr
+        th = t(".playing_date")
+        th = t(".match")
+        th = t(".competition")
+        th = t(".season")
+        th = t(".language")
       
-  tbody
-    = render partial: "search/match", collection: @matches
+    tbody
+      = render partial: "search/match", collection: @matches
