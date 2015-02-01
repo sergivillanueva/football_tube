@@ -1,12 +1,16 @@
 h4 = t(".players_found", n: @players.size, term: @term)
 
-table width="100%" style="margin:auto;"
-  thead
-    tr
-      th
-      th = t(".name")
-      th = t(".full_name")
-      th
-      
-  tbody
-    = render partial: "search/player", collection: @players
+- if @players.blank?
+  = t("no_results")
+  
+- else
+  table width="100%" style="margin:auto;"
+    thead
+      tr
+        th
+        th = t(".name")
+        th = t(".full_name")
+        th
+	      
+    tbody
+      = render partial: "search/player", collection: @players
