@@ -7,6 +7,7 @@ class SearchController < ApplicationController
     @term = params[:player_name]
 
     if params[:player_id].present?
+      @term = Player.find(params[:player_id]).name # there is no player_name param as it is a straight search by id
       @player_participations = PlayerParticipation.joins(:match).where(player_id: params[:player_id]).order("matches.playing_date").decorate  
     else
       name_where_clause = []
@@ -33,6 +34,7 @@ class SearchController < ApplicationController
     @term = params[:team_name]
 
     if params[:team_id].present?
+      @term = Team.find(params[:team_id]).name # there is no team_name param as it is a straight search by id
       @matches = Match.where("home_team_id = ? OR away_team_id = ?", params[:team_id], params[:team_id]).order("playing_date").decorate
     else
       @teams = Team.where("name like ? OR nick_names like ?", "%#{params[:team_name]}%", "%#{params[:team_name]}%").decorate
