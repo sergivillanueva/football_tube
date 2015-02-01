@@ -3,14 +3,14 @@ h4 = t("search.results", n: @player_participations.size, term: @term)
 
 ul.nav.nav-tabs
   li.active 
-    = link_to t(".starter"), "#matches_as_starter", "data-toggle" => "tab" 
+    = link_to t(".player"), "#matches_as_player", "data-toggle" => "tab" 
   li 
     = link_to t(".coach"), "#matches_as_coach", "data-toggle" => "tab" 
 
 .tab-content
-  #matches_as_starter.tab-pane.fade.active.in
+  #matches_as_player.tab-pane.fade.active.in
     .tab-content
-      = render partial: "search/player_participations", locals: { player_participations: @player_participations.select{|p| p.role == 'starter'} } 
+      = render partial: "search/player_participations", locals: { player_participations: @player_participations.select{|p| p.role != 'coach'} } 
 
   #matches_as_coach.tab-pane.fade
     .tab-content
