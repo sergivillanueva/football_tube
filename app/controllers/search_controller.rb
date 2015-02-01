@@ -4,6 +4,8 @@ class SearchController < ApplicationController
   before_action :check_competition_search_term, only: :search_by_competition
 
   def search_by_player
+    @term = params[:player_name]
+
     if params[:player_id].present?
       @player_participations = PlayerParticipation.joins(:match).where(player_id: params[:player_id]).order("matches.playing_date").decorate  
     else
@@ -28,6 +30,8 @@ class SearchController < ApplicationController
   end
   
   def search_by_team
+    @term = params[:team_name]
+
     if params[:team_id].present?
       @matches = Match.where("home_team_id = ? OR away_team_id = ?", params[:team_id], params[:team_id]).order("playing_date").decorate
     else

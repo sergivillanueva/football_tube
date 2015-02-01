@@ -91,7 +91,11 @@ en:
 
   search:
     search: Search
-    results: "%{n} matches found"
+    results: "%{n} matches found for %{term}"
+    player_results:
+      players_found: "%{n} players found for %{term}"
+    team_results:
+      teams_found: "%{n} teams found for %{term}"
 
   rating:
     bad: Bad
