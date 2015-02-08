@@ -1,0 +1,40 @@
+.dropdown
+	<a id="dLabel" role="button" data-toggle="dropdown" class="btn-link" data-target="#" href="#"> Browse competitions <span class="caret"></span> </a>
+	ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu" style="padding:10px;"
+	  - if @national_teams_competitions.present?
+	    h5 = t("competitions.scope.national_teams")
+	    - %w(world europe south_america).each do |zone|
+	      - if @national_teams_competitions[zone].present?
+	        li.dropdown-submenu 
+	          = link_to t("competitions.zone.#{zone}"), "#"
+	          ul.dropdown-menu
+	            - @national_teams_competitions[zone].each do |competition|
+	              li = link_to competition.name, search_by_competition_path(competition_id: competition.id)
+
+	  - if @international_competitions.present?                
+	    h5 = t("competitions.scope.international")
+	  	- %w(world europe south_america).each do |zone|
+	      - if @international_competitions[zone].present?
+	        li.dropdown-submenu 
+	          = link_to t("competitions.zone.#{zone}"), "#"
+	          ul.dropdown-menu
+	            - @international_competitions[zone].each do |competition|
+	              li = link_to competition.name, search_by_competition_path(competition_id: competition.id)
+
+	  - if @domestic_competitions.present?                
+	    h5 = t("competitions.scope.domestic")
+	  	- %w(europe south_america concacaf).each do |zone|
+	      - if @domestic_competitions[zone].present?
+	        li.dropdown-submenu 
+	          = link_to t("competitions.zone.#{zone}"), "#"
+	          ul.dropdown-menu
+	            - @domestic_competitions[zone].group_by{|c| c.country.try(:name)}.each do |competitions|
+	            	li.dropdown-submenu 
+	            	  = link_to competitions[0], "#"
+	            	  ul.dropdown-menu
+	            	    - competitions[1].each do |c|
+	            	      li = link_to c.name, search_by_competition_path(competition_id: c.id)
+
+	  - if @friendly.present?
+	    h5 = t("competition.scope.others")		    
+	    li = link_to t("competition.kind.friendly"), search_by_competition_path(competition_id: @friendly.first.id)
