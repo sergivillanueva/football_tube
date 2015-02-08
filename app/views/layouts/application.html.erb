@@ -19,7 +19,6 @@
   <div class="wrapper">
     <div id="main" class="clearfix">
       <div id="left_column">
-        <%= render "shared/search" %>
         <% if user_signed_in? && current_user.admin? %>
           <%= render "shared/admin_links" %>
         <% end %>

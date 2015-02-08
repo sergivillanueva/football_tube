@@ -87,8 +87,10 @@ en:
 
   shared:
     search:
-      search_player: Search player
-      search_team: Search team
+      search_by_player: Players
+      search_by_team: Teams
+      type_player_name: Type player name or nickname...
+      type_team_name: Type club name...
 
   search:
     search: Search
