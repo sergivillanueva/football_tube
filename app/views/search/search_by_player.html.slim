@@ -10,8 +10,8 @@ ul.nav.nav-tabs
 .tab-content
   #matches_as_player.tab-pane.fade.active.in
     .tab-content
-      = render partial: "search/player_participations", locals: { player_participations: @player_participations.select{|p| p.role != 'coach'} } 
+      = render partial: "search/player_participations", locals: { coach: false, player_participations: @player_participations.select{|p| p.role != 'coach'} } 
 
   #matches_as_coach.tab-pane.fade
     .tab-content
-      = render partial: "search/player_participations", locals: { player_participations: @player_participations.select{|p| p.role == 'coach'} }  
+      = render partial: "search/player_participations", locals: { coach: true, player_participations: @player_participations.select{|p| p.role == 'coach'} }  

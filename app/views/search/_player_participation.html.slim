@@ -9,4 +9,7 @@ tr
     = player_participation.match.season
   td.language
     = player_participation.match.language
+  - if !coach
+    td.role
+      = player_participation.role
     
