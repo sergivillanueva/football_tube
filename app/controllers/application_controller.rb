@@ -8,6 +8,17 @@ class ApplicationController < ActionController::Base
   #TODO use cancancan gem for this and let user crud her own stuff
   before_action :check_user, only: [:update, :edit, :destroy]
 
+  before_action :set_competitions
+
+  def set_competitions
+    competitions = Competition.completed.group_by(&:scope)
+
+    @national_teams_competitions = competitions["national_teams"].group_by(&:zone) if competitions["national_teams"].present?
+    @international_competitions = competitions["international"].group_by(&:zone) if competitions["international"].present?
+    @domestic_competitions = competitions["domestic"].group_by(&:zone) if competitions["domestic"].present?
+    @friendly = competitions["friendly"] if competitions["friendly"].present?
+  end
+
   private
 
   def check_user
