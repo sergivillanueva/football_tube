@@ -1,14 +1,14 @@
-.wrapper
-  .row-fluid
-    .span3
-      = link_to root_path do
-        = image_tag "logo.jpg", alt: "Footballia", title: "Footballia"
-    .span9
-    	.row-fluid
-    	  .span12
-    	    | LOGO
-    	.row-fluid
-    	  .span3
-    	    = render "shared/browse_competitions"
-    	  .span8.offset1	
-    	    = render "shared/search"
+.container
+    .row
+        .col-xs-3
+          = link_to root_path do
+            = image_tag "logo.jpg", alt: "Footballia", title: "Footballia", style: "width:100%"
+        .col-xs-9
+        	.row
+        	  .col-xs-12
+        	    | LOGO
+        	.row
+        	  .col-xs-3
+        	    = render "shared/browse_competitions"
+        	  .col-xs-8.col-xs-offset-1	
+        	    = render "shared/search"

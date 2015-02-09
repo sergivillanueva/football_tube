@@ -1,5 +1,9 @@
 en:
   no_results: No results
+  profile: Profile
+  login: Login
+  logout: Logout
+  register: Register
   pages:
     home:
       matches: total registered matches
@@ -7,6 +11,9 @@ en:
       goals: total scored goals
       competitions: total competitions among our matches
       matches_with_video: matches with video
+      add_your_match: Add your match
+      last_match: Last match
+      best_matches: Best matches
       
   matches:
     goal:
@@ -15,6 +22,9 @@ en:
       next: "Next step &#8594;"
       prev: "&#8592; Previous step"
       cancel: Cancel
+    show:
+      show_result: Show result
+      related_matches: Related matches
       
   competitions:
     kind:
@@ -45,7 +55,7 @@ en:
       national_teams: National teams
       international: International
       domestic: Domestic
-      Others: others
+      others: Others
     zone:
       world: World
       europe: Europe

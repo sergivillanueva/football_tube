@@ -1,18 +1,21 @@
-.row-fluid
-  .span3
+.row
+  .col-xs-3
     = select_tag "search_mode", "<option value='by_player'>#{t(".search_by_player")}</option><option value='by_team'>#{t(".search_by_team")}</option>".html_safe, style: "width:100%;"
-  .span9
+  .col-xs-9
     = form_tag search_by_player_path, method: :get, class: "form-inline search_by_player" do
-      = text_field_tag :player_name, "", placeholder: t(".type_player_name")
-      = hidden_field_tag :player_id
-      = button_tag class: "btn btn-sm", type: "submit" do
-        .icon.icon-search  
+      .row
+        .col-xs-11
+          = text_field_tag :player_name, "", placeholder: t(".type_player_name"), style: "width:100%;"
+          = hidden_field_tag :player_id
+        .col-xs-1
+          = button_tag class: "btn btn-sm btn-link", type: "submit" do
+            .fa.fa-search
 
     = form_tag search_by_team_path, method: :get, class: "form-inline search_by_team", style: "display:none;" do
       = text_field_tag :team_name, "", placeholder: t(".type_team_name")
       = hidden_field_tag :team_id
-      = button_tag class: "btn btn-sm", type: "submit" do
-        .icon.icon-search
+      = button_tag class: "btn btn-sm btn-link", type: "submit" do
+        .fa.fa-search
     
 javascript:
   $(document).ready(function () {
