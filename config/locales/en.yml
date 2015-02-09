@@ -25,6 +25,9 @@ en:
     show:
       show_result: Show result
       related_matches: Related matches
+      coach: Coach
+      reserves: Substitutes
+      no_results: No results
       
   competitions:
     kind:

@@ -74,31 +74,47 @@
                   = render partial: "player_participation", collection: @match.away_starters
           tr
             td colspan=3 height="15px"
-  
+                
           tr.coaches             
             td width="45%"
               table width="100%"
                 tbody
+                  tr.player
+                    td colspan=2
+                    td.name colspan=2
+                      = t(".coach")
                   - if @match.home_coach.present?
                     = render partial: "player_participation", object: @match.home_coach
             td width="10%"
             td width="45%"
               table width="100%"
                 tbody
+                  tr.player
+                    td colspan=2
+                    td.name colspan=2
+                      = t(".coach")
                   - if @match.away_coach.present?
                     = render partial: "player_participation", object: @match.away_coach
           tr
             td colspan=3 height="15px"
-            
+                        
           tr.reserves              
             td width="45%"
               table width="100%"
                 tbody
+                  tr.player
+                    td colspan=2
+                    td.name colspan=2
+                      = t(".reserves")
                   = render partial: "player_participation", collection: @match.home_reserves
             td width="10%"
             td width="45%"
               table width="100%"
                 tbody
+                  tr.player
+                    td colspan=2
+                    td.name colspan=2
+                      = t(".reserves")
                   = render partial: "player_participation", collection: @match.away_reserves
           
 javascript:
