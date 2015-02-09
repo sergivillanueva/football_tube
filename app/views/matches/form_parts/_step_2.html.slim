@@ -30,7 +30,8 @@
         .row-fluid.player class=g.object.role
           = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: "Player name", wrapper_html: { class: "span6" }, disabled: g.object.player_id.present? ? true : false
           = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "span2 offset1" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
-          = link_to t(".delete"), "#", class: "delete_player span2 offset1" if g.object.player_id.present? 
+          = link_to t(".delete"), "#", class: "delete_player span2 offset1" if g.object.player_id.present?
+          = g.input :_destroy, as: :boolean
 
           = g.input :side, as: :hidden
           = g.input :role, as: :hidden

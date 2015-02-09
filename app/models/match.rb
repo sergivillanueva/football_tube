@@ -24,12 +24,12 @@ class Match < ActiveRecord::Base
   
   attr_accessor :home_team_name, :away_team_name, :competition_name
   
-  accepts_nested_attributes_for :home_starters, :reject_if => proc { |p| p['player_name'].blank? }
-  accepts_nested_attributes_for :away_starters, :reject_if => proc { |p| p['player_name'].blank? }
-  accepts_nested_attributes_for :home_reserves, :reject_if => proc { |p| p['player_name'].blank? }
-  accepts_nested_attributes_for :away_reserves, :reject_if => proc { |p| p['player_name'].blank? }
-  accepts_nested_attributes_for :home_coach, :reject_if => proc { |p| p['player_name'].blank? }
-  accepts_nested_attributes_for :away_coach, :reject_if => proc { |p| p['player_name'].blank? }
+  accepts_nested_attributes_for :home_starters, :reject_if => proc { |p| p['player_name'].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :away_starters, :reject_if => proc { |p| p['player_name'].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :home_reserves, :reject_if => proc { |p| p['player_name'].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :away_reserves, :reject_if => proc { |p| p['player_name'].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :home_coach, :reject_if => proc { |p| p['player_name'].blank? }, allow_destroy: true
+  accepts_nested_attributes_for :away_coach, :reject_if => proc { |p| p['player_name'].blank? }, allow_destroy: true
   accepts_nested_attributes_for :goals, :reject_if => proc { |p| p['player_id'].blank? }
   accepts_nested_attributes_for :videos, :reject_if => proc { |p| p['source_file'].blank? }
 

@@ -31,7 +31,7 @@ class MatchesController < ApplicationController
     @match = Match.find(params[:id])
   
     # Destroy current player_participations since they will be created again to update data
-    @match.player_participations.destroy_all
+    # @match.player_participations.destroy_all
 
     assign_players_to_match
     assign_coaches_to_match
@@ -102,12 +102,12 @@ class MatchesController < ApplicationController
       :venue,
       :stage,
       :season,
-      home_starters_attributes: [:player_name, :side, :player_id, :team_number, :role],
-      away_starters_attributes: [:player_name, :side, :player_id, :team_number, :role],
-      home_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role],
-      away_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role],
-      home_coach_attributes: [:player_name, :side, :player_id, :role, :new_player],
-      away_coach_attributes: [:player_name, :side, :player_id, :role, :new_player],
+      home_starters_attributes: [:player_name, :side, :player_id, :team_number, :role, :_destroy],
+      away_starters_attributes: [:player_name, :side, :player_id, :team_number, :role, :_destroy],
+      home_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role, :_destroy],
+      away_reserves_attributes: [:player_name, :side, :player_id, :team_number, :role, :_destroy],
+      home_coach_attributes: [:player_name, :side, :player_id, :role, :new_player, :_destroy],
+      away_coach_attributes: [:player_name, :side, :player_id, :role, :new_player, :_destroy],
       goals_attributes: [:id, :player_id, :minute, :own_goal],
       videos_attributes: [:source_file]
     )
@@ -145,7 +145,9 @@ class MatchesController < ApplicationController
   def assign_players_to_match
     # Assign player and secure side and role attributes for players
     players_attributes.each do |attributes|
+      puts attributes
       params[:match][attributes[:key]] && params[:match][attributes[:key]].each do |player_participation|
+        puts player_participation
         #Find player or create a new one
         player_id = player_participation[1][:player_id]
         player_id = Player.create({ name: player_participation[1][:player_name] }).id unless player_id.present?
@@ -154,6 +156,7 @@ class MatchesController < ApplicationController
         match_params.merge!(Hash.new(key: player_participation[0], value: player_participation[1]))
       end
     end
+    
   end
 
   def assign_coaches_to_match
