@@ -4,9 +4,28 @@
           = link_to root_path do
             = image_tag "logo.jpg", alt: "Footballia", title: "Footballia", style: "width:100%"
         .col-xs-9
-        	.row
-        	  .col-xs-12
-        	    | LOGO
+        	.row style="min-height:100px;"
+        	  .col-xs-12 style="text-align:right;"
+        	      - if user_signed_in?
+                    <a id="dLabel" role="button" data-toggle="dropdown" class="btn-link" data-target="#" href="#"> <span class="fa fa-bars"></span> </a>
+                    ul class="dropdown-menu pull-right" role="menu"
+                        li                          
+                          = link_to profile_path do
+                            - if current_user.avatar.present?
+                              = image_tag current_user.avatar.thumb.url, title: current_user.name, alt: current_user.name, style: "width:50px; margin-right:10px;"
+                            = t("profile")
+
+                        - if user_signed_in? && current_user.admin?
+                          li.divider
+                          = render "shared/admin_links"
+                          li.divider
+        
+                        li
+                          = link_to t("logout"), destroy_user_session_path, method: :delete
+                    
+                  - else
+                    = link_to t("login"), new_user_session_path, class: "btn btn-link"
+                    = link_to t("register"), new_user_registration_path, class: "btn btn-link"  
         	.row
         	  .col-xs-3
         	    = render "shared/browse_competitions"

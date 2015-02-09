@@ -4,12 +4,12 @@
   .col-xs-9
     = form_tag search_by_player_path, method: :get, class: "form-inline search_by_player" do
       .row
-        .col-xs-11
+        .col-xs-10
           = text_field_tag :player_name, "", placeholder: t(".type_player_name"), style: "width:100%;"
           = hidden_field_tag :player_id
         .col-xs-1
           = button_tag class: "btn btn-sm btn-link", type: "submit" do
-            .fa.fa-search
+            .fa.fa-search style="font-size:17px;"
 
     = form_tag search_by_team_path, method: :get, class: "form-inline search_by_team", style: "display:none;" do
       = text_field_tag :team_name, "", placeholder: t(".type_team_name")
