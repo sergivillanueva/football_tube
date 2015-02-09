@@ -1,12 +1,12 @@
-.row-fluid.teams
-  .span6.team_details
+.row.teams
+  .col-xs-6.team_details
     .logo.blank
       - if f.object.home_team.present?
         = f.object.decorate.home_team_logo
       - else
         img style="display:none;"
     = f.input :home_team_name, input_html: { class: "team_name", value: f.object.home_team.present? ? f.object.home_team.name : "" }
-  .span6.team_details
+  .col-xs-6.team_details
     .logo.blank
       - if f.object.away_team.present?
         = f.object.decorate.away_team_logo
@@ -14,14 +14,14 @@
         img style="display:none;"
     = f.input :away_team_name, input_html: { class: "team_name", value: f.object.away_team.present? ? f.object.away_team.name : ""  }
 
-.row-fluid.videos
-  .span12
+.row.videos
+  .col-xs-12
     h3 = t(".upload_files")
     = f.simple_fields_for :videos do |g|
       = g.input :source_file, as: :file
 
-.row-fluid.form_buttons
-  .span12
+.row.form_buttons
+  .col-xs-12
     - if f.object.new_record?
       = link_to t("matches.form.next").html_safe, "#step_2", class: "btn btn-primary next_step"
       = link_to t("matches.form.cancel"), root_path, class: "btn btn-default"

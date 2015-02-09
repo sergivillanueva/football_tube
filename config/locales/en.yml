@@ -42,6 +42,10 @@ en:
         away_team_line_up: Away team line up
         add_reserves: Add substitutes
         coach: Coach
+        reserves: Substitutes
+      step_4:
+        goals: Goals
+        player: Player
       
   competitions:
     kind:
