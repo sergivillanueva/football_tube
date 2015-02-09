@@ -22,12 +22,26 @@ en:
       next: "Next step &#8594;"
       prev: "&#8592; Previous step"
       cancel: Cancel
+      step_1: Step 1
+      step_2: Step 2
+      step_3: Step 3
+      step_4: Step 4
     show:
       show_result: Show result
       related_matches: Related matches
       coach: Coach
       reserves: Substitutes
       no_results: No results
+    new:
+      new_match: New match
+    form_parts:
+      step_1:
+        upload_files: Upload files
+      step_2:
+        home_team_line_up: Home team line up
+        away_team_line_up: Away team line up
+        add_reserves: Add substitutes
+        coach: Coach
       
   competitions:
     kind:
