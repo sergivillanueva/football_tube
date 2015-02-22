@@ -6,7 +6,13 @@
       = g.input :minute, wrapper_html: { class: "col-xs-1 offset1" }, input_html: { style: "width:100%;" }
       = g.input :own_goal, as: :boolean, wrapper_html: { class: "col-xs-3 offset1" }
 
+  .row.videos
+    .col-xs-12
+      h3 = t(".upload_files")
+      = f.simple_fields_for :videos do |g|
+        = g.input :source_file, as: :file
+
   .row-fluid.form_buttons          
     .col-xs-12
       = f.button :submit, class: "btn-primary"
-      = link_to t("matches.form.cancel"), root_path, class: "btn btn-default"            
+      = link_to t("matches.form.cancel"), root_path, class: "btn btn-default"                    

@@ -35,9 +35,7 @@ en:
     new:
       new_match: New match
     form_parts:
-      step_1:
-        upload_files: Upload files
-      step_2:
+      step_3:
         home_team_line_up: Home team line up
         away_team_line_up: Away team line up
         add_reserves: Add substitutes
@@ -46,6 +44,7 @@ en:
       step_4:
         goals: Goals
         player: Player
+        upload_files: Upload files
       
   competitions:
     kind:

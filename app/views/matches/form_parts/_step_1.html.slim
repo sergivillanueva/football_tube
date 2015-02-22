@@ -14,12 +14,6 @@
         img style="display:none;"
     = f.input :away_team_name, input_html: { class: "team_name", value: f.object.away_team.present? ? f.object.away_team.name : ""  }
 
-.row.videos
-  .col-xs-12
-    h3 = t(".upload_files")
-    = f.simple_fields_for :videos do |g|
-      = g.input :source_file, as: :file
-
 .row.form_buttons
   .col-xs-12
     - if f.object.new_record?
