@@ -86,10 +86,8 @@ en:
       oceania: Oceania
  
   languages:
-    spanish: Spanish (ESP)
-    english: English (UK)
-    argentinean: Argentinian
-    mexican: Mexican
+    spanish: Spanish
+    english: English
     other: Other
     no_commentary: No commentary
     russian: Russian
@@ -98,22 +96,15 @@ en:
     german: German
     catalan: Catalan
     dutch: Dutch
-    spanish_mex: Spanish (MEX)
     italian: Italian
-    spanish_arg: Spanish (ARG)
-    portuguese_bra: Portuguese (BRA)
-    english_usa: English (USA)
     polish: Polish
     serbian: Serbian
     portuguese: Portuguese
     romanian: Romanian
-    spanish_col: Spanish (COL)
     basque: Basque
     galician: Galician
     japanese: Japanese
     turkish: Turkish
-    austrian_german: Austrian german
-
 
   shared:
     search:
