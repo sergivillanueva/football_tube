@@ -120,6 +120,22 @@ en:
       players_found: "%{n} players found for %{term}"
     team_results:
       teams_found: "%{n} teams found for %{term}"
+    search_by_player:
+      player: Player
+      coach: Coach
+    player_participations:
+      playing_date: Playing date
+      match: Match
+      competition: Competition
+      season: Season
+      language: Language
+      role: Role
+    search_by_team:
+      playing_date: Playing date
+      match: Match
+      competition: Competition
+      season: Season
+      language: Language
 
   rating:
     bad: Bad
