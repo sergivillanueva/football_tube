@@ -11,22 +11,44 @@
   <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
   <%= favicon_link_tag '/favicon.ico' %>
   <%= csrf_meta_tags %>
+    <!-- Bootstrap core CSS
+  ================================================== -->
+  <link href="uikit/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom styles for this template
+  ================================================== -->
+  <link href="uikit/css/skin-4.css" rel="stylesheet">
+
+  <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+  <!--[if lt IE 9]>
+  <script src="uikit/js/html5shiv.js"></script>
+  <script src="uikit/js/respond.min.js"></script>
+  <![endif]-->
 </head>
-<body>
-  <div id="header">
-    <%= render "shared/header" %>    
-  </div>
-  <div class="container">
-    <% if notice %>
-      <p class="alert alert-success"><%= notice %></p>
-    <% end %>
-    <% if alert %>
-      <p class="alert alert-danger"><%= alert %></p>
-    <% end %>
-    <%= yield %>
-  </div>
-  <div class="vertical-banner">
-  </div>
-  <%= render "shared/footer" %>
+<body class="preload tile-1-bg">
+  <div class="page-wrapper shadow">
+    <header class="header-block line-top">
+      <%= render "shared/header" %>    
+      <%= render "shared/menu" %>
+    </header>
+    
+    <!-- Content Block
+    ============================================ -->
+    <div class="content-block">
+          
+      <!-- Container -->
+      <div class="container no-pad-t">
+        <% if notice %>
+          <p class="alert alert-success"><%= notice %></p>
+        <% end %>
+        <% if alert %>
+          <p class="alert alert-danger"><%= alert %></p>
+        <% end %>
+        <%= yield %>
+      </div>
+    </div>
+
+    <%= render "shared/footer" %>
+  </div> <!-- Page Wrapper -->
 </body>
 </html>

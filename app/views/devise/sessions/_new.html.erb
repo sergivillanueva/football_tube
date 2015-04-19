@@ -1,0 +1,28 @@
+<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+	<div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"><i class="fa fa-user"></i></div>
+      <%= f.input :email, label: false, required: false, autofocus: true, placeholder: "Email", input_html: { class: "form-control" } %>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon"><i class="fa fa-lock"></i></div>
+      <%= f.input :password, label: false, required: false, placeholder: "Password", input_html: { class: "form-control" } %>
+    </div>
+  </div>
+
+  <% if devise_mapping.rememberable? %>
+    <div class="form-group">
+	    <label class="checkbox-inline">
+	    	<%= f.input :remember_me, as: :boolean, label: false %>
+	    	Remember me
+	    </label>
+	  </div>
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.button :submit, "Sign in", class: "btn btn-primary btn-block" %>
+  </div>
+<% end %>
