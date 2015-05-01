@@ -1,0 +1,36 @@
+/* ul toggle for browse competitions section */
+
+ul.ul-toggle > li {
+  padding: 0 15px;
+}
+
+ul.ul-toggle > li > ul > li {
+  margin: 10px 0px;
+  padding: 0 10px;
+  background: none;
+  color: none;
+}
+
+ul.ul-toggle > li > ul > li:hover {
+  background: none;
+  color: inherit;
+}
+
+ul.ul-toggle > li > ul {
+  line-height: 12px;
+}
+
+ul.ul-toggle > li {
+  line-height: 2em;
+  border-bottom: none;
+}
+
+/* Dropdown */
+
+.hnav .dropdown-menu.mega-menu .links > li > a {
+  border-bottom: none;
+}
+
+.hnav .dropdown-menu.mega-menu .links > li > a {
+  line-height: 2em;
+}

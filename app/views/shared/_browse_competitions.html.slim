@@ -1,63 +1,47 @@
-.dropdown
-	<a id="dLabel" role="button" data-toggle="dropdown" class="btn-link" data-target="#" href="#"> Browse competitions <span class="caret"></span> </a>
-	ul class="dropdown-menu" role="menu" style="padding:10px;"
-	  - if @national_teams_competitions.present?
-	    h5 
-	      b = t("competitions.scope.national_teams")
-	    - %w(world europe south_america).each do |zone|
-	      - if @national_teams_competitions[zone].present?
-	        li.dropdown-submenu data-toggle="dropdown" aria-expanded="false"
-	          = link_to t("competitions.zone.#{zone}"), "#"
-	          ul.dropdown-menu
-	            - @national_teams_competitions[zone].each do |competition|
-	              li data-toggle="dropdown" aria-expanded="false"
-	                = link_to competition.name, search_by_competition_path(competition_id: competition.id)
+<div class="mega-menu dropdown-menu browse_competitions">
+  <div class="row">
+    - if @national_teams_competitions.present?
+      .col-md-3
+        h5 = t("competitions.scope.national_teams")
+        
+        - %w(world europe south_america).each do |zone|
+          - if @national_teams_competitions[zone].present?
+            = t("competitions.zone.#{zone}")
+            ul.links
+              - @national_teams_competitions[zone].each do |competition|
+                li = link_to competition.name, search_by_competition_path(competition_id: competition.id)
+    
+      
+    - if @international_competitions.present?                
+      .col-md-3
+        h5 = t("competitions.scope.international")
+        ul.links
+          - %w(world europe south_america).each do |zone|
+            - if @international_competitions[zone].present?
+              li = t("competitions.zone.#{zone}")
+              - @international_competitions[zone].each do |competition|
+                li = link_to competition.name, search_by_competition_path(competition_id: competition.id)
 
-	  - if @international_competitions.present?                
-	    h5 
-	      b = t("competitions.scope.international")
-	  	- %w(world europe south_america).each do |zone|
-	      - if @international_competitions[zone].present?
-	        li.dropdown-submenu data-toggle="dropdown" aria-expanded="false"
-	          = link_to t("competitions.zone.#{zone}"), "#"
-	          ul.dropdown-menu
-	            - @international_competitions[zone].each do |competition|
-	              li data-toggle="dropdown" aria-expanded="false"
-	                = link_to competition.name, search_by_competition_path(competition_id: competition.id)
+    - if @domestic_competitions.present?
+      .col-md-3
+        h5 = t("competitions.scope.domestic")
+        ul.links
+          - %w(europe south_america concacaf).each do |zone|
+            - if @domestic_competitions[zone].present?
+              li = t("competitions.zone.#{zone}")
+              ul.ul-toggle.font-size-sm
+                - @domestic_competitions[zone].group_by{|c| c.country.try(:name)}.each do |competitions|
+                  li data-keep-open="true"
+                    <a href="#">#{competitions[0]}</a><i class="toggler ti ti-plus"></i> 
+                    ul style="display:none;"
+                      - competitions[1].each do |c|
+                        li 
+                          = link_to c.name, search_by_competition_path(competition_id: c.id)
 
-	  - if @domestic_competitions.present?                
-	    h5 
-	      b = t("competitions.scope.domestic")
-	  	- %w(europe south_america concacaf).each do |zone|
-	      - if @domestic_competitions[zone].present?
-	        li.dropdown-submenu data-toggle="dropdown" aria-expanded="false"
-	          = link_to t("competitions.zone.#{zone}"), "#"
-	          ul.dropdown-menu
-	            - @domestic_competitions[zone].group_by{|c| c.country.try(:name)}.each do |competitions|
-	            	li.dropdown-submenu data-toggle="dropdown" aria-expanded="false"
-	            	  = link_to competitions[0], "#"
-	            	  ul.dropdown-menu
-	            	    - competitions[1].each do |c|
-	            	      li data-toggle="dropdown" aria-expanded="false" 
-	            	        = link_to c.name, search_by_competition_path(competition_id: c.id)
-
-	  - if @friendly.present?
-	    h5 
-	      b = t("competitions.scope.others")		    
-	    li = link_to t("competitions.kind.friendly"), search_by_competition_path(competition_id: @friendly.first.id)
-
-	/
-		<a id="dLabel" role="button" data-toggle="dropdown" class="btn-link" data-target="#" href="#"> Browse competitions <span class="caret"></span> </a>
-		<ul class="dropdown-menu" role="menu"><li><a tabindex="0">Action</a></li><li class="dropdown-submenu"><a tabindex="0" data-toggle="dropdown" aria-expanded="false">Another action</a><ul class="dropdown-menu"><li class="dropdown-header">Dropdown header</li><li><a tabindex="0">Sub action</a></li><li class="disabled"><a tabindex="0">Another sub action</a></li><li><a tabindex="0">Something else here</a></li></ul></li><li><a tabindex="0">Something else here</a></li><li class="divider"></li><li><a tabindex="0">Separated link</a></li></ul>	    
-
-javascript:
-	(function($){
-		$(document).ready(function(){
-			$('ul.dropdown-menu [data-toggle=dropdown]').on('click', function(event) {
-				event.preventDefault(); 
-				event.stopPropagation(); 
-				$(this).parent().siblings().removeClass('open');
-				$(this).parent().toggleClass('open');
-			});
-		});
-	})(jQuery);	    
+    - if @friendly.present?
+      .col-md-3
+        h5 = t("competitions.scope.others")
+        ul.links
+          li = link_to t("competitions.kind.friendly"), search_by_competition_path(competition_id: @friendly.first.id)
+  </div>
+</div>
