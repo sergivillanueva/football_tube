@@ -50,7 +50,7 @@ var scripts = [
   "js/jquery.bxslider-rahisified.js",
   "js/jquery-ui.min.js",
   "js/highlight.pack.js",
-  "bootstrap/js/bootstrap.min.js",
+  //"bootstrap/js/bootstrap.min.js",
   "js/jquery-scrollto.js",
   "js/jquery.prettyPhoto.js",
   "js/wow.min.js",
