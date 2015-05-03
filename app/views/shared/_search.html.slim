@@ -1,22 +1,22 @@
-.row
-  .col-xs-3
-    = select_tag "search_mode", "<option value='by_player'>#{t(".search_by_player")}</option><option value='by_team'>#{t(".search_by_team")}</option>".html_safe, style: "width:100%;"
-  .col-xs-9
-    = form_tag search_by_player_path, method: :get, class: "form-inline search_by_player" do
-      .row
-        .col-xs-10
-          = text_field_tag :player_name, "", placeholder: t(".type_player_name"), style: "width:100%;"
-          = hidden_field_tag :player_id
-        .col-xs-1
-          = button_tag class: "btn btn-sm btn-link", type: "submit" do
-            .fa.fa-search style="font-size:17px;"
+.header-search
+  = select_tag "search_mode", "<option value='by_player'>#{t(".search_by_player")}</option><option value='by_team'>#{t(".search_by_team")}</option>".html_safe, style: "margin-bottom:5px;"
+  = form_tag search_by_player_path, method: :get, class: "search_by_player" do
+    .form-group
+      = text_field_tag :player_name, "", placeholder: t(".type_player_name"), class: "form-control", style: "z-index:9999;"
+      = hidden_field_tag :player_id 
+      = button_tag class: "btn btn-empty", type: "submit" do
+        i.fa.fa-search
 
-    = form_tag search_by_team_path, method: :get, class: "form-inline search_by_team", style: "display:none;" do
-      = text_field_tag :team_name, "", placeholder: t(".type_team_name")
+  = form_tag search_by_team_path, method: :get, class: "search_by_team", style: "display:none;" do
+    .form-group
+      = text_field_tag :team_name, "", placeholder: t(".type_team_name"), class: "form-control"
       = hidden_field_tag :team_id
-      = button_tag class: "btn btn-sm btn-link", type: "submit" do
+      = button_tag class: "btn btn-empty", type: "submit" do
         .fa.fa-search
-    
+
+
+
+
 javascript:
   $(document).ready(function () {
     $("#search_mode").on("change", function (e) {
@@ -60,7 +60,7 @@ javascript:
     .each(function (i) {
       $(this).data("ui-autocomplete")._renderItem = function(ul, item) {
         return $( "<li>" )
-          .append( "<a> <img src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
+          .append( "<a> <img src='" + item.logo_mini + "'></img> " + item.name + "</a>" )
           .appendTo( ul );
       };
     });

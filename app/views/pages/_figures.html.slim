@@ -1,0 +1,41 @@
+<div class="section-title line-pcolor">
+  <h2>all premium brands</h2>
+  <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor magna sit amet lorem sollicitudin, vitae euismod lacus lacinia. Nam ac pellentesque ligula. Nulla dapibus vulputate leo vel facilisis. </p>
+  .row.m-t-lg
+    .col-xs-4
+    .col-xs-4
+      .row
+        .col-xs-5
+          <ul class="vlinks vlinks-iconed vlinks-round vlinks-lg">
+            li
+              <i class="icon fa fa-youtube-play "></i>
+              span.blue.figure
+               = @matches_count
+              span.meta
+               = t("pages.home.matches")
+            li
+              <i class="icon fa fa-users"></i>
+              span.blue.figure
+               = @players_count
+              span.meta
+               = t("pages.home.players")
+          </ul>
+    
+        .col-xs-2
+        .col-xs-5
+          <ul class="vlinks vlinks-iconed vlinks-round vlinks-lg">
+            li
+              <i class="icon fa fa-futbol-o"></i>
+              span.blue.figure
+               = @goals_count
+              span.meta
+               = t("pages.home.goals")
+            li
+              <i class="icon fa fa-trophy"></i>
+              span.blue.figure
+               = @competitions_count
+              span.meta
+               = t("pages.home.competitions")
+          </ul>
+    .col-xs-4
+</div>
