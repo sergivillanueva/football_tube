@@ -6,10 +6,10 @@ en:
   register: Register
   pages:
     home:
-      matches: total registered matches
-      players: total players in our database
-      goals: total scored goals
-      competitions: total competitions among our matches
+      matches: matches
+      players: players
+      goals: goals
+      competitions: competitions
       matches_with_video: matches with video
       add_your_match: Add your match
       last_match: Last match
@@ -110,8 +110,8 @@ en:
     search:
       search_by_player: Players
       search_by_team: Teams
-      type_player_name: Type player name or nickname...
-      type_team_name: Type club name...
+      type_player_name: Type player name or nickname
+      type_team_name: Type club name
 
   search:
     search: Search
