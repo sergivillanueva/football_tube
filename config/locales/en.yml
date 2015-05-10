@@ -136,6 +136,12 @@ en:
       competition: Competition
       season: Season
       language: Language
+    search_by_competition:
+      playing_date: Playing date
+      match: Match
+      competition: Competition
+      season: Season
+      language: Language
 
   rating:
     bad: Bad
