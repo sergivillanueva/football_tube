@@ -10,9 +10,8 @@
       <div class="vcenter">
         <!-- v-centered -->               
         <div class="vcenter-this">
-          <a href="#{root_path}">
-            <img src="images/logo.png" alt="Footballia">
-          </a>
+          = link_to root_path do
+            = image_tag "logo.jpg", alt: "Footballia", title: "Footballia"
         </div>
         <!-- v-centered -->
       </div>
@@ -56,6 +55,7 @@
                   
                   </li>
                 </ul>
+                
               - else
 
                 <!-- Nav Right -->

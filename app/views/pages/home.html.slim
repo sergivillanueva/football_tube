@@ -1,6 +1,6 @@
 - if @last_match_with_video.present?
   .last_match style="margin:0% 18%;"
-    h5 = t(".last_match")
+    / h5 = t(".last_match")
     .video
       = jwplayer
     p.text-center style="margin-top:20px;" = link_to @last_match_with_video.decorate.title_with_logos, @last_match_with_video
@@ -9,12 +9,12 @@
 
 
 - if @best_matches.present?
-  .best_matches
-    h5 = t(".best_matches")
-    .row
-      = render partial: "matches/embed", collection: @best_matches, as: :match
-
-
+  .best_matches.section-title.line-pcolor
+    h2 = t(".best_matches")
+    .brand-slider
+      .bxslider
+        = render partial: "matches/embed", collection: @best_matches, as: :match
+  
 - if @last_match_with_video.present?
   = render "shared/videos", { videos: @last_match_with_video.videos }
 
@@ -23,4 +23,12 @@
 javascript:
   $(document).ready(function () {
     $(".star").raty('set', { readOnly: true });
+  
+    $('.bxslider').bxSlider({
+      slideMargin: 20,
+      autoReload: true,
+      pager: false,
+      breaks: [{screen:0, slides:2}, {screen:460, slides:3}, {screen:768, slides:5}]
+    });
+  
   });
