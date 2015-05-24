@@ -63,3 +63,4 @@ gem "devise"
 gem 'jwplayer-rails', :git => 'git://github.com/dutgriff/jwplayer-rails.git'
 gem 'carrierwave-video'
 gem 'ratyrate'
+gem 'friendly_id', '~> 5.1.0'
