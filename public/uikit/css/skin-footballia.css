@@ -48,3 +48,7 @@ ul.ul-toggle > li {
 .vlinks-iconed > li .meta {
   font-size: 0.9em;
 }
+
+.cover-1-bg {
+  background: url("/assets/backgrounds/cover1.jpg") no-repeat center 0 fixed;
+}
