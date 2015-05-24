@@ -14,7 +14,12 @@ en:
       add_your_match: Add your match
       last_match: Last match
       best_matches: Best matches
-      
+
+  players:
+    index:
+      uncompleted: Uncompleted
+      all: All
+
   matches:
     goal:
       own_goal: o.g.
