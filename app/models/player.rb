@@ -8,6 +8,17 @@ class Player < ActiveRecord::Base
 
   scope :uncompleted, -> { where("full_name = '' OR full_name IS NULL OR birthday = '' OR birthday IS NULL") }
 
+  extend FriendlyId
+  friendly_id :slug_candidates, use: :slugged
+
+  def slug_candidates
+    [
+      :full_name,
+      :name,
+      [:full_name, :name]
+    ]
+  end
+
   def as_json(options={})
     { 
       value: self.name,
