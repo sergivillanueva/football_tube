@@ -25,7 +25,7 @@ class Match < ActiveRecord::Base
   attr_accessor :home_team_name, :away_team_name, :competition_name
 
   extend FriendlyId
-  friendly_id :name, use: :slugged
+  friendly_id :slug_candidates, use: :slugged
   
   accepts_nested_attributes_for :home_starters, :reject_if => proc { |p| p['player_name'].blank? }
   accepts_nested_attributes_for :away_starters, :reject_if => proc { |p| p['player_name'].blank? }
@@ -61,5 +61,13 @@ class Match < ActiveRecord::Base
 
   def name
     "#{self.home_team.name} #{self.away_team.name}"
+  end
+
+  def slug_candidates
+    [
+      :name,
+      [:name, self.competition.try(:name)],
+      [:name, self.competition.try(:name), :season]
+    ]
   end
 end
