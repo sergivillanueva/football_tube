@@ -23,6 +23,9 @@ class Match < ActiveRecord::Base
   scope :with_videos, -> { joins(:videos).select('matches.id').group('matches.id').having('count(videos.id) > 0') }
   
   attr_accessor :home_team_name, :away_team_name, :competition_name
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
   
   accepts_nested_attributes_for :home_starters, :reject_if => proc { |p| p['player_name'].blank? }
   accepts_nested_attributes_for :away_starters, :reject_if => proc { |p| p['player_name'].blank? }
@@ -54,5 +57,9 @@ class Match < ActiveRecord::Base
 
   def can_have_goals_set?
     return can_have_players_set? && self.home_score.present? && self.away_score.present?
+  end
+
+  def name
+    "#{self.home_team.name} #{self.away_team.name}"
   end
 end

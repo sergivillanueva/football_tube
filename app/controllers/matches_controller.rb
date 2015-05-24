@@ -28,7 +28,7 @@ class MatchesController < ApplicationController
   end
   
   def update
-    @match = Match.find(params[:id])
+    @match = Match.friendly.find(params[:id])
   
     # Destroy current player_participations since they will be created again to update data
     @match.player_participations.destroy_all
@@ -66,12 +66,12 @@ class MatchesController < ApplicationController
   end
   
   def show
-    @match = Match.find(params[:id])
+    @match = Match.friendly.find(params[:id])
     @related_matches = @match.related_matches
   end
 
   def edit
-    @match = Match.find(params[:id])
+    @match = Match.friendly.find(params[:id])
     build_player_participations
     (@match.total_score - @match.goals.count).times do 
       @match.goals.build
@@ -81,7 +81,7 @@ class MatchesController < ApplicationController
   end
 
   def destroy
-    @match = Match.find(params[:id])
+    @match = Match.friendly.find(params[:id])
     @match.destroy
     redirect_to matches_path, notice: "Match deleted"
   end
