@@ -32,11 +32,11 @@ class PlayersController < ApplicationController
   end
   
   def edit
-    @player = Player.find params[:id]
+    @player = Player.friendly.find params[:id]
   end
   
   def update
-    @player = Player.find params[:id]
+    @player = Player.friendly.find params[:id]
     if @player.update_attributes(player_params)
       redirect_to players_path
     else
