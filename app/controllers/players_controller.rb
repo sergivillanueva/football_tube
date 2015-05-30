@@ -1,25 +1,6 @@
 class PlayersController < ApplicationController
   before_filter :check_uncompleted_param, only: :index
-  before_action :authenticate_user!, except: :search
-  before_action :check_search_term, only: :search
-
-  def search
-    name_where_clause = []
-    full_name_where_clause = []
-
-    words = params[:name].split
-
-    words.each do |word|
-      name_where_clause << "name LIKE ?"
-      full_name_where_clause << "full_name LIKE ?"
-    end
-    
-    where_clause = "(#{name_where_clause.join(" AND ")}) OR (#{full_name_where_clause.join(" AND ")})"
-    players = Player.where(where_clause, *(words.map{|p| "%#{p}%"} * 2))
-
-    render json: players.to_json
-  end
-  
+  before_action :authenticate_user!
   
   def index
     respond_to do |format|
@@ -53,10 +34,6 @@ class PlayersController < ApplicationController
   def check_uncompleted_param
     @only_uncompleted = true
     @only_uncompleted = false if !params[:uncompleted].nil? && params[:uncompleted] == "0"
-  end
-
-  def check_search_term
-    render(nothing: true) unless params[:name].present?
   end
 
 end
