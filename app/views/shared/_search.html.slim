@@ -28,7 +28,7 @@ javascript:
     /* Player name autocomplete */
     $("#player_name").autocomplete({
       source: function (request, response) {
-        $.getJSON("/players/search", {
+        $.getJSON("/search_by_player", {
           name: request.term,
         }, response );
       },

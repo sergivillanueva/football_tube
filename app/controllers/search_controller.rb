@@ -4,27 +4,23 @@ class SearchController < ApplicationController
   before_action :check_competition_search_term, only: :search_by_competition
 
   def search_by_player
-    @term = params[:player_name]
+    #TODO unify param name
+    @term = params[:player_name] || params[:name]
 
     if params[:player_id].present?
       @term = Player.find(params[:player_id]).name # there is no player_name param as it is a straight search by id
       @player_participations = PlayerParticipation.joins(:match).where(player_id: params[:player_id]).order("matches.playing_date").decorate  
     else
-      name_where_clause = []
-      full_name_where_clause = []
+      words = @term.split
 
-      words = params[:player_name].split
+      #http://stackoverflow.com/questions/1039512/mysql-full-text-search-in-ruby-on-rails
+      @players = Player.all.decorate#.where("MATCH(name, full_name) AGAINST (? IN BOOLEAN MODE)", words.split.map{|w| "+#{w}"}.join(" "))
 
-      words.each do |word|
-        name_where_clause << "name LIKE ?"
-        full_name_where_clause << "full_name LIKE ?"
+      if request.xhr?
+        render(json: @players.to_json) && return
+      else
+        render(:player_results) && return
       end
-
-      where_clause = "(#{name_where_clause.join(" AND ")}) OR (#{full_name_where_clause.join(" AND ")})"
-      @players = Player.where(where_clause, *(words.map{|p| "%#{p}%"} * 2)).decorate
-
-      render :player_results
-      return
     end
     
     render :search_by_player
@@ -53,7 +49,7 @@ class SearchController < ApplicationController
   private
 
   def check_player_search_term
-    redirect_to root_path unless params[:player_id].present? || params[:player_name].present?
+    redirect_to root_path unless params[:player_id].present? || params[:player_name].present? || params[:name].present?
   end
 
   def check_team_search_term
