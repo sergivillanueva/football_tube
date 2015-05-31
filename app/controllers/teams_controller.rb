@@ -37,7 +37,8 @@ class TeamsController < ApplicationController
       end
     end
   end
-  
+
+  #TODO move this to search controller and use full text search like on players  
   def search
     teams = Team.where("name like ? OR nick_names like ?", "%#{params[:name]}%", "%#{params[:name]}%")
     render json: teams.to_json
