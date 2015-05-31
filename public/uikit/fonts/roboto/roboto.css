@@ -1,92 +1,56 @@
-/* Roboto Fontkit (LOCAL)
------------------------------------------*/
-/*(1) Roboto-Regular-webfont
-.......................................*/
+/* cyrillic-ext */
 @font-face {
-  font-family: "Roboto";
-  src: url("Roboto-Regular-webfont.eot");
-  src: url("Roboto-Regular-webfont.eot?#iefix"), url("Roboto-Regular-webfont.woff") format("woff"), url("Roboto-Regular-webfont.ttf") format("truetype"), url("Roboto-Regular-webfont.svg#Roboto") format("svg");
-  font-weight: normal;
+  font-family: 'Roboto';
   font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(http://fonts.gstatic.com/s/roboto/v15/ek4gzZ-GeXAPcSbHtCeQI_esZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0460-052F, U+20B4, U+2DE0-2DFF, U+A640-A69F;
 }
-/*(2) Roboto-Italic-webfont
-.......................................*/
+/* cyrillic */
 @font-face {
-  font-family: "Roboto";
-  src: url("Roboto-Italic-webfont.eot");
-  src: url("Roboto-Italic-webfont.eot?#iefix"), url("Roboto-Italic-webfont.woff") format("woff"), url("Roboto-Italic-webfont.ttf") format("truetype"), url("Roboto-Italic-webfont.svg#Roboto") format("svg");
-  font-weight: normal;
-  font-style: italic;
-}
-/*(3) Roboto-Medium-webfont
-.......................................*/
-@font-face {
-  font-family: "Roboto";
-  src: url("Roboto-Medium-webfont.eot");
-  src: url("Roboto-Medium-webfont.eot?#iefix"), url("Roboto-Medium-webfont.woff") format("woff"), url("Roboto-Medium-webfont.ttf") format("truetype"), url("Roboto-Medium-webfont.svg#Roboto") format("svg");
-  font-weight: 500;
+  font-family: 'Roboto';
   font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(http://fonts.gstatic.com/s/roboto/v15/mErvLBYg_cXG3rLvUsKT_fesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0400-045F, U+0490-0491, U+04B0-04B1, U+2116;
 }
-/*(4) Roboto-MediumItalic-webfont
-.......................................*/
+/* greek-ext */
 @font-face {
-  font-family: "Roboto";
-  src: url("Roboto-MediumItalic-webfont.eot");
-  src: url("Roboto-MediumItalic-webfont.eot?#iefix"), url("Roboto-MediumItalic-webfont.woff") format("woff"), url("Roboto-MediumItalic-webfont.ttf") format("truetype"), url("Roboto-MediumItalic-webfont.svg#Roboto") format("svg");
-  font-weight: 500;
-  font-style: italic;
-}
-/*(5) Roboto-Bold-webfont
-.......................................*/
-@font-face {
-  font-family: "Roboto";
-  src: url("Roboto-Bold-webfont.eot");
-  src: url("Roboto-Bold-webfont.eot?#iefix"), url("Roboto-Bold-webfont.woff") format("woff"), url("Roboto-Bold-webfont.ttf") format("truetype"), url("Roboto-Bold-webfont.svg#Roboto") format("svg");
-  font-weight: bold;
+  font-family: 'Roboto';
   font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(http://fonts.gstatic.com/s/roboto/v15/-2n2p-_Y08sg57CNWQfKNvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+1F00-1FFF;
 }
-/*(6) Roboto-BoldItalic-webfont
-.......................................*/
+/* greek */
 @font-face {
-  font-family: "Roboto";
-  src: url("Roboto-BoldItalic-webfont.eot");
-  src: url("Roboto-BoldItalic-webfont.eot?#iefix"), url("Roboto-BoldItalic-webfont.woff") format("woff"), url("Roboto-BoldItalic-webfont.ttf") format("truetype"), url("Roboto-BoldItalic-webfont.svg#Roboto") format("svg");
-  font-weight: bold;
-  font-style: italic;
-}
-/*(7) Roboto-Light-webfont
-.......................................*/
-@font-face {
-  font-family: "Roboto";
-  src: url("Roboto-Light-webfont.eot");
-  src: url("Roboto-Light-webfont.eot?#iefix"), url("Roboto-Light-webfont.woff") format("woff"), url("Roboto-Light-webfont.ttf") format("truetype"), url("Roboto-Light-webfont.svg#Roboto") format("svg");
-  font-weight: 300;
+  font-family: 'Roboto';
   font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(http://fonts.gstatic.com/s/roboto/v15/u0TOpm082MNkS5K0Q4rhqvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0370-03FF;
 }
-/*(8) Roboto-LightItalic-webfont
-.......................................*/
+/* vietnamese */
 @font-face {
-  font-family: "Roboto";
-  src: url("Roboto-LightItalic-webfont.eot");
-  src: url("Roboto-LightItalic-webfont.eot?#iefix"), url("Roboto-LightItalic-webfont.woff") format("woff"), url("Roboto-LightItalic-webfont.ttf") format("truetype"), url("Roboto-LightItalic-webfont.svg#Roboto") format("svg");
-  font-weight: 300;
-  font-style: italic;
-}
-/*(9) Roboto-Black-webfont
-.......................................*/
-@font-face {
-  font-family: "Roboto";
-  src: url("Roboto-Black-webfont.eot");
-  src: url("Roboto-Black-webfont.eot?#iefix"), url("Roboto-Black-webfont.woff") format("woff"), url("Roboto-Black-webfont.ttf") format("truetype"), url("Roboto-Black-webfont.svg#Roboto") format("svg");
-  font-weight: 900;
+  font-family: 'Roboto';
   font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(http://fonts.gstatic.com/s/roboto/v15/NdF9MtnOpLzo-noMoG0miPesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0102-0103, U+1EA0-1EF1, U+20AB;
 }
-/*(10) Roboto-BlackItalic-webfont
-.......................................*/
+/* latin-ext */
 @font-face {
-  font-family: "Roboto";
-  src: url("Roboto-BlackItalic-webfont.eot");
-  src: url("Roboto-BlackItalic-webfont.eot?#iefix"), url("Roboto-BlackItalic-webfont.woff") format("woff"), url("Roboto-BlackItalic-webfont.ttf") format("truetype"), url("Roboto-BlackItalic-webfont.svg#Roboto") format("svg");
-  font-weight: 900;
-  font-style: italic;
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(http://fonts.gstatic.com/s/roboto/v15/Fcx7Wwv8OzT71A3E1XOAjvesZW2xOQ-xsNqO47m55DA.woff2) format('woff2');
+  unicode-range: U+0100-024F, U+1E00-1EFF, U+20A0-20AB, U+20AD-20CF, U+2C60-2C7F, U+A720-A7FF;
+}
+/* latin */
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(http://fonts.gstatic.com/s/roboto/v15/CWB0XYA8bzo0kSThX0UTuA.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
