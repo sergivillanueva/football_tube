@@ -103,4 +103,8 @@ class MatchDecorator < ApplicationDecorator
   def language
     object.language
   end
+
+  def description
+    object.description
+  end
 end

@@ -14,6 +14,9 @@
       h5 = t(".related_matches")
       = render(partial: "related_match", collection: @related_matches, as: :match) || t(".no_results")
   
+  .description
+    p = match.description
+
   .details
     .row.logos.m-b
       .col-xs-6

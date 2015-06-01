@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150524151856) do
+ActiveRecord::Schema.define(version: 20150601182510) do
 
   create_table "average_caches", force: true do |t|
     t.integer  "rater_id"
@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20150524151856) do
     t.string   "season"
     t.integer  "user_id"
     t.string   "slug"
+    t.text     "description"
   end
 
   add_index "matches", ["slug"], name: "index_matches_on_slug", unique: true
