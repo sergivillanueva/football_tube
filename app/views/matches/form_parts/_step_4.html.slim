@@ -1,10 +1,13 @@
 - unless @match.new_record?
   h3 = t(".goals")
   = f.simple_fields_for :goals do |g|
-    .row
-      = g.association :player, collection: @match.possible_scorers.map{|p| [p.name, p.id]}, selected: lambda {|l| l[0] == g.object.player.try(:name)}, include_blank: true, wrapper_html: { class: "col-xs-5" }, input_html: { style: "width:100%;" }, label: t(".player")
-      = g.input :minute, wrapper_html: { class: "col-xs-1 offset1" }, input_html: { style: "width:100%;" }
-      = g.input :own_goal, as: :boolean, wrapper_html: { class: "col-xs-3 offset1" }
+    .row.m-b-xs
+      .col-xs-6.col-md-3
+        = g.association :player, collection: @match.possible_scorers.map{|p| [p.name, p.id]}, selected: lambda {|l| l[0] == g.object.player.try(:name)}, include_blank: true, input_html: { style: "width:100%;" }, label: t(".player")
+      .col-xs-2
+        = g.input :minute, input_html: { style: "width:100%;" }
+      .col-xs-2.own_goal
+        = g.input :own_goal, as: :boolean, inline_label: true, label: false
 
   .row.videos
     .col-xs-12
@@ -12,7 +15,7 @@
       = f.simple_fields_for :videos do |g|
         = g.input :source_file, as: :file
 
-  .row-fluid.form_buttons          
+  .row.form_buttons          
     .col-xs-12
       = f.button :submit, class: "btn-primary"
       = link_to t("matches.form.cancel"), root_path, class: "btn btn-default"                    

@@ -1,13 +1,13 @@
 .row.teams
   .col-xs-6.team_details
-    .logo.blank
+    .logo.blank.m-b
       - if f.object.home_team.present?
         = f.object.decorate.home_team_logo
       - else
         img style="display:none;"
     = f.input :home_team_name, input_html: { class: "team_name", value: f.object.home_team.present? ? f.object.home_team.name : "" }
   .col-xs-6.team_details
-    .logo.blank
+    .logo.blank.m-b
       - if f.object.away_team.present?
         = f.object.decorate.away_team_logo
       - else
