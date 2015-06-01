@@ -17,7 +17,7 @@ class MatchDecorator < ApplicationDecorator
   def full_title
     h.content_tag :div, class: "row" do
       h.content_tag(:div, home_team_name, class: "col-xs-4", style: "text-align:right;") +
-      h.content_tag(:div, "#{home_team_logo "thumb"} - #{away_team_logo "thumb"}".html_safe, class: "col-xs-3", style: "text-align:center;") +
+      h.content_tag(:div, "#{home_team_logo "thumb"} - #{away_team_logo "thumb"}".html_safe, class: "col-xs-4", style: "text-align:center;") +
       h.content_tag(:div, away_team_name, class: "col-xs-4")
     end.html_safe
   end
