@@ -148,6 +148,17 @@ en:
       competition: Competition
       season: Season
       language: Language
+    advanced_search:
+      head_to_head: Head to head
+      team_one_name: First team
+      team_two_name: Second team
+    search_head_to_head:
+      playing_date: Playing date
+      match: Match
+      competition: Competition
+      season: Season
+      language: Language
+      missing_params: You have to choose two teams
 
   rating:
     bad: Bad

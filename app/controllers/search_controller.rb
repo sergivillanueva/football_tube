@@ -2,6 +2,16 @@ class SearchController < ApplicationController
   before_action :check_player_search_term, only: :search_by_player
   before_action :check_team_search_term, only: :search_by_team
   before_action :check_competition_search_term, only: :search_by_competition
+  before_action :check_head_to_head_params, only: :search_head_to_head
+
+  def advanced_search
+  end
+
+  def search_head_to_head
+    ids = [params[:team_one_id], params[:team_two_id]]
+    @term = "#{params[:team_one_name]} vs #{params[:team_two_name]}"
+    @matches = Match.where("home_team_id IN (?) AND away_team_id IN (?)", ids, ids).order("playing_date").decorate
+  end
 
   def search_by_player
     #TODO unify param name
@@ -59,5 +69,9 @@ class SearchController < ApplicationController
 
   def check_competition_search_term
     redirect_to root_path unless params[:competition_id].present?
+  end
+
+  def check_head_to_head_params
+    redirect_to(advanced_search_path, alert: t(".missing_params")) unless params[:team_one_id].present? && params[:team_two_id].present?
   end
 end
