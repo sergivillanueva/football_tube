@@ -10,6 +10,10 @@ class LogoUploader < CarrierWave::Uploader::Base
   version :thumb do
     process :resize_to_fit => [60, 60]
   end
+
+  version :small do
+    process :resize_to_fit => [40, 40]
+  end
   
   version :mini do
     process :resize_to_fit => [20, 20]
