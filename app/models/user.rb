@@ -10,6 +10,9 @@ class User < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
   
   ratyrate_rater
+  
+  extend FriendlyId
+  friendly_id :nick_name, use: :slugged
 
   def admin?
   	self.role == "admin"

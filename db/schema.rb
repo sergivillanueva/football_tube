@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150601182510) do
+ActiveRecord::Schema.define(version: 20150607172538) do
 
   create_table "average_caches", force: true do |t|
     t.integer  "rater_id"
@@ -165,10 +165,12 @@ ActiveRecord::Schema.define(version: 20150601182510) do
     t.string   "avatar"
     t.string   "nick_name"
     t.integer  "country_id"
+    t.string   "slug"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["slug"], name: "index_users_on_slug", unique: true
 
   create_table "videos", force: true do |t|
     t.string   "source_file"
