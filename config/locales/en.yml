@@ -118,6 +118,7 @@ en:
       search_by_team: Teams
       type_player_name: Type player name or nickname
       type_team_name: Type club name
+      head_to_head: Head to head search
 
   search:
     search: Search
