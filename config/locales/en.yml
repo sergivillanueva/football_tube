@@ -37,6 +37,7 @@ en:
       coach: Coach
       reserves: Substitutes
       no_results: No results
+      uploaded_by: Uploaded by
     new:
       new_match: New match
     form_parts:

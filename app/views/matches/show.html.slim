@@ -14,7 +14,10 @@
       h5 = t(".related_matches")
       = render(partial: "related_match", collection: @related_matches, as: :match) || t(".no_results")
   
-  .description
+  .description.m-t
+    p 
+      span = t(".uploaded_by")
+      span.m-l-xs = link_to match.object.user.name, profile_path(match.object.user)
     p = match.description
 
   .details
