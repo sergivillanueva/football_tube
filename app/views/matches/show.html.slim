@@ -17,7 +17,8 @@
   .description.m-t
     p 
       span = t(".uploaded_by")
-      span.m-l-xs = link_to match.object.user.name, profile_path(match.object.user)
+      - if match.object.user.present?
+        span.m-l-xs = link_to match.object.user.name, profile_path(match.object.user)
     p = match.description
 
   .details
