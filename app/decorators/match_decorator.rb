@@ -23,9 +23,10 @@ class MatchDecorator < ApplicationDecorator
   end
 
   def logos
-    h.content_tag :div, class: "row logos" do
-      h.content_tag(:div, home_team_logo("thumb"), class: "col-xs-6", style: "text-align:right;") +
-      h.content_tag(:div, away_team_logo("thumb"), class: "col-xs-6", style: "text-align:left;")
+    h.content_tag :div, class: "logos" do
+      h.content_tag(:span, home_team_logo("small"), style: "text-align:right;") +
+      h.content_tag(:span, "-", class: "m-l-xs m-r-xs") +
+      h.content_tag(:span, away_team_logo("small"), style: "text-align:left;")
     end
   end
 
