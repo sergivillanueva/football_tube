@@ -9,7 +9,7 @@ class SearchController < ApplicationController
 
   def search_head_to_head
     ids = [params[:team_one_id], params[:team_two_id]]
-    @term = "#{params[:team_one_name]} vs #{params[:team_two_name]}"
+    @term = params[:term].present? ? params[:term] : "#{params[:team_one_name]} vs #{params[:team_two_name]}"
     @matches = Match.where("home_team_id IN (?) AND away_team_id IN (?)", ids, ids).order("playing_date").decorate
   end
 
@@ -18,7 +18,7 @@ class SearchController < ApplicationController
     @term = params[:player_name] || params[:name]
 
     if params[:player_id].present?
-      @term = Player.find(params[:player_id]).name # there is no player_name param as it is a straight search by id
+      @term = params[:term].present? ? params[:term] : Player.find(params[:player_id]).name # there is no player_name param as it is a straight search by id
       @player_participations = PlayerParticipation.joins(:match).where(player_id: params[:player_id])
       if params[:from_year].present? && params[:to_year].present?
         seasons = (params[:from_year]..params[:to_year]).to_a.map{|year| [year, "#{year}-#{year.to_i + 1}"]}.flatten.prepend("#{params[:from_year].to_i - 1}-#{params[:from_year]}" )
@@ -46,7 +46,7 @@ class SearchController < ApplicationController
     @term = params[:team_name]
 
     if params[:team_id].present?
-      @term = Team.find(params[:team_id]).name # there is no team_name param as it is a straight search by id
+      @term = params[:term].present? ? params[:term] : Team.find(params[:team_id]).name # there is no team_name param as it is a straight search by id
       @matches = Match.where("home_team_id = ? OR away_team_id = ?", params[:team_id], params[:team_id])
       if params[:from_year].present? && params[:to_year].present?
         seasons = (params[:from_year]..params[:to_year]).to_a.map{|year| [year, "#{year}-#{year.to_i + 1}"]}.flatten.prepend("#{params[:from_year].to_i - 1}-#{params[:from_year]}" )

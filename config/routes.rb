@@ -42,14 +42,14 @@ FootballTube::Application.routes.draw do
     get "/#{name}-matches" => "search#search_by_player", player_id: eval("PLAYER_#{name.upcase}_ID"), as: "search_for_#{name}"
   end
 
-  get "/clockwork-orange-matches" => "search#search_by_team", team_id: TEAM_NETHERLANDS_ID, from_year: 1974, to_year: 1978, as: "search_for_clockwork_orange"
-  get "/brazil-70-matches" => "search#search_by_team", team_id: TEAM_BRAZIL_ID, from_year: 1970, to_year: 1970, as: "search_for_brazil_70"
-  get "/dream-team-matches" => "search#search_by_team", team_id: TEAM_FC_BARCELONA_ID, from_year: 1990, to_year: 1994, as: "search_for_dream_team"
-  get "/quinta-del-buitre-matches" => "search#search_by_team", team_id: TEAM_REAL_MADRID_ID, from_year: 1985, to_year: 1990, as: "search_for_quinta_del_buitre"
-  get "/sacchi-milan-matches" => "search#search_by_team", team_id: TEAM_AC_MILAN_ID, from_year: 1987, to_year: 1992, as: "search_for_sacchi_milan"
-  get "/france-80s-matches" => "search#search_by_team", team_id: TEAM_FRANCE_ID, from_year: 1982, to_year: 1986, as: "search_for_france_80s"
-  get "/spain-08-12-matches" => "search#search_by_team", team_id: TEAM_SPAIN_ID, from_year: 2008, to_year: 2012, as: "search_for_spain_08_12"
+  get "/clockwork-orange-matches" => "search#search_by_team", team_id: TEAM_NETHERLANDS_ID, from_year: 1974, to_year: 1978, term: "Clockwork orange", as: "search_for_clockwork_orange"
+  get "/brazil-70-matches" => "search#search_by_team", team_id: TEAM_BRAZIL_ID, from_year: 1970, to_year: 1970, term: "Brazil '70", as: "search_for_brazil_70"
+  get "/dream-team-matches" => "search#search_by_team", team_id: TEAM_FC_BARCELONA_ID, from_year: 1990, to_year: 1994, term: "Dream Team", as: "search_for_dream_team"
+  get "/quinta-del-buitre-matches" => "search#search_by_team", team_id: TEAM_REAL_MADRID_ID, from_year: 1985, to_year: 1990, term: "La Quinta del Buitre", as: "search_for_quinta_del_buitre"
+  get "/sacchi-milan-matches" => "search#search_by_team", team_id: TEAM_AC_MILAN_ID, from_year: 1987, to_year: 1992, term: "Sacchi Milan", as: "search_for_sacchi_milan"
+  get "/france-80s-matches" => "search#search_by_team", team_id: TEAM_FRANCE_ID, from_year: 1982, to_year: 1986, term: "France 80's", as: "search_for_france_80s"
+  get "/spain-08-12-matches" => "search#search_by_team", team_id: TEAM_SPAIN_ID, from_year: 2008, to_year: 2012, term: "Spain 2008-2012", as: "search_for_spain_08_12"
 
-  get "/el-clasico" => "search#search_head_to_head", team_one_id: TEAM_FC_BARCELONA_ID, team_two_id: TEAM_REAL_MADRID_ID, as: "search_for_el_clasico"
+  get "/el-clasico" => "search#search_head_to_head", team_one_id: TEAM_FC_BARCELONA_ID, team_two_id: TEAM_REAL_MADRID_ID, term: "El Clásico", as: "search_for_el_clasico"
       
 end
