@@ -19,7 +19,12 @@ class SearchController < ApplicationController
 
     if params[:player_id].present?
       @term = Player.find(params[:player_id]).name # there is no player_name param as it is a straight search by id
-      @player_participations = PlayerParticipation.joins(:match).where(player_id: params[:player_id]).order("matches.playing_date").decorate  
+      @player_participations = PlayerParticipation.joins(:match).where(player_id: params[:player_id])
+      if params[:from_year].present? && params[:to_year].present?
+        seasons = (params[:from_year]..params[:to_year]).to_a.map{|year| [year, "#{year}-#{year.to_i + 1}"]}.flatten.prepend("#{params[:from_year].to_i - 1}-#{params[:from_year]}" )
+        @player_participations = @player_participations.where(season: seasons)
+      end
+      @player_participations = @player_participations.order("matches.playing_date").decorate
     else
       words = @term.split
 
@@ -42,7 +47,12 @@ class SearchController < ApplicationController
 
     if params[:team_id].present?
       @term = Team.find(params[:team_id]).name # there is no team_name param as it is a straight search by id
-      @matches = Match.where("home_team_id = ? OR away_team_id = ?", params[:team_id], params[:team_id]).order("playing_date").decorate
+      @matches = Match.where("home_team_id = ? OR away_team_id = ?", params[:team_id], params[:team_id])
+      if params[:from_year].present? && params[:to_year].present?
+        seasons = (params[:from_year]..params[:to_year]).to_a.map{|year| [year, "#{year}-#{year.to_i + 1}"]}.flatten.prepend("#{params[:from_year].to_i - 1}-#{params[:from_year]}" )
+        @matches = @matches.where(season: seasons)
+      end
+      @matches = @matches.order("playing_date").decorate
     else
       @teams = Team.where("name like ? OR nick_names like ?", "%#{params[:team_name]}%", "%#{params[:team_name]}%").decorate
       render :team_results

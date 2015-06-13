@@ -14,6 +14,20 @@ en:
       add_your_match: Add your match
       last_match: Last match
       best_matches: Best matches
+    direct_search_links:
+      maradona: Maradona matches
+      di_stefano: Di Stéfano matches
+      cruyff: Cruyff matches
+      pele: Pelé matches
+      messi: Messi matches
+      clockwork_orange: Clockwork orange matches (1974-1978)
+      brazil_70: Brazil '70 matches (1970)
+      dream_team: Dream Team matches (1990-1994)
+      quinta_del_buitre: Quinta el buitre matches (1985-1990)
+      sacchi_milan: Sacchi Milan matches  (1987-1992)
+      france_80s: France 80's matches (1982-1986)
+      spain_08_12: Spain 08-12 matches (2008-2012)
+      el_clasico: El Clásico matches
 
   players:
     index:

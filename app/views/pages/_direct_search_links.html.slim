@@ -1,0 +1,5 @@
+.direct_search_links.m-t-lg
+	- %w(maradona di_stefano cruyff pele messi clockwork_orange brazil_70 dream_team quinta_del_buitre sacchi_milan france_80s spain_08_12 el_clasico).each do |term|
+		.direct_search_link
+		  = link_to t(".#{term}"), eval("search_for_#{term}_path"), title: t(".#{term}")
+	
