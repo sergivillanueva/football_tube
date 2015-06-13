@@ -114,20 +114,22 @@
             td width="45%"
               table width="100%"
                 tbody
-                  tr.player
-                    td colspan=2
-                    td.name colspan=2
-                      = t(".reserves")
-                  = render partial: "player_participation", collection: @match.home_reserves
+                  - if @match.home_reserves.any?
+                    tr.player
+                      td colspan=2
+                      td.name colspan=2
+                        = t(".reserves")
+                    = render partial: "player_participation", collection: @match.home_reserves
             td width="10%"
             td width="45%"
               table width="100%"
                 tbody
-                  tr.player
-                    td colspan=2
-                    td.name colspan=2
-                      = t(".reserves")
-                  = render partial: "player_participation", collection: @match.away_reserves
+                  - if @match.away_reserves.any?
+                    tr.player
+                      td colspan=2
+                      td.name colspan=2
+                        = t(".reserves")
+                    = render partial: "player_participation", collection: @match.away_reserves
           
 javascript:
   $(document).ready(function () {
