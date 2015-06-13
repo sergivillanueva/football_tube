@@ -12,7 +12,7 @@ class LogoUploader < CarrierWave::Uploader::Base
   end
 
   version :small do
-    process :resize_to_fit => [40, 40]
+    process :resize_and_pad => [40, 40]
   end
   
   version :mini do
