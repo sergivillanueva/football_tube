@@ -1,17 +1,20 @@
+- player_participations_as_player = @player_participations.select{|p| p.role != 'coach'}
+- player_participations_as_coach = @player_participations.select{|p| p.role == 'coach'}
+
 h4 = t("search.results", n: @player_participations.size, term: @term)
 - # TODO search by player name: use different search results views?
 
 ul.nav.nav-tabs
-  li.active 
-    = link_to t(".player"), "#matches_as_player", "data-toggle" => "tab" 
-  li 
-    = link_to t(".coach"), "#matches_as_coach", "data-toggle" => "tab" 
+  li class="#{player_participations_as_player.any? ? 'active' : 'disabled'}"
+    = link_to t(".player"), "#matches_as_player", "data-toggle" => "#{'tab' if player_participations_as_player.any?}" 
+  li class="#{'active' if player_participations_as_player.blank?} #{'disabled' if player_participations_as_coach.blank?}"
+    = link_to t(".coach"), "#matches_as_coach", "data-toggle" => "#{'tab' if player_participations_as_coach.any?}" 
 
 .tab-content
   #matches_as_player.tab-pane.fade.active.in
     .tab-content
-      = render partial: "search/player_participations", locals: { coach: false, player_participations: @player_participations.select{|p| p.role != 'coach'} } 
+      = render partial: "search/player_participations", locals: { coach: false, player_participations: player_participations_as_player }
 
   #matches_as_coach.tab-pane.fade
     .tab-content
-      = render partial: "search/player_participations", locals: { coach: true, player_participations: @player_participations.select{|p| p.role == 'coach'} }  
+      = render partial: "search/player_participations", locals: { coach: true, player_participations: player_participations_as_coach }
