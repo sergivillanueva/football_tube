@@ -50,6 +50,6 @@ FootballTube::Application.routes.draw do
   get "/france-80s-matches" => "search#search_by_team", team_id: TEAM_FRANCE_ID, from_year: 1982, to_year: 1986, term: "France 80's", as: "search_for_france_80s"
   get "/spain-08-12-matches" => "search#search_by_team", team_id: TEAM_SPAIN_ID, from_year: 2008, to_year: 2012, term: "Spain 2008-2012", as: "search_for_spain_08_12"
 
-  get "/el-clasico" => "search#search_head_to_head", team_one_id: TEAM_FC_BARCELONA_ID, team_two_id: TEAM_REAL_MADRID_ID, term: "El Clásico", as: "search_for_el_clasico"
+  get "/el-clasico-matches" => "search#search_head_to_head", team_one_id: TEAM_FC_BARCELONA_ID, team_two_id: TEAM_REAL_MADRID_ID, term: "El Clásico", as: "search_for_el_clasico"
       
 end
