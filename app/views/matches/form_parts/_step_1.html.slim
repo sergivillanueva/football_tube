@@ -6,6 +6,7 @@
       - else
         img style="display:none;"
     = f.input :home_team_name, input_html: { class: "team_name", value: f.object.home_team.present? ? f.object.home_team.name : "" }
+    i.fa.fa-spinner.fa-pulse.loading.m-l-xs style="display:none;"
   .col-xs-6.team_details
     .logo.blank.m-b
       - if f.object.away_team.present?
@@ -13,6 +14,7 @@
       - else
         img style="display:none;"
     = f.input :away_team_name, input_html: { class: "team_name", value: f.object.away_team.present? ? f.object.away_team.name : ""  }
+    i.fa.fa-spinner.fa-pulse.loading.m-l-xs style="display:none;"
 
 .row.form_buttons
   .col-xs-12

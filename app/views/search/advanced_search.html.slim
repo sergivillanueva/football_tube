@@ -8,6 +8,7 @@ h4 = t(".head_to_head")
 	    = label_tag :team_one_name, t(".team_one_name")	      
     	= text_field_tag :team_one_name, "", placeholder: t("shared.search.type_team_name"), class: "team_name"
     	= hidden_field_tag :team_one_id, "", class: "team_id"
+        i.fa.fa-spinner.fa-pulse.loading.m-l-xs style="display:none;"
 
 	  .col-lg-3.col-xs-6.team_details
 	    .logo.blank.m-b
@@ -15,6 +16,7 @@ h4 = t(".head_to_head")
 	    = label_tag :team_two_name, t(".team_two_name")
 	    = text_field_tag :team_two_name, "", placeholder: t("shared.search.type_team_name"), class: "team_name"
 	    = hidden_field_tag :team_two_id, "", class: "team_id"
+        i.fa.fa-spinner.fa-pulse.loading.m-l-xs style="display:none;"
 
 	.row
 	  .col-xs-2
@@ -48,10 +50,25 @@ javascript:
         $(scoreLogoElement).hide().attr("src", ui.item.logo_thumb).fadeIn();
 
         $(this).closest(".team_details").find(".team_id").val(ui.item.id);
-      }      
+      },
+      search: function () {
+        $(this).closest(".team_details").find(".loading").show();
+      },
+      open: function () {
+        $(this).closest(".team_details").find(".loading").hide();
+      },
+      response: function(event, ui) {
+        if (!ui.content.length) {
+          var noResult = { value: "no-results" };
+          ui.content.push(noResult);
+        }
+      }
     })
     .each(function (i) {
       $(this).data("ui-autocomplete")._renderItem = function(ul, item) {
+        if (item.value == "no-results") {
+          return $( "<li> ").append("<span class='padder'>#{t('no_results')}</span>").appendTo(ul);
+        }
         return $( "<li>" )
           .append( "<a> <img src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
           .appendTo( ul );

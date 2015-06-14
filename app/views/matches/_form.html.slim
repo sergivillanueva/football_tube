@@ -46,10 +46,25 @@ javascript:
 
         $(logoElement).hide().attr("src", ui.item.logo).fadeIn();
         $(scoreLogoElement).hide().attr("src", ui.item.logo_thumb).fadeIn();
-      }      
+      },
+      search: function () {
+        $(this).closest(".team_details").find(".loading").show();
+      },
+      open: function () {
+        $(this).closest(".team_details").find(".loading").hide();
+      },
+      response: function(event, ui) {
+        if (!ui.content.length) {
+          var noResult = { value: "no-results" };
+          ui.content.push(noResult);
+        }
+      }
     })
     .each(function (i) {
       $(this).data("ui-autocomplete")._renderItem = function(ul, item) {
+        if (item.value == "no-results") {
+          return $( "<li> ").append("<span class='padder'>#{t('no_results')}</span>").appendTo(ul);
+        }
         return $( "<li>" )
           .append( "<a> <img src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
           .appendTo( ul );
@@ -66,10 +81,25 @@ javascript:
       minLength: 2,
       select: function(event, ui) {
         $(this).closest(".player").find(".player_id").val(ui.item.id);    
+      },
+      search: function () {
+        $(this).closest(".team_details").find(".loading").show();
+      },
+      open: function () {
+        $(this).closest(".team_details").find(".loading").hide();
+      },
+      response: function(event, ui) {
+        if (!ui.content.length) {
+          var noResult = { value: "no-results" };
+          ui.content.push(noResult);
+        }
       }
     })
     .each(function (i) {
       $(this).data("ui-autocomplete")._renderItem = function(ul, item) {
+        if (item.value == "no-results") {
+          return $( "<li> ").append("<span class='padder'>#{t('no_results')}</span>").appendTo(ul);
+        }
         return $( "<li>" )
           .append( "<a> <span style='display:inline-block;' class='flag flag-" + item.country_code + "'></span> <b>" + item.name + "</b>, " + item.full_name + " (" + item.birthday + ")" + "</a>" )
           .appendTo( ul );
