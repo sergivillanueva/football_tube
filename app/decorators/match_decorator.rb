@@ -16,17 +16,17 @@ class MatchDecorator < ApplicationDecorator
 
   def full_title
     h.content_tag :div, class: "row" do
-      h.content_tag(:div, home_team_name, class: "col-xs-4", style: "text-align:right;") +
+      h.content_tag(:div, object.home_team.decorate.name, class: "col-xs-4", style: "text-align:right;") +
       h.content_tag(:div, logos.html_safe, class: "col-xs-4", style: "text-align:center;") +
-      h.content_tag(:div, away_team_name, class: "col-xs-4")
+      h.content_tag(:div, object.away_team.decorate.name, class: "col-xs-4")
     end.html_safe
   end
 
   def logos
     h.content_tag :div, class: "logos" do
-      h.content_tag(:span, home_team_logo("small"), style: "text-align:right;") +
+      h.content_tag(:span, object.home_team.decorate.logo("small"), style: "text-align:right;") +
       h.content_tag(:span, "-", class: "m-l-xs m-r-xs") +
-      h.content_tag(:span, away_team_logo("small"), style: "text-align:left;")
+      h.content_tag(:span, object.away_team.decorate.logo("small"), style: "text-align:left;")
     end
   end
 
