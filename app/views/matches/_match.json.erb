@@ -1,7 +1,7 @@
 {
-  "home_team": <%= raw "#{match.home_team_name} #{match.home_team_logo("mini")}".to_json %>,
+  "home_team": <%= raw "#{match.object.home_team.name} #{match.object.home_team.decorate.logo("mini")}".to_json %>,
   "result": <%= raw link_to(match.result, match, title: "view").to_json %>,
-  "away_team": <%= raw "#{match.away_team_name} #{match.away_team_logo("mini")}".to_json %>,
+  "away_team": <%= raw "#{match.object.away_team.name} #{match.object.away_team.decorate.logo("mini")}".to_json %>,
   "competition": "<%= match.competition_name %>",
   "stage": "<%= match.stage %>",
   "playing_date": "<%= match.playing_date %>",

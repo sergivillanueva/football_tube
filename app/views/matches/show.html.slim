@@ -22,43 +22,41 @@
         span.m-l-xs = link_to match.object.user.name, profile_path(match.object.user)
     p = match.description
 
-  .details
-    .row.logos.m-b
-      .col-xs-6
+  .details itemscope="" itemtype="http://schema.org/SportsEvent"
+    .row.teams.m-b
+      .col-xs-6.team itemscope="" itemprop="homeTeam" itemtype="http://schema.org/SportsTeam"
         .logo
           .image
-            = match.home_team_logo "medium"
+            = match.object.home_team.decorate.logo "medium"
+        .team_name.m-t
+          = link_to search_by_team_path(team_id: match.object.home_team_id), title: t("matches_by", name: match.object.home_team.decorate.name) do
+            - if match.object.competition.scope == "international"
+              = match.object.home_team.decorate.name_with_flag
+            - else
+              = match.object.home_team.decorate.name
                   
-      .col-xs-6
+      .col-xs-6.team itemscope="" itemprop="homeTeam" itemtype="http://schema.org/SportsTeam"
         .logo
           .image
-            = match.away_team_logo "medium"
-    .row.m-b
-      .col-xs-6
-        .team_name
-          = link_to search_by_team_path(team_id: match.object.home_team_id), title: match.home_team_name do
+            = match.object.away_team.decorate.logo "medium"
+        .team_name.m-t
+          = link_to search_by_team_path(team_id: match.object.away_team_id), title: t("matches_by", name: match.object.away_team.decorate.name) do
             - if match.object.competition.scope == "international"
-              = match.home_team_name_with_flag
+              = match.object.away_team.decorate.name_with_flag
             - else
-              = match.home_team_name
-      .col-xs-6
-        .team_name
-          = link_to search_by_team_path(team_id: match.object.away_team_id), title: match.away_team_name do
-            - if match.object.competition.scope == "international"
-              = match.away_team_name_with_flag
-            - else
-              = match.away_team_name
-                  
+              = match.object.away_team.decorate.name    
+                      
     .competition
       = "#{link_to match.competition_name, search_by_competition_path(competition_id: match.object.competition.id), title: match.competition_name} #{match.season}".html_safe
 
     .stage
       = match.stage
     
-    .venue
-      = match.venue
+    .venue itemprop="location" itemscope="" itemtype="http://schema.org/Place"
+      span itemprop="name" 
+        = match.venue
         
-    .playing_date
+    .playing_date itemprop="startDate" itemscope="" content=match.object.playing_date
       = match.playing_date
     
     .rating

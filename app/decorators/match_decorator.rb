@@ -7,7 +7,7 @@ class MatchDecorator < ApplicationDecorator
   end
   
   def result_with_logos
-    "#{home_team_logo "thumb"} #{result} #{away_team_logo "thumb"}".html_safe
+    "#{object.home_team.decorate.logo "thumb"} #{result} #{object.away_team.decorate.logo "thumb"}".html_safe
   end
 
   def title
@@ -31,21 +31,11 @@ class MatchDecorator < ApplicationDecorator
   end
 
   def title_with_logos size = "thumb", full = false
-    "#{home_team_logo size} #{full ? title : 'vs.'} #{away_team_logo size}".html_safe    
+    "#{object.home_team.decorate.logo size} #{full ? title : 'vs.'} #{object.away_team.decorate.logo size}".html_safe
   end
 
   def title_with_flags
     "#{object.home_team.country.decorate.flag if object.home_team.country} #{title} #{object.away_team.country.decorate.flag if object.away_team.country}".html_safe
-  end
-  
-  def home_team_logo size = nil
-    image = size.nil? ? object.home_team.logo.url : object.home_team.logo.send(size).url
-    h.image_tag image, alt: object.home_team.name, title: object.home_team.name
-  end
-  
-  def away_team_logo size = nil
-    image = size.nil? ? object.away_team.logo.url : object.away_team.logo.send(size).url
-    h.image_tag image, alt: object.away_team.name, title: object.away_team.name
   end
   
   def playing_date
@@ -82,22 +72,6 @@ class MatchDecorator < ApplicationDecorator
 
   def away_players
     object.away_players.map{|player_participation| player_participation.player}
-  end
-  
-  def home_team_name
-    object.home_team.name.mb_chars
-  end
-  
-  def away_team_name
-    object.away_team.name.mb_chars
-  end
-
-  def home_team_name_with_flag
-    "#{object.home_team.country.decorate.flag if object.home_team.country} #{home_team_name}".html_safe
-  end
-
-  def away_team_name_with_flag
-    "#{object.away_team.country.decorate.flag if object.away_team.country} #{away_team_name}".html_safe
   end
 
   def created_at

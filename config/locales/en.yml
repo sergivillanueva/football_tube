@@ -4,6 +4,8 @@ en:
   login: Login
   logout: Logout
   register: Register
+  matches_by: "%{name} matches"
+
   pages:
     home:
       matches: matches
