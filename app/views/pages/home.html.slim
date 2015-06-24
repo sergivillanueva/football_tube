@@ -9,6 +9,7 @@
     .rating
       = rating_for @last_match_with_video, nil, noRatedMsg: t("rating.not_rated")
 
+.separator
 
 - if @best_matches.present?
   .best_matches.section-title.line-pcolor
@@ -40,7 +41,7 @@
   
 </div>
 
-.separator.m-t.m-b style="margin:60px 80px;border-bottom:1px solid #28B9D4;"
+.separator
 
 = render "direct_search_links"
 
