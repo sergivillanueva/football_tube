@@ -35,6 +35,9 @@
     <header class="header-block line-top">
       <%= render "shared/header" %>    
       <%= render "shared/menu" %>
+      <div class="container m-t m-b">
+        <%= breadcrumbs pretext: "", separator: " &rsaquo; ", semantic: true %>
+      </div>
     </header>
     
     <!-- Content Block
