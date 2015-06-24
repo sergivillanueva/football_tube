@@ -144,8 +144,8 @@ en:
     team_results:
       teams_found: "%{n} teams found for %{term}"
     search_by_player:
-      player: Player
-      coach: Coach
+      player: Player (%{n} matches)
+      coach: Coach (%{n} matches)
       search_by_player: Search by player
     player_participations:
       playing_date: Playing date

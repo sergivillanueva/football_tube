@@ -8,15 +8,15 @@ h4 = t("search.results", n: @player_participations.size, term: @term)
 
 ul.nav.nav-tabs
   li class="#{player_participations_as_player.any? ? 'active' : 'disabled'}"
-    = link_to t(".player"), "#matches_as_player", "data-toggle" => "#{'tab' if player_participations_as_player.any?}" 
+    = link_to t(".player", n: player_participations_as_player.count), "#matches_as_player", "data-toggle" => "#{'tab' if player_participations_as_player.any?}" 
   li class="#{'active' if player_participations_as_player.blank?} #{'disabled' if player_participations_as_coach.blank?}"
-    = link_to t(".coach"), "#matches_as_coach", "data-toggle" => "#{'tab' if player_participations_as_coach.any?}" 
+    = link_to t(".coach", n: player_participations_as_coach.count), "#matches_as_coach", "data-toggle" => "#{'tab' if player_participations_as_coach.any?}" 
 
 .tab-content
-  #matches_as_player.tab-pane.fade.active.in
+  #matches_as_player.tab-pane.fade class="#{'active in' if player_participations_as_player.any?}"
     .tab-content
       = render partial: "search/player_participations", locals: { coach: false, player_participations: player_participations_as_player }
 
-  #matches_as_coach.tab-pane.fade
+  #matches_as_coach.tab-pane.fade class="#{'active in' unless player_participations_as_player.any?}"
     .tab-content
       = render partial: "search/player_participations", locals: { coach: true, player_participations: player_participations_as_coach }
