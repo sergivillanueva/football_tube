@@ -1,10 +1,10 @@
 tr
   td
-    = match.home_team_logo "thumb"
+    = match.home_team.decorate.logo "thumb"
   td
     = link_to match.result, match, title: "view"
   td
-    = match.away_team_logo "thumb"
+    = match.away_team.decorate.logo "thumb"
   td
     = match.competition_name
   td

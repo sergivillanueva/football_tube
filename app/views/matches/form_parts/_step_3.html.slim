@@ -4,7 +4,7 @@
 	  .col-xs-3
 	    .home_team_logo
 	      - if f.object.home_team.present?
-            = f.object.decorate.home_team_logo "thumb"
+            = f.object.home_team.decorate.logo "thumb"
           - else
             img style="display:none;"
 	  .col-xs-4
@@ -18,7 +18,7 @@
 	  .col-xs-3	
 	    .away_team_logo
 	      - if f.object.away_team.present?
-            = f.object.decorate.away_team_logo "thumb"
+            = f.object.away_team.decorate.logo "thumb"
           - else
             img style="display:none;"
 
