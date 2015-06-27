@@ -1,3 +1,5 @@
+require 'RMagick'
+
 class Match < ActiveRecord::Base
   belongs_to :home_team, class_name: Team
   belongs_to :away_team, class_name: Team
@@ -70,4 +72,13 @@ class Match < ActiveRecord::Base
       [:name, self.competition.try(:name), :season]
     ]
   end
+
+  def preview_image
+    canvas = Magick::Image.new(640, 360) do |c|
+      c.background_color = "#7EAE40"
+    end
+    canvas.composite!(self.home_team.logo.big, 0, 0, Magick::OverCompositeOp)
+    canvas.composite!(self.away_team.logo.big, 320, 0, Magick::OverCompositeOp)
+  end
+
 end

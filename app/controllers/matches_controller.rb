@@ -85,6 +85,11 @@ class MatchesController < ApplicationController
     @match.destroy
     redirect_to matches_path, notice: "Match deleted"
   end
+
+  def preview_image
+    @match = Match.find(params[:id])
+    send_data @match.preview_image, type: 'image/png', disposition: "inline"
+  end
   
   private
   

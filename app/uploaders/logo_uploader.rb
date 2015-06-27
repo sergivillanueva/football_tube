@@ -17,6 +17,10 @@ class LogoUploader < CarrierWave::Uploader::Base
   
   version :mini do
     process :resize_to_fit => [20, 20]
+  end
+
+  version :big do
+    process :resize_and_path => [320, 180]
   end  
   
   

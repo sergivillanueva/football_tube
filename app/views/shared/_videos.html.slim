@@ -7,7 +7,7 @@
       jwplayer("jwplayer").setup({
         height: "360",
         width: "100%",
-        image: "#{asset_path "logo.jpg"}",
+        image: "#{preview_image_match_path(match)}",
         flashplayer: "#{asset_path('flash.swf')}",
         advertising: {
           client: "vast",
