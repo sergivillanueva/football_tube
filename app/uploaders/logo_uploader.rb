@@ -20,7 +20,7 @@ class LogoUploader < CarrierWave::Uploader::Base
   end
 
   version :big do
-    process :resize_and_path => [320, 180]
+    process :resize_and_pad => [320, 360]
   end  
   
   

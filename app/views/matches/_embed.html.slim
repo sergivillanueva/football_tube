@@ -1,6 +1,6 @@
 .slide
 	= link_to match, title: match.title do
-	  img src="#{asset_path "logo.jpg"}" style="width:100%;"
+	  img src="#{preview_image_match_path(match)}" style="width:100%;"
 
 	  / p.text-center style="margin-top:10px;" = match.title_with_logos "mini"
 	/

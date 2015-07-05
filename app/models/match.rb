@@ -1,5 +1,3 @@
-require 'RMagick'
-
 class Match < ActiveRecord::Base
   belongs_to :home_team, class_name: Team
   belongs_to :away_team, class_name: Team
@@ -74,11 +72,46 @@ class Match < ActiveRecord::Base
   end
 
   def preview_image
-    canvas = Magick::Image.new(640, 360) do |c|
-      c.background_color = "#7EAE40"
-    end
-    canvas.composite!(self.home_team.logo.big, 0, 0, Magick::OverCompositeOp)
-    canvas.composite!(self.away_team.logo.big, 320, 0, Magick::OverCompositeOp)
-  end
+    image_name = Digest::MD5.hexdigest "#{self.home_team.name}#{self.home_team.id}#{self.away_team.name}#{self.away_team.id}"
+    image_path = "#{Rails.public_path}/cache/matches/#{image_name}.png"
 
+    return image_path if File.exist? image_path
+
+    home_team_logo = MiniMagick::Image.open "#{Rails.public_path}/#{self.home_team.logo.medium.url}"
+    away_team_logo = MiniMagick::Image.open "#{Rails.public_path}/#{self.away_team.logo.medium.url}"
+
+    # TODO refactor this code by adding new carrierwave logo version instead of these fucking team logo temp files
+
+    home_team_path = "#{Rails.public_path}/cache/tmp/#{Digest::MD5.hexdigest self.home_team.name}.png"
+    img = MiniMagick::Image.new home_team_path
+    img.run_command(:convert, "-size", "320x360", "xc:transparent", img.path)
+    img = img.composite(home_team_logo) do |c|
+      c.compose "Over"
+      c.gravity "Center"
+    end
+    img.write home_team_path
+
+    away_team_path = "#{Rails.public_path}/cache/tmp/#{Digest::MD5.hexdigest self.away_team.name}.png"
+    img = MiniMagick::Image.new away_team_path
+    img.run_command(:convert, "-size", "320x360", "xc:transparent", img.path)
+    img = img.composite(away_team_logo) do |c|
+      c.compose "Over"
+      c.gravity "Center"
+    end
+    img.write away_team_path
+
+    img = MiniMagick::Image.new image_path
+    img.run_command(:convert, "-size", "640x360", "xc:#7EAE40", img.path)
+    img = img.composite(MiniMagick::Image.open home_team_path) do |c|
+      c.compose "Over"
+      c.geometry "+0+0"
+    end
+    img = img.composite(MiniMagick::Image.open away_team_path) do |c|
+      c.compose "Over"
+      c.geometry "+320+0"
+    end
+
+    img.write image_path
+    img.path
+  end
 end

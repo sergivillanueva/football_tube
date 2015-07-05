@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
   decorates_assigned :match
-  before_action :authenticate_user!, except: :show
+  before_action :authenticate_user!, except: [:show, :preview_image]
 
   def new
     @match = Match.new
@@ -87,8 +87,9 @@ class MatchesController < ApplicationController
   end
 
   def preview_image
-    @match = Match.find(params[:id])
-    send_data @match.preview_image, type: 'image/png', disposition: "inline"
+    @match = Match.friendly.find(params[:id])
+    image = File.open(@match.preview_image, 'rb').read
+    send_data image, type: 'image/png', disposition: "inline"
   end
   
   private
