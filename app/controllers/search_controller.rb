@@ -27,9 +27,10 @@ class SearchController < ApplicationController
       @player_participations = @player_participations.order("matches.playing_date").decorate
     else
       words = @term.split
+      words_for_full_text_search = words.map{|w| "+#{w}*"}.join(" ")
 
       #http://stackoverflow.com/questions/1039512/mysql-full-text-search-in-ruby-on-rails
-      @players = Player.where("MATCH(name, full_name) AGAINST (? IN BOOLEAN MODE)", words.map{|w| "+#{w}*"}.join(" "))
+      @players = Player.where("MATCH(name) AGAINST (? IN BOOLEAN MODE) OR MATCH(name) AGAINST (? IN BOOLEAN MODE)", words_for_full_text_search, words_for_full_text_search)
 
       if request.xhr?
         render(json: @players.to_json) && return
