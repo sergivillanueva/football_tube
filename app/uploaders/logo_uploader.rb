@@ -18,11 +18,6 @@ class LogoUploader < CarrierWave::Uploader::Base
   version :mini do
     process :resize_to_fit => [20, 20]
   end
-
-  version :big do
-    process :resize_and_pad => [320, 360]
-  end  
-  
   
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
