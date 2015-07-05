@@ -38,7 +38,7 @@ $().ready(function() {
 
   /* NAV TOGGLER
   // ------------------------------------------------- */
-  var triggerH = $(".nav-top").height() + $(".main-header").height();
+  /*var triggerH = $(".nav-top").height() + $(".main-header").height();
   var toggleEl = $(".nav-bottom");
   
   function autoToggleNav() {
@@ -61,7 +61,7 @@ $().ready(function() {
   $(window).scroll(function() {
     autoToggleNav();
 
-  });
+  });*/
   
   // rare moments when switching between screens
   $(window).resize(function() {
