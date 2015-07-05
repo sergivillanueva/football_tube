@@ -5,7 +5,13 @@
     / h5 = t(".last_match")
     .video
       = jwplayer
-    p.text-center style="margin-top:20px;" = link_to @last_match_with_video.decorate.title, @last_match_with_video
+    p.text-center style="margin-top:20px;"
+      = link_to @last_match_with_video do
+        = @last_match_with_video.decorate.title
+        br
+        = "#{@last_match_with_video.decorate.competition_name} #{@last_match_with_video.decorate.season}"
+
+    end
     .rating
       = rating_for @last_match_with_video, nil, noRatedMsg: t("rating.not_rated")
 
