@@ -29,7 +29,7 @@
           .image
             = match.object.home_team.decorate.logo "medium"
         .team_name.m-t
-          = link_to search_by_team_path(team_id: match.object.home_team_id), title: t("matches_by", name: match.object.home_team.decorate.name) do
+          = link_to search_by_team_path(team_id: match.object.home_team_id), title: match.object.home_team.name do
             - if match.object.competition.scope == "international"
               = match.object.home_team.decorate.name_with_flag
             - else
@@ -40,7 +40,7 @@
           .image
             = match.object.away_team.decorate.logo "medium"
         .team_name.m-t
-          = link_to search_by_team_path(team_id: match.object.away_team_id), title: t("matches_by", name: match.object.away_team.decorate.name) do
+          = link_to search_by_team_path(team_id: match.object.away_team_id), title: match.object.away_team.name do
             - if match.object.competition.scope == "international"
               = match.object.away_team.decorate.name_with_flag
             - else
