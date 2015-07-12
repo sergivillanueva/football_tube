@@ -83,10 +83,10 @@ javascript:
         $(this).closest(".player").find(".player_id").val(ui.item.id);    
       },
       search: function () {
-        $(this).closest(".team_details").find(".loading").show();
+        $(this).closest(".player").find(".loading").show();
       },
       open: function () {
-        $(this).closest(".team_details").find(".loading").hide();
+        $(this).closest(".player").find(".loading").hide();
       },
       response: function(event, ui) {
         if (!ui.content.length) {
