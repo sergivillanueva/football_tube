@@ -5,6 +5,7 @@ en:
   logout: Logout
   register: Register
   matches_by: "%{name} matches"
+  delete: Delete
 
   pages:
     home:
@@ -56,6 +57,8 @@ en:
       uploaded_by: Uploaded by
     new:
       new_match: New match
+    edit:
+      edit_match: Edit match
     form_parts:
       step_3:
         home_team_line_up: Home team line up

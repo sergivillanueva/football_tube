@@ -34,7 +34,7 @@
             i.fa.fa-spinner.fa-pulse.loading style="display:none;"
 
           = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "col-xs-2" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
-          = link_to t(".delete"), "#", class: "delete_player col-xs-2" if g.object.player_id.present? 
+          = link_to t("delete"), "#", class: "delete_player col-xs-2" if g.object.player_id.present? 
 
           = g.input :side, as: :hidden
           = g.input :role, as: :hidden
@@ -52,7 +52,7 @@
             i.fa.fa-spinner.fa-pulse.loading style="display:none;"
 
           = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "col-xs-2" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
-          = link_to t(".delete"), "#", class: "delete_player col-xs-2" if g.object.player_id.present? 
+          = link_to t("delete"), "#", class: "delete_player col-xs-2" if g.object.player_id.present? 
 
           = g.input :side, as: :hidden
           = g.input :role, as: :hidden
@@ -68,7 +68,7 @@
             i.fa.fa-spinner.fa-pulse.loading style="display:none;"
           
           .col-xs-1
-            = link_to t(".delete"), "#", class: "delete_player col-xs-2 col-xs-offset-1" if g.object.player_id.present? 
+            = link_to t("delete"), "#", class: "delete_player col-xs-2 col-xs-offset-1" if g.object.player_id.present? 
 
           = g.input :side, as: :hidden
           = g.input :role, as: :hidden
@@ -85,7 +85,7 @@
             i.fa.fa-spinner.fa-pulse.loading style="display:none;"
 
           = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "col-xs-2" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
-          = link_to t(".delete"), "#", class: "delete_player col-xs-2 col-xs-offset-1" if g.object.player_id.present? 
+          = link_to t("delete"), "#", class: "delete_player col-xs-2 col-xs-offset-1" if g.object.player_id.present? 
 
           = g.input :side, as: :hidden
           = g.input :role, as: :hidden
@@ -102,7 +102,7 @@
             i.fa.fa-spinner.fa-pulse.loading style="display:none;"
           
           = g.input :team_number, label: false, placeholder: "Team no.", wrapper_html: { class: "col-xs-2" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
-          = link_to t(".delete"), "#", class: "delete_player col-xs-2 col-xs-offset-1" if g.object.player_id.present? 
+          = link_to t("delete"), "#", class: "delete_player col-xs-2 col-xs-offset-1" if g.object.player_id.present? 
 
           = g.input :side, as: :hidden
           = g.input :role, as: :hidden
@@ -118,7 +118,7 @@
             i.fa.fa-spinner.fa-pulse.loading style="display:none;"
 
           .col-xs-1
-            = link_to t(".delete"), "#", class: "delete_player col-xs-2 col-xs-offset-1" if g.object.player_id.present? 
+            = link_to t("delete"), "#", class: "delete_player col-xs-2 col-xs-offset-1" if g.object.player_id.present? 
 
           = g.input :side, as: :hidden
           = g.input :role, as: :hidden
