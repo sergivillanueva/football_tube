@@ -3,6 +3,7 @@ FootballTube::Application.routes.draw do
   devise_for :users
   resources :matches do
     get :preview_image, on: :member
+    post :increment_visualizations_counter, on: :member
   end
   resources :teams do
     get "search", on: :collection

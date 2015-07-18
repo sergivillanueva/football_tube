@@ -63,11 +63,11 @@ class MatchesController < ApplicationController
         render "matches/index"
       end
     end
-    
   end
   
   def show
     @match = Match.friendly.find(params[:id])
+    @match.increment!(:visits_counter)
     @related_matches = @match.related_matches
   end
 
@@ -91,6 +91,15 @@ class MatchesController < ApplicationController
     @match = Match.friendly.find(params[:id])
     image = File.open(@match.preview_image, 'rb').read
     send_data image, type: 'image/png', disposition: "inline"
+  end
+
+  def increment_visualizations_counter
+    @match = Match.friendly.find(params[:id])
+    if @match.increment!(:visualizations_counter)
+      render json: { status: :ok, code: 1 }
+    else
+      render json: { status: :error, code: 0 }
+    end
   end
   
   private
