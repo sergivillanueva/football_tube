@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
 
   #TODO use cancancan gem for this and let user crud her own stuff
-  before_action :check_user, only: [:update, :edit, :destroy]
+  #before_action :check_admin_role, only: [:update, :edit, :destroy]
 
   before_action :set_competitions
 
@@ -21,8 +21,8 @@ class ApplicationController < ActionController::Base
 
   private
 
-  def check_user
-  	redirect_to root_path unless current_user.admin?
+  def check_admin_role
+  	redirect_to root_path, alert: t("not_authorized") unless user_signed_in? && current_user.admin?
   end
 
   protected

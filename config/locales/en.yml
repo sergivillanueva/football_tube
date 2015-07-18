@@ -6,6 +6,7 @@ en:
   register: Register
   matches_by: "%{name} matches"
   delete: Delete
+  not_authorized: You are not authorized to access this page
 
   pages:
     home:
