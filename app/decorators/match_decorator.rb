@@ -89,4 +89,12 @@ class MatchDecorator < ApplicationDecorator
   def description
     object.description
   end
+
+  def visualizations_counter
+    object.visualizations_counter
+  end
+
+  def visits_counter
+    object.visits_counter
+  end  
 end

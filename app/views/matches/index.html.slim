@@ -11,6 +11,8 @@ table.table
       th = "Playing date"
       th = "Language"
       th = "Video files"
+      th = "Visits"
+      th = "Plays"      
       th = "Uploaded"
       th
       th
@@ -28,13 +30,15 @@ javascript:
         { "data": "playing_date" },
         { "data": "language" },
         { "data": "videos_count" },
+        { "data": "visits_counter" },
+        { "data": "visualizations_counter" },
         { "data": "created_at" },
         { "data": "edit_link", "orderable": false },
         { "data": "delete_link", "orderable": false }
       ],
       "pageLength": 50,
       "deferRender": true,
-      "order": [8, 'desc'],
+      "order": [10, 'desc'],
       "sDom": 'lfiprtip'
     });
   });      
