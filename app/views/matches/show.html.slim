@@ -22,6 +22,9 @@
         span.m-l-xs = link_to match.object.user.name, profile_path(match.object.user)
     p = match.description
 
+    - if user_signed_in? && current_user.admin?
+      p = match.visualizations_counter
+
   .details itemscope="" itemtype="http://schema.org/SportsEvent"
     .row.teams.m-b
       .col-xs-6.team itemscope="" itemprop="homeTeam" itemtype="http://schema.org/SportsTeam"
