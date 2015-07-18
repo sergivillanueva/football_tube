@@ -28,6 +28,6 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:account_update) << [:avatar, :country_id, :nick_name]
+    devise_parameter_sanitizer.for(:account_update) << [:avatar, :country_id, :nick_name, :favourite_team_id]
   end
 end

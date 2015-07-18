@@ -17,6 +17,14 @@
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
+    <div class="team_details">
+      <%= f.input :favourite_team_name do %>
+        <%= f.input_field :favourite_team_name, class: "team_name", value: f.object.favourite_team.present? ? f.object.favourite_team.name : "" %>
+        <i class="fa fa-spinner fa-pulse loading m-l-xs" style="display:none;"></i>
+      <% end %>
+      <%= f.input :favourite_team_id, as: :hidden, input_html: { class: "team_id" } %>
+    </div>
+
     <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
     <%= f.input :password_confirmation, required: false %>
     <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
@@ -34,3 +42,4 @@
 <% end %>
 
 <%= link_to "Back", :back %>
+
