@@ -104,10 +104,12 @@ en:
       conmebol: Copa CONMEBOL
       mercosur: Copa Mercosur
       friendly: Friendly
+      gold_cup: Gold Cup
     scope:
       national_teams: National teams
       international: International
       domestic: Domestic
+      friendly: Friendly
       others: Others
     zone:
       world: World
