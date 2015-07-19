@@ -4,7 +4,9 @@ end
 
 crumb :matches do
 	link match.title, match_path(match)
-	parent :competition, match.object.competition
+	if match.object.competition.present?
+	  parent :competition, match.object.competition
+	end
 end
 
 crumb :competition do |competition|
