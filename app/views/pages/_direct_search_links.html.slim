@@ -1,7 +1,7 @@
 .direct_search_links.m-t-lg.clearfix
 	/ - %w(maradona di_stefano cruyff pele messi clockwork_orange brazil_70 dream_team quinta_del_buitre sacchi_milan france_80s spain_08_12 el_clasico).each do |term|
-	- %w(maradona di_stefano cruyff pele messi clockwork_orange dream_team quinta_del_buitre spain_08_12).each do |term|
-		.direct_search_link.pull-left style="padding:4px;border:1px solid #eee;"
+	- %w(maradona di_stefano cruyff pele messi clockwork_orange dream_team quinta_del_buitre).each do |term|
+		.direct_search_link.pull-left style="padding:4px;border:1px solid #eee;margin:10px"
 		  = link_to eval("search_for_#{term}_path"), title: t(".#{term}") do
 		  	.m-b-xs = image_tag asset_path("direct_search/#{term}.jpg"), alt: t(".#{term}"), style: "width:250px;"
 		    = t(".#{term}")
