@@ -1,6 +1,6 @@
 class CompetitionsController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_admin_role, on: :index
+  before_action :check_admin_role, only: :index
 
   def search
     competitions = Competition.where("name like '%#{params[:name]}%'")

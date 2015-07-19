@@ -1,6 +1,6 @@
 class PlayersController < ApplicationController
   before_action :authenticate_user!
-  before_action :check_admin_role, on: :index  
+  before_action :check_admin_role, only: :index  
   before_filter :check_uncompleted_param, only: :index
 
   def index

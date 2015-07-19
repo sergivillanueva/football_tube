@@ -1,6 +1,6 @@
 class TeamsController < ApplicationController
   before_action :authenticate_user!, except: :search
-  before_action :check_admin_role, on: :index
+  before_action :check_admin_role, only: :index
   before_action :check_search_term, only: :search
 
   def new
