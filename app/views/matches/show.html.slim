@@ -151,7 +151,7 @@ javascript:
       jwplayer().onPlay(function() {
         console.log("PLAY");
         $.ajax({
-          url: "#{increment_visualizations_counter_match(@match)}",
+          url: "#{increment_visualizations_counter_match_path(@match)}",
           type: "post",
           success: function (e) {
             console.log("COUNTED!")
