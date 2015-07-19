@@ -22,7 +22,7 @@
     h2 = t(".best_matches")
     .brand-slider
       .bxslider
-        = render partial: "matches/embed", collection: @best_matches, as: :match
+        = render partial: "matches/slide", collection: @best_matches, as: :match
   
 - if @last_match_with_video.present?
   = render "shared/videos", { match: @last_match_with_video, videos: @last_match_with_video.videos }

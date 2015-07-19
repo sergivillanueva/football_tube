@@ -1,37 +1,41 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h4>Edit <%= resource_name.to_s.humanize %></h4>
 
 <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :nick_name %>
-    <%= f.input :avatar do %>
+    <%= f.input :nick_name, wrapper_html: { class: "m-b" } %>
+    <%= f.input :avatar, wrapper_html: { class: "m-b" } do %>
       <div class="avatar"> <%= image_tag f.object.avatar.thumb.url %> </div>
       <%= f.input_field :avatar, as: :file %>
     <% end %>
-    <%= f.input :country_id, collection: Country.all %>
+    <%= f.input :country_id, collection: Country.all, wrapper_html: { class: "m-b" } %>
 
-    <%= f.input :email, required: true %>
+    <%= f.input :email, required: true, wrapper_html: { class: "m-b" } %>
 
     <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
       <p>Currently waiting confirmation for: <%= resource.unconfirmed_email %></p>
     <% end %>
 
     <div class="team_details">
-      <%= f.input :favourite_team_name do %>
+      <%= f.input :favourite_team_name, wrapper_html: { class: "m-b" } do %>
         <%= f.input_field :favourite_team_name, class: "team_name", value: f.object.favourite_team.present? ? f.object.favourite_team.name : "" %>
         <i class="fa fa-spinner fa-pulse loading m-l-xs" style="display:none;"></i>
       <% end %>
       <%= f.input :favourite_team_id, as: :hidden, input_html: { class: "team_id" } %>
     </div>
+    
+    <!--
+      <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
+      <%= f.input :password_confirmation, required: false %>
+    -->
 
-    <%= f.input :password, autocomplete: "off", hint: "leave it blank if you don't want to change it", required: false %>
-    <%= f.input :password_confirmation, required: false %>
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true %>
+    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true, wrapper_html: { class: "m-b" } %>
   </div>
 
   <div class="form-actions">
-    <%= f.button :submit, "Update" %>
+    <%= f.button :submit, "Update", class: "btn btn-primary" %>
+    <%= link_to t("cancel"), :back, class: "btn btn-default" %>
   </div>
 <% end %>
 
@@ -41,5 +45,5 @@
   <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 <% end %>
 
-<%= link_to "Back", :back %>
+
 

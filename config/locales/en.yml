@@ -7,6 +7,7 @@ en:
   matches_by: "%{name} matches"
   delete: Delete
   not_authorized: You are not authorized to access this page
+  cancel: Cancel
 
   pages:
     home:
@@ -191,3 +192,25 @@ en:
     good: Good
     gorgeous: Gorgeous
     not_rated: Not rated yet!
+
+  profiles:
+    show:
+       profile: Perfil
+       edit: Editar
+       add_your_avatar: "You don't have any avatar, add it <a href=\"%{url}\">here</a>!"
+       add_your_favourite_team: "Do you have any favourite team? Add it <a href=\"%{url}\">here</a>!"
+       matches: Matches
+       add_match: "You haven't upload any match. Add one <a href=\"%{url}\">here</a>!"
+
+  activerecord:
+    models:
+    attributes:
+      user:
+        nick_name: Nick name
+        avatar: Avatar
+        country: Country
+        email: Email
+        favourite_team_name: Favourite team
+
+
+

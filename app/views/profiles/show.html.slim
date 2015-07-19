@@ -1,33 +1,36 @@
-h4 = t(".profile")
+h3 
+  = t(".profile")
+  small.m-l-xs = link_to t(".edit"), edit_user_registration_path
 
-.row-fluid.profile
-  .span6
+.row.profile
+  .col-xs-6
   	- if @user.avatar.present?
       = image_tag @user.avatar.medium.url, title: @user.name, alt: @user.name
     - else
-      = t(".no_avatar")
-  .span6
+      = t(".add_your_avatar", url: edit_user_registration_path).html_safe
+  .col-xs-6
   	.nick_name
-      label = t(".nick_name")
+      label = t("activerecord.attributes.user.nick_name")
       = @user.nick_name
     .email
-      label = t(".email")
+      label = t("activerecord.attributes.user.email")
       = @user.email
-    .country
-      label = t(".country")
-      - if @user.country.present?
-        .row-fluid
-          .span1
-            div class="flag flag-#{@user.country.code}" title=@user.country.name
-          .span11
-            = @user.country.name
+    .favourite_team
+      label = t("activerecord.attributes.user.favourite_team_name")
+      - if @user.favourite_team.present?
+        = link_to search_by_team_path(team_id: @user.favourite_team_id), title: @user.favourite_team.name do
+          = @user.favourite_team.decorate.logo "thumb"
+      - else
+         = t(".add_your_favourite_team", url: edit_user_registration_path).html_safe
 
-= link_to t(".edit"), edit_user_registration_path
+.matches.m-t
+  h4 = t(".matches")
+  - if @user.matches.empty?
+    = t(".add_match", url: new_match_path).html_safe
 
-.matches
-    h5 = t(".matches")
+  - else
     - @user.matches.decorate.to_a.in_groups_of(4, false) do |matches|
-      .row-fluid style="margin-bottom:20px;"
+      .row.m-b
         = render partial: "matches/embed", collection: matches, as: :match
 
 javascript:
