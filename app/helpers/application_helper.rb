@@ -12,6 +12,6 @@ module ApplicationHelper
 	end
 
 	def title(page_title)
-  	content_for :title, "Footballia - #{page_title}".truncate(64)
+  	content_for :title, "#{page_title.truncate(50)} | Footballia"
 	end
 end
