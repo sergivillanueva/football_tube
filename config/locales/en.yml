@@ -8,6 +8,9 @@ en:
   delete: Delete
   not_authorized: You are not authorized to access this page
   cancel: Cancel
+  motto_1: The first free interactive football video library
+  motto_2: Don't just read about history
+  motto_3: Experience it
 
   pages:
     home:
@@ -143,11 +146,17 @@ en:
 
   search:
     search: Search
+    search_matches: Search matches
     results: "%{n} matches found for %{term}"
     player_results:
       players_found: "%{n} players found for %{term}"
+      search_player: Search player
+      name: Name
+      full_name: Full name
     team_results:
       teams_found: "%{n} teams found for %{term}"
+      search_team: Search team
+      name: Name      
     search_by_player:
       player: Player (%{n} matches)
       coach: Coach (%{n} matches)
@@ -202,6 +211,11 @@ en:
        matches: Matches
        add_match: "You haven't upload any match. Add one <a href=\"%{url}\">here</a>!"
 
+  devise:
+    registrations:
+      edit:
+        edit_profile: Edit profile
+
   activerecord:
     models:
     attributes:
@@ -211,6 +225,3 @@ en:
         country: Country
         email: Email
         favourite_team_name: Favourite team
-
-
-

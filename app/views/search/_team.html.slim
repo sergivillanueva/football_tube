@@ -1,7 +1,6 @@
-tr
-  td.country
-    = team.country.flag if team.country.present?
+tr  
   td.name
+  	span.m-r-xs = team.country.flag if team.country.present?
     = team.name
   td
     = team.team_matches_search_link

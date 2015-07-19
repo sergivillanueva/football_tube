@@ -1,7 +1,6 @@
 tr
-  td.country
-    = player.country.flag if player.country.present?
   td.name
+  	span.m-r-xs = player.country.flag if player.country.present?
     = player.name
   td.full_name
     = player.full_name

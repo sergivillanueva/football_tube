@@ -1,15 +1,15 @@
+- title t(".search_team")
+
 h4 = t(".teams_found", n: @teams.size, term: @term)
 
 - if @teams.blank?
   = t("no_results")
   
 - else
-  table width="100%" style="margin:auto;"
+  table class="table table-striped table-condensed table-search"
     thead
       tr
-        th
         th = t(".name")
-        th = t(".full_name")
         th
       
     tbody
