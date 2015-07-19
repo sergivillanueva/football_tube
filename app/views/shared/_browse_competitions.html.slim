@@ -4,7 +4,7 @@
       .col-md-3
         h5 = t("competitions.scope.national_teams")
         
-        - %w(world europe south_america).each do |zone|
+        - %w(world europe south_america concacaf).each do |zone|
           - if @national_teams_competitions[zone].present?
             = t("competitions.zone.#{zone}")
             ul.links

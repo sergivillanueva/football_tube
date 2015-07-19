@@ -1,6 +1,6 @@
 module CompetitionsHelper
   def national_teams_competitions_kinds
-  	%w(world_cup world_cup_u20 euro euro_u21 copa_america african_cup international_supercup confederations_cup olympic_games mundialito)
+  	%w(world_cup world_cup_u20 euro euro_u21 copa_america african_cup international_supercup confederations_cup olympic_games mundialito gold_cup)
   end
   def international_competitions_kinds
   	%w(champions_league cup_winners_cup uefa_cup international_cup libertadores conmebol mercosur supercup)
