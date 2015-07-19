@@ -31,7 +31,7 @@ h3
     = t(".add_match", url: new_match_path).html_safe
 
   - else
-    - @user.matches.decorate.to_a.in_groups_of(4, false) do |matches|
+    - @user.matches.limit(16).decorate.to_a.in_groups_of(4, false) do |matches|
       .row.m-b
         = render partial: "matches/embed", collection: matches, as: :match
 
