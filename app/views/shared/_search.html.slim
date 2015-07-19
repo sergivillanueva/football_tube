@@ -1,24 +1,22 @@
 .header-search
   = select_tag "search_mode", "<option value='by_player'>#{t(".search_by_player")}</option><option value='by_team'>#{t(".search_by_team")}</option>".html_safe, style: "margin-bottom:5px;"
   = form_tag search_by_player_path, method: :get, class: "search_by_player" do
-    .form-group
-      = text_field_tag :player_name, "", placeholder: t(".type_player_name"), class: "form-control", style: "z-index:9999;"
-      = hidden_field_tag :player_id 
-      = button_tag class: "btn btn-empty", type: "submit" do
+    .form-group.player
+      = text_field_tag :player_name, "", placeholder: t(".type_player_name"), class: "form-control player_name", style: "z-index:9999;"
+      = hidden_field_tag :player_id, "", class: "player_id"
+      = button_tag class: "btn btn-primary btn-small", type: "submit" do
         .fa.fa-search.lens
         .fa.fa-spinner.fa-pulse.loading style="display:none;"
 
   = form_tag search_by_team_path, method: :get, class: "search_by_team", style: "display:none;" do
-    .form-group
-      = text_field_tag :team_name, "", placeholder: t(".type_team_name"), class: "form-control"
-      = hidden_field_tag :team_id
-      = button_tag class: "btn btn-empty", type: "submit" do
+    .form-group.team_details
+      = text_field_tag :team_name, "", placeholder: t(".type_team_name"), class: "form-control team_name"
+      = hidden_field_tag :team_id, "", class: "team_id"
+      = button_tag class: "btn btn-primary btn-small", type: "submit" do
         .fa.fa-search.lens
         .fa.fa-spinner.fa-pulse.loading style="display:none;"
 
   = link_to t(".head_to_head"), advanced_search_path, style: "font-size:11px;"
-  
-  
 
 javascript:
   $(document).ready(function () {
@@ -26,79 +24,5 @@ javascript:
       $(".search_by_player").toggle();
       $(".search_by_team").toggle();
       e.preventDefault();
-    });
-    
-    /* Player name autocomplete */
-    $("#player_name").autocomplete({
-      source: function (request, response) {
-        $.getJSON("/search_by_player", {
-          name: request.term,
-        }, response );
-      },
-      minLength: 2,
-      select: function (event, ui) {
-        $("#player_id").val(ui.item.id);
-      },
-      search: function () {
-        $(this).closest(".form-group").find(".lens").hide();
-        $(this).closest(".form-group").find(".loading").show();
-      },
-      open: function () {
-        $(this).closest(".form-group").find(".lens").show();
-        $(this).closest(".form-group").find(".loading").hide();
-      },
-      response: function(event, ui) {
-        if (!ui.content.length) {
-          var noResult = { value: "no-results" };
-          ui.content.push(noResult);
-        }
-      }
-    })
-    .each(function (i) {
-      $(this).data("ui-autocomplete")._renderItem = function(ul, item) {
-        if (item.value == "no-results") {
-          return $( "<li> ").append("<span class='padder'>#{t('no_results')}</span>").appendTo(ul);
-        }
-        return $( "<li>" )
-          .append( "<a> <span style='display:inline-block;' class='flag flag-" + item.country_code + "'></span> <b>" + item.name + "</b>, " + item.full_name + " (" + item.birthday + ")" + "</a>" )
-          .appendTo( ul );
-      };
-    });
-    
-    /* Team name autocomplete */
-    $("#team_name").autocomplete({
-      source: function (request, response) {
-        $.getJSON("/teams/search", {
-          name: request.term,
-        }, response );
-      },
-      minLength: 2,
-      select: function (event, ui) {
-        $("#team_id").val(ui.item.id);                
-      },
-      search: function () {
-        $(this).closest(".form-group").find(".lens").hide();
-        $(this).closest(".form-group").find(".loading").show();
-      },
-      open: function () {
-        $(this).closest(".form-group").find(".lens").show();
-        $(this).closest(".form-group").find(".loading").hide();
-      },
-      response: function(event, ui) {
-        if (!ui.content.length) {
-          var noResult = { value: "no-results" };
-          ui.content.push(noResult);
-        }
-      } 
-    })
-    .each(function (i) {
-      $(this).data("ui-autocomplete")._renderItem = function(ul, item) {
-        if (item.value == "no-results") {
-          return $( "<li> ").append("<span class='padder'>#{t('no_results')}</span>").appendTo(ul);
-        }
-        return $( "<li>" )
-          .append( "<a> <img src='" + item.logo_mini + "'></img> " + item.name + "</a>" )
-          .appendTo( ul );
-      };
     });
   });
