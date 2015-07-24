@@ -9,7 +9,7 @@ h4 = t(".head_to_head")
 	    .logo.blank.m-b
 	      img style="display:none;"
 	    = label_tag :team_one_name, t(".team_one_name")	      
-    	= text_field_tag :team_one_name, "", placeholder: t("shared.search.type_team_name"), class: "team_name"
+    	= text_field_tag :team_one_name, "", placeholder: t("shared.search.type_team_name"), class: "team_name autocomplete"
     	= hidden_field_tag :team_one_id, "", class: "team_id"
         i.fa.fa-spinner.fa-pulse.loading.m-l-xs style="display:none;"
 
@@ -17,7 +17,7 @@ h4 = t(".head_to_head")
 	    .logo.blank.m-b
 	      img style="display:none;"
 	    = label_tag :team_two_name, t(".team_two_name")
-	    = text_field_tag :team_two_name, "", placeholder: t("shared.search.type_team_name"), class: "team_name"
+	    = text_field_tag :team_two_name, "", placeholder: t("shared.search.type_team_name"), class: "team_name autocomplete"
 	    = hidden_field_tag :team_two_id, "", class: "team_id"
         i.fa.fa-spinner.fa-pulse.loading.m-l-xs style="display:none;"
 

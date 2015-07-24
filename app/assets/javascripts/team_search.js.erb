@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $(".team_name").autocomplete({
+  $(".team_name.autocomplete").autocomplete({
     source: function (request, response) {
       $.getJSON("/teams/search", {
         name: request.term,
