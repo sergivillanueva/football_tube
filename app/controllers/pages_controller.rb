@@ -1,7 +1,7 @@
 class PagesController < ApplicationController
   
   def home
-    @last_match_with_video = Video.last.match
+    @last_match_with_video = Video.last.try(:match)
     @best_matches = Match.joins("LEFT JOIN rating_caches ON (matches.id = rating_caches.cacheable_id) AND (rating_caches.cacheable_type = 'Match')").order("rating_caches.avg DESC, #{Rails.env.production? ? 'RAND()' : 'RANDOM()'}").limit(15).decorate
 
     @matches_count = Match.count
