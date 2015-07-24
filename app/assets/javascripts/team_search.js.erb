@@ -43,7 +43,7 @@ $(document).ready(function () {
         return $( "<li> ").append("<span class='padder'><%= I18n.t('no_results') %></span>").appendTo(ul);
       }
       return $( "<li>" )
-        .append( "<a> <img src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
+        .append( "<a> <img class='m-r-xs' src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
         .appendTo( ul );
     };
   });
