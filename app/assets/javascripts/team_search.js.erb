@@ -17,7 +17,7 @@ $(document).ready(function () {
         scoreLogoElement = $(scoreLogoElement).find(".away_team_logo img");
       }
 
-      $(logoElement).hide().attr("src", ui.item.logo).fadeIn();
+      $(logoElement).hide().attr("src", ui.item.logo_medium).fadeIn();
       $(scoreLogoElement).hide().attr("src", ui.item.logo_thumb).fadeIn();
 
       $(this).closest(".team_details").find(".team_id").val(ui.item.id);
