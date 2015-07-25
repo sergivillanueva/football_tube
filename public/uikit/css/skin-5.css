@@ -2023,6 +2023,10 @@ input[type="checkbox"] {
   }
 }
 
+.hnav .navbar-nav ul.ul-toggle > li.active .toggler {
+  transform: rotate(45deg);
+}
+
 /* Mega Menu
 .............................. */
 .hnav .has-mega-menu {
