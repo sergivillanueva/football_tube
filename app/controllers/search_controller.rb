@@ -1,7 +1,6 @@
 class SearchController < ApplicationController
   before_action :check_player_search_term, only: :search_by_player
   before_action :check_team_search_term, only: :search_by_team
-  before_action :check_competition_search_term, only: :search_by_competition
   before_action :check_head_to_head_params, only: :search_head_to_head
 
   def advanced_search
@@ -62,11 +61,6 @@ class SearchController < ApplicationController
     #render :search_by_team
   end
 
-  def search_by_competition
-    @term = Competition.find(params[:competition_id]).name
-    @matches = Match.where(competition_id: params[:competition_id]).order("playing_date").decorate
-  end
-
   private
 
   def check_player_search_term
@@ -75,10 +69,6 @@ class SearchController < ApplicationController
 
   def check_team_search_term
     redirect_to root_path unless params[:team_id].present? || params[:team_name].present? || params[:name].present?
-  end
-
-  def check_competition_search_term
-    redirect_to root_path unless params[:competition_id].present?
   end
 
   def check_head_to_head_params

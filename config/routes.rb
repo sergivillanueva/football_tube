@@ -19,7 +19,6 @@ FootballTube::Application.routes.draw do
 
   get "search_by_player" => "search#search_by_player"
   get "search_by_team" => "search#search_by_team"
-  get "search_by_competition" => "search#search_by_competition"
   get "search_head_to_head" => "search#search_head_to_head"
   get "advanced_search" => "search#advanced_search", as: :advanced_search
   

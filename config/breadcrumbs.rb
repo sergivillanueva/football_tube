@@ -10,7 +10,7 @@ crumb :matches do
 end
 
 crumb :competition do |competition|
-	link "#{competition.name} matches", search_by_competition_path(competition_id: competition.id)
+	link "#{competition.name} matches", competition
 end
 
 crumb :advanced_search do
