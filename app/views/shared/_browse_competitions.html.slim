@@ -9,7 +9,7 @@
             = t("competitions.zone.#{zone}")
             ul.links
               - @national_teams_competitions[zone].each do |competition|
-                li = link_to competition.name, search_by_competition_path(competition_id: competition.id)
+                li = link_to competition.name, competition
     
       
     - if @international_competitions.present?                
@@ -20,7 +20,7 @@
             - if @international_competitions[zone].present?
               li = t("competitions.zone.#{zone}")
               - @international_competitions[zone].each do |competition|
-                li = link_to competition.name, search_by_competition_path(competition_id: competition.id)
+                li = link_to competition.name, competition
 
     - if @domestic_competitions.present?
       .col-md-3
@@ -36,12 +36,12 @@
                     ul.links style="display:none;"
                       - competitions[1].each do |c|
                         li 
-                          = link_to c.name, search_by_competition_path(competition_id: c.id)
+                          = link_to c.name, c
 
     - if @friendly.present?
       .col-md-3
         h5 = t("competitions.scope.others")
         ul.links
-          li = link_to t("competitions.kind.friendly"), search_by_competition_path(competition_id: @friendly.first.id)
+          li = link_to t("competitions.kind.friendly"), @friendly.first
   </div>
 </div>
