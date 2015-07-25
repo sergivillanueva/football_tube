@@ -42,7 +42,7 @@ class TeamsController < ApplicationController
   def show
     @team = Team.friendly.find params[:id]
     @term = @team.name #params[:term].present? ? params[:term] : Team.find(params[:team_id]).name # there is no team_name param as it is a straight search by id
-    @matches = Match.where("home_team_id = ? OR away_team_id = ?", params[:team_id], params[:team_id])
+    @matches = @team.matches
     if params[:from_year].present? && params[:to_year].present?
       seasons = (params[:from_year]..params[:to_year]).to_a.map{|year| [year, "#{year}-#{year.to_i + 1}"]}.flatten.prepend("#{params[:from_year].to_i - 1}-#{params[:from_year]}" )
       @matches = @matches.where(season: seasons)
