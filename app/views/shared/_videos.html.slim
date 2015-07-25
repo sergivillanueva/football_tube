@@ -32,3 +32,23 @@
         playlist: #{raw videos.map{|v| { image: "#{preview_image_match_path(match)}", file: v.source_file.url}}.to_json}
       });
     });
+
+/ Increment visualizations counter
+
+javascript:
+  $(document).ready(function(){
+    var played = false; //patch to overcome jwplayer onPlay twice-call bug
+    jwplayer().onPlay(function() {
+      if (!played) {
+        console.log("PLAY");
+        $.ajax({
+          url: "#{increment_visualizations_counter_match_path(@match)}",
+          type: "post",
+          success: function (e) {
+            console.log("COUNTED!")
+          }
+        });
+      }
+      played = true;
+    });
+  });

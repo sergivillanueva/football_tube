@@ -148,17 +148,3 @@ javascript:
 
 - if match.videos.any?
   = render "shared/videos", { match: match, videos: match.videos }
-
-  javascript:
-    $(document).ready(function(){
-      jwplayer().onPlay(function() {
-        console.log("PLAY");
-        $.ajax({
-          url: "#{increment_visualizations_counter_match_path(@match)}",
-          type: "post",
-          success: function (e) {
-            console.log("COUNTED!")
-          }
-        });
-      });
-    });
