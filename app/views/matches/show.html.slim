@@ -54,7 +54,7 @@
                       
     - if match.object.competition.present?
       .competition
-        = "#{link_to match.competition_name, search_by_competition_path(competition_id: match.object.competition.id), title: match.competition_name} #{match.season}".html_safe
+        = "#{link_to match.competition_name, competition_path(match.object.competition), title: match.competition_name} #{match.season}".html_safe
 
     .stage
       = match.stage

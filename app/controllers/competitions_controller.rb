@@ -6,6 +6,13 @@ class CompetitionsController < ApplicationController
     competitions = Competition.where("name like '%#{params[:name]}%'")
     render json: competitions.to_json
   end
+
+  def show
+    @competition = Competition.friendly.find params[:id]
+    @term = @competition.name
+    @matches = @competition.matches.order("playing_date").decorate
+    render "search/search_by_competition"
+  end
   
   def index
     @competitions = Competition.order("name")
