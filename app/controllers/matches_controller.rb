@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
   decorates_assigned :match
-  before_action :authenticate_user!, except: [:show, :preview_image]
+  before_action :authenticate_user!, except: [:show, :preview_image, :increment_visualizations_counter]
   before_filter :check_admin_role, only: :index  
 
   def new
