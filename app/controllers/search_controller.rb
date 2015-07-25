@@ -26,8 +26,14 @@ class SearchController < ApplicationController
     if request.xhr?
       render(json: @players.to_json) && return
     else
-      @players = @players.decorate
-      render(:player_results) && return
+      #Don't bother user if there is 1 result: go straight to this one
+      if @players.size == 1
+        redirect_to @players.first
+        return
+      else
+        @players = @players.decorate
+        render(:player_results) && return
+      end
     end
     
     #render :search_by_player
@@ -43,8 +49,14 @@ class SearchController < ApplicationController
     if request.xhr?
       render(json: @teams.to_json) && return
     else
-      @teams = @teams.decorate
-      render(:team_results) && return
+      #Don't bother user if there is 1 result: go straight to this one
+      if @teams.size == 1
+        redirect_to @teams.first
+        return
+      else
+        @teams = @teams.decorate
+        render(:team_results) && return
+      end
     end
     
     #render :search_by_team
