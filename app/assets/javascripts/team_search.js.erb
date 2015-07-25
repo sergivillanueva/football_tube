@@ -21,6 +21,10 @@ $(document).ready(function () {
       $(scoreLogoElement).hide().attr("src", ui.item.logo_thumb).fadeIn();
 
       $(this).closest(".team_details").find(".team_id").val(ui.item.id);
+
+      if ($(this).data("link-results")) {
+        window.location.href = '/teams/' + ui.item.slug;
+      }
     },
     search: function () {
       $(this).closest(".form-group").find(".lens").hide();

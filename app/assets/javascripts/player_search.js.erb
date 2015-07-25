@@ -7,7 +7,11 @@ $(document).ready(function () {
     },
     minLength: 2,
     select: function(event, ui) {
-      $(this).closest(".player").find(".player_id").val(ui.item.id);    
+      $(this).closest(".player").find(".player_id").val(ui.item.id);
+      
+      if ($(this).data("link-results")) {
+        window.location.href = '/players/' + ui.item.slug;
+      }    
     },
     search: function () {
       $(this).closest(".form-group").find(".lens").hide();
