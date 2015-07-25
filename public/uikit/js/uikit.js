@@ -54,7 +54,7 @@ var scripts = [
   "js/jquery-scrollto.js",
   "js/jquery.prettyPhoto.js",
   "js/wow.min.js",
-  //"js/theme.js",
+  "js/theme.js",
   //"js/style-switcher.js",
 ];
 
