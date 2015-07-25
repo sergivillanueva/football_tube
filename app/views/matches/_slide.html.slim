@@ -1,3 +1,4 @@
 .slide
-	= link_to match, title: match.title do
-	  img src="#{preview_image_match_path(match)}" style="width:100%;"
+  = link_to match, title: match.title do
+    img src="#{preview_image_match_path(match)}" style="width:100%;"
+    .m-t-xs.competition = "#{match.competition_name} #{match.season}"

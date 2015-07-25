@@ -5,13 +5,15 @@
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= jwplayer_assets %>
-  <!-- DataTables CSS -->
-  <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css">
-  <!-- DataTables -->
-  <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
+
+  <% if controller.action_name == "index" && %w(players competitions teams matches).include?(controller.controller_name) %>
+    <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
+  <% end %>
+
   <%= favicon_link_tag '/favicon.ico' %>
   <%= csrf_meta_tags %>
-  
+
   <script src="/uikit/js/uikit.js"></script>
 
   <link href="/uikit/css/skin-5.css" rel="stylesheet">
@@ -30,7 +32,7 @@
   <link href='http://fonts.googleapis.com/css?family=Roboto&subset=cyrillic,cyrillic-ext,latin,greek-ext,greek,latin-ext' rel='stylesheet' type='text/css'>
 
 </head>
-<body class="preload tile-1-bg">
+<body class="preload">
   <div class="page-wrapper shadow">
     <header class="header-block">
       <%= render "shared/header" %>    

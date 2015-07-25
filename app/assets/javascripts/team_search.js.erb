@@ -1,5 +1,5 @@
 $(document).ready(function () {
-  $(".team_name").autocomplete({
+  $(".team_name.autocomplete").autocomplete({
     source: function (request, response) {
       $.getJSON("/search_by_team", {
         name: request.term,
@@ -17,7 +17,7 @@ $(document).ready(function () {
         scoreLogoElement = $(scoreLogoElement).find(".away_team_logo img");
       }
 
-      $(logoElement).hide().attr("src", ui.item.logo).fadeIn();
+      $(logoElement).hide().attr("src", ui.item.logo_medium).fadeIn();
       $(scoreLogoElement).hide().attr("src", ui.item.logo_thumb).fadeIn();
 
       $(this).closest(".team_details").find(".team_id").val(ui.item.id);
@@ -42,14 +42,15 @@ $(document).ready(function () {
       if (item.value == "no-results") {
         return $( "<li> ").append("<span class='padder'><%= I18n.t('no_results') %></span>").appendTo(ul);
       }
+
       if ($(this.element).data("link-results")) {
         return $( "<li>" )
-          .append( "<a href='/teams/" + item.slug + "'> <img src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
+          .append( "<a href='/teams/" + item.slug + "'> <img class='m-r-xs' src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
           .appendTo( ul );
       }
       else {
        return $( "<li>" )
-          .append( "<a> <img src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
+          .append( "<a> <img class='m-r-xs' src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
           .appendTo( ul ); 
       }
     };

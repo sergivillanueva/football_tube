@@ -14,10 +14,10 @@ class Team < ActiveRecord::Base
       id: self.id,
       value: self.name,
       name: self.name,
-      logo: self.logo.url,
       logo_mini: self.logo.mini.url,
       logo_thumb: self.logo.thumb.url,
-      slug: self.slug
+      slug: self.slug,
+      logo_medium: self.logo.medium.url
     }
   end
 
