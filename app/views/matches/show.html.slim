@@ -35,7 +35,7 @@
           .image
             = match.object.home_team.decorate.logo "medium"
         .team_name.m-t
-          = link_to search_by_team_path(team_id: match.object.home_team_id), title: match.object.home_team.name do
+          = link_to team_path(match.object.home_team), title: match.object.home_team.name do
             - if match.object.competition.present? && match.object.competition.scope == "international"
               = match.object.home_team.decorate.name_with_flag
             - else
@@ -46,7 +46,7 @@
           .image
             = match.object.away_team.decorate.logo "medium"
         .team_name.m-t
-          = link_to search_by_team_path(team_id: match.object.away_team_id), title: match.object.away_team.name do
+          = link_to team_path(match.object.away_team), title: match.object.away_team.name do
             - if match.object.competition.present? && match.object.competition.scope == "international"
               = match.object.away_team.decorate.name_with_flag
             - else
