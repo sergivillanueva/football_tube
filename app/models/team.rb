@@ -5,6 +5,9 @@ class Team < ActiveRecord::Base
   belongs_to :country
   
   mount_uploader :logo, LogoUploader
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
   
   def as_json(options={})
     { 
@@ -13,7 +16,8 @@ class Team < ActiveRecord::Base
       name: self.name,
       logo: self.logo.url,
       logo_mini: self.logo.mini.url,
-      logo_thumb: self.logo.thumb.url
+      logo_thumb: self.logo.thumb.url,
+      slug: self.slug
     }
   end
 
