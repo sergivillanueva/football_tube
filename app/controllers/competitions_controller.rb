@@ -1,5 +1,5 @@
 class CompetitionsController < ApplicationController
-  before_action :authenticate_user!
+  before_action :authenticate_user!, except: :show
   before_action :check_admin_role, only: :index
 
   def search

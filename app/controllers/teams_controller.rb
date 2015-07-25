@@ -1,7 +1,6 @@
 class TeamsController < ApplicationController
-  before_action :authenticate_user!#, except: :search
+  before_action :authenticate_user!, except: :show
   before_action :check_admin_role, only: :index
-  #before_action :check_search_term, only: :search
 
   def new
     @team = Team.new
@@ -57,7 +56,4 @@ class TeamsController < ApplicationController
     params.require(:team).permit(:name, :nick_names, :logo, :country_id)
   end
 
-  def check_search_term
-    render(nothing: true) unless params[:name].present?
-  end
 end
