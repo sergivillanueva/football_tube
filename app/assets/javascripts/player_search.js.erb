@@ -29,9 +29,17 @@ $(document).ready(function () {
       if (item.value == "no-results") {
         return $( "<li> ").append("<span class='padder'><%= I18n.t('no_results') %></span>").appendTo(ul);
       }
-      return $( "<li>" )
-        .append( "<a> <span style='display:inline-block;' class='flag flag-" + item.country_code + "'></span> <b>" + item.name + "</b>, " + item.full_name + " (" + item.birthday + ")" + "</a>" )
-        .appendTo( ul );
+
+      if ($(this.element).data("link-results")) {
+        return $( "<li>" )
+          .append( "<a href='/players/" + item.slug + "'> <span style='display:inline-block;' class='flag flag-" + item.country_code + "'></span> <b>" + item.name + "</b>, " + item.full_name + " (" + item.birthday + ")" + "</a>" )
+          .appendTo( ul );
+      }
+      else {
+        return $( "<li>" )
+          .append( "<a> <span style='display:inline-block;' class='flag flag-" + item.country_code + "'></span> <b>" + item.name + "</b>, " + item.full_name + " (" + item.birthday + ")" + "</a>" )
+          .appendTo( ul );
+      }
     };
   });
 });

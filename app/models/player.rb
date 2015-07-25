@@ -26,7 +26,8 @@ class Player < ActiveRecord::Base
       name: self.name,
       country_code: self.country.try(:code),
       birthday: self.birthday,
-      id: self.id
+      id: self.id,
+      slug: self.slug
     }
   end
   

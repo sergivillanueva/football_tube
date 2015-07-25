@@ -2,7 +2,7 @@
   = select_tag "search_mode", "<option value='by_player'>#{t(".search_by_player")}</option><option value='by_team'>#{t(".search_by_team")}</option>".html_safe, style: "margin-bottom:5px;"
   = form_tag search_by_player_path, method: :get, class: "search_by_player" do
     .form-group.player
-      = text_field_tag :player_name, "", placeholder: t(".type_player_name"), class: "form-control player_name", style: "z-index:9999;"
+      = text_field_tag :player_name, "", placeholder: t(".type_player_name"), class: "form-control player_name", style: "z-index:9999;", data: { :"link-results" => true }
       = hidden_field_tag :player_id, "", class: "player_id"
       = button_tag class: "btn btn-primary btn-small", type: "submit" do
         .fa.fa-search.lens
@@ -10,7 +10,7 @@
 
   = form_tag search_by_team_path, method: :get, class: "search_by_team", style: "display:none;" do
     .form-group.team_details
-      = text_field_tag :team_name, "", placeholder: t(".type_team_name"), class: "form-control team_name"
+      = text_field_tag :team_name, "", placeholder: t(".type_team_name"), class: "form-control team_name", data: { :"link-results" => true }
       = hidden_field_tag :team_id, "", class: "team_id"
       = button_tag class: "btn btn-primary btn-small", type: "submit" do
         .fa.fa-search.lens

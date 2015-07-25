@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $(".team_name").autocomplete({
     source: function (request, response) {
-      $.getJSON("/teams/search", {
+      $.getJSON("/search_by_team", {
         name: request.term,
       }, response );
     },
@@ -42,9 +42,16 @@ $(document).ready(function () {
       if (item.value == "no-results") {
         return $( "<li> ").append("<span class='padder'><%= I18n.t('no_results') %></span>").appendTo(ul);
       }
-      return $( "<li>" )
-        .append( "<a> <img src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
-        .appendTo( ul );
+      if ($(this.element).data("link-results")) {
+        return $( "<li>" )
+          .append( "<a href='/teams/" + item.slug + "'> <img src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
+          .appendTo( ul );
+      }
+      else {
+       return $( "<li>" )
+          .append( "<a> <img src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
+          .appendTo( ul ); 
+      }
     };
   });
 });

@@ -1,7 +1,7 @@
 class TeamsController < ApplicationController
-  before_action :authenticate_user!, except: :search
+  before_action :authenticate_user!#, except: :search
   before_action :check_admin_role, only: :index
-  before_action :check_search_term, only: :search
+  #before_action :check_search_term, only: :search
 
   def new
     @team = Team.new
@@ -17,11 +17,11 @@ class TeamsController < ApplicationController
   end
 
   def edit
-    @team = Team.find params[:id]
+    @team = Team.friendly.find params[:id]
   end  
 
   def update
-    @team = Team.find params[:id]
+    @team = Team.friendly.find params[:id]
     if @team.update_attributes(team_params)
       redirect_to teams_path
     else
@@ -39,12 +39,18 @@ class TeamsController < ApplicationController
     end
   end
 
-  #TODO move this to search controller and use full text search like on players  
-  def search
-    teams = Team.where("name like ? OR nick_names like ?", "%#{params[:name]}%", "%#{params[:name]}%")
-    render json: teams.to_json
+  def show
+    @team = Team.friendly.find params[:id]
+    @term = @team.name #params[:term].present? ? params[:term] : Team.find(params[:team_id]).name # there is no team_name param as it is a straight search by id
+    @matches = Match.where("home_team_id = ? OR away_team_id = ?", params[:team_id], params[:team_id])
+    if params[:from_year].present? && params[:to_year].present?
+      seasons = (params[:from_year]..params[:to_year]).to_a.map{|year| [year, "#{year}-#{year.to_i + 1}"]}.flatten.prepend("#{params[:from_year].to_i - 1}-#{params[:from_year]}" )
+      @matches = @matches.where(season: seasons)
+    end
+    @matches = @matches.order("playing_date").decorate
+    render "search/search_by_team"
   end
-  
+
   private
   
   def team_params

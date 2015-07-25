@@ -17,50 +17,37 @@ class SearchController < ApplicationController
     #TODO unify param name
     @term = params[:player_name] || params[:name]
 
-    if params[:player_id].present?
-      @term = params[:term].present? ? params[:term] : Player.find(params[:player_id]).name # there is no player_name param as it is a straight search by id
-      @player_participations = PlayerParticipation.joins(:match).where(player_id: params[:player_id])
-      if params[:from_year].present? && params[:to_year].present?
-        seasons = (params[:from_year]..params[:to_year]).to_a.map{|year| [year, "#{year}-#{year.to_i + 1}"]}.flatten.prepend("#{params[:from_year].to_i - 1}-#{params[:from_year]}" )
-        @player_participations = @player_participations.where(season: seasons)
-      end
-      @player_participations = @player_participations.order("matches.playing_date").decorate
+    words = @term.split
+    words_for_full_text_search = words.map{|w| "+#{w}*"}.join(" ")
+
+    #http://stackoverflow.com/questions/1039512/mysql-full-text-search-in-ruby-on-rails
+    @players = Player.all #Player.where("MATCH(name, full_name) AGAINST (? IN BOOLEAN MODE)", words_for_full_text_search)
+
+    if request.xhr?
+      render(json: @players.to_json) && return
     else
-      words = @term.split
-      words_for_full_text_search = words.map{|w| "+#{w}*"}.join(" ")
-
-      #http://stackoverflow.com/questions/1039512/mysql-full-text-search-in-ruby-on-rails
-      @players = Player.where("MATCH(name, full_name) AGAINST (? IN BOOLEAN MODE)", words_for_full_text_search)
-
-      if request.xhr?
-        render(json: @players.to_json) && return
-      else
-        @players = @players.decorate
-        render(:player_results) && return
-      end
+      @players = @players.decorate
+      render(:player_results) && return
     end
     
-    render :search_by_player
+    #render :search_by_player
   end
   
   def search_by_team
-    @term = params[:team_name]
+    #TODO unify param name
+    @term = params[:team_name] || params[:name]
+    
+    #TODO use full text search like on players  
+    @teams = Team.where("name like ? OR nick_names like ?", "%#{@term}%", "%#{@term}%")
 
-    if params[:team_id].present?
-      @term = params[:term].present? ? params[:term] : Team.find(params[:team_id]).name # there is no team_name param as it is a straight search by id
-      @matches = Match.where("home_team_id = ? OR away_team_id = ?", params[:team_id], params[:team_id])
-      if params[:from_year].present? && params[:to_year].present?
-        seasons = (params[:from_year]..params[:to_year]).to_a.map{|year| [year, "#{year}-#{year.to_i + 1}"]}.flatten.prepend("#{params[:from_year].to_i - 1}-#{params[:from_year]}" )
-        @matches = @matches.where(season: seasons)
-      end
-      @matches = @matches.order("playing_date").decorate
+    if request.xhr?
+      render(json: @teams.to_json) && return
     else
-      @teams = Team.where("name like ? OR nick_names like ?", "%#{params[:team_name]}%", "%#{params[:team_name]}%").decorate
-      render :team_results
-      return
+      @teams = @teams.decorate
+      render(:team_results) && return
     end
     
-    render :search_by_team
+    #render :search_by_team
   end
 
   def search_by_competition
@@ -75,7 +62,7 @@ class SearchController < ApplicationController
   end
 
   def check_team_search_term
-    redirect_to root_path unless params[:team_id].present? || params[:team_name].present?
+    redirect_to root_path unless params[:team_id].present? || params[:team_name].present? || params[:name].present?
   end
 
   def check_competition_search_term
