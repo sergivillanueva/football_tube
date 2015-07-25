@@ -4,7 +4,10 @@ class Competition < ActiveRecord::Base
 
   scope :completed, -> { where.not(kind: nil) }
   
-  validates :name, presence: true  
+  validates :name, presence: true
+
+  extend FriendlyId
+  friendly_id :name, use: :slugged
   
   def as_json(options={})
     { 
