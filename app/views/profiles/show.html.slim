@@ -20,7 +20,7 @@ h3
     .favourite_team
       label = t("activerecord.attributes.user.favourite_team_name")
       - if @user.favourite_team.present?
-        = link_to search_by_team_path(team_id: @user.favourite_team_id), title: @user.favourite_team.name do
+        = link_to @user.favourite_team, title: @user.favourite_team.name do
           = @user.favourite_team.decorate.logo "thumb"
       - else
          = t(".add_your_favourite_team", url: edit_user_registration_path).html_safe
