@@ -1,6 +1,6 @@
 module MatchesHelper
   def languages_for_select
-  	%w(no_commentary english russian swedish french spanish german catalan dutch italian polish serbian portuguese romanian basque galician japanese turkish).map do |l|
+  	%w(no_commentary english russian swedish french spanish german catalan dutch italian polish serbian portuguese romanian basque galician japanese turkish thai valencian).map do |l|
   	  [I18n.t("languages.#{l}"), l]
   	end.sort_by(&:first)
   end
