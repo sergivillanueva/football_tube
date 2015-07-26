@@ -57,7 +57,7 @@ javascript:
 
 javascript:
   $(document).ready(function(){
-    $(".toggle_player_size").on("click", function () {
+    $(".toggle_player_size").on("click", function (e) {
       if(jwplayer("jwplayer").getWidth() == 640) { 
         jwplayer("jwplayer").resize(800,450);
         $("#match .video").addClass("medium_size");
@@ -66,5 +66,6 @@ javascript:
         jwplayer("jwplayer").resize(640,360);
         $("#match .video").removeClass("medium_size");
       }
+      e.preventDefault();
     });
   });

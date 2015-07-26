@@ -63,6 +63,7 @@ en:
       reserves: Substitutes
       no_results: No results
       uploaded_by: Uploaded by
+      toggle_player_size: Toggle player size
     new:
       new_match: New match
     edit:
