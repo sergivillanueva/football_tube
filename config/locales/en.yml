@@ -67,12 +67,14 @@ en:
       new_match: New match
     edit:
       edit_match: Edit match
+    player_participation_fields:
+      team_number: Team number
     form_parts:
       step_3:
         home_team_line_up: Home team line up
         away_team_line_up: Away team line up
-        add_reserves: Add substitutes
-        add_more_reserves: Add more substitutes
+        add_reserves: Substitutes
+        add_more_reserves: More substitutes
         coach: Coach
         reserves: Substitutes
       step_4:

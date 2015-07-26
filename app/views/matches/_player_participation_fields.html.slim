@@ -1,0 +1,14 @@
+.row.m-b-xs.player class=css_class
+  = g.input :player_name, input_html: { class: "player_name", style: "width:100%;", value: g.object.player.present? ? g.object.player.name : "" }, label: false, placeholder: t("shared.search.type_player_name"), wrapper_html: { class: "col-xs-6" }, disabled: g.object.player_id.present? ? true : false
+
+  .col-xs-1
+    i.fa.fa-spinner.fa-pulse.loading style="display:none;"
+
+  - unless g.object.role == "coach"
+    = g.input :team_number, label: false, placeholder: t(".team_number"), wrapper_html: { class: "col-xs-2" }, input_html: { style: "width:100%;"}, disabled: g.object.player_id.present? ? true : false
+
+  = link_to t("delete"), "#", class: "delete_player col-xs-2" if g.object.player_id.present? 
+
+  = g.input :side, as: :hidden
+  = g.input :role, as: :hidden
+  = g.input :player_id, as: :hidden, input_html: { class: "player_id" }
