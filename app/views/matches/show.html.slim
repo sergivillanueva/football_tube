@@ -40,10 +40,7 @@
             = match.object.home_team.decorate.logo "medium"
         .team_name.m-t
           = link_to match.object.home_team, title: match.object.home_team.name do
-            - if match.object.competition.present? && match.object.competition.scope == "international"
-              = match.object.home_team.decorate.name_with_flag
-            - else
-              = match.object.home_team.decorate.name
+            = match.object.home_team.decorate.name
                   
       .col-xs-6.team itemscope="" itemprop="homeTeam" itemtype="http://schema.org/SportsTeam"
         .logo
@@ -51,10 +48,7 @@
             = match.object.away_team.decorate.logo "medium"
         .team_name.m-t
           = link_to match.object.away_team, title: match.object.away_team.name do
-            - if match.object.competition.present? && match.object.competition.scope == "international"
-              = match.object.away_team.decorate.name_with_flag
-            - else
-              = match.object.away_team.decorate.name    
+            = match.object.away_team.decorate.name    
                       
     - if match.object.competition.present?
       .competition
