@@ -13,11 +13,15 @@
       - else
         = image_tag src="fake_video.jpg", { style: "width:100%" }
 
-    .related_matches
-      h5 = t(".related_matches")
-      = render(partial: "related_match", collection: @related_matches, as: :match) || t(".no_results")
+    /
+      .related_matches
+        h5 = t(".related_matches")
+        = render(partial: "related_match", collection: @related_matches, as: :match) || t(".no_results")
   
   .description.m-t
+    p
+      = link_to t(".toggle_player_size"), "#", class: "toggle_player_size"
+
     p 
       span = t(".uploaded_by")
       - if match.object.user.present?

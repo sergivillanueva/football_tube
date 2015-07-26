@@ -6,7 +6,7 @@
       /* Video player */
       jwplayer("jwplayer").setup({
         height: "360",
-        width: "100%",
+        width: "640",
         image: "#{preview_image_match_path(match)}",
         flashplayer: "#{asset_path('flash.swf')}",
         advertising: {
@@ -23,7 +23,7 @@
       /* Video player */
       jwplayer("jwplayer").setup({
         height: "360",
-        width: "100%",
+        width: "640",
         flashplayer: "#{asset_path('flash.swf')}",
         advertising: {
           client: "vast",
@@ -50,5 +50,21 @@ javascript:
         });
       }
       played = true;
+    });
+  });
+
+/ Resizing player
+
+javascript:
+  $(document).ready(function(){
+    $(".toggle_player_size").on("click", function () {
+      if(jwplayer("jwplayer").getWidth() == 640) { 
+        jwplayer("jwplayer").resize(800,450);
+        $("#match .video").addClass("medium_size");
+      }
+      else {
+        jwplayer("jwplayer").resize(640,360);
+        $("#match .video").removeClass("medium_size");
+      }
     });
   });
