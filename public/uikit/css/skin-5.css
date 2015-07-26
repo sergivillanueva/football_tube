@@ -3109,7 +3109,8 @@ body {
   position: relative;
 }
 .main-header .brand-col {
-  width: 25%;
+  /*width: 25%;*/
+  width: 39%;
   margin: 0 auto;
   text-align: center;
   padding: 40px 0;
@@ -3123,7 +3124,8 @@ body {
   height: auto;
 }
 .main-header .left-col, .main-header .right-col {
-  width: 37.5%;
+  /*width: 37.5%;*/
+  width: 30.5%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -3136,6 +3138,23 @@ body {
   right: 0;
   padding-left: 30px;
 }
+.motto {
+  margin-bottom: 8px;
+  text-align: left;
+}
+.motto .text {
+  background: black;
+  color: white;
+  font-size: 28px;
+  font-weight: bold;
+  padding: 5px 45px;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+.motto .text.green {
+  color: #63b032;
+}
+
 @media (max-width: 767px) {
   .main-header .brand-col {
     width: auto;
