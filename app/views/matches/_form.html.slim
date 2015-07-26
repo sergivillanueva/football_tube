@@ -38,9 +38,16 @@ javascript:
     /* Add reserves */
     $("#match_form").on("click", ".add_reserves", function (e) {
       $(this).next().fadeIn();
+      $(this).closest(".reserves").find(".player.reserve.extra").hide();
       $(this).remove();
       e.preventDefault();
     });
+
+    $("#match_form").on("click", ".add_more_reserves", function (e) {
+      $(this).closest(".reserves").find(".player.reserve.extra").show();
+      $(this).remove();
+      e.preventDefault();
+    });    
 
     /* Delete players */
     $("#match_form").on("click", ".delete_player", function (e) {

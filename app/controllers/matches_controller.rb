@@ -149,10 +149,10 @@ class MatchesController < ApplicationController
     (11 - @match.away_starters.count).times do
       @match.away_starters.build({ side: "away", role: "starter" })
     end
-    (6 - @match.home_reserves.count).times do
+    (11 - @match.home_reserves.count).times do
       @match.home_reserves.build({ side: "home", role: "reserve" })
     end
-    (6 - @match.away_reserves.count).times do
+    (11 - @match.away_reserves.count).times do
       @match.away_reserves.build({ side: "away", role: "reserve" })
     end
     @match.build_home_coach unless @match.home_coach.present?
