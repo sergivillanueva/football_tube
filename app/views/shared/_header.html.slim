@@ -10,8 +10,15 @@
       <div class="vcenter">
         <!-- v-centered -->               
         <div class="vcenter-this">
-          = link_to root_path do
-            = image_tag "logo.png", alt: "Footballia", title: "Footballia"
+          <div class="motto"><span class="text rotate-down">
+            = "about history"
+          </span></div>
+          <div class="motto"><span class="text rotate-up">
+            = "don't just read"
+          </span></div>
+          <div class="motto"><span class="text rotate-down green">
+            = "experience it!"
+          </span></div>
         </div>
         <!-- v-centered -->
       </div>
@@ -103,7 +110,7 @@
     <!-- /Right Col -->
     
     <!-- Left Col -->
-    <div class="left-col">
+    <div class="left-col" style="width:24%;">
     
       <!-- vcenter -->
       <div class="vcenter">
@@ -111,6 +118,10 @@
         <!-- v-centered -->               
         <div class="vcenter-this">
           
+          
+          = link_to root_path do
+            = image_tag "logo.png", alt: "Footballia", title: "Footballia", style: "max-width:100%;height:auto;display:inline-block;"
+
           = render "shared/search"
 
         </div>
