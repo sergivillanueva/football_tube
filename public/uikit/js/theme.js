@@ -61,12 +61,12 @@ $().ready(function() {
   $(window).scroll(function() {
     autoToggleNav();
 
-  });*/
+  });
   
   // rare moments when switching between screens
   $(window).resize(function() {
     autoToggleNav();
-  });
+  });*/
   
   // PRETTY PHOTO
   // -------------------------------------------------
