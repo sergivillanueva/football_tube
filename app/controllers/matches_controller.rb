@@ -1,6 +1,6 @@
 class MatchesController < ApplicationController
   decorates_assigned :match
-  before_action :authenticate_user!, except: [:show, :preview_image, :increment_visualizations_counter]
+  before_action :authenticate_user!, except: [:show, :preview_image, :mini_preview_image, :increment_visualizations_counter]
   before_filter :check_admin_role, only: :index  
 
   def new
@@ -90,6 +90,12 @@ class MatchesController < ApplicationController
   def preview_image
     @match = Match.friendly.find(params[:id])
     image = File.open(@match.preview_image, 'rb').read
+    send_data image, type: 'image/png', disposition: "inline"
+  end
+
+  def mini_preview_image
+    @match = Match.friendly.find(params[:id])
+    image = File.open(@match.mini_preview_image, 'rb').read
     send_data image, type: 'image/png', disposition: "inline"
   end
 
