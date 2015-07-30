@@ -57,7 +57,11 @@ class PreviewImageGenerator
     img.write away_team_path
 
     img = MiniMagick::Image.new image_path
-    img.run_command(:convert, "-size", @@size, "xc:#7EAE40", img.path)
+    img.run_command(:convert, "-size", @@size, "xc:transparent", img.path)
+    img = img.composite(MiniMagick::Image.open Rails.root.join('app', 'assets', 'images', 'grass.png')) do |c|
+      c.compose "Over"
+      c.geometry "+0+0"
+    end
     img = img.composite(MiniMagick::Image.open home_team_path) do |c|
       c.compose "Over"
       c.geometry "+0+0"
