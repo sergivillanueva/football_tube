@@ -1,15 +1,18 @@
 tr
-  td.playing_date
+  td.playing_date.hidden-xs
     = player_participation.match.playing_date
   td.match
-    = link_to player_participation.match.full_title, player_participation.match 
+    .hidden-xs
+      = link_to player_participation.match.full_title, player_participation.match
+    .hidden-md.hidden-lg
+      = link_to player_participation.match.title, player_participation.match
   td.competition
     = player_participation.match.competition_name
-  td.season
+  td.season.hidden-xs
     = player_participation.match.season
-  td.language
+  td.language.hidden-xs
     = player_participation.match.language
   - if !coach
-    td.role
+    td.role.hidden-xs
       = player_participation.role
     

@@ -19,7 +19,7 @@
         = render(partial: "related_match", collection: @related_matches, as: :match) || t(".no_results")
   
   .description.m-t
-    p
+    p.hidden-xs
       = link_to t(".toggle_player_size"), "#", class: "toggle_player_size btn btn-primary btn-sm"
 
     p 
