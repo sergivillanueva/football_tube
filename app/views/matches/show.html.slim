@@ -11,7 +11,7 @@
         = jwplayer
 
       - else
-        = image_tag src="fake_video.jpg", { style: "width:100%" }
+        = image_tag src=preview_image_match_path(match), { style: "width:100%" }
 
     /
       .related_matches
@@ -19,7 +19,7 @@
         = render(partial: "related_match", collection: @related_matches, as: :match) || t(".no_results")
   
   .description.m-t
-    p
+    p.hidden-xs
       = link_to t(".toggle_player_size"), "#", class: "toggle_player_size btn btn-primary btn-sm"
 
     p 
@@ -75,7 +75,7 @@
           = render partial: "goal", collection: match.goals.order(:minute)
       
     .players
-      table width="80%" style="margin:auto;"
+      table
         thead
         tbody
           tr.starters

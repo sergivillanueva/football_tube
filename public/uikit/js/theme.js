@@ -25,13 +25,13 @@ function escapeHtml(string) {
 
 // PRELOADER
 // -------------------------------------------------
-$(window).load(function() {
+/*$(window).load(function() {
   $('.page-preloader .anim').fadeOut(); 
   $('.page-preloader').delay(350).fadeOut();
   $('body').delay(350).queue(function() {
     $(this).removeClass("preload");
   });
-})
+})*/
 
 
 $().ready(function() {

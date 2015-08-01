@@ -2068,9 +2068,9 @@ input[type="checkbox"] {
   line-height: 3em;
   text-transform: capitalize;
   color: #666b76;
-  display: block;
+  /*display: block;
   padding: 0 15px;
-  font-size: 12px;
+  font-size: 12px;*/
 }
 .hnav .dropdown-menu.mega-menu .links > li:last-child > a {
   border: none;

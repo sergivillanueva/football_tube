@@ -5,14 +5,14 @@
   h4 = t("search.results", n: @matches.size, term: @term)
 - # TODO search by player name: use different search results views?
 
-table class="table table-striped table-condensed table-search"
+table class="table table-striped table-condensed table-search table-responsive"
   thead
     tr
-      th = t(".playing_date")
+      th.hidden-xs = t(".playing_date")
       th = t(".match")
       th = t(".competition")
-      th = t(".season")
-      th = t(".language")
+      th.hidden-xs = t(".season")
+      th.hidden-xs = t(".language")
       
   tbody
     = render partial: "search/match", collection: @matches

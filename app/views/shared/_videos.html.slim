@@ -5,8 +5,8 @@
     $(document).ready(function () {
       /* Video player */
       jwplayer("jwplayer").setup({
-        height: "360",
-        width: "640",
+        height: "100%",
+        width: "100%",
         image: "#{preview_image_match_path(match)}",
         flashplayer: "#{asset_path('flash.swf')}",
         advertising: {
@@ -22,8 +22,8 @@
     $(document).ready(function () {
       /* Video player */
       jwplayer("jwplayer").setup({
-        height: "360",
-        width: "640",
+        height: "100%",
+        width: "100%",
         flashplayer: "#{asset_path('flash.swf')}",
         advertising: {
           client: "vast",
@@ -58,7 +58,7 @@ javascript:
 javascript:
   $(document).ready(function(){
     $(".toggle_player_size").on("click", function (e) {
-      if(jwplayer("jwplayer").getWidth() == 640) { 
+      if ($(jwplayer("jwplayer").getContainer()).width() == 640) {
         jwplayer("jwplayer").resize(800,450);
         $("#match .video").addClass("medium_size");
       }

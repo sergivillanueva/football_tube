@@ -1,12 +1,4 @@
 #match
-  .video
-    width: 640px
-    height: 360px
-    /*float: left*/
-  .video.medium_size
-    margin: auto
-    width: 800px
-    height: 450px
   .related_matches
     width: 20%
     float: right
@@ -28,8 +20,11 @@
     text-align: center
     text-transform: uppercase 
   .details
-    width: 65%
+    width: 100%
     margin: 40px auto
+  @media (min-width: 768px)
+    .details
+      width: 65%
   .playing_date, .competition, .venue, .stage, .season, .rating
     text-align: center
   .rating
@@ -52,6 +47,12 @@
       text-align: right
     .name
       padding-left: 10px
+  .players > table
+    margin: auto
+    width: 100%
+  @media (min-width: 768px)
+    .players > table
+      width: 80%
 #match_form, #head_to_head_form
   label
     display: block

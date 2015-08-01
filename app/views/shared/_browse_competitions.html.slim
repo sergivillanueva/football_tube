@@ -29,7 +29,7 @@
           - %w(europe south_america concacaf).each do |zone|
             - if @domestic_competitions[zone].present?
               li = t("competitions.zone.#{zone}")
-              ul.ul-toggle.font-size-sm
+              ul.ul-toggle.font-size-sm.links.sub-menu
                 - @domestic_competitions[zone].group_by{|c| c.country.try(:name)}.each do |competitions|
                   li data-keep-open="true"
                     <a>#{competitions[0]}</a><i class="toggler ti ti-plus"></i> 

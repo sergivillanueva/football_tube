@@ -4,18 +4,19 @@
 - PLAYER_PELE_ID = 135
 - PLAYER_MESSI_ID = 4732
 
-.direct_search_links.m-t-lg.clearfix
-	/ - %w(maradona di_stefano cruyff pele messi clockwork_orange brazil_70 dream_team quinta_del_buitre sacchi_milan france_80s spain_08_12 el_clasico).each do |term|
+/ - %w(maradona di_stefano cruyff pele messi clockwork_orange brazil_70 dream_team quinta_del_buitre sacchi_milan france_80s spain_08_12 el_clasico).each do |term|
+.direct_search_links.m-t-lg.row
 	- [PLAYER_MARADONA_ID, PLAYER_DI_STEFANO_ID, PLAYER_CRUYFF_ID, PLAYER_PELE_ID, PLAYER_MESSI_ID].each do |player|
-	  .direct_search_link.pull-left
-	  	- player = Player.find player
-	  	- term = player.name.parameterize
-		  = link_to player, title: t(".#{term}") do
-		  	.m-b-xs = image_tag asset_path("direct_search/#{term}.jpg"), alt: t(".#{term}")
-		    .search_term = t(".#{term}")
-
-	- %w(clockwork_orange dream_team quinta_del_buitre).each do |term|
-		.direct_search_link.pull-left
-		  = link_to eval("search_for_#{term}_path"), title: t(".#{term}") do
-		  	.m-b-xs = image_tag asset_path("direct_search/#{term}.jpg"), alt: t(".#{term}")
-		    .search_term = t(".#{term}")
+	  .col-xs-12.col-md-3.m-b
+      .direct_search_link
+		  	- player = Player.find player
+		  	- term = player.name.parameterize
+			  = link_to player, title: t(".#{term}") do
+			  	.m-b-xs = image_tag asset_path("direct_search/#{term}.jpg"), alt: t(".#{term}")
+			    .search_term = t(".#{term}")
+  - %w(maradona di_stefano cruyff pele messi clockwork_orange dream_team quinta_del_buitre).each do |term|
+    .col-xs-12.col-md-3.m-b
+      .direct_search_link
+        = link_to eval("search_for_#{term}_path"), title: t(".#{term}") do
+          .m-b-xs = image_tag asset_path("direct_search/#{term}.jpg"), alt: t(".#{term}")
+          .search_term = t(".#{term}")

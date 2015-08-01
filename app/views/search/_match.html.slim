@@ -1,12 +1,15 @@
 tr
-  td.playing_date
+  td.playing_date.hidden-xs
     = match.playing_date
   td.match
-    = link_to match.full_title, match
+    .hidden-xs
+      = link_to match.full_title, match
+    .hidden-md.hidden-lg
+      = link_to match.title, match
   td.competition
     = match.competition_name
-  td.season
+  td.season.hidden-xs
     = match.season
-  td.language
+  td.language.hidden-xs
     = match.language
     
