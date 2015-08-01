@@ -26,12 +26,6 @@ FootballTube::Application.routes.draw do
 
   # Direct search routes
 
-  PLAYER_MARADONA_ID = 1685
-  PLAYER_DI_STEFANO_ID = 196
-  PLAYER_CRUYFF_ID = 730
-  PLAYER_PELE_ID = 135
-  PLAYER_MESSI_ID = 4732
-
   TEAM_NETHERLANDS_ID = 83
   TEAM_BRAZIL_ID = 12
   TEAM_AC_MILAN_ID = 26  
@@ -39,10 +33,6 @@ FootballTube::Application.routes.draw do
   TEAM_REAL_MADRID_ID = 16
   TEAM_SPAIN_ID = 14
   TEAM_FRANCE_ID = 11
-
-  %w(maradona di_stefano cruyff pele messi).each do |name|
-    get "/#{name}-matches" => "search#search_by_player", player_id: eval("PLAYER_#{name.upcase}_ID"), as: "search_for_#{name}"
-  end
 
   get "/clockwork-orange-matches" => "search#search_by_team", team_id: TEAM_NETHERLANDS_ID, from_year: 1974, to_year: 1978, term: "Clockwork orange", as: "search_for_clockwork_orange"
   get "/brazil-70-matches" => "search#search_by_team", team_id: TEAM_BRAZIL_ID, from_year: 1970, to_year: 1970, term: "Brazil '70", as: "search_for_brazil_70"
