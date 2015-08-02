@@ -6,18 +6,20 @@ h4 = t(".head_to_head")
 = form_tag search_head_to_head_path, method: :get, id: "head_to_head_form", class: "search_by_team" do
 	.row.teams.m-b
 	  .col-lg-3.col-xs-6.team_details
-	    .logo.blank.m-b
-	      img style="display:none;"
+	    .logo.blank.m-b.vcenter
+	      .vcenter-this
+	        img style="display:none;"
 	    = label_tag :team_one_name, t(".team_one_name")	      
-    	= text_field_tag :team_one_name, "", placeholder: t("shared.search.type_team_name"), class: "team_name autocomplete"
+    	= text_field_tag :team_one_name, "", placeholder: t("shared.search.type_team_name"), class: "team_name autocomplete", style: "width:80%"
     	= hidden_field_tag :team_one_id, "", class: "team_id"
         i.fa.fa-spinner.fa-pulse.loading.m-l-xs style="display:none;"
 
 	  .col-lg-3.col-xs-6.team_details
-	    .logo.blank.m-b
-	      img style="display:none;"
+	    .logo.blank.m-b.vcenter
+	      .vcenter-this
+	        img style="display:none;"
 	    = label_tag :team_two_name, t(".team_two_name")
-	    = text_field_tag :team_two_name, "", placeholder: t("shared.search.type_team_name"), class: "team_name autocomplete"
+	    = text_field_tag :team_two_name, "", placeholder: t("shared.search.type_team_name"), class: "team_name autocomplete", style: "width:80%"
 	    = hidden_field_tag :team_two_id, "", class: "team_id"
         i.fa.fa-spinner.fa-pulse.loading.m-l-xs style="display:none;"
 

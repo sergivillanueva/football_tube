@@ -60,10 +60,19 @@
     .team_details
       .logo.blank
         border: 1px dashed grey
-        width: 210px
-        height: 210px
         padding: 5px
         text-align: center
+        width: 150px
+        height: 150px
+        img
+          width: 50%
+      @media (min-width: 768px)        
+        .logo.blank
+          width: 210px
+          height: 210px
+          img
+            width: auto
+            height: auto
   .players
     .home_players, .away_players
   .form_buttons
