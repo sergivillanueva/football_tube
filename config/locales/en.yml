@@ -157,7 +157,6 @@ en:
 
   search:
     search: Search
-    search_matches: Search
     results: "%{n} matches found for %{term}"
     player_results:
       players_found: "%{n} players found for %{term}"

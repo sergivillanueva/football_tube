@@ -10,7 +10,6 @@ h4 = t(".teams_found", n: @teams.size, term: @term)
     thead
       tr
         th = t(".name")
-        th
       
     tbody
       = render partial: "search/team", collection: @teams

@@ -4,13 +4,6 @@ class TeamDecorator < Draper::Decorator
   def name
     object.name
   end
-  
-  def team_matches_search_link
-    h.link_to h.team_path(object) do
-      h.content_tag(:div, "", class: "fa fa-search lens") +
-      h.content_tag(:span, I18n.t(".search.search_matches"), class: "m-l-xs")
-    end
-  end
 
   def name_with_flag
     "#{object.country.decorate.flag if object.country} #{name}".html_safe

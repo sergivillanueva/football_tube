@@ -1,9 +1,7 @@
 tr
   td.name
   	span.m-r-xs = player.country.flag if player.country.present?
-    = player.name
+    = link_to player.name, player, title: player.name
   td.full_name
     = player.full_name
-  td
-    = player.player_participations_search_link
     
