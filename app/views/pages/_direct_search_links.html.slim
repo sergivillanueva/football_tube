@@ -1,22 +1,37 @@
-- PLAYER_MARADONA_ID = 1685
-- PLAYER_DI_STEFANO_ID = 196
-- PLAYER_CRUYFF_ID = 730
-- PLAYER_PELE_ID = 135
-- PLAYER_MESSI_ID = 4732
+- maradona_id = 1685
+- di_stefano_id = 196
+- cruyff_id = 730
+- pele_id = 135
+- messi_id = 4732
+- netherlands_id = 83
+- fc_barcelona_id = 21
+- real_madrid_id = 16
 
 / - %w(maradona di_stefano cruyff pele messi clockwork_orange brazil_70 dream_team quinta_del_buitre sacchi_milan france_80s spain_08_12 el_clasico).each do |term|
 .direct_search_links.m-t-lg.row
-	- [PLAYER_MARADONA_ID, PLAYER_DI_STEFANO_ID, PLAYER_CRUYFF_ID, PLAYER_PELE_ID, PLAYER_MESSI_ID].each do |player|
-	  .col-xs-12.col-md-3.m-b
-      .direct_search_link
-		  	- player = Player.find player
-		  	- term = player.name.parameterize
-			  = link_to player, title: t(".#{term}") do
-			  	.m-b-xs = image_tag asset_path("direct_search/#{term}.jpg"), alt: t(".#{term}")
-			    .search_term = t(".#{term}")
-  - %w(maradona di_stefano cruyff pele messi clockwork_orange dream_team quinta_del_buitre).each do |term|
+  - [maradona_id, di_stefano_id, cruyff_id, pele_id, messi_id].each do |player|
+    - player = Player.find player
+    - term = player.name.parameterize
     .col-xs-12.col-md-3.m-b
       .direct_search_link
-        = link_to eval("search_for_#{term}_path"), title: t(".#{term}") do
+        = link_to player, title: t(".#{term}") do
           .m-b-xs = image_tag asset_path("direct_search/#{term}.jpg"), alt: t(".#{term}")
           .search_term = t(".#{term}")
+
+  .col-xs-12.col-md-3.m-b
+    .direct_search_link
+      = link_to team_path(Team.find(netherlands_id), { from_year: 1974, to_year: 1978 }), title: t(".clockwork_orange") do
+        .m-b-xs = image_tag asset_path("direct_search/clockwork_orange.jpg"), alt: t(".clockwork_orange")
+        .search_term = t(".clockwork_orange")
+
+  .col-xs-12.col-md-3.m-b
+    .direct_search_link
+      = link_to team_path(Team.find(fc_barcelona_id), { from_year: 1990, to_year: 1994 }), title: t(".dream_team") do
+        .m-b-xs = image_tag asset_path("direct_search/dream_team.jpg"), alt: t(".dream_team")
+        .search_term = t(".dream_team")
+
+  .col-xs-12.col-md-3.m-b
+    .direct_search_link
+      = link_to team_path(Team.find(real_madrid_id), { from_year: 1985, to_year: 1990 }), title: t(".quinta_del_buitre") do
+        .m-b-xs = image_tag asset_path("direct_search/quinta_del_buitre.jpg"), alt: t(".quinta_del_buitre")
+        .search_term = t(".quinta_del_buitre")
