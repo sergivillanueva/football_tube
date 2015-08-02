@@ -29,6 +29,10 @@ ul.ul-toggle > li {
   border-bottom: none;
 }
 
+.hnav .dropdown-menu.mega-menu ul.links.sub-menu > li a {
+  display: inline;
+}
+
 /* Dropdown */
 
 .hnav .dropdown-menu.mega-menu .links > li > a {
