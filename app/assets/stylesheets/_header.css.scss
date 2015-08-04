@@ -1,0 +1,19 @@
+@media (min-width: 768px) {
+  .header-cols {
+    height: 255px;
+    background: #d0d2d3;
+    background-image: asset-url("ball.png", image); /* fallback */
+    background-image: asset-url("ball.png", image), -webkit-gradient(linear, left, left bottom, from(#d0d2d3), to(#fff)); /* Saf4+, Chrome */
+    background-image: asset-url("ball.png", image), -webkit-linear-gradient(left, #d0d2d3, #fff); /* Chrome 10+, Saf5.1+ */
+    background-image: asset-url("ball.png", image),    -moz-linear-gradient(left, #d0d2d3, #fff); /* FF3.6+ */
+    background-image: asset-url("ball.png", image),      -o-linear-gradient(left, #d0d2d3, #fff); /* Opera 11.10+ */
+    background-image: asset-url("ball.png", image),         linear-gradient(to right, #d0d2d3, #fff); /* W3C */
+    background-position: top right;
+    background-repeat: no-repeat;
+  }
+
+  .hnav.hnav-sm .navbar-nav > li > a {
+    height: 30px !important;
+    line-height: 30px !important;
+  }
+}
