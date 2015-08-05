@@ -70,7 +70,7 @@ $().ready(function() {
   
   // PRETTY PHOTO
   // -------------------------------------------------
-  $("a[data-gal^='prettyPhoto']").prettyPhoto({hook:'data-gal', overlay_gallery:false, social_tools:false});
+  //$("a[data-gal^='prettyPhoto']").prettyPhoto({hook:'data-gal', overlay_gallery:false, social_tools:false});
   
   // CODE FORMATTER
   // -------------------------------------------------

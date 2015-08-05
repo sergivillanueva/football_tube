@@ -52,7 +52,7 @@ var scripts = [
   "js/highlight.pack.js",
   //"bootstrap/js/bootstrap.min.js",
   "js/jquery-scrollto.js",
-  "js/jquery.prettyPhoto.js",
+  //"js/jquery.prettyPhoto.js",
   "js/wow.min.js",
   "js/theme.js",
   //"js/style-switcher.js",
