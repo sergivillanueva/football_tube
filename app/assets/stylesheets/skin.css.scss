@@ -1108,7 +1108,9 @@ pre.no-breaks, pre.no-breaks > code {
 .btn-primary:hover {
   background: $dark-green;
 }
-
+.open > .dropdown-toggle.btn-primary {
+  background: $green;
+}
 .btn.btn-primary-hover:hover {
   background-color: $dark-green;
   color: #fff;
@@ -3113,7 +3115,8 @@ body {
   position: relative;
 }
 .main-header .brand-col {
-  width: 25%;
+  /*width: 25%;*/
+  width: 32%;
   margin: 0 auto;
   text-align: center;
   padding: 40px 0;
@@ -3127,7 +3130,8 @@ body {
   height: auto;
 }
 .main-header .left-col, .main-header .right-col {
-  width: 37.5%;
+  /*width: 37.5%;*/
+  width: 34%;
   height: 100%;
   position: absolute;
   top: 0;
@@ -3175,7 +3179,7 @@ body {
 }
 
 .header-search {
-  width: 250px;
+  width: 90%;
   margin: 0 15px;
 }
 .header-search .form-group {
@@ -3186,7 +3190,7 @@ body {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.2);
 }
-.header-search .form-group .btn {
+.header-search .form-group .btn-search {
   position: absolute;
   right: 0;
   top: 0;

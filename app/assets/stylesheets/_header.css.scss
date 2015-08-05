@@ -17,3 +17,63 @@
     line-height: 30px !important;
   }
 }
+
+.motto {
+  margin-bottom: 8px;
+  text-align: left;
+}
+.motto .text {
+  background: black;
+  color: white;
+  font-size: 30px;
+  font-weight: bold;
+  padding: 10px 42px;
+  display: inline-block;
+  letter-spacing: 1px;
+}
+.motto .text.green {
+  color: #63b032;
+}
+
+/* Search */
+
+.header-search {
+  position: relative;
+}
+
+.header-search .search_options {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  z-index: 9999;
+  width: 55px;
+}
+
+.header-search .search_options button {
+  width: 100%;
+}
+
+.header-search .search_options .dropdown-menu {
+  margin: 0px;
+}
+
+.header-search .search_options .dropdown-menu a {
+}
+
+.header-search .search_options .dropdown-menu .active {
+  /*background: #6f1585;*/
+  background: #63b032;
+  color: white;
+}
+
+.header-search form input.team_name, .header-search form input.player_name {
+  z-index: 9998;
+  padding-left: 60px; /* width of search_options element plus some pixels*/
+}
+
+.header-search .form-group .btn-search {
+  position: absolute;
+  right: 0;
+  top: 0;
+  z-index: 9999;
+}

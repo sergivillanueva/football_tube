@@ -3138,22 +3138,6 @@ body {
   right: 0;
   padding-left: 30px;
 }
-.motto {
-  margin-bottom: 8px;
-  text-align: left;
-}
-.motto .text {
-  background: black;
-  color: white;
-  font-size: 28px;
-  font-weight: bold;
-  padding: 2px 45px;
-  display: inline-block;
-  letter-spacing: 1px;
-}
-.motto .text.green {
-  color: #63b032;
-}
 
 @media (max-width: 767px) {
   .main-header .brand-col {

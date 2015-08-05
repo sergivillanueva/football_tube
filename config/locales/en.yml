@@ -149,8 +149,8 @@ en:
 
   shared:
     search:
-      search_by_player: Players
-      search_by_team: Teams
+      search_by_player: Search players
+      search_by_team: Search teams
       type_player_name: Type player name or nickname
       type_team_name: Type team name
       head_to_head: Head to head search
