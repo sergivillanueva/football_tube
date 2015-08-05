@@ -14,4 +14,9 @@ module ApplicationHelper
 	def title(page_title)
   	content_for :title, "#{page_title.truncate(50)} | Footballia"
 	end
+
+  def jwplayer_needed?
+    controller.controller_name == "pages" && controller.action_name == "home" ||
+    controller.controller_name == "matches" && controller.action_name == "show"
+  end
 end
