@@ -19,7 +19,7 @@
 .separator
 
 - if @best_matches.present?
-  .best_matches.section-title.line-pcolor
+  .best_matches.section-title.line-pcolor.wow.fadeInLeft
     h2 = t(".best_matches")
     .brand-slider
       .bxslider
@@ -30,7 +30,7 @@
 
 = render "figures"
 
-<div class="content-block boxed-section cover-1-bg overlay-dark-m">
+<div class="content-block boxed-section cover-1-bg overlay-dark-m wow bounceInUp">
     
   <!-- Container -->
   <div class="container cont-lg">
@@ -63,5 +63,6 @@ javascript:
       pager: false,
       breaks: [{screen:0, slides:2}, {screen:460, slides:3}, {screen:768, slides:5}]
     });
-  
+
+    new WOW().init();
   });
