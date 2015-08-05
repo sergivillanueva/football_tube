@@ -7112,7 +7112,7 @@ div.pp_default .pp_details, div.light_rounded .pp_details, div.dark_rounded .pp_
 
 /* Autocomplete */
 
-.ui-menu-item a:hover {
+.ui-menu-item a.ui-state-focus {
   background-color: $green;
   border-color: $dark-green;
   color: #fff;
