@@ -92,5 +92,9 @@ class MatchDecorator < ApplicationDecorator
 
   def visits_counter
     object.visits_counter
-  end  
+  end
+
+  def keywords
+    [object.home_team.name, object.home_team.nick_names, object.away_team.nick_names, object.away_team.nick_names, object.competition.name].reject(&:empty?).join(", ")
+  end
 end

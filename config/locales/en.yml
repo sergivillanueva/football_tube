@@ -235,3 +235,11 @@ en:
         country: Country
         email: Email
         favourite_team_name: Favourite team
+
+  locale:
+    short:
+      en: Eng
+      es: Esp
+    long:
+      en: English
+      es: Spanish
