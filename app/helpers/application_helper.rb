@@ -19,4 +19,8 @@ module ApplicationHelper
     controller.controller_name == "pages" && controller.action_name == "home" ||
     controller.controller_name == "matches" && controller.action_name == "show"
   end
+
+  def datatables_needed?
+    controller.action_name == "index" && %w(players competitions teams matches).include?(controller.controller_name)
+  end
 end

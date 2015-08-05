@@ -7,7 +7,7 @@
 
   <%= jwplayer_assets if jwplayer_needed? %>
 
-  <% if controller.action_name == "index" && %w(players competitions teams matches).include?(controller.controller_name) %>
+  <% if datatables_needed? %>
     <link rel="stylesheet" type="text/css" href="//cdn.datatables.net/1.10.4/css/jquery.dataTables.css">
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
   <% end %>
@@ -16,7 +16,7 @@
   <%= csrf_meta_tags %>
 
   <script src="/uikit/js/uikit.js"></script>
- 
+
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!--[if lt IE 9]>
   <script src="/uikit/js/html5shiv.js"></script>
