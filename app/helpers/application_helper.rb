@@ -33,16 +33,13 @@ module ApplicationHelper
   end
 
   def keywords specific_keywords = ""
-    generic_keywords = case locale.to_s
-      when 'en'
-        "Champions League games, full length games"
-    end
-    specific_keywords.present? ? "#{specific_keywords}, #{generic_keywords}" : generic_keywords
+    generic_keywords = I18n.t("meta_tags.keywords.generic")
+    [specific_keywords, generic_keywords].compact.reject(&:empty?).join(", ")
   end
 
   def meta_tags tags
     content_for(:keywords_meta_tag) do
-      tag "meta", name: "keywords", content: tags[:keywords]
+      tag "meta", name: "keywords", content: keywords(tags[:keywords])
     end
 
     content_for(:description_meta_tag) do

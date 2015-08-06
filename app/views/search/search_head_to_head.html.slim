@@ -1,4 +1,5 @@
 - title t("matches_by", name: @term)
+- meta_tags keywords: @term, description: t("meta_tags.description.search", name: @term)
 
 .m-b-lg
   h4 = t("search.results", n: @matches.size, term: @term)

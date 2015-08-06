@@ -243,3 +243,11 @@ en:
     long:
       en: English
       es: Spanish
+
+  meta_tags:
+    keywords:
+      generic: "Full matches, football full matches, historic full matches, Champions League matches, World Cup matches"
+    description:
+      match: "Watch the %{season} %{title} %{competition} %{stage} full match"
+      home: "Watch full football matches from all times"
+      search: "Watch full %{name} matches"
