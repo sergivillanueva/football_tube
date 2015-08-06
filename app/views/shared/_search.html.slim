@@ -1,10 +1,29 @@
 .header-search
-  = select_tag "search_mode", "<option value='by_player'>#{t(".search_by_player")}</option><option value='by_team'>#{t(".search_by_team")}</option>".html_safe, style: "margin-bottom:5px;"
+  = select_tag "search_mode", "<option value='by_player'>#{t(".search_by_player")}</option><option value='by_team'>#{t(".search_by_team")}</option>".html_safe, style: "display:none;"
+  <div class="search_options">
+    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+      <i class="icon fa fa-users m-r-xs search_option"></i>
+      <i class="icon fa fa-flag m-r-xs search_option" style="display:none;"></i>
+      <i class="fa fa-angle-down toggler"></i>
+    </button>
+    <ul class="dropdown-menu">
+      <li>
+        = link_to "#", class: "search_toggler active" do
+          <i class="icon fa fa-users m-r-xs"></i>
+          = t(".search_by_player")
+      </li>
+      <li>
+        = link_to "#", class: "search_toggler" do
+          <i class="icon fa fa-flag m-r-xs"></i>
+          = t(".search_by_team")
+      </li>
+    </ul>
+  </div>
   = form_tag search_by_player_path, method: :get, class: "search_by_player" do
     .form-group.player
       = text_field_tag :player_name, "", placeholder: t(".type_player_name"), class: "form-control player_name", style: "z-index:9999;", data: { :"link-results" => true }
       = hidden_field_tag :player_id, "", class: "player_id"
-      = button_tag class: "btn btn-primary btn-small", type: "submit" do
+      = button_tag class: "btn btn-primary btn-small btn-search", type: "submit" do
         .fa.fa-search.lens
         .fa.fa-spinner.fa-pulse.loading style="display:none;"
 
@@ -12,15 +31,27 @@
     .form-group.team_details
       = text_field_tag :team_name, "", placeholder: t(".type_team_name"), class: "form-control team_name autocomplete", data: { :"link-results" => true }
       = hidden_field_tag :team_id, "", class: "team_id"
-      = button_tag class: "btn btn-primary btn-small", type: "submit" do
+      = button_tag class: "btn btn-primary btn-small btn-search", type: "submit" do
         .fa.fa-search.lens
         .fa.fa-spinner.fa-pulse.loading style="display:none;"
 
 javascript:
   $(document).ready(function () {
-    $("#search_mode").on("change", function (e) {
+    /*$("#search_mode").on("change", function (e) {
       $(".search_by_player").toggle();
       $(".search_by_team").toggle();
       e.preventDefault();
+    });*/
+    $(".search_toggler").on("click", function (e) {
+      if (!$(this).hasClass("active")) {
+        $(".search_by_player").toggle();
+        $(".search_by_team").toggle();
+        $(".search_options > .dropdown-toggle > .search_option").toggle();
+        $(".search_toggler").removeClass("active");
+        $(this).addClass("active");
+      }
+      e.preventDefault();
     });
+
+
   });

@@ -92,5 +92,13 @@ class MatchDecorator < ApplicationDecorator
 
   def visits_counter
     object.visits_counter
-  end  
+  end
+
+  def meta_tag_keywords
+    [object.home_team.name, object.home_team.nick_names, object.away_team.name, object.away_team.nick_names, competition_name].compact.reject(&:empty?).join(", ")
+  end
+
+  def meta_tag_description
+    I18n.t("meta_tags.description.match", season: season, title: title, competition: competition_name, stage: stage, venue: venue)
+  end
 end

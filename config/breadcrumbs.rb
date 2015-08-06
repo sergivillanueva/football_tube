@@ -29,6 +29,11 @@ crumb :search_by_competition do
   link t("search.search_by_competition.search_by_competition"), advanced_search_path
 end
 
+crumb :search_by_head_to_head do |title|
+  link t("matches_by", name: title), advanced_search_path
+  parent :advanced_search
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end

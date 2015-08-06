@@ -149,8 +149,8 @@ en:
 
   shared:
     search:
-      search_by_player: Players
-      search_by_team: Teams
+      search_by_player: Search players
+      search_by_team: Search teams
       type_player_name: Type player name or nickname
       type_team_name: Type team name
       head_to_head: Head to head search
@@ -235,3 +235,19 @@ en:
         country: Country
         email: Email
         favourite_team_name: Favourite team
+
+  locale:
+    short:
+      en: Eng
+      es: Esp
+    long:
+      en: English
+      es: Spanish
+
+  meta_tags:
+    keywords:
+      generic: "Full matches, football full matches, historic full matches, Champions League matches, World Cup matches"
+    description:
+      match: "Watch the %{season} %{title} %{competition} %{stage} full match held at %{venue}"
+      home: "Watch full football matches from all times"
+      search: "Watch full %{name} matches"
