@@ -99,6 +99,6 @@ class MatchDecorator < ApplicationDecorator
   end
 
   def meta_tag_description
-    I18n.t("meta_tags.description.match", season: season, title: title, competition: competition_name, stage: stage)
+    I18n.t("meta_tags.description.match", season: season, title: title, competition: competition_name, stage: stage, venue: venue)
   end
 end

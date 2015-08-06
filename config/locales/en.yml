@@ -248,6 +248,6 @@ en:
     keywords:
       generic: "Full matches, football full matches, historic full matches, Champions League matches, World Cup matches"
     description:
-      match: "Watch the %{season} %{title} %{competition} %{stage} full match"
+      match: "Watch the %{season} %{title} %{competition} %{stage} full match held at %{venue}"
       home: "Watch full football matches from all times"
       search: "Watch full %{name} matches"
