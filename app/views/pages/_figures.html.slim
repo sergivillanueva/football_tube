@@ -8,13 +8,13 @@
           <ul class="vlinks vlinks-iconed vlinks-round vlinks-lg">
             li
               <i class="icon fa fa-youtube-play "></i>
-              span.blue.figure
+              span.figure
                = @matches_count
               span.meta
                = t("pages.home.matches")
             li
               <i class="icon fa fa-users"></i>
-              span.blue.figure
+              span.figure
                = @players_count
               span.meta
                = t("pages.home.players")
@@ -24,14 +24,14 @@
           <ul class="vlinks vlinks-iconed vlinks-round vlinks-lg">
             li
               <i class="icon fa fa-futbol-o"></i>
-              span.blue.figure
+              span.figure
                = @goals_count
               span.meta
                = t("pages.home.goals")
             li
               <i class="icon fa fa-trophy"></i>
-              span.blue.figure
-               = @competitions_count
+              span.figure
+               = number_with_delimiter 23123
               span.meta
                = t("pages.home.competitions")
           </ul>

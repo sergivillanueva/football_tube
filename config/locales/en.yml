@@ -23,7 +23,7 @@ en:
       competitions: competitions
       matches_with_video: matches with video
       add_your_match: Add your match
-      last_match: Last match
+      latest_match: Latest match uploaded
       best_matches: Best matches
     direct_search_links:
       maradona: Maradona matches
