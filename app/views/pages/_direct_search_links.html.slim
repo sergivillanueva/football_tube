@@ -8,7 +8,7 @@
 - real_madrid_id = 16
 
 / - %w(maradona di_stefano cruyff pele messi clockwork_orange brazil_70 dream_team quinta_del_buitre sacchi_milan france_80s spain_08_12 el_clasico).each do |term|
-.direct_search_links.m-t-lg.row
+.direct_search_links.m-t-lg.row.wow.bounceInUp
   - [maradona_id, di_stefano_id, cruyff_id, pele_id, messi_id].each do |player|
     - player = Player.find player
     - term = player.name.parameterize
