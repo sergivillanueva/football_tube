@@ -25,10 +25,16 @@
       text-align: center
     &:hover
       opacity: 0.8
-.more_special_matches
-  .delimiter:last-child
-    display: none
+@media (max-width: 767px)
+  .more_special_matches
+    a
+      display: block
+      margin-bottom: 10px
+    .delimiter
+      display: none
 @media (min-width: 768px)
   .more_special_matches
     width: 70%
     margin: auto
+  .delimiter:last-child
+    display: none
