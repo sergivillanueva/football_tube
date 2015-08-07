@@ -45,7 +45,7 @@
   position: absolute;
   top: 0px;
   left: 0px;
-  z-index: 9999;
+  z-index: 319;
   width: 55px;
 }
 
@@ -67,7 +67,7 @@
 }
 
 .header-search form input.team_name, .header-search form input.player_name {
-  z-index: 9998;
+  z-index: 318;
   padding-left: 60px; /* width of search_options element plus some pixels*/
 }
 
@@ -75,5 +75,5 @@
   position: absolute;
   right: 0;
   top: 0;
-  z-index: 9999;
+  z-index: 319;
 }
