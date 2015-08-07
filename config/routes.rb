@@ -34,15 +34,23 @@ FootballTube::Application.routes.draw do
   TEAM_REAL_MADRID_ID = 16
   TEAM_SPAIN_ID = 14
   TEAM_FRANCE_ID = 11
+  WORLD_CUP_ID = 4
+  CHAMPIONS_LEAGUE_ID = 1
+  COPA_LIBERTADORES_ID = 7
+  EUROPEAN_CUP_ID = 5
 
-  get "/clockwork-orange-matches" => "search#search_by_team", team_id: TEAM_NETHERLANDS_ID, from_year: 1974, to_year: 1978, term: "Clockwork orange", as: "search_for_clockwork_orange"
-  get "/brazil-70-matches" => "search#search_by_team", team_id: TEAM_BRAZIL_ID, from_year: 1970, to_year: 1970, term: "Brazil '70", as: "search_for_brazil_70"
-  get "/dream-team-matches" => "search#search_by_team", team_id: TEAM_FC_BARCELONA_ID, from_year: 1990, to_year: 1994, term: "Dream Team", as: "search_for_dream_team"
-  get "/quinta-del-buitre-matches" => "search#search_by_team", team_id: TEAM_REAL_MADRID_ID, from_year: 1985, to_year: 1990, term: "La Quinta del Buitre", as: "search_for_quinta_del_buitre"
-  get "/sacchi-milan-matches" => "search#search_by_team", team_id: TEAM_AC_MILAN_ID, from_year: 1987, to_year: 1992, term: "Sacchi Milan", as: "search_for_sacchi_milan"
-  get "/france-80s-matches" => "search#search_by_team", team_id: TEAM_FRANCE_ID, from_year: 1982, to_year: 1986, term: "France 80's", as: "search_for_france_80s"
-  get "/spain-08-12-matches" => "search#search_by_team", team_id: TEAM_SPAIN_ID, from_year: 2008, to_year: 2012, term: "Spain 2008-2012", as: "search_for_spain_08_12"
+  get "/clockwork-orange-matches" => "search#search_by_team", team_id: TEAM_NETHERLANDS_ID, from_year: 1974, to_year: 1978, term: I18n.t("pages.special_matches.clockwork_orange"), as: "search_for_clockwork_orange"
+  get "/brazil-70-matches" => "teams#show", id: TEAM_BRAZIL_ID, from_year: 1970, to_year: 1970, term: I18n.t("pages.special_matches.brazil_70"), as: "search_for_brazil_70"
+  get "/dream-team-matches" => "teams#show", id: TEAM_FC_BARCELONA_ID, from_year: 1990, to_year: 1994, term: I18n.t("pages.special_matches.dream_team"), as: "search_for_dream_team"
+  get "/quinta-del-buitre-matches" => "teams#show", id: TEAM_REAL_MADRID_ID, from_year: 1985, to_year: 1990, term: I18n.t("pages.special_matches.quinta_del_buitre"), as: "search_for_quinta_del_buitre"
+  get "/sacchi-milan-matches" => "teams#show", id: TEAM_AC_MILAN_ID, from_year: 1987, to_year: 1992, term: I18n.t("pages.special_matches.sacchi_milan"), as: "search_for_sacchi_milan"
+  get "/france-80s-matches" => "teams#show", id: TEAM_FRANCE_ID, from_year: 1982, to_year: 1986, term: I18n.t("pages.special_matches.france_80s"), as: "search_for_france_80s"
+  get "/spain-08-12-matches" => "teams#show", id: TEAM_SPAIN_ID, from_year: 2008, to_year: 2012, term: I18n.t("pages.special_matches.spain_08_12"), as: "search_for_spain_08_12"
 
-  get "/el-clasico-matches" => "search#search_head_to_head", team_one_id: TEAM_FC_BARCELONA_ID, team_two_id: TEAM_REAL_MADRID_ID, term: "El Clásico", as: "search_for_el_clasico"
+  get "/el-clasico-matches" => "search#search_head_to_head", team_one_id: TEAM_FC_BARCELONA_ID, team_two_id: TEAM_REAL_MADRID_ID, term: I18n.t("pages.special_matches.el_clasico"), as: "search_for_el_clasico"
       
+  get "/world-cup-finals" => "competitions#show", id: WORLD_CUP_ID, stage: "Final", term: I18n.t("pages.special_matches.world_cup_finals"), as: "search_for_world_cup_finals"
+  get "/champions-league-finals" => "competitions#show", id: CHAMPIONS_LEAGUE_ID, stage: "Final", term: I18n.t("pages.special_matches.champions_league_finals"), as: "search_for_champions_league_finals"
+  get "/european-cup-finals" => "competitions#show", id: EUROPEAN_CUP_ID, stage: "Final", term: I18n.t("pages.special_matches.european_cup_finals"), as: "search_for_european_cup_finals"
+  get "/copa-libertadores-finals" => "competitions#show", id: COPA_LIBERTADORES_ID, stage: "Final", term: I18n.t("pages.special_matches.libertadores_finals"), as: "search_libertadores_finals"
 end
