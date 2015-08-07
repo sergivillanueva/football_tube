@@ -49,8 +49,8 @@ FootballTube::Application.routes.draw do
 
   get "/el-clasico-matches" => "search#search_head_to_head", team_one_id: TEAM_FC_BARCELONA_ID, team_two_id: TEAM_REAL_MADRID_ID, term: I18n.t("pages.special_matches.el_clasico"), as: "search_for_el_clasico"
       
-  get "/world-cup-finals" => "competitions#show", id: WORLD_CUP_ID, stage: "Final", term: I18n.t("pages.special_matches.world_cup_finals"), as: "search_for_world_cup_finals"
-  get "/champions-league-finals" => "competitions#show", id: CHAMPIONS_LEAGUE_ID, stage: "Final", term: I18n.t("pages.special_matches.champions_league_finals"), as: "search_for_champions_league_finals"
-  get "/european-cup-finals" => "competitions#show", id: EUROPEAN_CUP_ID, stage: "Final", term: I18n.t("pages.special_matches.european_cup_finals"), as: "search_for_european_cup_finals"
-  get "/copa-libertadores-finals" => "competitions#show", id: COPA_LIBERTADORES_ID, stage: "Final", term: I18n.t("pages.special_matches.libertadores_finals"), as: "search_libertadores_finals"
+  get "/world-cup-finals" => "competitions#show", id: WORLD_CUP_ID, stages: "Final;Final, replay;Final, 1st leg;Final, 2nd leg", term: I18n.t("pages.special_matches.world_cup_finals"), as: "search_for_world_cup_finals"
+  get "/champions-league-finals" => "competitions#show", id: CHAMPIONS_LEAGUE_ID, stages: "Final;Final, replay;Final, 1st leg;Final, 2nd leg", term: I18n.t("pages.special_matches.champions_league_finals"), as: "search_for_champions_league_finals"
+  get "/european-cup-finals" => "competitions#show", id: EUROPEAN_CUP_ID, stages: "Final;Final, replay;Final, 1st leg;Final, 2nd leg", term: I18n.t("pages.special_matches.european_cup_finals"), as: "search_for_european_cup_finals"
+  get "/copa-libertadores-finals" => "competitions#show", id: COPA_LIBERTADORES_ID, stages: "Final;Final, replay;Final, 1st leg;Final, 2nd leg", term: I18n.t("pages.special_matches.libertadores_finals"), as: "search_libertadores_finals"
 end
