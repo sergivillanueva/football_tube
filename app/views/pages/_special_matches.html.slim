@@ -27,5 +27,5 @@
 .more_special_matches.text-center
   - %w(world_cup_finals european_cup_finals champions_league_finals sacchi_milan france_80s brazil_70 spain_08_12 el_clasico).each do |term|
     = link_to t(".#{term}"), eval("search_for_#{term}_path"), title: t(".#{term}")
-    span.m-r-xs.m-l-xs
+    span.m-r-xs.m-l-xs.delimiter
       | |
