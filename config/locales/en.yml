@@ -1,4 +1,4 @@
-en:
+﻿en:
   no_results: No results
   profile: Profile
   login: Login
@@ -13,7 +13,7 @@ en:
   motto_3: Experience it!
   motto_4: Footballia is the first free interactive football video library with over 1,000 matches to watch online anywhere, anytime.
   about: Footballia is the first free interactive football video library.
-  upload_match: Upload your match now
+  upload_match: Upload your match now!
 
   pages:
     home:
@@ -24,19 +24,19 @@ en:
       matches_with_video: matches with video
       add_your_match: Add your match
       latest_match: Latest match uploaded
-      best_matches: Best matches
+      best_matches: Best-rated matches
     special_matches:
-      our_special_matches: Our special matches
+      our_special_matches: Our special collections
       maradona: Maradona matches
       di-stefano: Di Stéfano matches
       cruijff: Cruyff matches
       pele: Pelé matches
       messi: Messi matches
-      clockwork_orange: Clockwork orange matches (1974-1978)
+      clockwork_orange: Clockwork Orange matches (1974-1978)
       brazil_70: Brazil '70 matches (1970)
       dream_team: Dream Team matches (1990-1994)
-      quinta_del_buitre: Quinta el buitre matches (1985-1990)
-      sacchi_milan: Sacchi Milan matches  (1987-1992)
+      quinta_del_buitre: Quinta del Buitre matches (1985-1990)
+      sacchi_milan: Sacchi's Milan matches  (1987-1992)
       france_80s: France 80's matches (1982-1986)
       spain_08_12: Spain 08-12 matches (2008-2012)
       el_clasico: El Clásico matches
@@ -77,8 +77,8 @@ en:
       team_number: Team number
     form_parts:
       step_3:
-        home_team_line_up: Home team line up
-        away_team_line_up: Away team line up
+        home_team_line_up: Home team line-up
+        away_team_line_up: Away team line-up
         add_reserves: Substitutes
         add_more_reserves: More substitutes
         coach: Coach
@@ -102,7 +102,7 @@ en:
       world_cup_u20: U-20 World Cup
       euro: Euro
       euro_u21: U-21 Euro
-      copa_america: Copa America
+      copa_america: Copa América
       african_cup: African Cup
       confederations_cup: Confederations Cup
       olympic_games: Olympic Games
@@ -201,32 +201,32 @@ en:
       search_by_competition: Search by competition      
     advanced_search:
       head_to_head: Head to head
-      team_one_name: First team
-      team_two_name: Second team
+      team_one_name: Team 1
+      team_two_name: Team 2
     search_head_to_head:
       playing_date: Playing date
       match: Match
       competition: Competition
       season: Season
       language: Language
-      missing_params: You have to choose two teams
+      missing_params: You must choose two teams
 
   rating:
-    bad: Bad
-    poor: Poor
-    regular: Regular
-    good: Good
-    gorgeous: Gorgeous
+    bad: Poor
+    poor: Not bad
+    regular: Good
+    good: Very good
+    gorgeous: Excellent
     not_rated: Not rated yet!
 
   profiles:
     show:
-       profile: Perfil
-       edit: Editar
-       add_your_avatar: "You don't have any avatar, add it <a href=\"%{url}\">here</a>!"
-       add_your_favourite_team: "Do you have any favourite team? Add it <a href=\"%{url}\">here</a>!"
+       profile: Profile
+       edit: Edit
+       add_your_avatar: "You don't have an avatar, add one <a href=\"%{url}\">here</a>!"
+       add_your_favourite_team: "Do you have a favourite team? Add it <a href=\"%{url}\">here</a>!"
        matches: Matches
-       add_match: "You haven't upload any match. Add one <a href=\"%{url}\">here</a>!"
+       add_match: "You haven't uploaded any matches yet. Add one <a href=\"%{url}\">here</a>!"
 
   devise:
     registrations:
@@ -237,7 +237,7 @@ en:
     models:
     attributes:
       user:
-        nick_name: Nick name
+        nick_name: Nickname
         avatar: Avatar
         country: Country
         email: Email
@@ -253,7 +253,7 @@ en:
 
   meta_tags:
     keywords:
-      generic: "Full matches, football full matches, historic full matches, Champions League matches, World Cup matches"
+      generic: "Full matches, full football matches, full historic matches, Champions League matches, World Cup matches"
     description:
       match: "Watch the %{season} %{title} %{competition} %{stage} full match held at %{venue}"
       home: "Watch full football matches from all times"
