@@ -9,7 +9,7 @@ class CompetitionsController < ApplicationController
 
   def show
     @competition = Competition.friendly.find params[:id]
-    @term = @competition.name
+    @term = params[:term] || @competition.name
     @matches = @competition.matches
     @matches = @matches.where(stage: params[:stage]) if params[:stage].present?
     @matches = @matches.order("playing_date").decorate
