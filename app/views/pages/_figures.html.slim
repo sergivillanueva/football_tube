@@ -9,13 +9,13 @@
             li
               <i class="icon fa fa-youtube-play "></i>
               span.figure
-               = @matches_count
+               = number_with_delimiter @matches_count
               span.meta
                = t("pages.home.matches")
             li
               <i class="icon fa fa-users"></i>
               span.figure
-               = @players_count
+               = number_with_delimiter @players_count
               span.meta
                = t("pages.home.players")
           </ul>
@@ -25,13 +25,13 @@
             li
               <i class="icon fa fa-futbol-o"></i>
               span.figure
-               = @goals_count
+               = number_with_delimiter @goals_count
               span.meta
                = t("pages.home.goals")
             li
               <i class="icon fa fa-trophy"></i>
               span.figure
-               = number_with_delimiter 23123
+               = number_with_delimiter @competitions_count
               span.meta
                = t("pages.home.competitions")
           </ul>

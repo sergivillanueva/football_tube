@@ -9,8 +9,10 @@ class CompetitionsController < ApplicationController
 
   def show
     @competition = Competition.friendly.find params[:id]
-    @term = @competition.name
-    @matches = @competition.matches.order("playing_date").decorate
+    @term = params[:term] || @competition.name
+    @matches = @competition.matches
+    @matches = @matches.where(stage: params[:stage]) if params[:stage].present?
+    @matches = @matches.order("playing_date").decorate
     render "search/search_by_competition"
   end
   
@@ -19,11 +21,11 @@ class CompetitionsController < ApplicationController
   end
   
   def edit
-    @competition = Competition.find params[:id]
+    @competition = Competition.friendly.find params[:id]
   end
   
   def update
-    @competition = Competition.find params[:id]
+    @competition = Competition.friendly.find params[:id]
     if @competition.update_attributes(competition_params)
       redirect_to competitions_path
     else
@@ -45,7 +47,7 @@ class CompetitionsController < ApplicationController
   end
 
   def destroy
-    @competition = Competition.find(params[:id])
+    @competition = Competition.friendly.find(params[:id])
     @competition.destroy
     redirect_to competitions_path, notice: "Competition deleted"
   end

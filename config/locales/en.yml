@@ -25,7 +25,8 @@ en:
       add_your_match: Add your match
       latest_match: Latest match uploaded
       best_matches: Best matches
-    direct_search_links:
+    special_matches:
+      our_special_matches: Our special matches
       maradona: Maradona matches
       di-stefano: Di Stéfano matches
       cruijff: Cruyff matches
@@ -39,6 +40,10 @@ en:
       france_80s: France 80's matches (1982-1986)
       spain_08_12: Spain 08-12 matches (2008-2012)
       el_clasico: El Clásico matches
+      world_cup_finals: World Cup finals
+      champions_league_finals: Champions League finals
+      european_cup_finals: European Cup finals
+      libertadores_finals: Copa Libertadores finals
 
   players:
     index:
@@ -84,6 +89,8 @@ en:
         upload_files: Upload files
       
   competitions:
+    edit:
+      edit_competition: Edit competition
     kind:
       league_1: League 1
       league_2: League 2

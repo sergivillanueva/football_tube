@@ -42,6 +42,7 @@
       .col-md-3
         h5 = t("competitions.scope.others")
         ul.links
-          li = link_to t("competitions.kind.friendly"), @friendly.first
+          - @friendly.each do |friendly_competition|
+            li = link_to friendly_competition.name, friendly_competition
   </div>
 </div>
