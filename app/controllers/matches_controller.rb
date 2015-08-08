@@ -90,12 +90,14 @@ class MatchesController < ApplicationController
   def preview_image
     @match = Match.friendly.find(params[:id])
     image = File.open(@match.preview_image, 'rb').read
+    response.headers["Expires"] = 1.year.from_now.httpdate
     send_data image, type: 'image/png', disposition: "inline"
   end
 
   def mini_preview_image
     @match = Match.friendly.find(params[:id])
     image = File.open(@match.mini_preview_image, 'rb').read
+    response.headers["Expires"] = 1.year.from_now.httpdate
     send_data image, type: 'image/png', disposition: "inline"
   end
 

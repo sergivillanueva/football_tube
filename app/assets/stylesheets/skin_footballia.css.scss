@@ -70,7 +70,7 @@ ul.ul-toggle > li {
 }
 
 .cover-1-bg {
-  background: url("/assets/backgrounds/cover1.jpg") no-repeat center 0 fixed;
+  background: asset-url("backgrounds/cover1.jpg", image) no-repeat center 0 fixed;
 }
 
 .cover-2-bg {
