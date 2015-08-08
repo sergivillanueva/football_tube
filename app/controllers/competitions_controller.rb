@@ -1,6 +1,7 @@
 class CompetitionsController < ApplicationController
   before_action :authenticate_user!, except: :show
-  before_action :check_admin_role, only: :index
+  #TODO use cancancan gem for this and let user crud her own stuff
+  before_action :check_admin_role, only: [:update, :edit, :destroy, :index]
 
   def search
     competitions = Competition.where("name like '%#{params[:name]}%'")
