@@ -254,7 +254,9 @@
   meta_tags:
     keywords:
       generic: "Full matches, full football matches, full historic matches, Champions League matches, World Cup matches"
+      head_to_head: "Head to head search"
     description:
       match: "Watch the %{season} %{title} %{competition} %{stage} full match held at %{venue}"
       home: "Watch full football matches from all times"
       search: "Watch full %{name} matches"
+      head_to_head: "Find all-time head-to-head matches between any two teams"
