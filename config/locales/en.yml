@@ -170,6 +170,9 @@
       type_player_name: Type player name or nickname
       type_team_name: Type team name
       head_to_head: Head to head search
+    footer:
+      about: "Footballia is the first free interactive football video library where you can watch full football matches for free anytime, anywhere"
+      about_footballia: About Footballia
 
   search:
     search: Search
