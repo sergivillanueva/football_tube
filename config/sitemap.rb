@@ -39,6 +39,10 @@ SitemapGenerator::Sitemap.create do
     add competition_path(competition), :lastmod => competition.updated_at
   end
 
+  Player.find_each do |player|
+    add player_path(player), :lastmod => player.updated_at
+  end
+
   add advanced_search_path
   add search_for_clockwork_orange_path
   add search_for_brazil_70_path
