@@ -57,9 +57,12 @@
 <!-- hlinks -->
 <ul class="hlinks pull-right">
 <li><a href="#">About</a></li>
-<li><a href="#">Login</a></li>
-<li><a href="#">Sign Up</a></li>
-<li><a href="#">Support</a></li>
+<li>
+	= link_to t("login"), new_user_session_path, title: t("login")
+</li>
+<li>
+  = link_to "Sign up", new_user_registration_path, title: "Sign in"
+</li>
 </ul>
 <!-- /hlinks -->
 
