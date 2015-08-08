@@ -37,6 +37,15 @@ module ApplicationHelper
     [specific_keywords, generic_keywords].compact.reject(&:empty?).join(", ")
   end
 
+  def open_graph_meta_tags tags
+    content_for(:open_graph_meta_tags) do
+      [tag("meta", name: "og:type", content: "article"),
+      tag("meta", name: "og:title", content: tags[:title]),
+      tag("meta", name: "og:description", content: tags[:description]),
+      tag("meta", name: "og:image", content: tags[:image])].join("").html_safe
+    end
+  end
+
   def meta_tags tags
     content_for(:keywords_meta_tag) do
       tag "meta", name: "keywords", content: keywords(tags[:keywords])
