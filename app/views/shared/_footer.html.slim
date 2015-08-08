@@ -56,7 +56,9 @@
 <span class="copy-text">© 2015 Footballia.</span>
 <!-- hlinks -->
 <ul class="hlinks pull-right">
-<li><a href="#">About</a></li>
+<li>
+  = link_to t("about"), about_path, title: t("about")
+</li>
 <li>
 	= link_to t("login"), new_user_session_path, title: t("login")
 </li>

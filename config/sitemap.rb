@@ -57,4 +57,6 @@ SitemapGenerator::Sitemap.create do
   add search_for_european_cup_finals_path
   add search_libertadores_finals_path
 
+  add about_path
+
 end

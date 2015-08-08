@@ -10,5 +10,8 @@ class PagesController < ApplicationController
     @goals_count = Goal.count
     @competitions_count = Competition.count
   end
+
+  def about
+  end
       
 end

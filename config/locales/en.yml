@@ -14,6 +14,7 @@
   motto_4: Footballia is the first free interactive football video library with over 1,000 matches to watch online anywhere, anytime.
   about: Footballia is the first free interactive football video library.
   upload_match: Upload your match now!
+  about: About
 
   pages:
     home:
@@ -44,6 +45,14 @@
       champions_league_finals: Champions League finals
       european_cup_finals: European Cup finals
       libertadores_finals: Copa Libertadores finals
+    about:
+      about: About Footballia
+      text_1: "Have you ever heard people discussing who the best player ever was? Di Stéfano, Pelé, Cruyff, Charlton, Beckenbauer, Platini…? And what about the ongoing debate these days, has Messi surpassed Maradona yet? You wish you could have your say, but you can’t because you’ve never seen most of them play!"
+      text_2: "Have you ever wished you could see that match you enjoyed so much again? Or see for the first time those historic matches experts always talk about?"
+      text_3: "Well, we have! Those were the premises that drove us to create Footballia. We wanted to build a place to bring together all the football in the world. Of course that is a huge task, that’s why we’re counting on you to contribute to building the largest collection of full football matches online. We’d like to become the largest football community on the web. Everyone is welcome!"
+      text_4: "You don’t need to learn about football history anymore by reading what others have to say about it. Now you can experience it for yourself!"
+      text_5: "Choose a game and just click play!"
+
 
   players:
     index:
@@ -260,3 +269,4 @@
       home: "Watch full football matches from all times"
       search: "Watch full %{name} matches"
       head_to_head: "Find all-time head-to-head matches between any two teams"
+      about: "On Footballia you can watch full football matches for free anytime, anywhere"

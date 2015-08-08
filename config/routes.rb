@@ -22,6 +22,7 @@ FootballTube::Application.routes.draw do
   get "search_by_team" => "search#search_by_team"
   get "search_head_to_head" => "search#search_head_to_head"
   get "advanced_search" => "search#advanced_search", as: :advanced_search
+  get "about" => "pages#about", as: :about
   
   root 'pages#home'
 
