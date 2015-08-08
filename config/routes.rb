@@ -40,7 +40,7 @@ FootballTube::Application.routes.draw do
   COPA_LIBERTADORES_ID = 7
   EUROPEAN_CUP_ID = 5
 
-  get "/clockwork-orange-matches" => "search#search_by_team", team_id: TEAM_NETHERLANDS_ID, from_year: 1974, to_year: 1978, term: I18n.t("pages.special_matches.clockwork_orange"), as: "search_for_clockwork_orange"
+  get "/clockwork-orange-matches" => "teams#show", id: TEAM_NETHERLANDS_ID, from_year: 1974, to_year: 1978, term: I18n.t("pages.special_matches.clockwork_orange"), as: "search_for_clockwork_orange"
   get "/brazil-70-matches" => "teams#show", id: TEAM_BRAZIL_ID, from_year: 1970, to_year: 1970, term: I18n.t("pages.special_matches.brazil_70"), as: "search_for_brazil_70"
   get "/dream-team-matches" => "teams#show", id: TEAM_FC_BARCELONA_ID, from_year: 1990, to_year: 1994, term: I18n.t("pages.special_matches.dream_team"), as: "search_for_dream_team"
   get "/quinta-del-buitre-matches" => "teams#show", id: TEAM_REAL_MADRID_ID, from_year: 1985, to_year: 1990, term: I18n.t("pages.special_matches.quinta_del_buitre"), as: "search_for_quinta_del_buitre"

@@ -5,9 +5,6 @@ class ApplicationController < ActionController::Base
   
   before_action :configure_permitted_parameters, if: :devise_controller?
 
-  #TODO use cancancan gem for this and let user crud her own stuff
-  before_action :check_admin_role, only: [:update, :edit, :destroy]
-
   before_action :set_competitions
 
   def set_competitions

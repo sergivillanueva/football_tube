@@ -42,7 +42,7 @@ javascript:
       if (!played) {
         console.log("PLAY");
         $.ajax({
-          url: "#{increment_visualizations_counter_match_path(@match)}",
+          url: "#{increment_visualizations_counter_match_path(match)}",
           type: "post",
           success: function (e) {
             console.log("COUNTED!")

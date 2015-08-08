@@ -1,7 +1,8 @@
 class PlayersController < ApplicationController
   before_action :authenticate_user!, except: :show
-  before_action :check_admin_role, only: :index  
   before_filter :check_uncompleted_param, only: :index
+  #TODO use cancancan gem for this and let user crud her own stuff
+  before_action :check_admin_role, only: [:update, :edit, :destroy, :index]
 
   def index
     respond_to do |format|
