@@ -18,13 +18,22 @@
   .direct_search_link
     padding: 4px
     text-align: center
+    .image
+      -webkit-filter: drop-shadow(4px 4px 3px #c4c3c3)
+      filter: drop-shadow(4px 4px 3px #c4c3c3)
     img
       width: 250px
       height: 180px
+      -webkit-filter: grayscale(40%) sepia(50%)
+      -moz-filter: grayscale(40%) sepia(50%)
+      filter: grayscale(40%) sepia(50%)
     .search_term
       text-align: center
     &:hover
-      opacity: 0.8
+      img
+        -webkit-filter: grayscale(0%) sepia(0%)
+        -moz-filter: grayscale(0%) sepia(0%)
+        filter: grayscale(0%) sepia(0%)
 @media (max-width: 767px)
   .more_special_matches
     a
