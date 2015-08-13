@@ -14,9 +14,15 @@
         br
         = "#{@last_match_with_video.decorate.competition_name} #{@last_match_with_video.decorate.season}"
 
-    end
+      end
     .rating
       = rating_for @last_match_with_video, nil, noRatedMsg: t("rating.not_rated")
+
+    .embedded_ad
+      <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+      <!-- Home -->
+      <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3306034605208079" data-ad-slot="4390317144" data-ad-format="auto"></ins>
+      <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
 .separator
 
