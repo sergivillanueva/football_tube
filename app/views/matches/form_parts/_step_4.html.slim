@@ -12,6 +12,7 @@
   .row.videos
     .col-xs-12
       h3 = t(".upload_files")
+      h5 = t(".video_format_instructions")
       = f.simple_fields_for :videos do |g|
         = g.input :source_file, as: :file
 
