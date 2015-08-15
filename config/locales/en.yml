@@ -15,7 +15,7 @@
   about: Footballia is the first free interactive football video library.
   upload_match: Upload your match now!
   about: About
-  contact: Contact
+  contact: Contact us
 
   pages:
     home:
@@ -53,7 +53,9 @@
       text_3: "Well, we have! Those were the premises that drove us to create Footballia. We wanted to build a place to bring together all the football in the world. Of course that is a huge task, that’s why we’re counting on you to contribute to building the largest collection of full football matches online. We’d like to become the largest football community on the web. Everyone is welcome!"
       text_4: "You don’t need to learn about football history anymore by reading what others have to say about it. Now you can experience it for yourself!"
       text_5: "Choose a game and just click play!"
-
+    contact:
+      contact: Contact Footballia
+      text_1: "Tell us what you think about Footballia!"
 
   players:
     index:

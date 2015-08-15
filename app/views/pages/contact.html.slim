@@ -1,2 +1,23 @@
 - title "Contact"
 
+.row
+  #main-col.col-sm-8.col-md-8.mgb-30-xs
+		h4  = t(".contact")
+
+		p = t(".text_1")
+
+		= simple_form_for @contact do |f|
+		  .row
+		    .col-md-6
+		      = f.input :name, label: false, placeholder: "Your name", :required => true, wrapper_html: { class: "form-group" }, input_html: { class: "form-control" }
+		    .col-md-6
+		      = f.input :email, label: false, placeholder: "Your email", :required => true, wrapper_html: { class: "form-group" }, input_html: { class: "form-control" }       
+		  
+		  = f.input :message, label: false, placeholder: "Your message...", :as => :text, :required => true, wrapper_html: { class: "form-group" }, input_html: { class: "form-control", rows: 8 }
+		  <div class= "hidden">
+		    = f.input :nickname, :hint => 'Leave this field blank!'
+		  </div>
+		  <div>
+		    </br>
+		    = f.button :submit, 'Send message', :class=> "btn btn-primary"
+		  </div>
