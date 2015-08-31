@@ -34,6 +34,14 @@ crumb :search_by_head_to_head do |title|
   parent :advanced_search
 end
 
+crumb :about do
+  link t("about"), about_path
+end
+
+crumb :contact do
+  link t("contact"), contact_path
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
