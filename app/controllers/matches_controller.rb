@@ -2,7 +2,8 @@ class MatchesController < ApplicationController
   decorates_assigned :match
   before_action :authenticate_user!, except: [:show, :preview_image, :mini_preview_image, :increment_visualizations_counter]
   #TODO use cancancan gem for this and let user crud her own stuff
-  before_action :check_admin_role, only: [:update, :edit, :destroy, :index]
+  before_action :check_admin_role, only: [:destroy, :index]
+  before_action :fetch_match, only: [:update, :edit]
 
   def new
     @match = Match.new
@@ -30,8 +31,6 @@ class MatchesController < ApplicationController
   end
   
   def update
-    @match = Match.friendly.find(params[:id])
-  
     # Destroy current player_participations since they will be created again to update data
     @match.player_participations.destroy_all
 
@@ -73,7 +72,6 @@ class MatchesController < ApplicationController
   end
 
   def edit
-    @match = Match.friendly.find(params[:id])
     build_player_participations
     (@match.total_score - @match.goals.count).times do 
       @match.goals.build
@@ -194,5 +192,12 @@ class MatchesController < ApplicationController
       player_participation.merge!({ player_id: player_id, side: attributes[:side], role: attributes[:role] })
       match_params.merge!(Hash.new(key: attributes[:key], value: player_participation))
     end
+  end
+
+  def fetch_match
+    # User is already signed in, so check only her role
+    @match = current_user.admin? ? Match.friendly.find(params[:id]) : current_user.matches.friendly.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    redirect_to root_path, alert: t("not_authorized")
   end
 end
