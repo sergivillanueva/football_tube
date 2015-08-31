@@ -58,5 +58,6 @@ SitemapGenerator::Sitemap.create do
   add search_libertadores_finals_path
 
   add about_path
+  add contact_path
 
 end
