@@ -1,3 +1,3 @@
 User-agent: *
-
+Disallow: /*increment_visualizations_counter$
 Sitemap: http://www.footballia.net/sitemap.xml.gz

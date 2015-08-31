@@ -34,7 +34,14 @@
     - if user_signed_in? && current_user.admin?
       p = match.visualizations_counter
 
+  .embedded_ad
+    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <!-- Match -->
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3306034605208079" data-ad-slot="2218593149" data-ad-format="auto"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+
   .details itemscope="" itemtype="http://schema.org/SportsEvent"
+    meta itemscope="" itemprop="name" content="#{match.competition_name} #{match.season} #{match.stage}"
     .row.teams.m-b
       .col-xs-6.team itemscope="" itemprop="homeTeam" itemtype="http://schema.org/SportsTeam"
         .logo
@@ -44,7 +51,7 @@
           = link_to match.object.home_team, title: match.object.home_team.name do
             = match.object.home_team.decorate.name
                   
-      .col-xs-6.team itemscope="" itemprop="homeTeam" itemtype="http://schema.org/SportsTeam"
+      .col-xs-6.team itemscope="" itemprop="awayTeam" itemtype="http://schema.org/SportsTeam"
         .logo
           .image
             = match.object.away_team.decorate.logo "medium"
