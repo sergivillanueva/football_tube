@@ -6,7 +6,7 @@ tr.player itemscope="" itemprop="competitor" itemtype="http://schema.org/Person"
     = player_participation.team_number
   td.name width="30%"
     = link_to player_participation.player, title: player_participation.player.full_name do
-      span itemscope="" itemprop="name"
+      span itemprop="name"
         = player_participation.player.name 
   td.age width="5%"
     = player_participation.player.age_at(player_participation.match.playing_date)
