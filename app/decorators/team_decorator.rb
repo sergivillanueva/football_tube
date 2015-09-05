@@ -10,14 +10,14 @@ class TeamDecorator < Draper::Decorator
   end
 
   def name
-    h.content_tag :span, itemscope: "", itemprop: "name" do
+    h.content_tag :span, itemprop: "name" do
     	object.name
     end
   end
 
   def logo size = nil
     image = size.nil? ? object.logo.url : object.logo.send(size).url
-    h.image_tag image, alt: object.name, title: object.name, itemscope: "", itemprop: "logo"
+    h.image_tag image, alt: object.name, title: object.name
   end
   
 end

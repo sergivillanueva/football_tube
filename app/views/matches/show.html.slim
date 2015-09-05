@@ -46,22 +46,20 @@
       .col-xs-6.team itemscope="" itemprop="homeTeam" itemtype="http://schema.org/SportsTeam"
         .logo
           .image
-            meta itemprop="logo" content="#{match.object.home_team.logo.url}"
+            meta itemprop="logo" content="http://www.footballia.net#{match.object.home_team.logo.url}"
             = match.object.home_team.decorate.logo "medium"
         .team_name.m-t
           = link_to match.object.home_team, title: match.object.home_team.name do
-            span itemprop="name"
-              = match.object.home_team.decorate.name
+            = match.object.home_team.decorate.name
                   
       .col-xs-6.team itemscope="" itemprop="awayTeam" itemtype="http://schema.org/SportsTeam"
         .logo
           .image
-            meta itemprop="logo" content="#{match.object.away_team.logo.url}"
+            meta itemprop="logo" content="http://www.footballia.net#{match.object.away_team.logo.url}"
             = match.object.away_team.decorate.logo "medium"
         .team_name.m-t
           = link_to match.object.away_team, title: match.object.away_team.name do
-            span itemprop="name"
-              = match.object.away_team.decorate.name    
+            = match.object.away_team.decorate.name    
                       
     - if match.object.competition.present?
       .competition
