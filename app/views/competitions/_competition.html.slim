@@ -8,6 +8,5 @@ tr
   td = t("competitions.scope.#{competition.scope}") if competition.scope.present?  
   td = t("competitions.zone.#{competition.zone}") if competition.zone.present?  
   td = competition.matches.count
-  td 
-     = link_to "", edit_competition_path(competition), class: "ui-icon ui-icon-pencil", title: "edit"
-     = link_to "", competition_path(competition), method: :delete, class: "ui-icon ui-icon-trash", :"data-confirm" => "Are you sure?", title: "delete"
+  td = link_to "", edit_competition_path(competition), class: "ui-icon ui-icon-pencil", title: "edit"
+  td = link_to "", competition_path(competition), method: :delete, class: "ui-icon ui-icon-trash", :"data-confirm" => "Are you sure?", title: "delete"
