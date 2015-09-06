@@ -49,7 +49,7 @@ class MatchesController < ApplicationController
       @match.goals.each do |goal|
         goal.destroy unless @match.players.include? goal.player
       end
-      redirect_to root_path
+      redirect_to root_path, notice: @match.published? ? t(".match_updated") : t(".match_validation")
     else
       render :edit
     end

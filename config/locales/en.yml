@@ -85,6 +85,9 @@
       new_match: New match
     edit:
       edit_match: Edit match
+    update:
+      match_updated: Your match has been updated
+      match_validation: Your match will be public after being validated by the administradors.
     player_participation_fields:
       team_number: Team number
     form_parts:
@@ -100,7 +103,6 @@
         player: Player
         upload_files: Upload files
         video_format_instructions: Video files must be encoded using the H264 video codec and the AAC coding for audio and preferably no larger than 800 Mb.
-      
   competitions:
     edit:
       edit_competition: Edit competition
