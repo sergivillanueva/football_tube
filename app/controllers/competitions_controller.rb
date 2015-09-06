@@ -11,7 +11,7 @@ class CompetitionsController < ApplicationController
   def show
     @competition = Competition.friendly.find params[:id]
     @term = params[:term] || @competition.name
-    @matches = @competition.matches
+    @matches = @competition.matches.published
     @matches = @matches.where(stage: params[:stages].split(";")) if params[:stages].present?
     @matches = @matches.order("playing_date").decorate
     render "search/search_by_competition"

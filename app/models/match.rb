@@ -24,7 +24,8 @@ class Match < ActiveRecord::Base
   validates :away_score, presence: true
 
   scope :with_videos, -> { joins(:videos).select('matches.id').group('matches.id').having('count(videos.id) > 0') }
-  
+  scope :published, -> { where(published: true) }
+
   attr_accessor :home_team_name, :away_team_name, :competition_name
 
   extend FriendlyId

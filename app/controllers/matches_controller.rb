@@ -66,7 +66,7 @@ class MatchesController < ApplicationController
   end
   
   def show
-    @match = Match.friendly.find(params[:id])
+    @match = Match.published.friendly.find(params[:id])
     @match.increment!(:visits_counter)
     @related_matches = @match.related_matches
   end

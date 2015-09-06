@@ -17,7 +17,7 @@ class PlayersController < ApplicationController
   def show
     @player = Player.friendly.find params[:id]
     @term = @player.name
-    @player_participations = @player.player_participations.joins(:match) #PlayerParticipation.joins(:match).where(player_id: params[:player_id])
+    @player_participations = @player.player_participations.joins(:match).where(:"matches.published" => true) #PlayerParticipation.joins(:match).where(player_id: params[:player_id])
     if params[:from_year].present? && params[:to_year].present?
       seasons = (params[:from_year]..params[:to_year]).to_a.map{|year| [year, "#{year}-#{year.to_i + 1}"]}.flatten.prepend("#{params[:from_year].to_i - 1}-#{params[:from_year]}" )
       @player_participations = @player_participations.where(season: seasons)
