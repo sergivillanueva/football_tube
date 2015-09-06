@@ -39,6 +39,12 @@ class PlayersController < ApplicationController
     end
   end
   
+  def destroy
+    @player = Player.friendly.find(params[:id])
+    @player.destroy
+    redirect_to players_path, notice: "Player deleted"
+  end
+
   private
   
   def player_params

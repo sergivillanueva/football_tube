@@ -11,6 +11,7 @@ table.table
       th = "Full name"
       th = "Birthay"
       th
+      th
  
 javascript:
   $(document).ready(function() {
@@ -21,7 +22,8 @@ javascript:
         { "data": "name" },
         { "data": "full_name" },
         { "data": "birthday" },
-        { "data": "edit_link", "orderable": false }
+        { "data": "edit_link", "orderable": false },
+        { "data": "delete_link", "orderable": false }
       ],
       "pageLength": 50,
       "deferRender": true,
