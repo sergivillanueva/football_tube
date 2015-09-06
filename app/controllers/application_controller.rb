@@ -22,6 +22,12 @@ class ApplicationController < ActionController::Base
   	redirect_to root_path, alert: t("not_authorized") unless user_signed_in? && current_user.admin?
   end
 
+  def mobile?  
+    request.user_agent =~ /Mobile|webOS/  
+  end 
+
+  helper_method :mobile?
+
   protected
 
   def configure_permitted_parameters
