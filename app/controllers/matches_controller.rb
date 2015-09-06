@@ -108,6 +108,15 @@ class MatchesController < ApplicationController
       render json: { status: :error, code: 0 }
     end
   end
+
+  def publish
+    @match = Match.friendly.find(params[:id])
+    if @match.publish!
+      render json: { status: :ok, code: 1 }
+    else
+      render json: { status: :error, code: 0 }
+    end
+  end
   
   private
   

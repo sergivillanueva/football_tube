@@ -81,4 +81,12 @@ class Match < ActiveRecord::Base
   def mini_preview_image
     PreviewImageGenerator.new(self).generate_mini_preview_image
   end
+
+  def published?
+    self.published == true
+  end
+
+  def publish!
+    self.update_column(:published, true)
+  end
 end

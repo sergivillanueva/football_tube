@@ -16,6 +16,7 @@ table.table
       th = "Uploaded"
       th
       th
+      th
 
 javascript:
   $(document).ready(function() {
@@ -33,6 +34,7 @@ javascript:
         { "data": "visits_counter" },
         { "data": "visualizations_counter" },
         { "data": "created_at" },
+        { "data": "publish_link", "orderable": false },
         { "data": "edit_link", "orderable": false },
         { "data": "delete_link", "orderable": false }
       ],
@@ -41,4 +43,18 @@ javascript:
       "order": [10, 'desc'],
       "sDom": 'lfiprtip'
     });
+    
+    $(document).on("click", ".publish", function (e) {
+      var link = this;
+      $.ajax({
+        url: $(link).data("url"),
+        type: "post",
+        success: function (e) {
+          alert("Published!");
+          $(link).remove();
+        }
+      });
+      e.preventDefault();
+    });
+
   });      

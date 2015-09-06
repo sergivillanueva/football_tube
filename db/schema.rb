@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150725224647) do
+ActiveRecord::Schema.define(version: 20150906160527) do
 
   create_table "average_caches", force: true do |t|
     t.integer  "rater_id"
@@ -64,8 +64,8 @@ ActiveRecord::Schema.define(version: 20150725224647) do
   end
 
   create_table "matches", force: true do |t|
-    t.integer  "home_score",             limit: 1,             null: false
-    t.integer  "away_score",             limit: 1,             null: false
+    t.integer  "home_score",             limit: 1,                 null: false
+    t.integer  "away_score",             limit: 1,                 null: false
     t.date     "playing_date"
     t.integer  "home_team_id"
     t.integer  "away_team_id"
@@ -81,6 +81,7 @@ ActiveRecord::Schema.define(version: 20150725224647) do
     t.text     "description"
     t.integer  "visualizations_counter",           default: 0
     t.integer  "visits_counter",                   default: 0
+    t.boolean  "published",                        default: false
   end
 
   add_index "matches", ["slug"], name: "index_matches_on_slug", unique: true
