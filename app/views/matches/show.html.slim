@@ -35,17 +35,14 @@
       p = match.visualizations_counter
 
   .embedded_ad
-    <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <!-- Match -->
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-3306034605208079" data-ad-slot="2218593149" data-ad-format="auto"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
 
   .details itemscope="" itemtype="http://schema.org/SportsEvent"
-    meta itemscope="" itemprop="name" content="#{match.competition_name} #{match.season} #{match.stage}"
+    meta itemprop="name" content="#{match.competition_name} #{match.season} #{match.stage}"
     .row.teams.m-b
       .col-xs-6.team itemscope="" itemprop="homeTeam" itemtype="http://schema.org/SportsTeam"
         .logo
           .image
+            meta itemprop="logo" content="http://www.footballia.net#{match.object.home_team.logo.url}"
             = match.object.home_team.decorate.logo "medium"
         .team_name.m-t
           = link_to match.object.home_team, title: match.object.home_team.name do
@@ -54,6 +51,7 @@
       .col-xs-6.team itemscope="" itemprop="awayTeam" itemtype="http://schema.org/SportsTeam"
         .logo
           .image
+            meta itemprop="logo" content="http://www.footballia.net#{match.object.away_team.logo.url}"
             = match.object.away_team.decorate.logo "medium"
         .team_name.m-t
           = link_to match.object.away_team, title: match.object.away_team.name do
@@ -70,7 +68,7 @@
       span itemprop="name" 
         = match.venue
         
-    .playing_date itemprop="startDate" itemscope="" content=match.object.playing_date
+    .playing_date itemprop="startDate" content=match.object.playing_date
       = match.playing_date
     
     .rating
