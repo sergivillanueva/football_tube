@@ -66,7 +66,11 @@ class MatchesController < ApplicationController
   end
   
   def show
-    @match = Match.published.friendly.find(params[:id])
+    if user_signed_in? && current_user.admin?
+      @match = Match.friendly.find(params[:id])
+    else
+      @match = Match.published.friendly.find(params[:id])
+    end
     @match.increment!(:visits_counter)
     @related_matches = @match.related_matches
   end
