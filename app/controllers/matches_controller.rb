@@ -2,7 +2,7 @@ class MatchesController < ApplicationController
   decorates_assigned :match
   before_action :authenticate_user!, except: [:show, :preview_image, :mini_preview_image, :increment_visualizations_counter]
   #TODO use cancancan gem for this and let user crud her own stuff
-  before_action :check_admin_role, only: [:destroy, :index]
+  before_action :check_admin_role, only: [:destroy, :index, :publish]
   before_action :fetch_match, only: [:update, :edit]
 
   def new
