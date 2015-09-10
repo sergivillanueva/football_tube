@@ -27,7 +27,7 @@ SitemapGenerator::Sitemap.create do
 
   add root_path, :changefreq => 'daily', :priority => 0.9
 
-  Match.find_each do |match|
+  Match.published.find_each do |match|
     add match_path(match), :lastmod => match.updated_at
   end
 
