@@ -19,6 +19,10 @@ class Player < ActiveRecord::Base
     ]
   end
 
+  def should_generate_new_friendly_id?
+    name_changed? || full_name_changed?
+  end
+
   def as_json(options={})
     { 
       value: self.name,
