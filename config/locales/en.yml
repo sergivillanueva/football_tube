@@ -61,6 +61,8 @@
     index:
       uncompleted: Uncompleted
       all: All
+    edit:
+      edit_player: Edit player
 
   matches:
     goal:
@@ -275,7 +277,7 @@
       head_to_head: "Head to head search"
     description:
       match: "Watch the %{season} %{title} %{competition} %{stage} full match held at %{venue}"
-      home: "Watch full football matches from all times"
+      home: "Watch full football matches from all times, from early 50's to nowadays. We have more than 1,400 matches to watch online and a database of 10,000 football players around the world"
       search: "Watch full %{name} matches"
       head_to_head: "Find all-time head-to-head matches between any two teams"
       about: "On Footballia you can watch full football matches for free anytime, anywhere"
