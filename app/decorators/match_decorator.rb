@@ -101,4 +101,8 @@ class MatchDecorator < ApplicationDecorator
   def meta_tag_description
     I18n.t("meta_tags.description.match", season: season, title: title, competition: competition_name, stage: stage, venue: venue)
   end
+
+  def published?
+    object.published?
+  end
 end
