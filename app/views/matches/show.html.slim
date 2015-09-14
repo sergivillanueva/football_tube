@@ -4,6 +4,11 @@
 
 #match
   - breadcrumb :matches, @match
+
+  - if !match.published?
+    .alert.alert-danger
+      = "Match not published."
+
   .clearfix
     .video
       - if match.videos.any?
