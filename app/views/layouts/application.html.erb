@@ -69,5 +69,20 @@
 
     <%= render "shared/footer" %>
   </div> <!-- Page Wrapper -->
+
+  <% if controller.action_name == 'home' %>
+    <!-- CODIGO ADPV -->
+    <script type="text/javascript">
+      setTimeout(function() {	 
+      window.adpv_client_slidein = "44845";
+      var script = document.createElement("script");
+      script.type = "text/javascript";
+      script.src = "http://ads.adpv.com/ads_slidein.js";
+      document.getElementsByTagName('head')[0].appendChild(script);
+      }, 0);
+    </script>
+    <!-- FIN CODIGO ADPV -->
+  <% end %>
+
 </body>
 </html>
