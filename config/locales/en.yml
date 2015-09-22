@@ -170,6 +170,12 @@
     turkish: Turkish
     thai: Thai
     valencian: Valencian
+    danish: Danish
+    korean: Korean
+    bulgarian: Bulgarian 
+    arabic: Arabic
+    georgian: Georgian
+    chinese: Chinese
 
   shared:
     search:
