@@ -33,7 +33,7 @@
       span = t(".uploaded_by")
       - if match.object.user.present?
         / span.m-l-xs = link_to match.object.user.name, profile_path(match.object.user)
-        span.m-l-xs = match.object.user.name
+        span.m-l-xs = match.object.user.nick_name
     p = match.description
 
     - if user_signed_in? && current_user.admin?
