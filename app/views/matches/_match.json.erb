@@ -10,7 +10,7 @@
   "visits_counter": <%= match.visits_counter %>,
   "visualizations_counter": <%= match.visualizations_counter %>,
   "created_at": "<%= match.created_at %>",
-  "user": "<%= match.object.user.email %>",
+  "user": "<%= match.object.user.try(:email) %>",
   "publish_link": <%= raw match.object.published? ? "".to_json : link_to('', "#", class: 'ui-icon ui-icon-check publish', title: 'publish', :"data-url" => "#{publish_match_path(match)}").to_json %>,
   "edit_link": <%= raw link_to('', edit_match_path(match), class: 'ui-icon ui-icon-pencil', title: 'edit').to_json %>,
   "delete_link": <%= raw link_to('', match_path(match), method: :delete, class: 'ui-icon ui-icon-trash', :"data-confirm" => "Are you sure?", title: 'delete').to_json %>
