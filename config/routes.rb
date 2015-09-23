@@ -6,6 +6,7 @@ FootballTube::Application.routes.draw do
     get :mini_preview_image, on: :member
     post :increment_visualizations_counter, on: :member
     post :publish, on: :member
+    resources :comments
   end
   resources :teams do
     get "search", on: :collection

@@ -1,0 +1,12 @@
+= simple_form_for [@match, @match.comment_threads.build] do |f|
+
+  - if !current_user.nick_name.present?
+    .row
+      .col-xs-12.col-md-6
+        .form-group
+          = f.input :nick_name, required: true, label: false, placeholder: t(".your_nick_name"), input_html: { class: "form-control" }
+
+  .form-group
+    = f.input :body, label: false, placeholder: t(".your_message"), input_html: { class: "form-control", rows: 8 }
+
+  = f.button :submit, class: "btn-primary"

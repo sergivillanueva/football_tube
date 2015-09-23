@@ -9,6 +9,19 @@
     .alert.alert-danger
       = "Match not published."
 
+  .m-b
+    |
+      <!-- CODIGO ADPV -->
+      <div id="adsadpv44909"></div>
+      <script type="text/javascript"><!--
+      var adpv_client = "44909";
+      var adpv_width = 728;
+      var adpv_height = 90;
+      var adpv_container_id = "adsadpv44909";
+      //--></script>
+      <script type="text/javascript" src="http://ads.adpv.com/ads.js"></script>
+      <!-- FIN CODIGO ADPV -->
+
   .clearfix
     .video
       - if match.videos.any?
@@ -39,18 +52,17 @@
     - if user_signed_in? && current_user.admin?
       p = match.visualizations_counter
 
-  .embedded_ad
-    |
-      <!-- CODIGO ADPV -->
-      <div id="adsadpv44909"></div>
-      <script type="text/javascript"><!--
-      var adpv_client = "44909";
-      var adpv_width = 728;
-      var adpv_height = 90;
-      var adpv_container_id = "adsadpv44909";
-      //--></script>
-      <script type="text/javascript" src="http://ads.adpv.com/ads.js"></script>
-      <!-- FIN CODIGO ADPV -->
+  .comments
+    .row
+      .col-xs-12.col-md-8
+        h4 = t(".comments")
+        ol.comments-list
+          = render @match.comment_threads
+        h4 = t(".add_comment")
+        - if user_signed_in?
+          = render "comments/form"
+        - else
+          = t(".sign_in_to_comment", url: new_user_session_path).html_safe
 
   .details itemscope="" itemtype="http://schema.org/SportsEvent"
     meta itemprop="name" content="#{match.competition_name} #{match.season} #{match.stage}"

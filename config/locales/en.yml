@@ -64,6 +64,14 @@
     edit:
       edit_player: Edit player
 
+  comments:
+    create:
+      comment_created: Congratulations! Your comment has been added
+      comment_not_created: Your comment coudn't be added
+    form:
+      your_message: Your message...
+      your_nick_name: Your nickname
+
   matches:
     goal:
       own_goal: o.g.
@@ -83,6 +91,9 @@
       no_results: No results
       uploaded_by: Uploaded by
       toggle_player_size: Toggle player size
+      comments: Comments
+      add_comment: Add a comment
+      sign_in_to_comment: "<a href=\"%{url}\" title=\"Sign in\">Sign in</a> to comment"
     new:
       new_match: New match
     edit:
