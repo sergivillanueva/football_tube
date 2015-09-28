@@ -1,4 +1,4 @@
-= simple_form_for [@match, @match.comment_threads.build] do |f|
+= simple_form_for [@match, Comment.new] do |f|
 
   - if !current_user.nick_name.present?
     .row
