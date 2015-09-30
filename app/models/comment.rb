@@ -51,6 +51,7 @@ class Comment < ActiveRecord::Base
   end
 
   def send_notification
+    UserMailer.new_comment_reply_email(self).deliver if self.parent.present?
     UserMailer.new_comment_email(self).deliver
   end
 end

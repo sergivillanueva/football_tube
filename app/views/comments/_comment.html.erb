@@ -1,8 +1,16 @@
-<li class="clearfix">
+<% reply_css_class = "#{'reply-comment' if comment.parent.present?}" %>
+<li class="clearfix comment-block <%= reply_css_class %>">
   <div class="avatar">
-    <%= image_tag comment.user.avatar.medium.url, title: comment.user.name, alt: comment.user.name %>
+    <% if comment.user.avatar.present? %>
+      <div class="m-b-xs">
+        <%= image_tag comment.user.avatar.medium.url, title: comment.user.name, alt: comment.user.name %>
+      </div>
+    <% end %>
     <% if user_signed_in? && current_user.admin? %>
       <%= link_to('', match_comment_path(@match, comment), method: :delete, class: 'ui-icon ui-icon-trash', :"data-confirm" => "Are you sure?", title: 'delete') %>
+    <% end %>
+    <% if !comment.parent.present? %>
+      <%= link_to t(".reply"), "#", class: "reply_comment" %>
     <% end %>
   </div>
   <div class="comment-box clearfix">
@@ -13,5 +21,16 @@
     <p class="comment">
       <%= comment.body %>
     </p>
+    <div class="comment reply_comment_form m-t" style="display:none;">
+      <% if user_signed_in? %>
+        <%= render partial: "comments/form", locals: { comment: Comment.new(parent: comment) } %>
+      <% else %>
+        <%= t("sign_in_to_comment", url: new_user_session_path).html_safe %>
+      <% end %>
+    </div>
   </div>
 </li>
+<% if comment.has_children? %>
+    <%= render partial: "comments/comment", collection: comment.children, as: :comment %>
+<% end %>
+

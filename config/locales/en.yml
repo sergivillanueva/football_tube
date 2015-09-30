@@ -16,6 +16,7 @@
   upload_match: Upload your match now!
   about: About
   contact: Contact us
+  sign_in_to_comment: "<a href=\"%{url}\" title=\"Sign in\">Sign in</a> to comment"
 
   pages:
     home:
@@ -71,6 +72,8 @@
     form:
       your_message: Your message...
       your_nick_name: Your nickname
+    comment:
+      reply: Reply
 
   matches:
     goal:
@@ -93,7 +96,6 @@
       toggle_player_size: Toggle player size
       comments: Comments
       add_comment: Add a comment
-      sign_in_to_comment: "<a href=\"%{url}\" title=\"Sign in\">Sign in</a> to comment"
     new:
       new_match: New match
     edit:

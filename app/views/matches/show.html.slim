@@ -55,16 +55,16 @@
   .comments
     .row
       .col-xs-12.col-md-8
-        .m-b-lg
+        .new_comment.m-b-lg
           h4 = t(".add_comment")
           - if user_signed_in?
-            = render "comments/form"
+            = render partial: "comments/form", locals: { comment: Comment.new }
           - else
-            = t(".sign_in_to_comment", url: new_user_session_path).html_safe
+            = t("sign_in_to_comment", url: new_user_session_path).html_safe
 
         h4 = t(".comments")
         ol.comments-list
-          = render @match.comment_threads.order("created_at DESC")
+          = render @match.root_comments.order("created_at DESC")
 
   .details itemscope="" itemtype="http://schema.org/SportsEvent"
     meta itemprop="name" content="#{match.competition_name} #{match.season} #{match.stage}"
@@ -177,6 +177,10 @@ javascript:
     $("#match").on("click", "#show_result", function (e) {
       $(this).next().fadeIn();
       $(this).remove();
+      e.preventDefault();
+    });
+    $("#match").on("click", ".reply_comment", function (e) {
+      $(this).closest(".comment-block").find(".reply_comment_form").toggle();
       e.preventDefault();
     });
   });

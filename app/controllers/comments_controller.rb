@@ -30,7 +30,8 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(
       :body,
       :title,
-      :nick_name
+      :nick_name,
+      :parent_id
     )
   end
 
