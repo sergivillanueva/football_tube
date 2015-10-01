@@ -1,8 +1,6 @@
 .preview.col-xs-3
-	= link_to match, title: match.title do
-	  img src="#{preview_image_match_path(match)}" style="width:100%;"
-	  
-	/ p.text-center style="margin-top:10px;" = match.title_with_logos "mini"
-
-	.mini-rating
-    = rating_for match.object, nil, noRatedMsg: t("rating.not_rated")
+  = link_to match, title: match.title do
+    img src="#{preview_image_match_path(match)}" style="width:100%;"
+  
+  - if user_signed_in? && current_user.matches.include?(match.object)
+    = link_to t("matches.edit.edit_match"), edit_match_path(match.object), title: t("matches.edit.edit_match")
