@@ -52,21 +52,6 @@
     - if user_signed_in? && current_user.admin?
       p = match.visualizations_counter
 
-  - if user_signed_in? && current_user.admin?
-    .comments
-      .row
-        .col-xs-12.col-md-8
-          .new_comment.m-b-lg
-            h4 = t(".add_comment")
-            - if user_signed_in?
-              = render partial: "comments/form", locals: { comment: Comment.new }
-            - else
-              = t("sign_in_to_comment", url: new_user_session_path).html_safe
-
-          h4 = t(".comments")
-          ol.comments-list
-            = render @match.root_comments.order("created_at DESC")
-
   .details itemscope="" itemtype="http://schema.org/SportsEvent"
     meta itemprop="name" content="#{match.competition_name} #{match.season} #{match.stage}"
     .row.teams.m-b
@@ -172,7 +157,22 @@
                       td.name colspan=2
                         = t(".reserves")
                     = render partial: "player_participation", collection: @match.away_reserves
-          
+
+  .comments
+    .row
+      .col-xs-12.col-md-8
+        .new_comment.m-b-lg
+          h4 = t(".add_comment")
+          - if user_signed_in?
+            = render partial: "comments/form", locals: { comment: Comment.new }
+          - else
+            = t("sign_in_to_comment", url: new_user_session_path).html_safe
+
+	- if @match.root_comments.any?
+          h4 = t(".comments")
+          ol.comments-list
+            = render @match.root_comments.order("created_at DESC")
+
 javascript:
   $(document).ready(function () {
     $("#match").on("click", "#show_result", function (e) {
