@@ -1,5 +1,6 @@
 class MatchDecorator < ApplicationDecorator
   decorates_association :player_participation
+  decorates_association :user
   delegate :current_page, :total_pages, :limit_value
     
   def result

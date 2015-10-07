@@ -96,6 +96,10 @@
       toggle_player_size: Toggle player size
       comments: Comments
       add_comment: Add a comment
+    meta:
+      uploaded_by: "By %{name}"
+      comments: "%{n} Comments"
+      visualizations: "%{n} Views"
     new:
       new_match: New match
     edit:

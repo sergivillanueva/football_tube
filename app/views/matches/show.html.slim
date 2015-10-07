@@ -37,20 +37,24 @@
       .related_matches
         h5 = t(".related_matches")
         = render(partial: "related_match", collection: @related_matches, as: :match) || t(".no_results")
-  
-  .description.m-t
+
+  .description.m-t.blog-entry
+    h1 = match.title
+
+    = render "meta"
+
+    ul.page-links.pull-right.hlinks.hlinks-icons.color-icons-borders.color-icons-bg-hovered
+      li
+        a href="https://www.facebook.com/sharer/sharer.php?u=http://footballia.net/matches/manchester-city-newcastle-united" target="_blank"
+          i.icon.fa.fa-facebook
+      li
+        a href="https://twitter.com/share?text=#{match.title}" target="_blank"
+          i.icon.fa.fa-twitter
+
     p.hidden-xs
       = link_to t(".toggle_player_size"), "#", class: "toggle_player_size btn btn-primary btn-sm"
 
-    p 
-      span = t(".uploaded_by")
-      - if match.object.user.present?
-        / span.m-l-xs = link_to match.object.user.name, profile_path(match.object.user)
-        span.m-l-xs = match.object.user.nick_name
     p = match.description
-
-    - if user_signed_in? && current_user.admin?
-      p = match.visualizations_counter
 
   .details itemscope="" itemtype="http://schema.org/SportsEvent"
     meta itemprop="name" content="#{match.competition_name} #{match.season} #{match.stage}"
@@ -158,7 +162,7 @@
                         = t(".reserves")
                     = render partial: "player_participation", collection: @match.away_reserves
 
-  .comments
+  #comments.comments
     .row
       .col-xs-12.col-md-8
         .new_comment.m-b-lg
@@ -168,7 +172,7 @@
           - else
             = t("sign_in_to_comment", url: new_user_session_path).html_safe
 
-	- if @match.root_comments.any?
+        - if @match.root_comments.any?
           h4 = t(".comments")
           ol.comments-list
             = render @match.root_comments.order("created_at DESC")
@@ -184,6 +188,13 @@ javascript:
       $(this).closest(".comment-block").find(".reply_comment_form").toggle();
       e.preventDefault();
     });
+    $(".meta .comments a").on('click', function (e) {
+      $('html, body').animate({
+        scrollTop: $("#comments").offset().top
+      }, 1000);
+      event.preventDefault();
+    });
+
   });
 
 - if match.videos.any?

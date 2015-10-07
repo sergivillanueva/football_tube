@@ -1,0 +1,14 @@
+.meta
+  - if match.object.user.present?
+    span.author
+      i.fa.fa-user
+      = link_to t(".uploaded_by", name: match.user.name), profile_path(match.object.user), title: t(".uploaded_by", name: match.user.name)
+
+  span.comments
+    i.fa.fa-comments
+    a href="#comments"
+      = t(".comments", n: @match.root_comments.count)
+
+  span.visualizations
+    i.fa.fa-play
+    = t(".visualizations", n: match.visualizations_counter)
