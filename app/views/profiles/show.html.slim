@@ -1,41 +1,50 @@
-- title t(".profile")
+- title t(".profile", name: @user.decorate.unique_name)
 
-h3 
-  = t(".profile")
-  small.m-l-xs = link_to t(".edit"), edit_user_registration_path
+h3
+  = t(".profile", name: @user.decorate.name)
+  - if user_signed_in? && current_user == @user
+    small.m-l-xs = link_to t(".edit"), edit_user_registration_path
 
 .row.profile
   .col-xs-6
   	- if @user.avatar.present?
       = image_tag @user.avatar.medium.url, title: @user.name, alt: @user.name
     - else
-      = t(".add_your_avatar", url: edit_user_registration_path).html_safe
+      - if user_signed_in? && current_user == @user
+        = t(".add_your_avatar", url: edit_user_registration_path).html_safe
+      - else
+        = t(".no_avatar")
   .col-xs-6
-  	.nick_name
-      label = t("activerecord.attributes.user.nick_name")
-      = @user.nick_name
-    .email
-      label = t("activerecord.attributes.user.email")
-      = @user.email
+    - if user_signed_in? && current_user == @user
+      .nick_name
+        label = t("activerecord.attributes.user.nick_name")
+        - if @user.nick_name.present?
+          = @user.nick_name
+        - else
+          = t(".add_your_nick_name", url: edit_user_registration_path).html_safe
+      .email
+        label = t("activerecord.attributes.user.email")
+        = @user.email
     .favourite_team
       label = t("activerecord.attributes.user.favourite_team_name")
       - if @user.favourite_team.present?
         = link_to @user.favourite_team, title: @user.favourite_team.name do
           = @user.favourite_team.decorate.logo "thumb"
       - else
-         = t(".add_your_favourite_team", url: edit_user_registration_path).html_safe
+        - if user_signed_in? && current_user == @user
+          = t(".add_your_favourite_team", url: edit_user_registration_path).html_safe
+        - else
+          = t(".not_set")
 
 .matches.m-t
   h4 = t(".matches")
   - if @user.matches.empty?
-    = t(".add_match", url: new_match_path).html_safe
+    - if user_signed_in? && current_user == @user
+      = t(".add_match", url: new_match_path).html_safe
+    - else
+      = t(".no_matches")
 
   - else
     - @user.matches.limit(16).decorate.to_a.in_groups_of(4, false) do |matches|
       .row.m-b
         = render partial: "matches/embed", collection: matches, as: :match
-
-javascript:
-  $(document).ready(function () {
-    $(".star").raty('set', { readOnly: true });
-  });        

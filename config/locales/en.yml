@@ -260,12 +260,16 @@
 
   profiles:
     show:
-       profile: Profile
+       profile: "%{name} profile"
        edit: Edit
        add_your_avatar: "You don't have an avatar, add one <a href=\"%{url}\">here</a>!"
+       add_your_nick_name: "You don't have a nickname, add it <a href=\"%{url}\">here</a>!"
        add_your_favourite_team: "Do you have a favourite team? Add it <a href=\"%{url}\">here</a>!"
        matches: Matches
        add_match: "You haven't uploaded any matches yet. Add one <a href=\"%{url}\">here</a>!"
+       not_set: Not set
+       no_avatar: No avatar
+       no_matches: This user hasn't upload any matches yet
 
   devise:
     registrations:
