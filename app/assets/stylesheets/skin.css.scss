@@ -2786,10 +2786,10 @@ body {
   text-align: center;
   text-transform: uppercase;
 }
-.promo-text h5, .promo-text h1, .promo-text p {
+.promo-text h5, .promo-text h3, .promo-text h1 {
   color: inherit;
 }
-.promo-text h1 {
+.promo-text h3 {
   margin: 0 0 20px 0;
   font: 700 35px/1.5em "Roboto";
   border: 2px solid #fff;
@@ -2797,7 +2797,7 @@ body {
   text-align: center;
   padding: 15px 50px;
 }
-.promo-text p {
+.promo-text h1 {
   font: 500 20px/1.5em "Roboto Condensed";
   margin: 0 0 30px 0;
   text-transform: none;
