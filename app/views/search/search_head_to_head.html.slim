@@ -2,18 +2,20 @@
 - meta_tags keywords: @term, description: t("meta_tags.description.search", name: @term)
 - breadcrumb :search_by_head_to_head, @term
 
-.m-b-lg
-  h4 = t("search.results", n: @matches.size, term: @term)
-- # TODO search by player name: use different search results views?
+.search-results
+  h1 = t("search.full_matches", term: @term)
+  h2 = t("search.results", n: @matches.size)
 
-table class="table table-striped table-condensed table-search"
-  thead
-    tr
-      th.hidden-xs = t(".playing_date")
-      th = t(".match")
-      th.hidden-xs = t(".competition")
-      th = t(".season")
-      th.hidden-xs = t(".language")
-      
-  tbody
-    = render partial: "search/match", collection: @matches
+  - # TODO search by player name: use different search results views?
+
+  table class="table table-striped table-condensed table-search"
+    thead
+      tr
+        th.hidden-xs = t(".playing_date")
+        th = t(".match")
+        th.hidden-xs = t(".competition")
+        th = t(".season")
+        th.hidden-xs = t(".language")
+
+    tbody
+      = render partial: "search/match", collection: @matches

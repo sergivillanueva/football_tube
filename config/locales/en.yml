@@ -4,14 +4,14 @@
   login: Login
   logout: Logout
   register: Register
-  matches_by: "%{name} matches"
+  matches_by: "%{name} full matches"
   delete: Delete
   not_authorized: You are not authorized to access this page
   cancel: Cancel
-  motto_1: The first free interactive football video library
+  motto_1: Full online historic football matches
   motto_2: Don't just read about history
   motto_3: Experience it!
-  motto_4: Footballia is the first free interactive football video library with over 1,000 matches to watch online anywhere, anytime.
+  motto_4: Footballia is the first free interactive football video library with over 1,500 online matches to watch anywhere, anytime.
   about: Footballia is the first free interactive football video library.
   upload_match: Upload your match now!
   about: About
@@ -30,23 +30,23 @@
       best_matches: Best-rated matches
     special_matches:
       our_special_matches: Our special collections
-      maradona: Maradona matches
-      di-stefano: Di Stéfano matches
-      cruijff: Cruyff matches
-      pele: Pelé matches
-      messi: Messi matches
-      clockwork_orange: Clockwork Orange matches (1974-1978)
-      brazil_70: Brazil '70 matches (1970)
-      dream_team: Dream Team matches (1990-1994)
-      quinta_del_buitre: Quinta del Buitre matches (1985-1990)
-      sacchi_milan: Sacchi's Milan matches  (1987-1992)
-      france_80s: France 80's matches (1982-1986)
-      spain_08_12: Spain 08-12 matches (2008-2012)
-      el_clasico: El Clásico matches
-      world_cup_finals: World Cup finals
-      champions_league_finals: Champions League finals
-      european_cup_finals: European Cup finals
-      libertadores_finals: Copa Libertadores finals
+      maradona: Maradona football matches
+      di-stefano: Di Stéfano football matches
+      cruijff: Cruyff football matches
+      pele: Pelé football matches
+      messi: Messi football matches
+      clockwork_orange: Clockwork Orange football matches (1974-1978)
+      brazil_70: Brazil '70 football matches (1970)
+      dream_team: Dream Team football matches (1990-1994)
+      quinta_del_buitre: Quinta del Buitre football matches (1985-1990)
+      sacchi_milan: Sacchi's Milan football matches  (1987-1992)
+      france_80s: France 80's football matches (1982-1986)
+      spain_08_12: Spain 08-12 football matches (2008-2012)
+      el_clasico: El Clásico football matches
+      world_cup_finals: World Cup football finals
+      champions_league_finals: Champions League football finals
+      european_cup_finals: European Cup football finals
+      libertadores_finals: Copa Libertadores football finals
     about:
       about: About Footballia
       text_1: "Have you ever heard people discussing who the best player ever was? Di Stéfano, Pelé, Cruyff, Charlton, Beckenbauer, Platini…? And what about the ongoing debate these days, has Messi surpassed Maradona yet? You wish you could have your say, but you can’t because you’ve never seen most of them play!"
@@ -207,7 +207,8 @@
 
   search:
     search: Search
-    results: "%{n} matches found for %{term}"
+    full_matches: "%{term} full matches"
+    results: "%{n} matches found"
     player_results:
       players_found: "%{n} players found for %{term}"
       search_player: Search player
@@ -220,7 +221,7 @@
     search_by_player:
       player: Player (%{n} matches)
       coach: Coach (%{n} matches)
-      search_by_player: Search by player
+      search_by_player: Search matches by player
     player_participations:
       playing_date: Playing date
       match: Match
@@ -234,14 +235,14 @@
       competition: Competition
       season: Season
       language: Language
-      search_by_team: Search by team
+      search_by_team: Search matches by team
     search_by_competition:
       playing_date: Playing date
       match: Match
       competition: Competition
       season: Season
       language: Language
-      search_by_competition: Search by competition      
+      search_by_competition: Search matches by competition
     advanced_search:
       head_to_head: Head to head
       team_one_name: Team 1
@@ -300,11 +301,11 @@
 
   meta_tags:
     keywords:
-      generic: "Full matches, full football matches, full historic matches, Champions League matches, World Cup matches"
+      generic: "Full matches, football matches, online matches, soccer matches, historic matches, Champions League matches, World Cup matches"
       head_to_head: "Head to head search"
     description:
       match: "Watch the %{season} %{title} %{competition} %{stage} full match held at %{venue}"
-      home: "Watch full football matches from all times, from early 50's to nowadays. We have more than 1,400 matches to watch online and a database of 10,000 football players around the world"
+      home: "Watch full football matches from all times, from early 50's to nowadays. We have more than 1,500 matches to watch online and a database of 10,000 football players around the world"
       search: "Watch full %{name} matches"
       head_to_head: "Find all-time head-to-head matches between any two teams"
       about: "On Footballia you can watch full football matches for free anytime, anywhere"
