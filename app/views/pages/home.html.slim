@@ -18,19 +18,6 @@
     .rating
       = rating_for @last_match_with_video, nil, noRatedMsg: t("rating.not_rated")
 
-    .embedded_ad
-      |
-        <!-- CODIGO ADPV -->
-        <div id="adsadpv44910"></div>
-        <script type="text/javascript"><!--
-        var adpv_client = "44910";
-        var adpv_width = 728;
-        var adpv_height = 90;
-        var adpv_container_id = "adsadpv44910";
-        //--></script>
-        <script type="text/javascript" src="http://ads.adpv.com/ads.js"></script>
-        <!-- FIN CODIGO ADPV -->
-
 .separator
 
 - if @best_matches.present?
