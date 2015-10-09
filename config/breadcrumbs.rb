@@ -34,6 +34,14 @@ crumb :search_by_head_to_head do |title|
   parent :advanced_search
 end
 
+crumb :search_player do
+  link t("search.player_results.search_player"), advanced_search_path
+end
+
+crumb :search_team do
+  link t("search.team_results.search_team"), advanced_search_path
+end
+
 crumb :about do
   link t("about"), about_path
 end

@@ -4,7 +4,7 @@
   login: Login
   logout: Logout
   register: Register
-  matches_by: "%{name} matches"
+  matches_by: "%{name} full matches"
   delete: Delete
   not_authorized: You are not authorized to access this page
   cancel: Cancel
@@ -207,7 +207,8 @@
 
   search:
     search: Search
-    results: "%{n} matches found for %{term}"
+    full_matches: "%{term} full matches"
+    results: "%{n} matches found"
     player_results:
       players_found: "%{n} players found for %{term}"
       search_player: Search player
@@ -220,7 +221,7 @@
     search_by_player:
       player: Player (%{n} matches)
       coach: Coach (%{n} matches)
-      search_by_player: Search by player
+      search_by_player: Search matches by player
     player_participations:
       playing_date: Playing date
       match: Match
@@ -234,14 +235,14 @@
       competition: Competition
       season: Season
       language: Language
-      search_by_team: Search by team
+      search_by_team: Search matches by team
     search_by_competition:
       playing_date: Playing date
       match: Match
       competition: Competition
       season: Season
       language: Language
-      search_by_competition: Search by competition      
+      search_by_competition: Search matches by competition
     advanced_search:
       head_to_head: Head to head
       team_one_name: Team 1
