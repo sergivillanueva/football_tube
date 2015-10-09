@@ -39,10 +39,11 @@ module ApplicationHelper
 
   def open_graph_meta_tags tags
     content_for(:open_graph_meta_tags) do
-      [tag("meta", name: "og:type", content: "article"),
-      tag("meta", name: "og:title", content: tags[:title]),
-      tag("meta", name: "og:description", content: tags[:description]),
-      tag("meta", name: "og:image", content: tags[:image])].join("").html_safe
+      [tag("meta", property: "og:type", content: "article"),
+      tag("meta", property: "og:title", content: tags[:title]),
+      tag("meta", property: "og:description", content: tags[:description]),
+      #tag("meta", name: "og:image", property: "og:image", content: "http://www.footballia.net/assets/logo.png")].join("").html_safe
+      tag("meta", property: "og:image", content: tags[:image])].join("").html_safe
     end
   end
 
