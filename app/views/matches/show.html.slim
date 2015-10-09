@@ -1,6 +1,6 @@
 - title match.title
 - meta_tags keywords: @match.decorate.meta_tag_keywords, description: @match.decorate.meta_tag_description
-- open_graph_meta_tags title: @match.decorate.title, description: @match.decorate.meta_tag_description, image: asset_url("logo.png")
+- open_graph_meta_tags title: @match.decorate.title, description: @match.decorate.meta_tag_description, image: preview_image_match_url(match) #asset_url("logo.png")
 
 #match
   - breadcrumb :matches, @match
@@ -45,7 +45,7 @@
 
     ul.page-links.pull-right.hlinks.hlinks-icons.color-icons-borders.color-icons-bg-hovered
       li
-        a href="https://www.facebook.com/sharer/sharer.php?u=http://footballia.net/matches/manchester-city-newcastle-united" target="_blank"
+        a href="https://www.facebook.com/sharer/sharer.php?u=#{match_url(@match)}" target="_blank"
           i.icon.fa.fa-facebook
       li
         a href="https://twitter.com/share?text=#{match.title}" target="_blank"
