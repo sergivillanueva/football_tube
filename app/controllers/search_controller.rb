@@ -8,7 +8,7 @@ class SearchController < ApplicationController
 
   def search_head_to_head
     ids = [params[:team_one_id], params[:team_two_id]]
-    @term = params[:term].present? ? params[:term] : "#{params[:team_one_name]} vs #{params[:team_two_name]}"
+    @term = params[:term].present? ? params[:term].sub(" football matches", "") : "#{params[:team_one_name]} vs #{params[:team_two_name]}"
     @matches = Match.published.where("home_team_id IN (?) AND away_team_id IN (?)", ids, ids).order("playing_date").decorate
   end
 
