@@ -80,3 +80,28 @@ ul.ul-toggle > li {
 .cover-4-bg {
   background: asset-url("backgrounds/cover4.jpg", image) no-repeat center 0 fixed;
 }
+
+/* PAGINATION
+-------------------------------------------------- */
+
+.pagination li.active span {
+  border: none;
+  background: none;
+  border: 1px solid #ddd;
+  background: #e5e5e5;
+  padding: 0 14px;
+  line-height: 35px;
+  display: block;
+  margin-right: 5px;
+  color: #131416;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  -o-border-radius: 0 !important;
+  -ms-border-radius: 0 !important;
+  border-radius: 0 !important;
+}
+
+.pagination li.active:hover span {
+  background: #e5e5e5;
+  border-color: #e5e5e5;
+}

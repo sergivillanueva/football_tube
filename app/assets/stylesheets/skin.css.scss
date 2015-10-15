@@ -980,7 +980,7 @@ pre.no-breaks, pre.no-breaks > code {
 
 /* PAGINATION
 -------------------------------------------------- */
-.pagination li a {
+.pagination li a, .pagination li span {
   border: none;
   background: none;
   border: 1px solid #ddd;
@@ -996,7 +996,7 @@ pre.no-breaks, pre.no-breaks > code {
   border-radius: 0 !important;
 }
 .pagination li a:hover {
-  background: #e5e5e5;
+  /*background: #e5e5e5;*/
 }
 @media (max-width: 767px) {
   .pagination li a {
@@ -1006,21 +1006,21 @@ pre.no-breaks, pre.no-breaks > code {
 }
 .pagination li:first-child a {
   color: #fff;
-  background: #424344;
+  background: $dark-green;
   font-size: 15px;
   border-color: transparent;
 }
 .pagination li:first-child a:hover {
-  background: #131416;
+  background: $green;
 }
 .pagination li:last-child a {
   color: #fff;
-  background: $green;
+  background: $dark-green;
   border-color: transparent;
   font-size: 15px;
 }
 .pagination li:last-child a:hover {
-  background: #2094a9;
+  background: $green;
 }
 .pagination.align-center {
   width: 100%;
