@@ -13,7 +13,7 @@ class CompetitionsController < ApplicationController
     @term = params[:term] || @competition.name
     @matches = @competition.matches.published
     @matches = @matches.where(stage: params[:stages].split(";")) if params[:stages].present?
-    @matches = @matches.order("playing_date").decorate
+    @matches = @matches.order("playing_date").paginate(:per_page => 20, :page => params[:page]).decorate
     render "search/search_by_competition"
   end
   
