@@ -1,4 +1,4 @@
-class TeamDecorator < Draper::Decorator
+class TeamDecorator < ApplicationDecorator
   decorates_association :country
   
   def name

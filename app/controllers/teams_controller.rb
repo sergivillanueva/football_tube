@@ -47,7 +47,7 @@ class TeamsController < ApplicationController
       seasons = (params[:from_year]..params[:to_year]).to_a.map{|year| [year, "#{year}-#{year.to_i + 1}"]}.flatten.prepend("#{params[:from_year].to_i - 1}-#{params[:from_year]}" )
       @matches = @matches.where(season: seasons)
     end
-    @matches = @matches.order("playing_date").decorate
+    @matches = @matches.order("playing_date").paginate(:per_page => 20, :page => params[:page]).decorate
     render "search/search_by_team"
   end
 
