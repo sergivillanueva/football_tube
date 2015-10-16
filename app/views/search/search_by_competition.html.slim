@@ -4,7 +4,7 @@
 
 .search-results
   h1 = t("search.full_matches", term: @term)
-  h2 = t("search.results", n: @matches.size)
+  h2 = t("search.results", n: @matches.total_entries)
 
     - # TODO search by player name: use different search results views?
 
