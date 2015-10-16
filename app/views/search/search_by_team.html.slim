@@ -19,3 +19,5 @@
 
     tbody
       = render partial: "search/match", collection: @matches
+
+  = will_paginate @matches, renderer: BootstrapPagination::Rails, next_label: "»", previous_label: "«"
