@@ -1,5 +1,5 @@
-- title t("matches_by", name: @term)
-- meta_tags keywords: @term, description: t("meta_tags.description.search", name: @term)
+- title t("matches_by", name: @player.full_name)
+- meta_tags keywords: [@player.full_name, @player.name], description: t("meta_tags.description.search", name: @player.full_name)
 - breadcrumb :search_by_player
 
 - player_participations_as_player = @player_participations.select{|p| p.role != 'coach'}
