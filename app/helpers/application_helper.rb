@@ -1,19 +1,19 @@
 module ApplicationHelper
-	def resource_name
-		:user
-	end
+  def resource_name
+    :user
+  end
 
-	def resource
-		@resource ||= User.new
-	end
+  def resource
+    @resource ||= User.new
+  end
 
-	def devise_mapping
-		@devise_mapping ||= Devise.mappings[:user]
-	end
+  def devise_mapping
+    @devise_mapping ||= Devise.mappings[:user]
+  end
 
-	def title(page_title)
-  	content_for :title, "#{page_title.truncate(50)} | Footballia"
-	end
+  def title(page_title)
+    content_for :title, "#{page_title.truncate(50)} | Footballia"
+  end
 
   def keywords(keywords)
   	content_for :keywords, keywords.truncate(60)
