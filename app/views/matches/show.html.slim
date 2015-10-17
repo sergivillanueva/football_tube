@@ -26,7 +26,7 @@
         = render(partial: "related_match", collection: @related_matches, as: :match) || t(".no_results")
 
   .description.m-t.blog-entry
-    h1 = match.title
+    h1 = "#{match.title} #{t("full_match")}"
     h2 = "#{match.competition_name} #{match.season}"
 
     = render "meta"
