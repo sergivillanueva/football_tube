@@ -12,7 +12,7 @@ module ApplicationHelper
   end
 
   def title(page_title)
-    content_for :title, "#{page_title.truncate(50)} | Footballia"
+    content_for :title, "#{page_title.truncate(60)} | Footballia"
   end
 
   def keywords(keywords)
@@ -42,7 +42,6 @@ module ApplicationHelper
       [tag("meta", property: "og:type", content: "article"),
       tag("meta", property: "og:title", content: tags[:title]),
       tag("meta", property: "og:description", content: tags[:description]),
-      #tag("meta", name: "og:image", property: "og:image", content: "http://www.footballia.net/assets/logo.png")].join("").html_safe
       tag("meta", property: "og:image", content: tags[:image])].join("").html_safe
     end
   end

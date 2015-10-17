@@ -1,4 +1,4 @@
-- title match.title
+- title "#{match.title} #{match.season}"
 - meta_tags keywords: @match.decorate.meta_tag_keywords, description: @match.decorate.meta_tag_description
 - open_graph_meta_tags title: @match.decorate.title, description: @match.decorate.meta_tag_description, image: preview_image_match_url(match) #asset_url("logo.png")
 
@@ -27,6 +27,7 @@
 
   .description.m-t.blog-entry
     h1 = match.title
+    h2 = "#{match.competition_name} #{match.season}"
 
     = render "meta"
 
