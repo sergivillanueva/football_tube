@@ -7,8 +7,12 @@
   span.comments
     i.fa.fa-comments
     a href="#comments"
-      = t(".comments", n: @match.root_comments.count)
+      = mobile? ? @match.root_comments.count : t(".comments", n: @match.root_comments.count)
 
   span.visualizations
     i.fa.fa-play
-    = t(".visualizations", n: match.visualizations_counter)
+    = mobile? ? match.visualizations_counter : t(".visualizations", n: match.visualizations_counter)
+
+  span.language
+    i.fa.fa-volume-up
+    = match.language
