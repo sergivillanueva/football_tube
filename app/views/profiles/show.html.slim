@@ -45,6 +45,13 @@ h3
       = t(".no_matches")
 
   - else
-    - @user.matches.limit(16).decorate.to_a.in_groups_of(4, false) do |matches|
+    - @user.matches.published.limit(16).decorate.to_a.in_groups_of(4, false) do |matches|
       .row.m-b
         = render partial: "matches/embed", collection: matches, as: :match
+
+    - if user_signed_in? && current_user == @user
+      h5 = t(".unpublished")
+      - @user.matches.unpublished.decorate.to_a.in_groups_of(4, false) do |matches|
+        .row.m-b
+          = render partial: "matches/embed", collection: matches, as: :match
+

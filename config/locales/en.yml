@@ -277,6 +277,7 @@
        not_set: Not set
        no_avatar: No avatar
        no_matches: This user hasn't upload any matches yet
+       unpublished: Unpublished
 
   devise:
     registrations:
