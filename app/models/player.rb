@@ -3,7 +3,7 @@ class Player < ActiveRecord::Base
   has_many :matches, through: :player_participations
   has_many :goals
   belongs_to :country
-  
+
   validates :name, presence: true
 
   scope :uncompleted, -> { where("full_name = '' OR full_name IS NULL OR birthday = '' OR birthday IS NULL") }
@@ -24,7 +24,7 @@ class Player < ActiveRecord::Base
   end
 
   def as_json(options={})
-    { 
+    {
       value: self.name,
       full_name: self.full_name,
       name: self.name,
@@ -34,12 +34,17 @@ class Player < ActiveRecord::Base
       slug: self.slug
     }
   end
-  
+
   def age_at date
     if self.birthday.present?
       age = date.year - self.birthday.year
       age -= 1 if date < birthday + age.years
       age
     end
+  end
+
+  def destroy
+    raise "Cannot delete player with matches" unless self.matches.count == 0
+    super
   end
 end

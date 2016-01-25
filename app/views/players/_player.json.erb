@@ -6,5 +6,3 @@
   "edit_link": <%= raw link_to('', edit_player_path(player), class: 'ui-icon ui-icon-pencil', title: 'edit').to_json %>,
   "delete_link": <%= raw link_to('', player_path(player), method: :delete, class: 'ui-icon ui-icon-trash', :"data-confirm" => "Are you sure?", title: 'delete').to_json %>  
 }
-
-  

@@ -43,6 +43,8 @@ class PlayersController < ApplicationController
     @player = Player.friendly.find(params[:id])
     @player.destroy
     redirect_to players_path, notice: "Player deleted"
+  rescue Exception => e
+    redirect_to players_path, alert: "Player cannot be deleted: #{e}"
   end
 
   private
