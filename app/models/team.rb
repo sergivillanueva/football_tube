@@ -25,4 +25,9 @@ class Team < ActiveRecord::Base
     self.home_matches + self.away_matches
   end
 
+  def destroy
+    raise "Cannot delete team with matches" unless self.matches.count == 0
+    super
+  end
+
 end

@@ -51,6 +51,14 @@ class TeamsController < ApplicationController
     render "search/search_by_team"
   end
 
+  def destroy
+    @team = Team.friendly.find params[:id]
+    @team.destroy
+    redirect_to teams_path, notice: "Team deleted"
+  rescue Exception => e
+    redirect_to teams_path, alert: "Team cannot be deleted: #{e}"
+  end
+
   private
   
   def team_params
