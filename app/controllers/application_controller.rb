@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
   before_action :set_competitions
 
   after_filter :store_location
+  before_action :set_locale
 
   def set_competitions
     competitions = Competition.completed.group_by(&:scope)
@@ -15,6 +16,14 @@ class ApplicationController < ActionController::Base
     @international_competitions = competitions["international"].group_by(&:zone) if competitions["international"].present?
     @domestic_competitions = competitions["domestic"].group_by(&:zone) if competitions["domestic"].present?
     @friendly = competitions["friendly"] if competitions["friendly"].present?
+  end
+
+  def set_locale
+    I18n.locale = params[:locale] || I18n.default_locale
+  end
+
+  def default_url_options(options = {})
+    { locale: I18n.locale }.merge options
   end
 
   private

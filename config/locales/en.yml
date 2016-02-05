@@ -107,7 +107,7 @@
       edit_match: Edit match
     update:
       match_updated: Your match has been updated
-      match_validation: Your match will be public after being validated by the administradors.
+      match_validation: Your match will be published after being validated by the administradors.
     player_participation_fields:
       team_number: Team number
     form_parts:
@@ -142,10 +142,10 @@
       confederations_cup: Confederations Cup
       olympic_games: Olympic Games
       mundialito: Mundialito
-      international_supercup: International Supercup
+      international_supercup: Intercontinental Supercup
       european_supercup: European Supercup
       supercup: Supercup
-      international_cup: International Cup
+      international_cup: Intercontinental Cup
       libertadores: Copa Libertadores
       conmebol: Copa CONMEBOL
       mercosur: Copa Mercosur
@@ -195,7 +195,6 @@
     georgian: Georgian
     chinese: Chinese
     greek: Greek
-    norwegian: Norwegian
 
   shared:
     search:
@@ -207,6 +206,9 @@
     footer:
       about: "Footballia is the first free interactive football video library where you can watch full football matches for free anytime, anywhere."
       about_footballia: About Footballia
+    header:
+      sign_in: Sign in
+      sign_up: Sign up
 
   search:
     search: Search
@@ -277,7 +279,7 @@
        add_match: "You haven't uploaded any matches yet. Add one <a href=\"%{url}\">here</a>!"
        not_set: Not set
        no_avatar: No avatar
-       no_matches: This user hasn't upload any matches yet
+       no_matches: This user hasn't uploaded any matches yet
        unpublished: Unpublished
 
   devise:
@@ -313,3 +315,4 @@
       search: "Watch full %{name} football matches online on Footballia"
       head_to_head: "Find all-time head-to-head matches between any two teams"
       about: "On Footballia you can watch full football matches for free anytime, anywhere"
+

@@ -1621,7 +1621,7 @@ input[type="checkbox"] {
   border: 1px solid #cccccc;
   color: #666b76;
 }
-.dropdown-menu > li > a, .hnav .navbar-nav .dropdown-menu > li > a {
+.dropdown-menu > li > div, .dropdown-menu > li > a, .hnav .navbar-nav .dropdown-menu > li > a {
   padding: 0 20px;
   line-height: 40px;
   color: #42464d;
@@ -3129,7 +3129,7 @@ body {
 }
 .main-header .left-col, .main-header .right-col {
   /*width: 37.5%;*/
-  width: 34%;
+  width: 36%;
   height: 100%;
   position: absolute;
   top: 0;

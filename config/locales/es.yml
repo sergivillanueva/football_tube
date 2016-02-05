@@ -1,0 +1,318 @@
+﻿es:
+  no_results: No hay resultados
+  profile: Perfil
+  login: Iniciar sesión
+  logout: Cerrar sesión
+  register: Regístrate
+  matches_by: "Partidos completos de %{name}"
+  delete: Borrar
+  not_authorized: No estás autorizado a ver esta página
+  cancel: Cancelar
+  motto_1: Partidos de fútbol históricos completos online
+  motto_2: Que no te cuenten la historia,
+  motto_3: ¡vívela!
+  motto_4: Footballia es la primera videoteca de fútbol interactiva y gratuita con más de 1.500 partidos online para ver en cualquier momento y en cualquier lugar.
+  about: Footballia es la primera videoteca de fútbol interactiva gratuita.
+  upload_match: ¡Sube tu partido ahora!
+  about: Quiénes somos
+  contact: Contacto
+  sign_in_to_comment: "<a href=\"%{url}\" title=\"Inicia sesión\">Inicia la sesión</a> para comentar"
+  full_match: partido completo
+
+  pages:
+    home:
+      matches: partidos
+      players: jugadores
+      goals: goles
+      competitions: competiciones
+      matches_with_video: partidos con vídeo
+      add_your_match: Añade tu partido
+      latest_matches: Últimos partidos añadidos
+      best_matches: Partidos más votados
+    special_matches:
+      our_special_matches: Nuestras colecciones especiales
+      maradona: Partidos de fútbol de Maradona
+      di-stefano: Partidos de fútbol de Di Stéfano
+      cruijff: Partidos de fútbol de Cruyff
+      pele: Partidos de fútbol de Pelé
+      messi: Partidos de fútbol de Messi
+      clockwork_orange: Partidos de fútbol de la Naranja Mecánica (1974-1978)
+      brazil_70: Partidos de fútbol del Brasil del 70 (1970)
+      dream_team: Partidos de fútbol del Dream Team (1990-1994)
+      quinta_del_buitre: Partidos de fútbol de la Quinta del Buitre (1985-1990)
+      sacchi_milan: Partidos de fútbol del Milan de Sacchi  (1987-1992)
+      france_80s: Partidos de fútbol de la Francia de los 80 (1982-1986)
+      spain_08_12: Partidos de fútbol de España 08-12 (2008-2012)
+      el_clasico: Partidos de fútbol del Clásico
+      world_cup_finals: Finales de Mundiales de fútbol
+      champions_league_finals: Finales de la Champions League de fútbol
+      european_cup_finals: Finales de la Copa de Europa de fútbol
+      libertadores_finals: Finales de la Copa Libertadores de fútbol
+    about:
+      about: Quiénes somos
+      text_1: "¿Alguna vez has oído a la gente hablar de quién es el mejor jugador de la historia? ¿Di Stéfano, Pelé, Cruyff, Charlton, Beckenbauer, Platini…? ¿Y el continuo debate hoy en día sobre si Messi ya ha sobrepasado a Maradona? Te gustaría dar tu opinión, pero no puedes porque nunca has visto jugar a la mayoría de ellos."
+      text_2: "¿Alguna vez has deseado poder volver a ver aquel partido que tanto disfrutaste? ¿O ver por primera vez esos partidos históricos de los que siempre hablan los expertos?"
+      text_3: " Pues bien, ¡nosotros sí! Esas son las premisas que nos impulsaron a crear Footballia. Queríamos construir un lugar para unir todo el fútbol del mundo. Por supuesto esa es una tarea enorme, por eso contamos contigo para que contribuyas a formar la mayor colección de partidos completos de fútbol online. Nos gustaría convertirnos en la mayor comunidad de fútbol en la red. ¡Todo el mundo es bienvenido!"
+      text_4: " Ya no tienes que aprender sobre la historia del fútbol leyendo lo que otros tienen que decir al respecto. ¡Ahora puedes vivirla por ti mismo!"
+      text_5: "Escoge un partido, ¡y dale al play!"
+    contact:
+      contact: Contacta con Footballia
+      text_1: "¿Quieres decirnos algo?"
+
+  players:
+    index:
+      uncompleted: Incompletos
+      all: Todos
+    edit:
+      edit_player: Editar jugador
+
+  comments:
+    create:
+      comment_created: ¡Enhorabuena! Se ha añadido tu comentario.
+      comment_not_created: No se ha podido crear tu comentario
+    form:
+      your_message: Tu mensaje...
+      your_nick_name: Tu nombre de usuario
+    comment:
+      reply: Responder
+
+  matches:
+    goal:
+      own_goal: p.p.
+    form:
+      next: "Siguiente paso &#8594;"
+      prev: "&#8592; Paso anterior"
+      cancel: Cancelar
+      step_1: Paso 1
+      step_2: Paso 2
+      step_3: Paso 3
+      step_4: Paso 4
+    show:
+      show_result: Mostrar resultado
+      related_matches: Partidos relacionados
+      coach: Entrenador
+      reserves: Suplentes
+      no_results: No hay resultados
+      uploaded_by: Subido por
+      toggle_player_size: Cambiar tamaño del reproductor
+      comments: Comentarios
+      add_comment: Añadir un comentario
+    meta:
+      uploaded_by: "Por %{name}"
+      comments: "%{n} Comments"
+      visualizations: "%{n} Visualizaciones"
+    new:
+      new_match: Nuevo partido
+    edit:
+      edit_match: Editar partido
+    update:
+      match_updated: Tu partido se ha actualizado
+      match_validation: Tu partido será publicado tras ser validado por los administradores.
+    player_participation_fields:
+      team_number: Dorsal
+    form_parts:
+      step_3:
+        home_team_line_up: Alineación local
+        away_team_line_up: Alineación visitante
+        add_reserves: Suplentes
+        add_more_reserves: Más suplentes
+        coach: Entrenador
+        reserves: Suplentes
+      step_4:
+        goals: Goles
+        player: Jugador
+        upload_files: Subir archivos
+        video_format_instructions: Los archivos de vídeo deben ser codificados usando el códec de vídeo H264 y la codificación de audio AAC, y no deberían superar los 800 Mb.
+  competitions:
+    edit:
+      edit_competition: Editar competición
+    kind:
+      league_1: Liga 1
+      league_2: Liga 2
+      cup: Copa
+      champions_league: Copa de Europa / Champions League
+      cup_winners_cup: Recopa
+      uefa_cup: Copa de la UEFA
+      world_cup: Mundial
+      world_cup_u20: Mundial sub-20
+      euro: Eurocopa
+      euro_u21: Eurocopa sub-21
+      copa_america: Copa América
+      african_cup: Copa de África
+      confederations_cup: Copa Confederaciones
+      olympic_games: Juegos Olímpicos
+      mundialito: Mundialito
+      international_supercup: Supercopa Intercontinental
+      european_supercup: Supercopa Europea
+      supercup: Supercopa
+      international_cup: Copa Intercontinental
+      libertadores: Copa Libertadores
+      conmebol: Copa CONMEBOL
+      mercosur: Copa Mercosur
+      friendly: Amistoso
+      gold_cup: Copa de Oro
+    scope:
+      national_teams: Selecciones
+      international: Internacionales
+      domestic: Nacionales
+      friendly: Amistoso
+      others: Otras
+    zone:
+      world: Mundo
+      europe: Europa
+      south_america: Sudamérica
+      concacaf: CONCACAF
+      asia: Asia
+      africa: África
+      oceania: Oceanía
+ 
+  languages:
+    spanish: Español
+    english: Inglés
+    other: Otro
+    no_commentary: Sin comentarios
+    russian: Ruso
+    swedish: Sueco
+    french: Francés
+    german: Alemán
+    catalan: Catalán
+    dutch: Neerlandés
+    italian: Italiano
+    polish: Polaco
+    serbian: Serbio
+    portuguese: Portugués
+    romanian: Rumano
+    basque: Vasco
+    galician: Gallego
+    japanese: Japonés
+    turkish: Turco
+    thai: Tailandés
+    valencian: Valenciano
+    danish: Danés
+    korean: Coreano
+    bulgarian: Búlgaro
+    arabic: Árabe
+    georgian: Georgiano
+    chinese: Chino
+    greek: Griego
+
+  shared:
+    search:
+      search_by_player: Buscar jugadores
+      search_by_team: Buscar equipos
+      type_player_name: Introduce el nombre del jugador
+      type_team_name: Introduce el nombre del equipo
+      head_to_head: Búsqueda por enfrentamientos
+    footer:
+      about: " Footballia es la primera videoteca de fútbol interactiva donde puedes ver partidos de fútbol completos en cualquier lugar y en cualquier momento."
+      about_footballia: Quiénes somos
+    header:
+      sign_in: Entra
+      sign_up: Regístrate
+
+  search:
+    search: Buscar
+    full_matches: "Partidos completos de %{term}"
+    results: "%{n} partidos encontrados"
+    player_results:
+      players_found: "%{n} jugadores encontrados para %{term}"
+      search_player: Buscar jugador
+      name: Nombre
+      full_name: Nombre completo
+    team_results:
+      teams_found: "%{n} equipos encontrados para %{term}"
+      search_team: Buscar equipo
+      name: Nombre      
+    search_by_player:
+      player: Jugador (%{n} partidos)
+      coach: Entrenador (%{n} partidos)
+      search_by_player: Buscar partidos por jugador
+    player_participations:
+      playing_date: Fecha del partido
+      match: Partido
+      competition: Competición
+      season: Temporada
+      language: Idioma
+      role: Función
+    search_by_team:
+      playing_date: Fecha del partido
+      match: Partido
+      competition: Competición
+      season: Temporada
+      language: Idioma
+      search_by_team: Buscar partidos por equipo
+    search_by_competition:
+      playing_date: Fecha del partido
+      match: Partido
+      competition: Competición
+      season: Temporada
+      language: Idioma
+      search_by_competition: Buscar partidos por competición
+    advanced_search:
+      head_to_head: Cara a cara
+      team_one_name: Equipo 1
+      team_two_name: Equipo 2
+    search_head_to_head:
+      playing_date: Fecha del partido
+      match: Partido
+      competition: Competición
+      season: Temporada
+      language: Idioma
+      missing_params: Debes escoger dos equipos
+
+  rating:
+    bad: Malo
+    poor: Regular
+    regular: Bueno
+    good: Muy bueno
+    gorgeous: Excelente
+    not_rated: ¡Aún sin puntuar!
+
+  profiles:
+    show:
+       profile: "Perfil de %{name}"
+       edit: Editar
+       add_your_avatar: "No tienes avatar, añade uno. <a href=\"%{url}\">here</a>!"
+       add_your_nick_name: "No tienes nombre de usuario, añádelo. <a href=\"%{url}\">here</a>!"
+       add_your_favourite_team: "¿Eres de algún equipo? Añádelo. <a href=\"%{url}\">here</a>!"
+       matches: Partidos
+       add_match: "Aún no has subido ningún partido. Añade uno. <a href=\"%{url}\">here</a>!"
+       not_set: No definido
+       no_avatar: Sin avatar
+       no_matches: Este usuario no ha subido partidos todavía.
+       unpublished: Sin publicar
+
+  devise:
+    registrations:
+      edit:
+        edit_profile: Editar perfil
+
+  activerecord:
+    models:
+    attributes:
+      user:
+        nick_name: Nombre de usuario
+        avatar: Avatar
+        country: País
+        email: Email
+        favourite_team_name: Equipo favorito
+
+  locale:
+    short:
+      en: Eng
+      es: Esp
+    long:
+      en: Inglés
+      es: Español
+
+  meta_tags:
+    keywords:
+      generic: "Partidos completos, partidos de fútbol, partidos online, partidos históricos, partidos de Champions League, partidos de mundiales"
+      head_to_head: "Búsqueda de Cara a Cara"
+    description:
+      match: "Puedes ver el partido completo %{title} de %{stage} de la %{competition} de %{season} celebrado en %{venue} en Footballia"
+      home: "Footballia tiene más de 1.500 partidos para ver online y una base de datos de más de 10.000 futbolistas de todo el mundo."
+      search: "Puedes ver partidos de fútbol de %{name} online en Footballia "
+      head_to_head: "Busca enfrentamientos directos de todos los tiempos entre los dos equipos que elijas"
+      about: "En Footballia puedes ver partidos de fútbol completos gratis en cualquier momento y en cualquier lugar"
+
