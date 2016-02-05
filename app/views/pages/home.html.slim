@@ -5,7 +5,7 @@
 
 - if @last_match_with_video.present?
   .last_match.section-title.line-pcolor
-    h2 = t(".latest_match")
+    h2 = t(".latest_matches")
     .video
       = jwplayer
     p.text-center style="margin-top:20px;margin-bottom:10px;"
@@ -14,9 +14,20 @@
         br
         = "#{@last_match_with_video.decorate.competition_name} #{@last_match_with_video.decorate.season}"
 
-      end
     .rating
       = rating_for @last_match_with_video, nil, noRatedMsg: t("rating.not_rated")
+
+  .last_matches.section-title
+    - @last_matches_with_video.reverse.in_groups_of(mobile? ? 2 : 3, false).each do |matches|
+      .row
+        - matches.each do |match|
+          .col-xs-6.col-lg-4.m-b
+            = link_to match, title: match.decorate.title do
+              img alt=match.decorate.title src=preview_image_match_path(match) style="width:100%;"
+              p.text-center
+                .m-t-xs.title.text-center 
+                  = match.decorate.title unless mobile?
+                .competition.text-center = "#{match.decorate.competition_name} #{match.decorate.season}"
 
 .separator
 
