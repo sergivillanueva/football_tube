@@ -46,17 +46,17 @@
                   - if I18n.locale == :en
                     div = "English"
                   - else
-                    = link_to "English", url_for(locale: :en), title: "English"
+                    = link_to "English", home_en_path, title: "English"
                 li
                   - if I18n.locale == :es
                     div = "Castellano"
                   - else
-                    = link_to "Castellano", url_for(locale: :es), title: "Castellano"
+                    = link_to "Castellano", home_es_path, title: "Castellano"
                 li
                   - if I18n.locale == :fr
                     div = "Français"
                   - else
-                    = link_to "Français", url_for(locale: :fr), title: "Français"
+                    = link_to "Français", home_fr_path, title: "Français"
 
               <!-- /Dropdown Panel -->
             </li>
