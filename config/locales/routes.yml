@@ -1,0 +1,31 @@
+es:
+  routes:
+    matches: partidos-completos
+    players: jugadores
+    teams: equipos
+    competitions: competiciones
+    profile: perfil
+    search_by_player: busqueda-por-jugador
+    search_by_team: busqueda-por-equipo
+    search_head_to_head: busqueda-enfrentamientos
+    about: sobre-nosotros
+    contact: contacto
+    clockwork-orange-matches: partidos-de-la-naranja-mecanica
+    brazil-70-matches: partidos-del-brasil-del-70
+    dream-team-matches: partidos-del-dream-team
+    quinta-del-buitre-matches: partidos-de-la-quinta-del-buitre
+    sacchi-milan-matches: partidos-del-milan-de-sacchi
+    france-80s-matches: partidos-de-la-francia-de-los-80
+    spain-08-12-matches: partidos-de-espana-2008-2012
+    el-clasico-matches: partidos-el-clasico
+    world-cup-finals: finales-de-mundiales
+    champions-league-finals: finales-de-champions-league
+    european-cup-finals: finales-de-copa-de-europa
+    copa-libertadores-finals: finales-de-copa-libertadores
+
+fr:
+  routes:
+    matches: matchs-completees
+    players: joueurs
+    teams: equipes
+    competitions: competitions

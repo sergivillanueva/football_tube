@@ -157,6 +157,7 @@ GEM
     rdoc (3.12.2)
       json (~> 1.4)
     request_store (1.0.5)
+    route_translator (3.2.2)
     ruby-hmac (0.4.0)
     sass (3.2.12)
     sass-rails (4.0.5)
@@ -233,6 +234,7 @@ DEPENDENCIES
   nokogiri
   rails (= 4.0.0)
   ratyrate
+  route_translator
   sass-rails (~> 4.0.2)
   sdoc
   simple_form

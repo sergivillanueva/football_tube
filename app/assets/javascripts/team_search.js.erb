@@ -1,4 +1,7 @@
 $(document).ready(function () {
+  <%# TODO find a better approach for this! %>
+  var teamsPath = "<%= I18n.locale.to_s == "es" ? "/es/equipos/" : I18n.locale.to_s == "fr" ? "/fr/equipes/" : "/teams/" %>";
+
   $(".team_name.autocomplete").autocomplete({
     source: function (request, response) {
       $.getJSON("/search_by_team", {
@@ -23,7 +26,7 @@ $(document).ready(function () {
       $(this).closest(".team_details").find(".team_id").val(ui.item.id);
 
       if ($(this).data("link-results")) {
-        window.location.href = '/teams/' + ui.item.slug;
+        window.location.href = teamsPath + ui.item.slug;
       }
     },
     search: function () {
@@ -49,7 +52,7 @@ $(document).ready(function () {
 
       if ($(this.element).data("link-results")) {
         return $( "<li>" )
-          .append( "<a href='/teams/" + item.slug + "'> <img class='m-r-xs' src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
+          .append( "<a href='" + teamsPath + item.slug + "'> <img class='m-r-xs' src='" + item.logo_mini + "'></img>" + item.name + "</a>" )
           .appendTo( ul );
       }
       else {
