@@ -14,8 +14,6 @@
   motto_4: Footballia is the first free interactive football video library with over 1,500 online matches to watch anywhere, anytime.
   about: Footballia is the first free interactive football video library.
   upload_match: Upload your match now!
-  about: About
-  contact: Contact us
   sign_in_to_comment: "<a href=\"%{url}\" title=\"Sign in\">Sign in</a> to comment"
   full_match: full match
 
@@ -209,7 +207,12 @@
     header:
       sign_in: Sign in
       sign_up: Sign up
-
+    menu:
+      competitions: Competitions
+      head_to_head: Head to Head
+      about: About
+      contact: Contact us
+  
   search:
     search: Search
     full_matches: "%{term} full matches"

@@ -14,8 +14,6 @@
   motto_4: Footballia es la primera videoteca de fútbol interactiva y gratuita con más de 1.500 partidos online para ver en cualquier momento y en cualquier lugar.
   about: Footballia es la primera videoteca de fútbol interactiva gratuita.
   upload_match: ¡Sube tu partido ahora!
-  about: Quiénes somos
-  contact: Contacto
   sign_in_to_comment: "<a href=\"%{url}\" title=\"Inicia sesión\">Inicia la sesión</a> para comentar"
   full_match: partido completo
 
@@ -209,7 +207,12 @@
     header:
       sign_in: Entra
       sign_up: Regístrate
-
+    menu:
+      competitions: Competiciones
+      head_to_head: Cara a cara
+      about: Quiénes somos
+      contact: Contacto
+      
   search:
     search: Buscar
     full_matches: "Partidos completos de %{term}"
