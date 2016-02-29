@@ -20,7 +20,7 @@
     
       <!-- Navbar Center -->
       <ul class="nav navbar-nav navbar-center fill-pcolor case-u">
-        <li class="#{'active' if controller.action_name == 'home'}"><a href="#{root_path}">home</a></li>
+        <li class="#{'active' if controller.action_name == 'home'}"><a href="#{home_path}">home</a></li>
         <li class="dropdown dropdown-mega"><a href="#" class="dropdown-toggle" data-toggle="dropdown">#{t(".competitions")}<i class="fa fa-angle-down toggler"></i></a>
           = render partial: "shared/browse_competitions"
         </li>
