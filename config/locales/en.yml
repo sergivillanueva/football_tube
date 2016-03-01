@@ -301,6 +301,21 @@
         country: Country
         email: Email
         favourite_team_name: Favourite team
+      match:
+        home_team_name: Home team name
+        away_team_name: Away team name
+        competition_name: Competition name
+        stage: Stage
+        season: Season
+        venue: Venue
+        playing_date: Playing date
+        language: Language
+        description: Description
+      goal:
+        minute: Minute
+        own_goal: Own goal
+      video:
+        source_file: Source file
 
   locale:
     short:

@@ -301,6 +301,21 @@
         country: País
         email: Email
         favourite_team_name: Equipo favorito
+      match:
+        home_team_name: Nombre del equipo local
+        away_team_name: Nombre del equipo visitante
+        competition_name: Nombre de la competición
+        stage: Fase
+        season: Temporada
+        venue: Estadio
+        playing_date: Fecha del partido
+        language: Idioma
+        description: Descripción
+      goal:
+        minute: Minuto
+        own_goal: Gol en propia puerta
+      video:
+        source_file: Archivo de vídeo
 
   locale:
     short:
