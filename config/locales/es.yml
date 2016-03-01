@@ -27,6 +27,8 @@
       add_your_match: Añade tu partido
       latest_matches: Últimos partidos añadidos
       best_matches: Partidos más votados
+    figures:
+      figures: Nuestros números
     special_matches:
       our_special_matches: Nuestras colecciones especiales
       maradona: Partidos de fútbol de Maradona

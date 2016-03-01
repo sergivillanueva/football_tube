@@ -1,13 +1,12 @@
 <div class="figures section-title line-pcolor wow bounceIn">
-  <h2>Figures</h2>
-  / <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed tempor magna sit amet lorem sollicitudin, vitae euismod lacus lacinia. Nam ac pellentesque ligula. Nulla dapibus vulputate leo vel facilisis. </p>
+  h2 = t(".figures")
   .row.m-t-lg
     .col-md-4.col-md-offset-4.col-xs-12
       .row
         .col-md-5.col-xs-6
           <ul class="vlinks vlinks-iconed vlinks-round vlinks-lg">
             li
-              <i class="icon fa fa-youtube-play "></i>
+              <i class="icon fa fa-youtube-play"></i>
               span.figure
                = number_with_delimiter @matches_count
               span.meta

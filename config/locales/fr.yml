@@ -27,8 +27,10 @@
       add_your_match: Ajoutez votre match
       latest_matches: Derniers matches ajoutés
       best_matches: Les matches les mieux classés
+    figures:
+      figures: Chiffres
     special_matches:
-      our_special_matches: Notres collections spéciaux
+      our_special_matches: Nos collections spéciales
       maradona: Matches de football de Maradona
       di-stefano: Matches de football de Di Stéfano
       cruijff: Matches de football de Cruyff

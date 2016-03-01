@@ -27,6 +27,8 @@
       add_your_match: Add your match
       latest_matches: Latest matches uploaded
       best_matches: Best-rated matches
+    figures:
+      figures: Figures
     special_matches:
       our_special_matches: Our special collections
       maradona: Maradona football matches
