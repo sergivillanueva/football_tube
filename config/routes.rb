@@ -29,8 +29,8 @@ FootballTube::Application.routes.draw do
       get "/advanced_search" => "search#advanced_search", as: :advanced_search
       get "/about" => "pages#about", as: :about
       get "/contact" => "pages#contact", as: :contact
-      get "/" => "pages#home", as: :home
     end
+    get "/" => "pages#home", as: :home
   end
 
   root 'pages#home'
