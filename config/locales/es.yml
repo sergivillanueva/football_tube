@@ -16,6 +16,7 @@
   upload_match: ¡Sube tu partido ahora!
   sign_in_to_comment: "<a href=\"%{url}\" title=\"Inicia sesión\">Inicia la sesión</a> para comentar"
   full_match: partido completo
+  password: Contraseña
 
   pages:
     home:
@@ -291,6 +292,16 @@
     registrations:
       edit:
         edit_profile: Editar perfil
+        password_needed: necesitamos tu contraseña actual para confirmar los cambios
+      new:
+        already_have_an_account: ¿Ya tienes una cuenta?
+      form:
+        accept_tos: Acepto los términos y condiciones.
+    sessions:
+      new:
+        need_an_account: ¿Necesitas una cuenta?
+      form:
+        remember_me: Recuérdame
 
   activerecord:
     models:

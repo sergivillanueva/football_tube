@@ -32,7 +32,7 @@
       <%= f.input :password_confirmation, required: false %>
     -->
 
-    <%= f.input :current_password, hint: "we need your current password to confirm your changes", required: true, wrapper_html: { class: "m-b" } %>
+    <%= f.input :current_password, hint: t(".password_needed"), required: true, wrapper_html: { class: "m-b" } %>
   </div>
 
   <div class="form-actions">

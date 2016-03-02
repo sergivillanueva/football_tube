@@ -9,17 +9,17 @@
   <div class="form-group">
     <div class="input-group">
       <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-      <%= f.input :password, label: false, required: true, placeholder: "Password", input_html: { class: "form-control" } %>
+      <%= f.input :password, label: false, required: true, placeholder: t("password"), input_html: { class: "form-control" } %>
     </div>
   </div>
   <div class="form-group">
     <div class="input-group">
       <div class="input-group-addon"><i class="fa fa-lock"></i></div>
-      <%= f.input :password_confirmation, label: false, required: true, placeholder: "Password", input_html: { class: "form-control" } %>
+      <%= f.input :password_confirmation, label: false, required: true, placeholder: t("password"), input_html: { class: "form-control" } %>
     </div>
   </div>
   <div class="form-group">
-    <label class="checkbox-inline"><input value="" type="checkbox">I accept the terms and conditions.</label>
+    <label class="checkbox-inline"><input value="" type="checkbox"><%= t(".accept_tos") %></label>
   </div>
   
   <button class="btn btn-primary btn-block"><%= t("shared.header.sign_up") %></button>
