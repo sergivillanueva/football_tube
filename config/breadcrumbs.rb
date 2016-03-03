@@ -43,11 +43,11 @@ crumb :search_team do
 end
 
 crumb :about do
-  link t("about"), about_path
+  link t("shared.menu.about"), about_path
 end
 
 crumb :contact do
-  link t("contact"), contact_path
+  link t("shared.menu.contact"), contact_path
 end
 
 # crumb :projects do
