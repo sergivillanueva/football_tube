@@ -305,6 +305,12 @@
 
   activerecord:
     models:
+      comment:
+        one: Commentaire
+        other: Commentaires
+      match:
+        one: Match
+        other: Matches
     attributes:
       user:
         nick_name: Nom d'utilisateur
