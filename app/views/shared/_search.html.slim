@@ -23,6 +23,7 @@
     .form-group.player
       = text_field_tag :player_name, "", placeholder: t(".type_player_name"), class: "form-control player_name", style: "z-index:9999;", data: { :"link-results" => true }
       = hidden_field_tag :player_id, "", class: "player_id"
+      = hidden_field_tag :url_base, I18n.locale.to_s == "es" ? "/es/jugadores/" : I18n.locale.to_s == "fr" ? "/fr/joueurs/" : "/players/", class: "url_base"
       = button_tag class: "btn btn-primary btn-small btn-search", type: "submit" do
         .fa.fa-search.lens
         .fa.fa-spinner.fa-pulse.loading style="display:none;"
@@ -31,6 +32,7 @@
     .form-group.team_details
       = text_field_tag :team_name, "", placeholder: t(".type_team_name"), class: "form-control team_name autocomplete", data: { :"link-results" => true }
       = hidden_field_tag :team_id, "", class: "team_id"
+      = hidden_field_tag :url_base, I18n.locale.to_s == "es" ? "/es/equipos/" : I18n.locale.to_s == "fr" ? "/fr/equipes/" : "/teams/", class: "url_base"
       = button_tag class: "btn btn-primary btn-small btn-search", type: "submit" do
         .fa.fa-search.lens
         .fa.fa-spinner.fa-pulse.loading style="display:none;"
