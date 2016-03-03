@@ -22,6 +22,8 @@ es:
     champions-league-finals: finales-de-champions-league
     european-cup-finals: finales-de-copa-de-europa
     copa-libertadores-finals: finales-de-copa-libertadores
+    new: nuevo
+    edit: editar
 
 fr:
   routes:
@@ -47,3 +49,5 @@ fr:
     champions-league-finals: finales-de-la-champions-league
     european-cup-finals: finales-de-la-coupe-d-europe
     copa-libertadores-finals: finales-de-la-copa-libertadores
+    new: nouveau
+    edit: editer
