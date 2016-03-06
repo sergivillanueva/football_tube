@@ -38,7 +38,7 @@
           <ul class="nav navbar-nav navbar-right case-u active-bcolor navbar-center-xs">
             - if user_signed_in? && current_user.admin?
               <li class="dropdown has-panel">
-                <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-left fa fa-globe hidden-xs"></i><span>#{I18n.locale}</span><i class="fa fa-angle-down toggler"></i></a>
+                <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-left fa fa-globe "></i><span>#{I18n.locale}</span><i class="fa fa-angle-down toggler"></i></a>
   
                 <!-- Dropdown Panel -->
                 ul class="dropdown-menu dropdown-panel arrow-top dropdown-left-xs" role="menu"
@@ -63,7 +63,7 @@
 
             - if user_signed_in?
               <li class="dropdown has-panel">
-                <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-left ti ti-user hidden-xs"></i><span>#{current_user.name.truncate(25)}</span><i class="fa fa-angle-down toggler"></i></a>
+                <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-left ti ti-user "></i><span>#{current_user.name.truncate(25)}</span><i class="fa fa-angle-down toggler"></i></a>
 
                 ul class="dropdown-menu dropdown-panel arrow-top dropdown-left-xs" role="menu"
                   li
@@ -81,7 +81,7 @@
 
             - else
               <li class="dropdown has-panel">
-                <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-left ti ti-user hidden-xs"></i><span>#{t(".sign_in")}</span><i class="fa fa-angle-down toggler"></i></a>
+                <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-left ti ti-user "></i><span>#{t(".sign_in")}</span><i class="fa fa-angle-down toggler"></i></a>
 
                 <!-- Dropdown Panel -->
                 <div class="dropdown-menu dropdown-panel arrow-top dropdown-left-xs" data-keep-open="true">
@@ -93,7 +93,7 @@
               </li>
 
               <li class="dropdown has-panel">
-                <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-left ti ti-pencil-alt hidden-xs"></i><span>#{t(".sign_up")}</span><i class="fa fa-angle-down toggler"></i></a>
+                <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-left ti ti-pencil-alt "></i><span>#{t(".sign_up")}</span><i class="fa fa-angle-down toggler"></i></a>
 
                 <!-- Dropdown Panel -->
                 <div class="dropdown-menu dropdown-panel arrow-top" data-keep-open="true">
