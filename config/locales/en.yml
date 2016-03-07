@@ -59,6 +59,10 @@
     contact:
       contact: Contact Footballia
       text_1: "Is there anything you'd like to tell us?"
+      your_name: Your name
+      your_email: Your email
+      your_message: "Your message..."	
+      send_message: Send message
 
   players:
     index:
@@ -196,6 +200,7 @@
     georgian: Georgian
     chinese: Chinese
     greek: Greek
+    norwegian: Norwegian
 
   shared:
     search:

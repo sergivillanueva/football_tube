@@ -10,15 +10,14 @@
 		= simple_form_for @contact do |f|
 		  .row
 		    .col-md-6
-		      = f.input :name, label: false, placeholder: "Your name", :required => true, wrapper_html: { class: "form-group" }, input_html: { class: "form-control" }
+		      = f.input :name, label: false, placeholder: t(".your_name"), :required => true, wrapper_html: { class: "form-group" }, input_html: { class: "form-control" }
 		    .col-md-6
-		      = f.input :email, label: false, placeholder: "Your email", :required => true, wrapper_html: { class: "form-group" }, input_html: { class: "form-control" }       
+		      = f.input :email, label: false, placeholder: t(".your_email"), :required => true, wrapper_html: { class: "form-group" }, input_html: { class: "form-control" }       
 		  
-		  = f.input :message, label: false, placeholder: "Your message...", :as => :text, :required => true, wrapper_html: { class: "form-group" }, input_html: { class: "form-control", rows: 8 }
+		  = f.input :message, label: false, placeholder: t(".your_message"), :as => :text, :required => true, wrapper_html: { class: "form-group" }, input_html: { class: "form-control", rows: 8 }
 		  <div class= "hidden">
 		    = f.input :nickname, :hint => 'Leave this field blank!'
 		  </div>
 		  <div>
-		    </br>
-		    = f.button :submit, 'Send message', :class=> "btn btn-primary"
+		    = f.button :submit, t(".send_message"), :class=> "btn btn-primary", :style => "text-transform:initial;"
 		  </div>
