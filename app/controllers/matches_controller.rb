@@ -49,7 +49,7 @@ class MatchesController < ApplicationController
       @match.goals.each do |goal|
         goal.destroy unless @match.players.include? goal.player
       end
-      redirect_to root_path, notice: @match.published? ? t(".match_updated") : t(".match_validation")
+      redirect_to home_path, notice: @match.published? ? t(".match_updated") : t(".match_validation")
     else
       render :edit
     end
@@ -211,6 +211,6 @@ class MatchesController < ApplicationController
     # User is already signed in, so check only her role
     @match = current_user.admin? ? Match.friendly.find(params[:id]) : current_user.matches.friendly.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    redirect_to root_path, alert: t("not_authorized")
+    redirect_to home_path, alert: t("not_authorized")
   end
 end
