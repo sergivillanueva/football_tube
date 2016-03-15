@@ -36,30 +36,27 @@
         <!-- Dont Collapse -->
         <div class="navbar-dont-collapse no-toggle">
           <ul class="nav navbar-nav navbar-right case-u active-bcolor navbar-center-xs">
-            - if user_signed_in? && current_user.admin?
-              <li class="dropdown has-panel">
-                <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-left fa fa-globe "></i><span>#{I18n.locale}</span><i class="fa fa-angle-down toggler"></i></a>
+            <li class="dropdown has-panel">
+              <a aria-expanded="false" href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-left fa fa-globe "></i><span>#{I18n.locale}</span><i class="fa fa-angle-down toggler"></i></a>
   
-                <!-- Dropdown Panel -->
-                ul class="dropdown-menu dropdown-panel arrow-top dropdown-left-xs" role="menu"
-                  li
-                    - if I18n.locale == :en
-                      div = "English"
-                    - else
-                      = link_to "English", home_en_path(locale: :en), title: "English"
-                  li
-                    - if I18n.locale == :es
-                      div = "Castellano"
-                    - else
-                      = link_to "Castellano", home_es_path(locale: :es), title: "Castellano"
-                  li
-                    - if I18n.locale == :fr
-                      div = "Français"
-                    - else
-                      = link_to "Français", home_fr_path(locale: :fr), title: "Français"
+              ul class="dropdown-menu dropdown-panel arrow-top dropdown-left-xs" role="menu"
+                li
+                  - if I18n.locale == :en
+                    div = "English"
+                  - else
+                    = link_to "English", home_en_path(locale: :en), title: "English"
+                li
+                  - if I18n.locale == :es
+                    div = "Castellano"
+                  - else
+                    = link_to "Castellano", home_es_path(locale: :es), title: "Castellano"
+                li
+                  - if I18n.locale == :fr
+                    div = "Français"
+                  - else
+                    = link_to "Français", home_fr_path(locale: :fr), title: "Français"
   
-                <!-- /Dropdown Panel -->
-              </li>
+            </li>
 
             - if user_signed_in?
               <li class="dropdown has-panel">
