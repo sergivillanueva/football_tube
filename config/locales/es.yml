@@ -305,8 +305,6 @@
     sessions:
       new:
         need_an_account: ¿Necesitas una cuenta?
-      form:
-        remember_me: Recuérdame
 
   activerecord:
     models:
@@ -323,6 +321,7 @@
         country: País
         email: Email
         favourite_team_name: Equipo favorito
+        remember_me: Recuérdame
       match:
         home_team_name: Nombre del equipo local
         away_team_name: Nombre del equipo visitante

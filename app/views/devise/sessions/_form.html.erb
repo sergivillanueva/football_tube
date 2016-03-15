@@ -15,11 +15,8 @@
 
   <% if devise_mapping.rememberable? %>
     <div class="form-group">
-	    <label class="checkbox-inline">
-	    	<%= f.input :remember_me, as: :boolean, label: false %>
-        <%= t(".remember_me") %>
-	    </label>
-	  </div>
+      <%= f.input :remember_me, as: :boolean, label: false, inline_label: true, item_wrapper_class: 'checkbox-inline' %>
+    </div>
   <% end %>
 
   <div class="form-actions">
