@@ -1,5 +1,5 @@
 crumb :root do
-  link "Home", root_path
+  link "Home", home_path
 end
 
 crumb :matches do
