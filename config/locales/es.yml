@@ -351,9 +351,9 @@
       generic: "Partidos completos, partidos de fútbol, partidos online, partidos históricos, partidos de Champions League, partidos de mundiales"
       head_to_head: "Búsqueda de Cara a Cara"
     description:
-      match: "Puedes ver el partido completo %{title} de %{stage} de la %{competition} de %{season} celebrado en %{venue} en Footballia"
+      match: "Revive el partido completo %{title} de %{stage} de la %{competition} de %{season} celebrado en %{venue} en Footballia"
       home: "Footballia tiene más de 1.500 partidos para ver online y una base de datos de más de 10.000 futbolistas de todo el mundo."
-      search: "Puedes ver partidos de fútbol de %{name} online en Footballia "
+      search: "Revive partidos de fútbol completos de %{name} en Footballia. Partidos de fútbol online gratis."
       head_to_head: "Busca enfrentamientos directos de todos los tiempos entre los dos equipos que elijas"
       about: "En Footballia puedes ver partidos de fútbol completos gratis en cualquier momento y en cualquier lugar"
 
