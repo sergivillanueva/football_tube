@@ -55,7 +55,8 @@
         .logo
           .image
             meta itemprop="logo" content="http://www.footballia.net#{match.object.home_team.logo.url}"
-            = match.object.home_team.decorate.logo "medium"
+            = link_to match.object.home_team, title: match.object.home_team.name do
+              = match.object.home_team.decorate.logo "medium"
         .team_name.m-t
           = link_to match.object.home_team, title: match.object.home_team.name do
             = match.object.home_team.decorate.name
@@ -64,7 +65,8 @@
         .logo
           .image
             meta itemprop="logo" content="http://www.footballia.net#{match.object.away_team.logo.url}"
-            = match.object.away_team.decorate.logo "medium"
+            = link_to match.object.away_team, title: match.object.away_team.name do
+              = match.object.away_team.decorate.logo "medium"
         .team_name.m-t
           = link_to match.object.away_team, title: match.object.away_team.name do
             = match.object.away_team.decorate.name    
