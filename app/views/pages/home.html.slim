@@ -17,6 +17,10 @@
     .rating
       = rating_for @last_match_with_video, nil, noRatedMsg: t("rating.not_rated")
 
+  .embedded_ad
+    = link_to "http://bit.ly/1pvBozR", { target: "_blank", title: "Flyboard Barcelona" } do
+      = image_tag "sea_riders.jpg", alt: "Flyboard Barcelona"
+
   .last_matches.section-title
     - @last_matches_with_video.reverse.in_groups_of(mobile? ? 2 : 3, false).each do |matches|
       .row
