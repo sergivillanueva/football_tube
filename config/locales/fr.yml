@@ -113,6 +113,7 @@
     update:
       match_updated: Votre match a été actualisé.
       match_validation: Votre match sera publié après être validé par les administrateurs.
+      no_videos_found: Vous n'avez sélectionné un fichier de vidéo. Voudrez-vous retourner et en sélectionner un? Ou vous pouvez revenir plus tard et en ajouter un alors. Autrement, ce match sera effacé en 3 jours.
     player_participation_fields:
       team_number: Numéro
     form_parts:
