@@ -113,6 +113,7 @@
     update:
       match_updated: Tu partido se ha actualizado
       match_validation: Tu partido será publicado tras ser validado por los administradores.
+      no_videos_found: No has seleccionado un archivo de vídeo. ¿Quieres volver atrás y seleccionar uno? Si no, puedes volver más tarde y añadirlo entonces. En caso de no hacerlo, este partido será borrado en 3 días.
     player_participation_fields:
       team_number: Dorsal
     form_parts:

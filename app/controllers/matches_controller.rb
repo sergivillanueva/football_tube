@@ -49,7 +49,11 @@ class MatchesController < ApplicationController
       @match.goals.each do |goal|
         goal.destroy unless @match.players.include? goal.player
       end
-      redirect_to home_path, notice: @match.published? ? t(".match_updated") : t(".match_validation")
+      if @match.videos.any?
+        redirect_to home_path, notice: @match.published? ? t(".match_updated") : t(".match_validation")
+      else
+        redirect_to home_path, alert: t(".no_videos_found")
+      end
     else
       render :edit
     end
