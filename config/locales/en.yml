@@ -11,7 +11,7 @@
   motto_1: Full online historic football matches
   motto_2: Don't just read about history
   motto_3: Experience it!
-  motto_4: Footballia is the first free interactive football video library with over 1,500 online matches to watch anywhere, anytime.
+  motto_4: Footballia is the first free interactive football video library with over 2,000 online matches to watch anywhere, anytime.
   about: Footballia is the first free interactive football video library.
   upload_match: Upload your match now!
   sign_in_to_comment: "<a href=\"%{url}\" title=\"Sign in\">Sign in</a> to comment"
@@ -352,7 +352,7 @@
       head_to_head: "Head to head search"
     description:
       match: "Watch the %{season} %{title} %{competition} %{stage} full match held at %{venue} on Footballia"
-      home: "Watch full football matches from all times, from the early 50's to nowadays. Footballia has more than 1,500 matches to watch online and a database of 10,000 football players around the world"
+      home: "Watch full football matches from all times, from the early 50's to nowadays. Footballia has more than 2,000 matches to watch online and a database of 10,000 football players around the world"
       search: "Watch full %{name} football matches online on Footballia"
       head_to_head: "Find all-time head-to-head matches between any two teams"
       about: "On Footballia you can watch full football matches for free anytime, anywhere"

@@ -11,7 +11,7 @@
   motto_1: Matches de football historiques complets online
   motto_2: Ne te contente pas de lire de l'histoire,
   motto_3: vis-la !
-  motto_4: Footballia est la première vidéotèque de football interactive et gratuite avec plus de 1.500 matches online pour les voir n'importe où et quand.
+  motto_4: Footballia est la première vidéotèque de football interactive et gratuite avec plus de 2.000 matches online pour les voir n'importe où et quand.
   about: Footballia est la première vidéotèque de football interactive gratuite.
   upload_match: Téléchargez votre match maintenant !
   sign_in_to_comment: "<a href=\"%{url}\" title=\"Connexion\">Connectez-vous</a> pour commenter"
@@ -352,7 +352,7 @@
       head_to_head: "Cherchez tête à tête"
     description:
       match: "Voyez le match complet %{title] de %{title} de la %{competition} de %{season} joué à %{venue} sur Footballia"
-      home: "Footballia a plus de 1.500 matches pour les voir online et une base de données de plus de 10.000 footballeurs de tout le monde"
+      home: "Footballia a plus de 2.000 matches pour les voir online et une base de données de plus de 10.000 footballeurs de tout le monde"
       search: "Voyez des matches de football de %{name} online sur Footballia"
       head_to_head: "Cherchez des concurrences directes de tous les temps entre les deux équipes choisies"
       about: "Sur Footballia vous pouvez voir des matches de football complets gratis n'importe où et quand"
