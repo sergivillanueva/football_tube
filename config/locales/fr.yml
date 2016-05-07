@@ -102,6 +102,9 @@
       toggle_player_size: Changer la grandeur du player
       comments: Commentaires
       add_comment: Ajouter un commentaire
+      match_unavailable: Ce match n'est pas disponible pour des raisons legales.
+      register_to_watch_match: Inscrivez-vouz gratis pour voir le match.
+      match_will_be_available_after_30_days: Ce match sera disponible 30 jours après être joué.
     meta:
       uploaded_by: "Par %{name}"
       comments: "%{n} Commentaires"

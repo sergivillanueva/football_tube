@@ -26,6 +26,7 @@ class Match < ActiveRecord::Base
   scope :with_videos, -> { joins(:videos).select('matches.id').group('matches.id').having('count(videos.id) > 0') }
   scope :published, -> { where(published: true) }
   scope :unpublished, -> { where(published: false) }
+  scope :available, -> { where("playing_date < '#{30.days.ago}'").where.not(competition_id: [1, 44]) }
 
   attr_accessor :home_team_name, :away_team_name, :competition_name
 
@@ -91,5 +92,21 @@ class Match < ActiveRecord::Base
 
   def publish!
     self.update_column(:published, true)
+  end
+
+  def recent?
+    self.playing_date >= 30.days.ago
+  end
+
+  def banned?
+    self.competition_id == 1 || self.competition_id == 44
+  end
+
+  def available?
+    !self.banned? && !self.recent?
+  end
+
+  def unavailable?
+    !self.available?
   end
 end

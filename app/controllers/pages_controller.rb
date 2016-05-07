@@ -2,7 +2,7 @@ class PagesController < ApplicationController
   
   def home
     #@last_matches_with_video = Video.joins(:match).where(:"matches.published" => true).order("created_at DESC").limit(7).reverse
-    @last_matches_with_video = Video.joins(:match).select("DISTINCT videos.match_id, matches.*").where(:"matches.published" => true).order("videos.created_at DESC").limit(7).reverse.map(&:match)
+    @last_matches_with_video = Video.available.joins(:match).select("DISTINCT videos.match_id, matches.*").where(:"matches.published" => true).order("videos.created_at DESC").limit(7).reverse.map(&:match)
     @last_match_with_video = @last_matches_with_video.pop
     @best_matches = Match.joins("LEFT JOIN rating_caches ON (matches.id = rating_caches.cacheable_id) AND (rating_caches.cacheable_type = 'Match')").order("rating_caches.avg DESC, #{Rails.env.production? ? 'RAND()' : 'RANDOM()'}").limit(15).decorate
 

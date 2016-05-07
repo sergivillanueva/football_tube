@@ -9,9 +9,17 @@
     .alert.alert-danger
       = "Match not published."
 
+  - if match.unavailable?
+    .alert.alert-danger
+      = match.banned? ? t(".match_unavailable") : t(".match_will_be_available_after_30_days") 
+
+  - elsif !user_signed_in?
+    .alert.alert-danger
+      = t(".register_to_watch_match")
+
   .clearfix
     .video
-      - if match.videos.any?
+      - if user_signed_in? && match.videos.any? && match.available?
         / 
           = video_tag match.videos.first.source_file.url, { controls: true, style: "width:100%" }
         
@@ -191,5 +199,5 @@ javascript:
 
   });
 
-- if match.videos.any?
+- if user_signed_in? && match.videos.any? && match.available?
   = render "shared/videos", { match: match, videos: match.videos }
