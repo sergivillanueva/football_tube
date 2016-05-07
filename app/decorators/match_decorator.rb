@@ -106,4 +106,20 @@ class MatchDecorator < ApplicationDecorator
   def published?
     object.published?
   end
+
+  def available?
+    object.available?
+  end
+
+  def unavailable?
+    object.unavailable?
+  end
+
+  def recent?
+    object.recent?
+  end
+
+  def banned?
+    object.banned?
+  end
 end

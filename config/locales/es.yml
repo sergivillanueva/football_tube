@@ -11,7 +11,7 @@
   motto_1: Partidos de fútbol históricos completos online
   motto_2: Que no te cuenten la historia,
   motto_3: ¡vívela!
-  motto_4: Footballia es la primera videoteca de fútbol interactiva y gratuita con más de 1.500 partidos online para ver en cualquier momento y en cualquier lugar.
+  motto_4: Footballia es la primera videoteca de fútbol interactiva y gratuita con más de 2.000 partidos online para ver en cualquier momento y en cualquier lugar.
   about: Footballia es la primera videoteca de fútbol interactiva gratuita.
   upload_match: ¡Sube tu partido ahora!
   sign_in_to_comment: "<a href=\"%{url}\" title=\"Inicia sesión\">Inicia la sesión</a> para comentar"
@@ -102,6 +102,9 @@
       toggle_player_size: Cambiar tamaño del reproductor
       comments: Comentarios
       add_comment: Añadir un comentario
+      match_unavailable: Este partido no está disponible temporalmente por motivos legales.
+      register_to_watch_match: Regístrate gratis para ver el partido.
+      match_will_be_available_after_30_days: Este partido estará disponible 30 días después de haberse disputado.
     meta:
       uploaded_by: "Por %{name}"
       comments: "%{n} Comments"
@@ -353,7 +356,7 @@
       head_to_head: "Búsqueda de Cara a Cara"
     description:
       match: "Revive el partido completo %{title} de %{stage} de la %{competition} de %{season} celebrado en %{venue} en Footballia"
-      home: "Footballia tiene más de 1.500 partidos para ver online y una base de datos de más de 10.000 futbolistas de todo el mundo."
+      home: "Footballia tiene más de 2.000 partidos para ver online y una base de datos de más de 10.000 futbolistas de todo el mundo."
       search: "Revive partidos de fútbol completos de %{name} en Footballia. Partidos de fútbol online gratis."
       head_to_head: "Busca enfrentamientos directos de todos los tiempos entre los dos equipos que elijas"
       about: "En Footballia puedes ver partidos de fútbol completos gratis en cualquier momento y en cualquier lugar"
