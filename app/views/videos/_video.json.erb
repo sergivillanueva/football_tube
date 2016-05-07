@@ -1,0 +1,6 @@
+{
+  "match": "<%= video.match.name %>",
+  "name": "<%= video.source_file.to_s %>",
+  "created_at": "<%= video.created_at %>",
+  "delete_link": <%= raw link_to('', video_path(video), method: :delete, class: 'ui-icon ui-icon-trash', :"data-confirm" => "Are you sure you want to delete video #{video.source_file.to_s}?", title: 'delete').to_json %>  
+}

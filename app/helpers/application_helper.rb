@@ -29,7 +29,7 @@ module ApplicationHelper
   end
 
   def datatables_needed?
-    controller.action_name == "index" && %w(players competitions teams matches).include?(controller.controller_name)
+    controller.action_name == "index" && %w(players competitions teams matches videos).include?(controller.controller_name)
   end
 
   def keywords specific_keywords = ""
