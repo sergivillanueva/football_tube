@@ -46,7 +46,7 @@
 
   .embedded_ad
     = link_to "http://bit.ly/1pvBozR", { target: "_blank", title: "Flyboard Barcelona" } do
-      = image_tag "sea_riders.jpg", alt: "Flyboard Barcelona"
+      = image_tag mobile? ? "sea_riders_mobile.jpg" : "sea_riders.jpg", alt: "Flyboard Barcelona"
 
   .details itemscope="" itemtype="http://schema.org/SportsEvent"
     meta itemprop="name" content="#{match.competition_name} #{match.season} #{match.stage}"
