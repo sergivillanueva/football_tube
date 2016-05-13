@@ -102,7 +102,7 @@
       toggle_player_size: Toggle player size
       comments: Comments
       add_comment: Add a comment
-      match_unavailable: This match is temporarily unavailable due to legal reasons.
+      match_unavailable: This match is temporarily unavailable.
       register_to_watch_match: Sign up for free to watch the match.
       match_will_be_available_after_30_days: This match will become available 30 days after being played.
     meta:
