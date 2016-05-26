@@ -8,7 +8,7 @@ class MatchDecorator < ApplicationDecorator
   end
   
   def result_with_logos
-    "#{object.home_team.decorate.logo "thumb"} #{result} #{object.away_team.decorate.logo "thumb"}".html_safe
+    "#{object.home_team.decorate.logo "mini"} #{result} #{object.away_team.decorate.logo "mini"}".html_safe
   end
 
   def title
@@ -76,7 +76,7 @@ class MatchDecorator < ApplicationDecorator
   end
 
   def created_at
-    l object.created_at.to_date, format: :long
+    l object.created_at, format: :long
   end
 
   def videos
