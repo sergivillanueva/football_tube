@@ -53,8 +53,8 @@
     p = match.description
 
   .embedded_ad
-    = link_to "http://bit.ly/1pvBozR", { target: "_blank", title: "Flyboard Barcelona" } do
-      = image_tag mobile? ? "sea_riders_mobile.jpg" : "sea_riders.jpg", alt: "Flyboard Barcelona"
+    = link_to contact_path, { title: "Footballia" } do
+      = image_tag asset_path("footballia_ad_#{I18n.locale}.jpg"), alt: "Footballia"
 
   .details itemscope="" itemtype="http://schema.org/SportsEvent"
     meta itemprop="name" content="#{match.competition_name} #{match.season} #{match.stage}"
