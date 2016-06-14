@@ -217,8 +217,8 @@
       about: "Footballia est la première vidéotèque de football interactive où vous pouvez voir des matches de football complets n'importe où et n'importe quand."
       about_footballia: Qui sommes-nous
     header:
-      sign_in: S'inscrire
-      sign_up: Se connecter
+      sign_in: Se connecter
+      sign_up: S'inscrire
     menu:
       competitions: Compétitions
       head_to_head: Tête à tête
