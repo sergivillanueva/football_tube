@@ -7,9 +7,17 @@ class VideoUploader < CarrierWave::Uploader::Base
   include CarrierWave::Video
 
   # Choose what kind of storage to use for this uploader:
-  # storage :file
-  storage :fog
+  storage :file
+  #storage :fog
 
   #process encode_video: [:mp4, resolution: :same,  custom: '-vcodec libx264 -acodec libfdk_aac -preset ultrafast' ]
+
+  def store_dir
+    "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
+  end
+
+  def extension_white_list
+    %w(mp4)
+  end
 
 end
