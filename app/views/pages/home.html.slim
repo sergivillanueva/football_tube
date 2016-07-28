@@ -18,8 +18,8 @@
       = rating_for @last_match_with_video, nil, noRatedMsg: t("rating.not_rated")
 
   .embedded_ad
-    = link_to contact_path, { title: "Footballia" } do
-      = image_tag asset_path("footballia_ad_#{I18n.locale}.jpg"), alt: "Footballia"
+    = link_to "http://bit.ly/1pvBozR", { target: "_blank", title: "Flyboard Barcelona" } do
+      = image_tag mobile? ? asset_path("ads/sea_riders_mobile.jpg") : asset_path("ads/sea_riders.jpg"), alt: "Flyboard Barcelona"
 
   .last_matches.section-title
     - @last_matches_with_video.reverse.in_groups_of(mobile? ? 2 : 3, false).each do |matches|
