@@ -205,6 +205,8 @@
     chinese: Chinese
     greek: Greek
     norwegian: Norwegian
+    czech: Czech
+    croatian: Croatian
 
   shared:
     search:
