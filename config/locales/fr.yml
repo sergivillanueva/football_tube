@@ -345,12 +345,10 @@
         source_file: Fichier de vidéo
 
   locale:
-    short:
-      en: Eng
-      es: Esp
     long:
       en: Anglais
       es: Espagnol
+      fr: Français
 
   meta_tags:
     keywords:

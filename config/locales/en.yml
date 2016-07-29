@@ -345,12 +345,10 @@
         source_file: Source file
 
   locale:
-    short:
-      en: Eng
-      es: Esp
     long:
       en: English
       es: Spanish
+      fr: French
 
   meta_tags:
     keywords:
