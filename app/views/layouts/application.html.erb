@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="<%=I18n.locale%>">
 <head>
   <title><%= yield(:title) %></title>
   <%= stylesheet_link_tag    "application", media: "all" %>
@@ -33,6 +33,10 @@
 
 </head>
 <body>
+
+  <%= render "shared/facebook_sdk" %>
+  <%= render "shared/twitter_widget" %>
+
   <div class="page-wrapper shadow">
     <header class="header-block">
       <%= render "shared/header" %>    

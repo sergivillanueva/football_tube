@@ -33,6 +33,8 @@
                   = match.decorate.title unless mobile?
                 .competition.text-center = "#{match.decorate.competition_name} #{match.decorate.season}"
 
+= render "shared/social_links"
+
 .separator
 
 - if @best_matches.present?
