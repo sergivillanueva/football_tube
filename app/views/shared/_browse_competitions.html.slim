@@ -4,7 +4,7 @@
       .col-md-3
         h5 = t("competitions.scope.national_teams")
         
-        - %w(world europe south_america concacaf africa).each do |zone|
+        - %w(world europe south_america concacaf africa asia oceania).each do |zone|
           - if @national_teams_competitions[zone].present?
             = t("competitions.zone.#{zone}")
             ul.links
@@ -16,7 +16,7 @@
       .col-md-3
         h5 = t("competitions.scope.international")
         ul.links
-          - %w(world europe south_america africa).each do |zone|
+          - %w(world europe south_america africa asia oceania).each do |zone|
             - if @international_competitions[zone].present?
               li = t("competitions.zone.#{zone}")
               - @international_competitions[zone].each do |competition|
@@ -26,7 +26,7 @@
       .col-md-3
         h5 = t("competitions.scope.domestic")
         ul.links
-          - %w(europe south_america concacaf africa).each do |zone|
+          - %w(europe south_america concacaf africa asia oceania).each do |zone|
             - if @domestic_competitions[zone].present?
               li = t("competitions.zone.#{zone}")
               ul.ul-toggle.font-size-sm.links.sub-menu
