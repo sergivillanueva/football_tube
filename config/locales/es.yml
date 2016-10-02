@@ -307,7 +307,7 @@
       new:
         already_have_an_account: ¿Ya tienes una cuenta?
       form:
-        accept_tos: Acepto los términos y condiciones.
+        accept_tos: Acepto la <a href='%{url}'>política de privacidad</a>
     sessions:
       new:
         need_an_account: ¿Necesitas una cuenta?

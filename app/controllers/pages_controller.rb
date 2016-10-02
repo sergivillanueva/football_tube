@@ -16,6 +16,9 @@ class PagesController < ApplicationController
   def about
   end
 
+  def privacy_policy
+  end
+
   def contact
     @contact = Contact.new
   end

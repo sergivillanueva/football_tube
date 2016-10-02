@@ -50,6 +50,10 @@ crumb :contact do
   link t("shared.menu.contact"), contact_path
 end
 
+crumb :privacy_policy do
+  link "Privacy Policy", privacy_policy_path
+end
+
 # crumb :projects do
 #   link "Projects", projects_path
 # end
