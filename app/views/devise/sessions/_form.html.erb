@@ -19,6 +19,10 @@
     </div>
   <% end %>
 
+  <div class="form-group">
+    <%= link_to t("devise.passwords.new.forgot_password"), new_user_password_path %>
+  </div>
+
   <div class="form-actions">
     <%= f.button :submit, t("shared.header.sign_in"), class: "btn btn-primary btn-block" %>
   </div>

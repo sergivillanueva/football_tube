@@ -313,6 +313,14 @@
     sessions:
       new:
         need_an_account: ¿Necesitas una cuenta?
+    passwords:
+      new:
+        forgot_password: ¿Olvidaste la contraseña?
+        send_me_instructions: Enviar instrucciones para generar nueva contraseña
+      edit:
+        change_password: Generar nueva contraseña
+        new_password: Nueva contraseña
+        confirm_password: Confirmar nueva contraseña
 
   activerecord:
     models:
