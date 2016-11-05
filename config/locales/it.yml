@@ -11,7 +11,7 @@ it:
   motto_1: Partite storiche di calcio complete online
   motto_2: Non farti raccontare la storia,
   motto_3: vivila!
-  motto_4: Footballia è la prima videotecca di calcio interattiva e gratuita con oltre 1.500 partite online per vederle in qualsiasi posto e momento.
+  motto_4: Footballia è la prima videotecca di calcio interattiva e gratuita con oltre 3.000 partite online per vederle in qualsiasi posto e momento.
   about: Footballia è la prima videotecca di calcio interattiva e gratuita.
   upload_match: Carica la tua partita adesso!
   sign_in_to_comment: "<a href=\"%{url}\" title=\"Connexion\">Accedi</a> per commentare"
@@ -367,7 +367,7 @@ it:
       head_to_head: "Cerca testa a testa"
     description:
       match: "Guarda la partita completa %{title] di %{title} della %{competition} di %{season} giocato a %{venue} su Footballia"
-      home: "Footballia ha oltre 2.800 partite per guardarle online e una banca dati de oltre 16.000 giocatori di tutto il mondo"
+      home: "Footballia ha oltre 3.500 partite per guardarle online e una banca dati de oltre 18.000 giocatori di tutto il mondo"
       search: "Guarda delle partite di calcio di %{name} online su Footballia"
       head_to_head: "Cerca delle concorrenze dirette di tutti i tempi tra le due squadre scelte"
       about: "Su Footballia puoi guardare delle partite complete gratis in qualsiasi momento e posto"
