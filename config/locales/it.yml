@@ -1,0 +1,373 @@
+it:
+  no_results: Nessun risultato
+  profile: Profilo
+  login: Accedi
+  logout: Esci
+  register: Iscriveti
+  matches_by: "Partite complete di %{name}"
+  delete: Cancellare
+  not_authorized: Non sei autorizzato a vedere questa pagina
+  cancel: Annullare
+  motto_1: Partite storiche di calcio complete online
+  motto_2: Non farti raccontare la storia,
+  motto_3: vivila!
+  motto_4: Footballia è la prima videotecca di calcio interattiva e gratuita con oltre 1.500 partite online per vederle in qualsiasi posto e momento.
+  about: Footballia è la prima videotecca di calcio interattiva e gratuita.
+  upload_match: Carica la tua partita adesso!
+  sign_in_to_comment: "<a href=\"%{url}\" title=\"Connexion\">Accedi</a> per commentare"
+  full_match: partita completa
+  password: Password
+
+  pages:
+    home:
+      matches: partite
+      players: giocatori
+      goals: reti
+      competitions: competizioni
+      matches_with_video: partite con video
+      add_your_match: Aggiungi la tua partita
+      latest_matches: Ultima partita aggiunta
+      best_matches: Le partite più valutate
+    figures:
+      figures: I nostri numeri
+    special_matches:
+      our_special_matches: Le nostre collezioni speciali
+      maradona: Partite di calcio di Maradona
+      di-stefano: Partite di calcio di Di Stéfano
+      cruijff: Partite di calcio di Cruyff
+      pele: Partite di calcio di Pelé
+      messi: Partite di calcio di Messi
+      clockwork_orange: Partite di calcio di l'Arancia Meccanica (1974-1978)
+      brazil_70: Partite di calcio del Brasile del 70 (1970)
+      dream_team: Partite di calcio del Dream Team (1990-1994)
+      quinta_del_buitre: Partite di calcio della Quinta del Buitre (1985-1990)
+      sacchi_milan: Partite di calcio del Milan di Sacchi (1987-1992)
+      france_80s: Partite di calcio della Francia degli anni 80 (1982-1986)
+      spain_08_12: Partite di calcio della Spagna 08-12 (2008-2012)
+      el_clasico: Partite di calcio del Clásico
+      world_cup_finals: Finali della Coppa del Mondo di calcio
+      champions_league_finals: Finali della Champions League di calcio
+      european_cup_finals: Finali della Coppa dei Campioni di calcio
+      libertadores_finals: Finali della Copa Libertadores di calcio
+    about:
+      about: Chi siamo?
+      text_1: "Hai mai sentito la gente parlare di chi è il miglior giocatore della storia? Di Stéfano, Pelé, Cruyff, Charlton, Beckenbauer, Platini...? E il dibattito attuale: Messi ha già sorpassato Maradona? Vorresti esprimerti, ma non puoi perché non hai mai visto giocare la maggioranza di loro!"
+      text_2: "Hai mai desiderato rivedere quella partita che ti è piaciuta tanto? Oppure vedere per prima quelle partite storiche di cui gli esperti parlano sempre?"
+      text_3: "Beh, noi sì! Queste sono le premesse che ci hanno spinto a creare Footballia. Volevamo costruire un posto per raccogliere tutto il calcio del mondo. È chiaro, è un compito enorme! È per ciò che contiamo su voi per contribuire a creare la videotecca storica più grande di partite di calcio complete online. Vorremmo diventare la comunità di calcio più grande dell’internet. Tutti sono benvenuti!"
+      text_4: "Adesso non bisogna più imparare la storia del calcio leggendo quello che altri ne dicono. Adesso puoi vivirla te stesso!"
+      text_5: "Sceglie una partita e clicca su play!"
+    contact:
+      contact: Contatta con Footballia
+      text_1: "Vuoi dirci qualcosa?"
+      your_name: Il tuo nome
+      your_email: Il tuo email
+      your_message: "Il tuo messaggio..."
+      send_message: Inviare messaggio
+
+  players:
+    index:
+      uncompleted: Non completati
+      all: Tutti
+    edit:
+      edit_player: Modifica il giocatore
+
+  comments:
+    create:
+      comment_created: Complimenti! Il tuo commente è stato aggiunto.
+      comment_not_created: Il tuo commento non si è potuto creare.
+    form:
+      your_message: Il tuo messaggio...
+      your_nick_name: Il tuo login...
+    comment:
+      reply: Rispondere
+
+  matches:
+    goal:
+      own_goal: autogol
+    form:
+      next: "Prossimo passo &#8594;"
+      prev: "&#8592; Passo precedente"
+      cancel: Annullare
+      step_1: Passo 1
+      step_2: Passo 2
+      step_3: Passo 3
+      step_4: Passo 4
+    show:
+      show_result: Mostrare risultato
+      related_matches: Partite collegate
+      coach: Allenatore
+      reserves: Giocatori entrati
+      no_results: Nessun risultato
+      uploaded_by: Caricato da
+      toggle_player_size: Cambiare la dimensione del player
+      comments: Commenti
+      add_comment: Aggiungere un commento
+      match_unavailable: Questa partita non è disponibile.
+      register_to_watch_match: Iscriveti gratis per vedere la partita.
+      match_will_be_available_after_30_days: Questa partita sarà disponibile 30 giorni dopo essere giocata.
+    meta:
+      uploaded_by: "Da %{name}"
+      comments: "%{n} Commenti"
+      visualizations: "%{n} visualizzazioni"
+    new:
+      new_match: Nuova partita
+    edit:
+      edit_match: Modificare la partita
+    update:
+      match_updated: La tua partita è stata aggiornata.
+      match_validation: La tua partita sarà pubblicata dopo essere validata dagli amministratori.
+      no_videos_found: Non hai scelto un file di video. Vuoi tornare indietro e sceglierne uno? Altrimenti, puoi tornare più tardi e aggiungerlo. In caso di non farlo, questa partita verrà cancellata fra 3 giorni.
+    player_participation_fields:
+      team_number: Numero
+    form_parts:
+      step_3:
+        home_team_line_up: Schieramento locali
+        away_team_line_up: Schieramento ospiti
+        add_reserves: Giocatori entrati
+        add_more_reserves: Più giocatori entrati
+        coach: Allenatore
+        reserves: Giocatori entrati
+      step_4:
+        goals: Reti
+        player: Giocatore
+        upload_files: Caricare il file
+        video_format_instructions: I files di video devono essere codificati con il codec di video H264 e la codificazione di audio AAC, e non dovrebbero sorpassare gli 800 Mb.
+  competitions:
+    edit:
+      edit_competition: Modificare la competizione
+    kind:
+      league_1: Lega 1
+      league_2: Lega 2
+      cup: Coppa
+      champions_league: Coppa dei Campioni / Champions League
+      cup_winners_cup: Coppa delle Coppe
+      uefa_cup: Coppa UEFA
+      world_cup: Coppa del Mondo
+      world_cup_u20: Coppa del Mondo U-20
+      euro: Euro
+      euro_u21: Euro U-21
+      copa_america: Copa América
+      african_cup: Coppa d'Africa
+      confederations_cup: Coppa delle Confederazioni
+      olympic_games: Giochi Olimpici
+      mundialito: Mundialito
+      international_supercup: Supercoppa Intercontinentale
+      european_supercup: Supercoppa Europea
+      supercup: Supercoppa
+      international_cup: Coppa Intercontinentale
+      libertadores: Copa Libertadores
+      conmebol: Coppa CONMEBOL
+      mercosur: Coppa Mercosur
+      friendly: Amichevole
+      gold_cup: Gold Cup
+    scope:
+      national_teams: Squadre nazionali
+      international: Internazionali
+      domestic: Nazionali
+      friendly: Amichevole
+      others: Altre
+    zone:
+      world: Mondo
+      europe: Europa
+      south_america: America del Sud
+      concacaf: CONCACAF
+      asia: Asia
+      africa: Africa
+      oceania: Oceania
+
+  languages:
+    spanish: Spagnolo
+    english: Inglese
+    other: Altra
+    no_commentary: Senza telecronaca
+    russian: Russo
+    swedish: Svedese
+    french: Francese
+    german: Tedesco
+    catalan: Catalano
+    dutch: Neerlandese
+    italian: Italiano
+    polish: Polacco
+    serbian: Serbo
+    portuguese: Portoghese
+    romanian: Romeno
+    basque: Basco
+    galician: Gallego
+    japanese: Giapponese
+    turkish: Turco
+    thai: Thailandese
+    valencian: Valenciano
+    danish: Danese
+    korean: Coreano
+    bulgarian: Bulgaro
+    arabic: Arabo
+    georgian: Georgiano
+    chinese: Cinese
+    greek: Greco
+    norwegian: Norvégien
+    czech: Ceco
+    croatian: Croata
+    hungarian: Ungherese
+    hebrew: Ebraico
+
+  shared:
+    search:
+      search_by_player: Cerca giocatori
+      search_by_team: Cerca squadre
+      type_player_name: Introduci il nome del giocatore
+      type_team_name: Introduci il nome della squadra
+      head_to_head: Cercare testa a testa
+    footer:
+      about: "Footballia è la prima videotecca interattiva di calcio dove potete guardare delle partite di calcio complete in qualsiasi momento e posto."
+      about_footballia: Chi siamo
+    header:
+      sign_in: Accedi
+      sign_up: Registrati
+    menu:
+      competitions: Competizioni
+      head_to_head: Testa a testa
+      about: Chi siamo?
+      contact: Contatto
+
+  search:
+    search: Cerca
+    full_matches: "Partite complete di %{term}"
+    results: "%{n} partite trovate"
+    player_results:
+      players_found: "%{n} giocatori trovati per %{term}"
+      search_player: Cerca un giocatore
+      name: Nome
+      full_name: Nome completo
+    team_results:
+      teams_found: "%{n} squadre trovate per %{term}"
+      search_team: Cerca una squadra
+      name: Nome
+    search_by_player:
+      player: Giocatore (%{n} partite)
+      coach: Allenatore (%{n} partite)
+      search_by_player: Cerca partite per giocatore
+    player_participations:
+      playing_date: Data della partita
+      match: Partita
+      competition: Competizione
+      season: Stagione
+      language: Lingua
+      role: Funzione
+    search_by_team:
+      playing_date: Data della partita
+      match: Partita
+      competition: Competizione
+      season: Stagione
+      language: Lingua
+      search_by_team: Cerca partite per squadra
+    search_by_competition:
+      playing_date: Data della partita
+      match: Partita
+      competition: Competizione
+      season: Stagione
+      language: Lingua
+      search_by_competition: Cerca delle partite per competizione
+    advanced_search:
+      head_to_head: Testa a testa
+      team_one_name: Squadra 1
+      team_two_name: Squadra 2
+    search_head_to_head:
+      playing_date: Data della partita
+      match: Partita
+      competition: Competizione
+      season: Stagione
+      language: Lingua
+      missing_params: Devi scegliere due squadre
+
+  rating:
+    bad: Cattivo
+    poor: Medio
+    regular: Buono
+    good: Molto buono
+    gorgeous: Eccellente
+    not_rated: Ancora senza valutare!
+
+  profiles:
+    show:
+       profile: "Profilo di %{name}"
+       edit: Modificare
+       add_your_avatar: "Non hai un avatar, aggiungene uno. <a href=\"%{url}\">here</a>!"
+       add_your_nick_name: "Non hai un nome d'utente, aggiungelo. <a href=\"%{url}\">here</a>!"
+       add_your_favourite_team: "Hai una squadra favorita? Aggiungela! <a href=\"%{url}\">here</a>!"
+       matches: Partite
+       add_match: "Non hai ancora caricato alcuna partita. Aggiungene una. <a href=\"%{url}\">here</a>!"
+       not_set: Non definito
+       no_avatar: Senza avatar
+       no_matches: Questo utente non ha ancora caricato delle partite.
+       unpublished: Non pubblicato
+
+  devise:
+    registrations:
+      edit:
+        edit_profile: Modificare il profilo
+        password_needed: Inserire password
+      new:
+        already_have_an_account: Hai già un conto?
+      form:
+        accept_tos: Acetto la <a href='%{url}'>tutela della privacy</a>
+    sessions:
+      new:
+        need_an_account: Hai bisogno di un conto?
+    passwords:
+      new:
+        forgot_password: Hai dimenticato la password?
+        send_me_instructions: Inviare istruzioni per creare una nuova password
+      edit:
+        change_password: Creare nuova password
+        new_password: Nuova password
+        confirm_password: Confermare la nuova password
+
+  activerecord:
+    models:
+      comment:
+        one: commento
+        other: commenti
+      match:
+        one: partita
+        other: partite
+    attributes:
+      user:
+        nick_name: Nome d'utente
+        avatar: Avatar
+        country: Paese
+        email: Email
+        favourite_team_name: Squadra favorita
+        remember_me: Ricordami
+      match:
+        home_team_name: Nome della squadra locale
+        away_team_name: Nome della squadra ospite
+        competition_name: Nome della competizione
+        stage: Fase
+        season: Stagione
+        venue: Sede
+        playing_date: Data della partita
+        language: Lingua
+        description: Description
+      goal:
+        minute: Minuto
+        own_goal: Autogol
+      video:
+        source_file: File di origine
+
+  locale:
+    long:
+      en: Inglese
+      es: Spagnolo
+      fr: Francese
+      it: Italiano
+
+  meta_tags:
+    keywords:
+      generic: "Partite complete, partite online, partite storiche, partite di Champions League, partite della Coppa del Mondo, partite dei Mondiali"
+      head_to_head: "Cerca testa a testa"
+    description:
+      match: "Guarda la partita completa %{title] di %{title} della %{competition} di %{season} giocato a %{venue} su Footballia"
+      home: "Footballia ha oltre 2.800 partite per guardarle online e una banca dati de oltre 16.000 giocatori di tutto il mondo"
+      search: "Guarda delle partite di calcio di %{name} online su Footballia"
+      head_to_head: "Cerca delle concorrenze dirette di tutti i tempi tra le due squadre scelte"
+      about: "Su Footballia puoi guardare delle partite complete gratis in qualsiasi momento e posto"

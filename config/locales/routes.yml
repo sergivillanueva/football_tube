@@ -51,3 +51,28 @@ fr:
     copa-libertadores-finals: finales-de-la-copa-libertadores
     new: nouveau
     edit: modifier
+
+it:
+  routes:
+    matches: partite-complete
+    players: giocatori
+    teams: squadre
+    competitions: competizioni
+    profile: profilo
+    search_by_player: cerca-per-giocatore
+    search_by_team: cerca-per-squadrea
+    search_head_to_head: cerca-scontri
+    about: chi-siamo
+    contact: contatto
+    clockwork-orange-matches: partite-dell-arancia-mecania
+    brazil-70-matches: partite-del-brasile-del-70
+    dream-team-matches: partite-del-dream-team
+    quinta-del-buitre-matches: partite-della-quinta-del-buitre
+    sacchi-milan-matches: partite-del-milan-di-sacchi
+    france-80s-matches: partite-della-francia-degli-80
+    spain-08-12-matches: partite-della-spagna-2008-2012
+    el-clasico-matches: partite-el-clasico
+    world-cup-finals: finali-dei-mondiali
+    champions-league-finals: finali-della-champions-league
+    european-cup-finals: finali-della-coppa-campioni
+    copa-libertadores-finals: finali-della-copa-libertadores

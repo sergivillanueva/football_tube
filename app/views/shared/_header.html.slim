@@ -55,6 +55,11 @@
                     div = "Français"
                   - else
                     = link_to "Français", home_fr_path(locale: :fr), title: "Français"
+                li
+                  - if I18n.locale == :it
+                    div = "Italiano"
+                  - else
+                    = link_to "Italiano", home_fr_path(locale: :it), title: "Italiano"
   
             </li>
 
