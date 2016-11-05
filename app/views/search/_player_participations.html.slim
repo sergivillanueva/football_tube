@@ -10,8 +10,6 @@
         th.hidden-xs = t(".competition")
         th.hidden-xs = t("activerecord.attributes.match.stage")
         th = t(".season")
-        - if !coach
-          th.hidden-xs = t(".role")
         
     tbody
       = render partial: "search/player_participation", collection: player_participations, locals: { coach: coach }
