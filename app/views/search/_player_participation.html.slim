@@ -8,10 +8,10 @@ tr
       = link_to player_participation.match.title, player_participation.match
   td.competition.hidden-xs
     = player_participation.match.competition_name
+  td.stage.hidden-xs
+    = player_participation.match.stage
   td.season
     = player_participation.match.season
-  td.language.hidden-xs
-    = player_participation.match.language
   - if !coach
     td.role.hidden-xs
       = player_participation.role

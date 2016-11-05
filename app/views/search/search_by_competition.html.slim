@@ -18,8 +18,8 @@
           th.hidden-xs = t(".playing_date")
           th = t(".match")
           th.hidden-xs = t(".competition")
+          th.hidden-xs = t("activerecord.attributes.match.stage")
           th = t(".season")
-          th.hidden-xs = t(".language")
 
       tbody
         = render partial: "search/match", collection: @matches
