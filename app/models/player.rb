@@ -47,4 +47,12 @@ class Player < ActiveRecord::Base
     raise "Cannot delete player with matches" unless self.matches.count == 0
     super
   end
+
+  def name=(value)
+    self[:name] = value.to_s.squish
+  end
+
+  def full_name=(value)
+    self[:full_name] = value.to_s.squish
+  end
 end
