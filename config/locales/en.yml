@@ -174,7 +174,7 @@
       asia: Asia
       africa: Africa
       oceania: Oceania
- 
+
   languages:
     spanish: Spanish
     english: English
@@ -199,7 +199,7 @@
     valencian: Valencian
     danish: Danish
     korean: Korean
-    bulgarian: Bulgarian 
+    bulgarian: Bulgarian
     arabic: Arabic
     georgian: Georgian
     chinese: Chinese
@@ -209,6 +209,7 @@
     croatian: Croatian
     hungarian: Hungarian
     hebrew: Hebrew
+    albanian: Albanian
 
   shared:
     search:

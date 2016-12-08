@@ -174,7 +174,7 @@
       asia: Asia
       africa: África
       oceania: Oceanía
- 
+
   languages:
     spanish: Español
     english: Inglés
@@ -209,6 +209,7 @@
     croatian: Croata
     hungarian: Húngaro
     hebrew: Hebreo
+    albanian: Albanés
 
   shared:
     search:
