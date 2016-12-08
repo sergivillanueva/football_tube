@@ -20,3 +20,4 @@
 .project
 Thumbs.db
 public/sitemap.xml.gz
+.ruby-version
