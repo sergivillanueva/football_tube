@@ -9,7 +9,8 @@ class Contact < MailForm::Base
   def headers
     {
       :subject => "Footballia Contact Form",
-      :to => "wislabe@gmail.com; sergi.villanueva@gmail.com; info@footballia.net",
+      :to => "info@footballia.net",
+      :bcc => "wislabe@gmail.com; sergi.villanueva@gmail.com;",
       :from => %("#{name}" <#{email}>)
     }
   end
