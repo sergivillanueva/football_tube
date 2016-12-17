@@ -76,6 +76,8 @@ it:
     champions-league-finals: finali-della-champions-league
     european-cup-finals: finali-della-coppa-campioni
     copa-libertadores-finals: finali-della-copa-libertadores
+    new: nuovo
+    edit: editare
 
 de:
   routes:
