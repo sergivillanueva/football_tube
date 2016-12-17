@@ -105,6 +105,9 @@ it:
       match_unavailable: Questa partita non è disponibile.
       register_to_watch_match: Iscriveti gratis per vedere la partita.
       match_will_be_available_after_30_days: Questa partita sarà disponibile 30 giorni dopo essere giocata.
+      first_leg: "« Andata"
+      second_leg: "Ritorno »"
+      replay: "Replay"
     meta:
       uploaded_by: "Da %{name}"
       comments: "%{n} Commenti"

@@ -1,0 +1,377 @@
+﻿de:
+  no_results: Kein Ergebnis
+  profile: Profil
+  login: Sich einloggen
+  logout: Sich ausloggen
+  register: Sich anmelden
+  matches_by: "%{name} ganze Spiele"
+  delete: Löschen
+  not_authorized: Sie sind nicht autorisiert, auf diese Seite zu zugreifen
+  cancel: Abbrechen
+  motto_1: Ganze historischen Fußball Spiele online
+  motto_2: Lesen Sie nicht nur über Geschichte
+  motto_3: Erleben Sie sie!
+  motto_4: Footballia ist die erste kostenlose Fußball-Videosammlung mit mehr als 3.000 online Spielen - erleben Sie historischen Fußball immer und überall.
+  about: Footballia ist die erste kostenlos Fußball-Videosammlung.
+  upload_match: Laden Sie ein Spiel hoch!
+  sign_in_to_comment: "<a href=\"%{url}\" title=\"Sign in\">Loggen Sie sich ein</a> um zu kommentieren"
+  full_match: Ganzes Spiel
+  password: Passwort
+
+  pages:
+    home:
+      matches: Spiele
+      players: Spielern
+      goals: Tore
+      competitions: Wettbewerbe
+      matches_with_video: Spiele mit Video
+      add_your_match: Steuern Sie sein Spiel bei
+      latest_matches: Neueste hochgeladene Spiele
+      best_matches: Bestbewertete Spiele
+    figures:
+      figures: Zahlen
+    special_matches:
+      our_special_matches: Unsere Spezialsammlungen
+      maradona: Maradona Fußballspiele
+      di-stefano: Di Stéfano Fußballspiele
+      cruijff: Cruyff Fußballspiele
+      pele: Pelé Fußballspiele
+      messi: Messi Fußballspiele
+      clockwork_orange: Niederländische Nationalmannschaft Fußballspiele (1974-1978)
+      brazil_70: "Brasilien '70 Fußballspiele (1970)"
+      dream_team: Barcelonas Dream Team Fußballspiele (1990-1994)
+      quinta_del_buitre: Real Madrids Quinta del Buitre Fußballspiele (1985-1990)
+      sacchi_milan: Sacchis Mailand Fußballspiele  (1987-1992)
+      france_80s: Frankreich in den 80ern Fußballspiele (1982-1986)
+      spain_08_12: Spanien 08-12 Fußballspiele (2008-2012)
+      el_clasico: El Clásicos Fußballspiele
+      world_cup_finals: WM-Endspiele
+      champions_league_finals: Champions League Endspiele
+      european_cup_finals: Europapokal der Landesmeister Endspiele
+      libertadores_finals: Copa Libertadores Endspiele
+    about:
+      about: Über Footballia
+      text_1: " Haben Sie jemals gehört, wie Leute darüber diskutieren, wer der beste Spieler aller Zeiten war? Di Stéfano, Pelé, Cruyff, Charlton, Beckenbauer, Platini...? Und die aktuelle laufende Debatte: hat Messi Maradona schon übertroffen? Haben Sie das Gefühl, dabei nicht mitreden zu können, weil sie diese Spieler nie gesehen haben?"
+      text_2: "Haben Sie sich jemals gewünscht, Sie könnten ein altes Spiel, welches Sie sehr genossen haben, noch einmal sehen? Oder möchten Sie sich ein eigenes Bild von den historischen Spielen machen, von denen die Experten immer reden?"
+      text_3: " Ab jetzt haben Sie die Möglichkeit dazu! Aus diesen Gründen haben wir nämlich Footballia ins Leben gerufen. Wir wollten eine Plattform erschaffen, um Fußball aus der ganzen Welt und aus der Vergangenheit zu sammeln. Natürlich ist das eine riesige Aufgabe, deshalb verlassen wir uns auf Sie, um die größte Online-Sammlung von Fußballspielen aufzubauen. Wir möchten die größte Fußball-Gemeinschaft im Internet werden. Jeder ist willkommen!"
+      text_4: " Sie müssen nicht mehr über Fußball-Geschichte lernen, indem Sie lesen, was andere darüber sagen. Jetzt können Sie es selbst es selbst erleben!"
+      text_5: "Wählen Sie ein Spiel und klicken Sie auf play!"
+    contact:
+      contact: Footballia erreichen
+      text_1: "Möchten Sie uns etwas mitteilen?"
+      your_name: Ihr Name
+      your_email: Ihre E-mail
+      your_message: "Ihre Nachtriht..."
+      send_message: Nachtricht senden
+
+  players:
+    index:
+      uncompleted: Unvollendet
+      all: Alle
+    edit:
+      edit_player: Spieler editieren
+
+  comments:
+    create:
+      comment_created: Glückwunsch! Ihr Kommentar wurde hinzugefügt
+      comment_not_created: Ihr Kommentar konnte nicht hinzugefügt werden
+    form:
+      your_message: Ihre Nachricht...
+      your_nick_name: Ihr Benutzername
+    comment:
+      reply: Antworten
+
+  matches:
+    goal:
+      own_goal: Eigentor
+    form:
+      next: "Folgender Schritt &#8594;"
+      prev: "&#8592; Vorheriger Schritt"
+      cancel: Abbrechen
+      step_1: Schritt 1
+      step_2: Schritt 2
+      step_3: Schritt 3
+      step_4: Schritt 4
+    show:
+      show_result: Ergebnis einzeigen
+      related_matches: Änliche Spiele
+      coach: Trainer
+      reserves: Ersatzspieler
+      no_results: Kein Ergebnis
+      uploaded_by: Hochgeladen von
+      toggle_player_size: Player-Größe umschalten
+      comments: Kommentare
+      add_comment: Einen Kommentar beisteuern
+      match_unavailable: Dieses Spiel ist vorübergehend nicht erreichbar.
+      register_to_watch_match: Loggen Sie sich kostenlos ein, um das Spiel zu sehen.
+      match_will_be_available_after_30_days: Dieses Spiel wird 30 Tage nach dem Spieltermin erreichbar werden.
+      first_leg: "« Hinspiel"
+      second_leg: "Rückspiel »"
+      replay: "Replay"
+    meta:
+      uploaded_by: "Von %{name}"
+      comments: "%{n} Kommentare"
+      visualizations: "%{n} Aufrufe"
+    new:
+      new_match: Neues Spiel
+    edit:
+      edit_match: Spiel editieren
+    update:
+      match_updated: Ihr Spiel wurde aktualisiert
+      match_validation: Ihr Spiel wird nach der Validierung von den Administratoren veröffentlicht.
+      no_videos_found: Sie haben keine Videodatei ausgewählt. Möchten sie zurückgehen und eine auswählen? Oder Sie können später wieder kommen und das Video dann hinzufügen. Wenn nicht, wird dieses Spiel innerhalb von 3 Tagen gelöscht.
+    player_participation_fields:
+      team_number: Team nummer
+    form_parts:
+      step_3:
+        home_team_line_up: Heim Aufstellung
+        away_team_line_up: Gäste Aufstellung
+        add_reserves: Ersatzspieler
+        add_more_reserves: Weitere Ersatzspieler
+        coach: Trainer
+        reserves: Ersatzspieler
+      step_4:
+        goals: Tore
+        player: Spieler
+        upload_files: Datei hochladen
+        video_format_instructions: Video-Dateien müssen damit codiert werden, die H264-Codec und der AAC-Codierung für Audio und vorzugsweise nicht größer als 800 MB.
+  competitions:
+    edit:
+      edit_competition: Wettbewerb editieren
+    kind:
+      league_1: Liga 1
+      league_2: Liga 2
+      cup: Pokal
+      champions_league: Europapokal / Champions League
+      cup_winners_cup: Europapokal der Pokalsieger
+      uefa_cup: UEFA Pokal
+      world_cup: Weltmeisterschaft
+      world_cup_u20: U-20 WM
+      euro: Europameisterschaft
+      euro_u21: U-21 EM
+      copa_america: Copa América
+      african_cup: Afrikameisterschaft
+      confederations_cup: Confederations Cup
+      olympic_games: Olympische Spiele
+      mundialito: Mundialito
+      international_supercup: Intercontinental Supercup
+      european_supercup: Europäischer Supercup
+      supercup: Supercup
+      international_cup: Weltpokal
+      libertadores: Copa Libertadores
+      conmebol: Copa CONMEBOL
+      mercosur: Copa Mercosur
+      friendly: Freundschaftspiel
+      gold_cup: Gold Cup
+    scope:
+      national_teams: Nationalmannschaften
+      international: International
+      domestic: Inländisch
+      friendly: Freundschaftspiel
+      others: Andere
+    zone:
+      world: Welt
+      europe: Europa
+      south_america: Südamerika
+      concacaf: CONCACAF
+      asia: Asien
+      africa: Afrika
+      oceania: Ozeanien
+
+  languages:
+    spanish: Spanisch
+    english: Englisch
+    other: Andere
+    no_commentary: Kein Komentar
+    russian: Russisch
+    swedish: Schwedisch
+    french: Französisch
+    german: Deutsch
+    catalan: Katalanisch
+    dutch: Niederländisch
+    italian: Italienisch
+    polish: Polnisch
+    serbian: Serbisch
+    portuguese: Portugiesisch
+    romanian: Rumänisch
+    basque: Baskisch
+    galician: Galizisch
+    japanese: Japanisch
+    turkish: Türkisch
+    thai: Thailändisch
+    valencian: Valencianisch
+    danish: Dänisch
+    korean: Koreanisch
+    bulgarian: Bulgarisch
+    arabic: Arabisch
+    georgian: Georgisch
+    chinese: Chinesisch
+    greek: Griechisch
+    norwegian: Norwegisch
+    czech: Tschechisch
+    croatian: Kroatisch
+    hungarian: Ungarisch
+    hebrew: Hebräisch
+    albanian: Albanisch
+
+  shared:
+    search:
+      search_by_player: Spieler suchen
+      search_by_team: Verein suchen
+      type_player_name: Spielername eingeben
+      type_team_name: Vereinsname eingeben
+      head_to_head: direkte Begegnungen
+    footer:
+      about: "Footballia ist die erste freie interaktive Fußball-Videosammlung, in der Sie volle Fußballspiele jederzeit und überall ansehen können."
+      about_footballia: Über Footballia
+    header:
+      sign_in: Login
+      sign_up: Sich anmelden
+    menu:
+      competitions: Wettbewerbe
+      head_to_head: direkte Begegnungen
+      about: Über
+      contact: Kontaktieren Sie uns
+
+  search:
+    search: Suchen
+    full_matches: "%{term} ganze Spiele"
+    results: "%{n} Spiele gefunden"
+    player_results:
+      players_found: "%{n} Spielern gefunden für %{term}"
+      search_player: Spieler suchen
+      name: Name
+      full_name: Vollständiger Name
+    team_results:
+      teams_found: "%{n} Vereine gefunden für %{term}"
+      search_team: Verein suchen
+      name: Name
+    search_by_player:
+      player: Spieler (%{n} Spiele)
+      coach: Trainer (%{n} Spiele)
+      search_by_player: Spiele durch Spieler suchen
+    player_participations:
+      playing_date: Spieldatum
+      match: Spiel
+      competition: Wettbewerb
+      season: Saison
+      language: Sprache
+      role: Rolle
+    search_by_team:
+      playing_date: Spieldatum
+      match: Spiel
+      competition: Wettbewerb
+      season: Saison
+      language: Sprache
+      search_by_team: Spiele durch Verein suchen
+    search_by_competition:
+      playing_date: Spieldatum
+      match: Spiel
+      competition: Wettbewerb
+      season: Saison
+      language: Sprache
+      search_by_competition: Spiele durch Wettbewerb suchen
+    advanced_search:
+      head_to_head: direkte Begegnung
+      team_one_name: Verein 1
+      team_two_name: Verein 2
+    search_head_to_head:
+      playing_date: Spieldatum
+      match: Spiel
+      competition: Wettbewerb
+      season: Saison
+      language: Sprache
+      missing_params: Sie mussen zwei Vereine wählen
+
+  rating:
+    bad: Schlecht
+    poor: Okay
+    regular: Gut
+    good: Sehr gut
+    gorgeous: Exzellent
+    not_rated: Noch nicht bewertet!
+
+  profiles:
+    show:
+       profile: "%{name} Profil"
+       edit: Editieren
+       add_your_avatar: "Sie haben keinen Avatar, steuern Sie einen bei <a href=\"%{url}\">here</a>!"
+       add_your_nick_name: "Sie haben keinen Benutzername, steuern Sie einen bei <a href=\"%{url}\">here</a>!"
+       add_your_favourite_team: "Haben Sie ein Lieblingsteam? Steuern Sie es bei <a href=\"%{url}\">here</a>!"
+       matches: Spiele
+       add_match: "Sie haben noch kein Spiel hochgeladen. Steuern Sie ein <a href=\"%{url}\">here</a>!"
+       not_set: Nicht aufgegeben
+       no_avatar: Kein Avatar
+       no_matches: Dieser Benutzer hat noch kein Spiel hochgeladen
+       unpublished: Unveröffentlicht
+
+  devise:
+    registrations:
+      edit:
+        edit_profile: Profil editieren
+        password_needed: Wir brauchen ihr aktuelles Passwort, um ihre Änderungen zu bestätigen.
+      new:
+        already_have_an_account: Haben Sie schon ein Konto?
+      form:
+        accept_tos: "Ich akzeptiere die <a href='%{url}'>Datenschutzbestimmungen</a>"
+    sessions:
+      new:
+        need_an_account: Brauchen Sie ein Konto?
+    passwords:
+      new:
+        forgot_password: Haben Sie ihr Passwort vergessen?
+        send_me_instructions: Schicken Sie mir Hilfe, um mein Passwort zurückzusetzen.
+      edit:
+        change_password: Ändern Sie ihr Passwort.
+        new_password: Neues Passwort
+        confirm_password: Bestätigen Sie ihr neues Passwort.
+
+  activerecord:
+    models:
+      comment:
+        one: Kommentar
+        other: Kommentare
+      match:
+        one: Spiel
+        other: Spiele
+    attributes:
+      user:
+        nick_name: Benutzername
+        avatar: Avatar
+        country: Land
+        email: Email
+        favourite_team_name: Lieblingsverein
+        remember_me: Automatische Anmeldung
+      match:
+        home_team_name: Gastgeber Name
+        away_team_name: Gäste Name
+        competition_name: Name Wettbewerb
+        stage: Phase
+        season: Saison
+        venue: Spielort
+        playing_date: Spiel Datum
+        language: Sprache
+        description: Beschreibung
+      goal:
+        minute: Minute
+        own_goal: Eigentor
+      video:
+        source_file: Quelldatei
+
+  locale:
+    long:
+      en: Englisch
+      es: Spanisch
+      fr: Französisch
+
+  meta_tags:
+    keywords:
+      generic: "Ganze Spiele, Fußballspiele, Historische Spiele, Champions League Spiele, Weltmeisterschaftsspiele"
+      head_to_head: "direkte Begegnung suchen"
+    description:
+      match: "Sehen Sie das %{season} %{title} %{competition} %{stage} ganze Spiel in %{venue} auf Footballia"
+      home: "Sehen sie ganze Fußballspiele aus allen Epochen, von den frühen 50ern Jahren bis zur Gegenwart. Footballia hat mehr als 3000 Spiele online und eine Datenbank mit 20000 Spielern."
+      search: "Sehen Sie ganze %{name} Fußballspiele online auf Footballia"
+      head_to_head: "Finden Sie alle direkte Duelle zwischen zwei Teams"
+      about: "Auf Footballia können Sie ganze Fußballspiele gratis anschauen: überall und jederzeit."
+

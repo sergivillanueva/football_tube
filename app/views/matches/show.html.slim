@@ -67,7 +67,7 @@
         .team_name.m-t
           = link_to match.object.home_team, title: match.object.home_team.name do
             = match.object.home_team.decorate.name
-                  
+
       .col-xs-6.team itemscope="" itemprop="awayTeam" itemtype="http://schema.org/SportsTeam"
         .logo
           .image
@@ -84,14 +84,26 @@
 
     .stage
       = match.stage
-    
+
     .venue itemprop="location" itemscope="" itemtype="http://schema.org/Place"
       span itemprop="name" 
         = match.venue
-        
+
     .playing_date itemprop="startDate" content=match.object.playing_date
       = match.playing_date
-    
+
+    - if @match.first_leg.present?
+      .leg
+        = link_to t(".first_leg"), @match.first_leg, title: t(".first_leg")
+
+    - if @match.second_leg.present?
+      .leg
+        = link_to t(".second_leg"), @match.second_leg, title: t(".second_leg")
+
+    - if @match.replay.present?
+      .leg
+        = link_to t(".replay"), @match.replay, title: t(".replay")
+
     .rating
       = rating_for @match
     

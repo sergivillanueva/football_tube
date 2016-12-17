@@ -2374,7 +2374,7 @@ input[type="checkbox"] {
   padding: 0 8px;
   line-height: 50px;
   height: 50px;
-  font-size: 13px;
+  font-size: 12px;
 }
 .hnav.hnav-sm .navbar-nav.boxed-links > li > a {
   line-height: 40px;
@@ -3139,6 +3139,7 @@ body {
   padding-right: 30px;
 }
 .main-header .right-col {
+  width: 40%;
   right: 0;
   padding-left: 30px;
 }
