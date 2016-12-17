@@ -76,3 +76,30 @@ it:
     champions-league-finals: finali-della-champions-league
     european-cup-finals: finali-della-coppa-campioni
     copa-libertadores-finals: finali-della-copa-libertadores
+
+de:
+  routes:
+    matches: ganze-spiele
+    players: spielern
+    teams: vereine
+    competitions: wettbewerbe
+    profile: profil
+    search_by_player: spieler-suchen
+    search_by_team: verein-suchen
+    search_head_to_head: direkte-begegnung
+    about: uber-footballia
+    contact: kontakt
+    clockwork-orange-matches: niederlandische-nationalmannschaft-fussballspiele
+    brazil-70-matches: brasilien-70-fussballspiele
+    dream-team-matches: barcelonas-dream-team-fussballspiele
+    quinta-del-buitre-matches: real-madrids-quinta-del-buitre-fußballspiele
+    sacchi-milan-matches: sacchis-mailand-fußballspiele
+    france-80s-matches: frankreich-in-den-80ern-fussballspiele
+    spain-08-12-matches: spanien-08-12-fussballspiele
+    el-clasico-matches: el-clasicos-fussballspiele
+    world-cup-finals: wm-endspiele
+    champions-league-finals: champions-league-endspiele
+    european-cup-finals: europapokal-der-landermeister-endspiele
+    copa-libertadores-finals: copa-libertadores-endspiele
+    new: neu
+    edit: editieren
