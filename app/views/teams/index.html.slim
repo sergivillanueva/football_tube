@@ -4,6 +4,7 @@ table.table
       th = "Country"
       th = "Name"
       th = "Logo"
+      th = "Visits"
       th = "Created At"
       th
       th
@@ -16,13 +17,14 @@ javascript:
         { "data": "country", "orderable": false },
         { "data": "name" },
         { "data": "logo" },
+        { "data": "visits_counter" },
         { "data": "created_at" },
         { "data": "edit_link", "orderable": false },
         { "data": "delete_link", "orderable": false }
       ],
       "pageLength": 50,
       "deferRender": true,
-      "order": [3, "desc"],
+      "order": [4, "desc"],
       "sDom": 'lfiprtip'
     });
   });

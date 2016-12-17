@@ -2,6 +2,7 @@
   "country": <%= raw (team.country.present? ? "<div class='flag flag-#{team.country.code}' title='#{team.country.name}'</div>" : "").to_json %>,
   "name": "<%= team.name %>",
   "logo": <%= raw image_tag(team.logo.thumb.url, alt: team.name, title: team.name).to_json %>,
+  "visits_counter": "<%= team.visits_counter %>",
   "created_at": "<%= team.created_at %>",
   "edit_link": <%= raw link_to('', edit_team_path(team), class: 'ui-icon ui-icon-pencil', title: 'edit').to_json %>,
   "delete_link": <%= raw link_to('', team_path(team), method: :delete, class: 'ui-icon ui-icon-trash', :"data-confirm" => "Are you sure?", title: 'delete').to_json %>  
