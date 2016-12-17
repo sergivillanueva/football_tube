@@ -3,7 +3,7 @@
   "name": "<%= team.name %>",
   "logo": <%= raw image_tag(team.logo.thumb.url, alt: team.name, title: team.name).to_json %>,
   "visits_counter": "<%= team.visits_counter %>",
-  "created_at": "<%= team.created_at %>",
+  "created_at": "<%= l team.created_at, format: :long %>",
   "edit_link": <%= raw link_to('', edit_team_path(team), class: 'ui-icon ui-icon-pencil', title: 'edit').to_json %>,
   "delete_link": <%= raw link_to('', team_path(team), method: :delete, class: 'ui-icon ui-icon-trash', :"data-confirm" => "Are you sure?", title: 'delete').to_json %>  
 }

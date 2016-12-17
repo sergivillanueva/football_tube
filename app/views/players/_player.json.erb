@@ -4,6 +4,7 @@
   "birthday": "<%= player.birthday %>",
   "visits_counter": "<%= player.visits_counter %>",
   "country": <%= raw (player.country.present? ? "<div class='flag flag-#{player.country.code}' title='#{player.country.name}'</div>" : "").to_json %>,
+  "created_at": "<%= l player.created_at, format: :long %>",
   "edit_link": <%= raw link_to('', edit_player_path(player), class: 'ui-icon ui-icon-pencil', title: 'edit').to_json %>,
   "delete_link": <%= raw link_to('', player_path(player), method: :delete, class: 'ui-icon ui-icon-trash', :"data-confirm" => "Are you sure?", title: 'delete').to_json %>  
 }
