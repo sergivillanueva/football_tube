@@ -23,6 +23,7 @@ class PlayersController < ApplicationController
       @player_participations = @player_participations.where(season: seasons)
     end
     @player_participations = @player_participations.order("matches.playing_date").decorate
+    @player.increment!(:visits_counter)
     render "search/search_by_player"
   end
   

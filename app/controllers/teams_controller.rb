@@ -48,6 +48,7 @@ class TeamsController < ApplicationController
       @matches = @matches.where(season: seasons)
     end
     @matches = @matches.order("playing_date").paginate(:per_page => 20, :page => params[:page]).decorate
+    @team.increment!(:visits_counter)
     render "search/search_by_team"
   end
 
