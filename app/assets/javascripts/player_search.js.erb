@@ -1,6 +1,6 @@
 $(document).ready(function () {
   <%# TODO find a better approach for this! %>
-  var playersPath = $("form.search_by_player input.url_base").val();
+  var playersPath = $("form.search_by_player input.url_base").val() + "/";
 
   $(".player_name").autocomplete({
     source: function (request, response) {

@@ -1,6 +1,6 @@
 $(document).ready(function () {
   <%# TODO find a better approach for this! %>
-  var teamsPath = $("form.search_by_team input.url_base").val();
+  var teamsPath = $("form.search_by_team input.url_base").val() + "/";
   $(".team_name.autocomplete").autocomplete({
     source: function (request, response) {
       $.getJSON("/search_by_team", {
