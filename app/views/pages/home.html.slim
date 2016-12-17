@@ -18,8 +18,7 @@
       = rating_for @last_match_with_video, nil, noRatedMsg: t("rating.not_rated")
 
   .embedded_ad
-    = link_to "http://bit.ly/1pvBozR", { target: "_blank", title: "Flyboard Barcelona" } do
-      = image_tag mobile? ? asset_path("ads/sea_riders_mobile.jpg") : asset_path("ads/sea_riders.jpg"), alt: "Flyboard Barcelona"
+    <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
 
   .last_matches.section-title
     - @last_matches_with_video.reverse.in_groups_of(mobile? ? 2 : 3, false).each do |matches|
@@ -34,6 +33,9 @@
                 .competition.text-center = "#{match.decorate.competition_name} #{match.decorate.season}"
 
 = render "shared/social_links"
+
+.embedded_ad
+  <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
 
 .separator
 

@@ -53,8 +53,7 @@
     p = match.description
 
   .embedded_ad
-    = link_to "http://bit.ly/1pvBozR", { target: "_blank", title: "Flyboard Barcelona" } do
-      = image_tag mobile? ? asset_path("ads/sea_riders_mobile.jpg") : asset_path("ads/sea_riders.jpg"), alt: "Flyboard Barcelona"
+    <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
 
   .details itemscope="" itemtype="http://schema.org/SportsEvent"
     meta itemprop="name" content="#{match.competition_name} #{match.season} #{match.stage}"
@@ -163,6 +162,9 @@
                       td.name colspan=2
                         = t(".reserves")
                     = render partial: "player_participation", collection: @match.away_reserves
+
+  .embedded_ad
+    <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
 
   #comments.comments
     .row
