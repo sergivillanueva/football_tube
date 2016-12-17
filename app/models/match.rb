@@ -131,7 +131,7 @@ class Match < ActiveRecord::Base
   end
 
   def set_first_leg
-    Match.find(self.second_leg_id_was).update_column(:first_leg_id, nil) if self.second_leg_id_was.presen?
+    Match.find(self.second_leg_id_was).update_column(:first_leg_id, nil) if self.second_leg_id_was.present?
     Match.find(self.second_leg_id).update_column(:first_leg_id, self.id) if self.second_leg_id.present?
   end
 
