@@ -14,6 +14,15 @@
 	.col-xs-12.col-md-4
 		= f.input :language, as: :select, collection: languages_for_select
 
+- if current_user.admin? && !@match.new_record?
+  .row.m-b
+    .col-xs-12.col-md-4
+      = f.input :first_leg_id, as: :select, collection: @match.possible_legs.published.map{|m| [m.decorate.full_plain_title, m.id]}, input_html: { style: "width:100%;"}
+    .col-xs-12.col-md-4
+      = f.input :second_leg_id, as: :select, collection: @match.possible_legs.published.map{|m| [m.decorate.full_plain_title, m.id]}, input_html: { style: "width:100%;"}
+    .col-xs-12.col-md-4
+      = f.input :replay_id, as: :select, collection: @match.possible_legs.published.map{|m| [m.decorate.full_plain_title, m.id]}, input_html: { style: "width:100%;"}
+
 .row.m-b
 	.col-xs-12.col-md-6
 	  = f.input :description, input_html: { style: "width:100%;height:80px;"}

@@ -105,6 +105,9 @@
       match_unavailable: Este partido no está disponible temporalmente.
       register_to_watch_match: Regístrate gratis para ver el partido.
       match_will_be_available_after_30_days: Este partido estará disponible 30 días después de haberse disputado.
+      first_leg: "« Ida"
+      second_leg: "Vuelta »"
+      replay: "Replay"
     meta:
       uploaded_by: "Por %{name}"
       comments: "%{n} Comentarios"

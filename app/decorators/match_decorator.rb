@@ -23,6 +23,10 @@ class MatchDecorator < ApplicationDecorator
     end.html_safe
   end
 
+  def full_plain_title
+    "#{self.title}, #{self.competition_name}, #{self.playing_date}"
+  end
+
   def logos
     h.content_tag :div, class: "logos" do
       h.content_tag(:span, object.home_team.decorate.logo("small"), style: "text-align:right;") +

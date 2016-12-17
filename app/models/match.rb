@@ -20,6 +20,13 @@ class Match < ActiveRecord::Base
 
   has_many :videos
 
+  has_one :first_leg, foreign_key: 'second_leg_id', class_name: Match
+  has_one :second_leg, foreign_key: 'first_leg_id', class_name: Match
+  belongs_to :replay, foreign_key: 'replay_id', class_name: Match
+
+  after_save :set_first_leg, if: :second_leg_id_changed?
+  after_save :set_second_leg, if: :first_leg_id_changed?
+
   validates :home_score, presence: true
   validates :away_score, presence: true
 
@@ -109,4 +116,27 @@ class Match < ActiveRecord::Base
   def unavailable?
     !self.available?
   end
+
+  def self.by_head_to_head ids
+    Match.where("home_team_id IN (?) AND away_team_id IN (?)", ids, ids)
+  end
+
+  def self.by_season season
+    Match.where(season: season)
+  end
+
+  def possible_legs
+    self.competition.matches.by_head_to_head([self.home_team_id, self.away_team_id]).where.not(id: self.id).by_season(self.season)
+  end
+
+  def set_first_leg
+    Match.find(self.second_leg_id_was).update_column(:first_leg_id, nil) if self.second_leg_id_was.presen?
+    Match.find(self.second_leg_id).update_column(:first_leg_id, self.id) if self.second_leg_id.present?
+  end
+
+  def set_second_leg
+    Match.find(self.first_leg_id_was).update_column(:second_leg_id, nil) if self.first_leg_id_was.present?
+    Match.find(self.first_leg_id).update_column(:second_leg_id, self.id) if self.first_leg_id.present?
+  end
+
 end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150923084117) do
+ActiveRecord::Schema.define(version: 20161217111204) do
 
   create_table "average_caches", force: true do |t|
     t.integer  "rater_id"
@@ -99,8 +99,14 @@ ActiveRecord::Schema.define(version: 20150923084117) do
     t.integer  "visualizations_counter",           default: 0
     t.integer  "visits_counter",                   default: 0
     t.boolean  "published",                        default: false
+    t.integer  "first_leg_id"
+    t.integer  "second_leg_id"
+    t.integer  "replay_id"
   end
 
+  add_index "matches", ["first_leg_id"], name: "index_matches_on_first_leg_id", using: :btree
+  add_index "matches", ["replay_id"], name: "index_matches_on_replay_id", using: :btree
+  add_index "matches", ["second_leg_id"], name: "index_matches_on_second_leg_id", using: :btree
   add_index "matches", ["slug"], name: "index_matches_on_slug", unique: true, using: :btree
   add_index "matches", ["user_id"], name: "index_matches_on_user_id", using: :btree
 

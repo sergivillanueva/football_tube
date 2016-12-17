@@ -105,6 +105,9 @@
       match_unavailable: Dieses Spiel ist vorübergehend nicht erreichbar.
       register_to_watch_match: Loggen Sie sich kostenlos ein, um das Spiel zu sehen.
       match_will_be_available_after_30_days: Dieses Spiel wird 30 Tage nach dem Spieltermin erreichbar werden.
+      first_leg: "« Hinspiel"
+      second_leg: "Rückspiel »"
+      replay: "Replay"
     meta:
       uploaded_by: "Von %{name}"
       comments: "%{n} Kommentare"
