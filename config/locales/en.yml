@@ -106,7 +106,7 @@
       register_to_watch_match: Sign up for free to watch the match.
       match_will_be_available_after_30_days: This match will become available 30 days after being played.
       first_leg: "« 1st leg"
-      second_leg: "2n leg »"
+      second_leg: "2nd leg »"
       replay: "Replay"
     meta:
       uploaded_by: "By %{name}"
