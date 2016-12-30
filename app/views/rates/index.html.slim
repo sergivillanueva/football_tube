@@ -1,0 +1,24 @@
+table.table
+  thead
+    tr
+      th = "Rateable"
+      th = "Rater"
+      th = "Stars"
+      th = "Created At"
+
+javascript:
+  $(document).ready(function() {
+    $('.table').dataTable( {
+      "ajax": "#{rates_path(format: :json)}",
+      "columns": [
+        { "data": "rateable", "orderable": false },
+        { "data": "rater" },
+        { "data": "stars" },
+        { "data": "created_at" },
+      ],
+      "pageLength": 50,
+      "deferRender": true,
+      "order": [3, "desc"],
+      "sDom": 'lfiprtip'
+    });
+  });

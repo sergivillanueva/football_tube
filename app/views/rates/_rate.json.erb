@@ -1,0 +1,6 @@
+{
+  "rateable": <%= raw(rate.rateable.present? ? link_to(rate.rateable.decorate.result_with_logos, rate.rateable).to_json : "Match not found".to_json) %>,
+  "rater": "<%= rate.rater.email %>",
+  "stars": <%= rate.stars %>,
+  "created_at": "<%= l rate.created_at, format: :long %>"
+}
