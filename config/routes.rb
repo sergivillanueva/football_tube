@@ -19,7 +19,8 @@ FootballTube::Application.routes.draw do
       get "search", on: :collection
     end
     resources :videos, only: [:index, :destroy]
-    resources "contacts", only: [:new, :create]
+    resources :contacts, only: [:new, :create]
+    resources :rates, only: [:index], controller: :rater
 
     get "/profile/:id" => "profiles#show", as: :profile
 
