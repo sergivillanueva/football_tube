@@ -20,7 +20,7 @@ class SearchController < ApplicationController
     words_for_full_text_search = words.map{|w| "+#{w}*"}.join(" ")
 
     #http://stackoverflow.com/questions/1039512/mysql-full-text-search-in-ruby-on-rails
-    @players = Player.where("MATCH(name, full_name) AGAINST (? IN BOOLEAN MODE)", words_for_full_text_search).includes(:country)
+    @players = Player.where("MATCH(players.name, players.full_name) AGAINST (? IN BOOLEAN MODE)", words_for_full_text_search).includes(:country)
 
     if request.xhr?
       render(json: @players.to_json) && return
