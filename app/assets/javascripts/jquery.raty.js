@@ -332,6 +332,8 @@
         }
       }
 
+      $('<span class="text">' + this.opt.rates + '</span>').appendTo(this);
+
       this.stars = this.self.children(this.opt.starType);
     },
 

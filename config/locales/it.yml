@@ -17,6 +17,7 @@ it:
   sign_in_to_comment: "<a href=\"%{url}\" title=\"Connexion\">Accedi</a> per commentare"
   full_match: partita completa
   password: Password
+  votes: "%{n} voti"
 
   pages:
     home:

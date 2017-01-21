@@ -4,7 +4,7 @@
 - breadcrumb :root
 
 - if @last_match_with_video.present?
-  .last_match.section-title.line-pcolor
+  .last_match.section-title.line-pcolor.product-details
     h2 = t(".latest_matches")
     .video
       = jwplayer
@@ -14,7 +14,7 @@
         br
         = "#{@last_match_with_video.decorate.competition_name} #{@last_match_with_video.decorate.season}"
 
-    .rating
+    .rating.product-rating
       = rating_for @last_match_with_video, nil, noRatedMsg: t("rating.not_rated")
 
   .embedded_ad
@@ -78,7 +78,7 @@
 
 javascript:
   $(document).ready(function () {
-    $(".star").raty('set', { readOnly: true });
+    $(".star").raty('set', { rates: "#{t('votes', n: @last_match_with_video.rates.count)}", space: false, readOnly: true });
   
     $('.bxslider').bxSlider({
       slideMargin: 20,
