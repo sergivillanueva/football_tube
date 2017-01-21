@@ -18,6 +18,8 @@
   full_match: full match
   password: Password
   votes: "%{n} votes"
+  done: Done!
+  sign_in_to_vote: "<a href=\"%{url}\" title=\"Sign in\">Sign in</a> to vote"
 
   pages:
     home:

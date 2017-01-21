@@ -49,13 +49,14 @@ $(function(){
           klass: $(this).attr('data-classname')
         },
         function(data) {
-          if(data) {
+          if(data.code) {
             // success code goes here ...
 
             if ($(_this).attr('data-disable-after-rate') == 'true') {
               $(_this).raty('set', { readOnly: true, score: score });
             }
           }
+          $(_this).find(".text").html(data.message);
         });
       }
     });

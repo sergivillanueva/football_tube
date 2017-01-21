@@ -18,6 +18,8 @@
   full_match: partido completo
   password: Contraseña
   votes: "%{n} votos"
+  done: ¡Hecho!
+  sign_in_to_vote: "<a href=\"%{url}\" title=\"Inicia sesión\">Inicia la sesión</a> para votar"
 
   pages:
     home:

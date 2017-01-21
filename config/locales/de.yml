@@ -18,6 +18,8 @@
   full_match: Ganzes Spiel
   password: Passwort
   votes: "%{n} stimmen"
+  done: Fertig!
+  sign_in_to_vote: "<a href=\"%{url}\" title=\"Loggen Sie sich ein\">Loggen Sie sich ein</a> um abzustimmen"
 
   pages:
     home:

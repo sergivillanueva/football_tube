@@ -6,9 +6,9 @@ class RaterController < ApplicationController
       obj = params[:klass].classify.constantize.find(params[:id])
       obj.rate params[:score].to_f, current_user, params[:dimension]
 
-      render :json => true
+      render :json => { code: true, message: t("done") }
     else
-      render :json => false
+      render :json => { code: false, message: t("sign_in_to_vote", url: new_user_session_path).html_safe }
     end
   end
 
