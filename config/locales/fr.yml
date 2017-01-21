@@ -104,7 +104,7 @@
       comments: Commentaires
       add_comment: Ajouter un commentaire
       match_unavailable: Ce match n'est pas disponible.
-      register_to_watch_match: Inscrivez-vouz gratis pour voir le match.
+      register_to_watch_match: "<a href=\"%{url}\" title=\"Inscrivez-vouz gratis\" class=\"alert-link\">Inscrivez-vouz gratis</a> pour voir le match."
       match_will_be_available_after_30_days: Ce match sera disponible 30 jours après être joué.
       first_leg: "« Allée"
       second_leg: "Retour »"

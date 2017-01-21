@@ -104,7 +104,7 @@ it:
       comments: Commenti
       add_comment: Aggiungere un commento
       match_unavailable: Questa partita non è disponibile.
-      register_to_watch_match: Iscriveti gratis per vedere la partita.
+      register_to_watch_match: "<a href=\"%{url}\" title=\"Iscriveti gratis\" class=\"alert-link\">Iscriveti gratis</a> per vedere la partita."
       match_will_be_available_after_30_days: Questa partita sarà disponibile 30 giorni dopo essere giocata.
       first_leg: "« Andata"
       second_leg: "Ritorno »"
