@@ -3718,6 +3718,10 @@ body {
   background-color: #FF0084;
   color: #fff;
 }
+.color-icons-bg [class*="-reddit"] {
+  background-color: #ff4500;
+  color: #fff;
+}
 
 .color-icons-hovered [class*="-facebook"]:hover {
   color: #5371AD!important;
@@ -3749,6 +3753,10 @@ body {
 }
 .color-icons-hovered [class*="-flickr"]:hover {
   color: #FF0084!important;
+  background: #fff;
+}
+.color-icons-hovered [class*="-reddit"]:hover {
+  color: #ff4500!important;
   background: #fff;
 }
 
