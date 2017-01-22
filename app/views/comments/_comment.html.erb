@@ -1,11 +1,9 @@
 <% reply_css_class = "#{'reply-comment' if comment.parent.present?}" %>
 <li class="clearfix comment-block <%= reply_css_class %>">
   <div class="avatar">
-    <% if comment.user.avatar.present? %>
-      <div class="m-b-xs">
-        <%= image_tag comment.user.avatar.medium.url, title: comment.user.name, alt: comment.user.name %>
-      </div>
-    <% end %>
+    <div class="m-b-xs">
+      <%= image_tag comment.user.avatar.medium.url, title: comment.user.name, alt: comment.user.name %>
+    </div>
     <% if user_signed_in? && current_user.admin? %>
       <%= link_to('', match_comment_path(@match, comment), method: :delete, class: 'ui-icon ui-icon-trash', :"data-confirm" => "Are you sure?", title: 'delete') %>
     <% end %>
@@ -15,7 +13,7 @@
   </div>
   <div class="comment-box clearfix">
     <div class="author clearfix">
-      <a class="username" href="#"><%= comment.user.nick_name %></a>
+      <a class="username" href="<%= profile_path(comment.user) %>" title="<%= comment.user.decorate.name %>"><%= comment.user.decorate.name %></a>
       <span class="date"><%= l comment.created_at, format: :long %></span>
     </div>
     <p class="comment">
