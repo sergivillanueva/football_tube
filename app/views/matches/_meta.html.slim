@@ -6,7 +6,7 @@
 
   span.comments
     i.fa.fa-comments
-    a href="#comments"
+    a href="#comments" class="comments_shortcut"
       = mobile? ? @match.root_comments.count : t(".comments", n: @match.root_comments.count)
 
   span.visualizations

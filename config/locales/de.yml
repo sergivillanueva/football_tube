@@ -111,6 +111,10 @@
       first_leg: "« Hinspiel"
       second_leg: "Rückspiel »"
       replay: "Replay"
+      match_info: Informationen
+      lineups: Aufstellungen
+      navigate_through_files: "Dieses Spiel ist in %{n} Dateien unterteilt. Sie können mit den Pfeilen auf dem Player durch sie navigieren."
+      share_this_match: "Gefällt Ihnen dieses Spiel? Teilen Sie es!"
     meta:
       uploaded_by: "Von %{name}"
       comments: "%{n} Kommentare"

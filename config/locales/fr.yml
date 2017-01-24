@@ -111,6 +111,10 @@
       first_leg: "« Allée"
       second_leg: "Retour »"
       replay: "Replay"
+      match_info: Information
+      lineups: Formations
+      navigate_through_files: "Ce match est divisé en %{n} fichiers. Vous pouvez naviguer entre eux avec les flèches du player."
+      share_this_match: "Vous aimez ce match ? Partagez-le !"
     meta:
       uploaded_by: "Par %{name}"
       comments: "%{n} Commentaires"

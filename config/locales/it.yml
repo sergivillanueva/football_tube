@@ -111,6 +111,10 @@ it:
       first_leg: "« Andata"
       second_leg: "Ritorno »"
       replay: "Replay"
+      match_info: Informazioni
+      lineups: Schieramento
+      navigate_through_files: "Questa partita è divisa tra %{n} file. Puoi navigare tra loro con le frecce del player."
+      share_this_match: "Ti piace questa partita? Condividila!"
     meta:
       uploaded_by: "Da %{name}"
       comments: "%{n} Commenti"

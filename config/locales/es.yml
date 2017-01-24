@@ -111,6 +111,10 @@
       first_leg: "« Ida"
       second_leg: "Vuelta »"
       replay: "Replay"
+      match_info: Información
+      lineups: Alineaciones
+      navigate_through_files: "Este partido está dividido en %{n} archivos. Puedes navegar entre ellos usando las flechas del reproductor."
+      share_this_match: "¿Te gusta este partido? <b>¡Compártelo!</b>"
     meta:
       uploaded_by: "Por %{name}"
       comments: "%{n} Comentarios"

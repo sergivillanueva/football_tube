@@ -61,10 +61,12 @@ javascript:
       if ($(jwplayer("jwplayer").getContainer()).width() == 640) {
         jwplayer("jwplayer").resize(800,450);
         $("#match .video").addClass("medium_size");
+        $("#match .side-col").hide();
       }
       else {
         jwplayer("jwplayer").resize(640,360);
         $("#match .video").removeClass("medium_size");
+        $("#match .side-col").show();
       }
       e.preventDefault();
     });

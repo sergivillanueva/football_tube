@@ -17,46 +17,57 @@
     .alert.alert-danger
       = t(".register_to_watch_match", url: new_user_registration_path).html_safe
 
-  .clearfix
-    .video
-      - if user_signed_in? && match.videos.any? && match.available?
-        / 
-          = video_tag match.videos.first.source_file.url, { controls: true, style: "width:100%" }
-        
-        = jwplayer
+  .row
+    .col-xs-12.col-md-7
+      .video
+        - if user_signed_in? && match.videos.any? && match.available?
+          / 
+            = video_tag match.videos.first.source_file.url, { controls: true, style: "width:100%" }
 
-      - else
-        = image_tag src=preview_image_match_path(match), { style: "width:100%" }
+          = jwplayer
 
-    /
-      .related_matches
-        h5 = t(".related_matches")
-        = render(partial: "related_match", collection: @related_matches, as: :match) || t(".no_results")
+        - else
+          = image_tag src=preview_image_match_path(match), { style: "width:100%" }
 
-  .description.m-t.blog-entry
-    h1 = "#{match.title} #{t("full_match")}"
-    h2 = "#{match.competition_name} #{match.season}"
+      /
+        .related_matches
+          h5 = t(".related_matches")
+          = render(partial: "related_match", collection: @related_matches, as: :match) || t(".no_results")
 
-    = render "meta"
+      .description.m-t.blog-entry
+        h1 = "#{match.title} #{t("full_match")}"
+        h2 = "#{match.competition_name} #{match.season}"
 
-    ul.page-links.pull-right.hlinks.hlinks-icons.color-icons-borders.color-icons-bg.color-icons-hovered
-      li
-        a href="https://www.facebook.com/sharer/sharer.php?u=#{match_url(@match)}" target="_blank"
-          i.icon.fa.fa-facebook
-      li
-        a href="https://twitter.com/share?text=#{match.title}" target="_blank"
-          i.icon.fa.fa-twitter
-      li
-        a href="https://plus.google.com/share?url=#{match_url(@match)}"
-          i.icon.fa.fa-google-plus
-      li
-        a href="//www.reddit.com/submit?url=#{match_url(@match)}" target="_blank"
-          i.icon.fa.fa-reddit
+        = render "meta"
+        = render "share_links"
 
-    p.hidden-xs
-      = link_to t(".toggle_player_size"), "#", class: "toggle_player_size btn btn-primary btn-sm"
+        p.hidden-xs
+          = link_to t(".toggle_player_size"), "#", class: "toggle_player_size btn btn-primary btn-sm"
 
-    p = match.description
+    .side-col.side-col-padded.col-md-5.hidden-xs
+      .side-widget
+        <h5 class="boxed-title">#{t(".match_info")}</h5>
+        ul.ul-toggle
+          li
+            = link_to "#", class: "lineups_shortcut" do
+              <i class="icon fa fa-angle-right"></i>
+              = t(".lineups")
+          li
+            = link_to "#", class: "comments_shortcut" do
+              <i class="icon fa fa-angle-right"></i>
+              = t(".comments")
+
+        - if match.description.present?
+          p = match.description
+
+        - if match.videos.count > 1
+          p
+            i.fa.fa-info-circle
+            span.m-l-xs = t(".navigate_through_files", n: match.videos.count)
+
+        p.m-b-xs = t(".share_this_match").html_safe
+
+        = render "share_links"
 
   .embedded_ad
     <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
@@ -212,9 +223,16 @@ javascript:
       e.preventDefault();
     });
 
-    $(".meta .comments a").on('click', function (e) {
+    $("a.comments_shortcut").on('click', function (e) {
       $('html, body').animate({
         scrollTop: $("#comments").offset().top
+      }, 1000);
+      event.preventDefault();
+    });
+
+    $("a.lineups_shortcut").on('click', function (e) {
+      $('html, body').animate({
+        scrollTop: $(".details").offset().top
       }, 1000);
       event.preventDefault();
     });

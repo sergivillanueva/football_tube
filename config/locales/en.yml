@@ -111,6 +111,10 @@
       first_leg: "« 1st leg"
       second_leg: "2nd leg »"
       replay: "Replay"
+      match_info: Information
+      lineups: Lineups
+      navigate_through_files: "This match is divided into %{n} files. You can navigate through them using the arrows on the player."
+      share_this_match: "Like this match? Share it!"
     meta:
       uploaded_by: "By %{name}"
       comments: "%{n} Comments"
