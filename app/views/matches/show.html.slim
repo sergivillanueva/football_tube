@@ -44,10 +44,10 @@
         p.hidden-xs
           = link_to t(".toggle_player_size"), "#", class: "toggle_player_size btn btn-primary btn-sm"
 
-    .side-col.side-col-padded.col-md-5.hidden-xs
+    .side-col.side-col-padded.col-xs-12.col-md-5.hidden-xs
       .side-widget
         <h5 class="boxed-title">#{t(".match_info")}</h5>
-        ul.ul-toggle
+        ul.ul-toggle.m-b
           li
             = link_to "#", class: "lineups_shortcut" do
               <i class="icon fa fa-angle-right"></i>
