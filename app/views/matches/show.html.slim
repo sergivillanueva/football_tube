@@ -55,7 +55,7 @@
   .embedded_ad
     <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
 
-  .details itemscope="" itemtype="http://schema.org/SportsEvent"
+  .details.product-details itemscope="" itemtype="http://schema.org/SportsEvent"
     meta itemprop="name" content="#{match.competition_name} #{match.season} #{match.stage}"
     .row.teams.m-b
       .col-xs-6.team itemscope="" itemprop="homeTeam" itemtype="http://schema.org/SportsTeam"
@@ -104,8 +104,8 @@
       .leg
         = link_to t(".replay"), @match.replay, title: t(".replay")
 
-    .rating
-      = rating_for @match
+    .rating.product-rating
+      = rating_for @match, nil, rates: @match.rates.count
     
     .result        
       = link_to t(".show_result"), "#", id: "show_result"
@@ -200,10 +200,12 @@ javascript:
       $(this).remove();
       e.preventDefault();
     });
+
     $("#match").on("click", ".reply_comment", function (e) {
       $(this).closest(".comment-block").find(".reply_comment_form").toggle();
       e.preventDefault();
     });
+
     $(".meta .comments a").on('click', function (e) {
       $('html, body').animate({
         scrollTop: $("#comments").offset().top
@@ -211,6 +213,7 @@ javascript:
       event.preventDefault();
     });
 
+    $(".star").raty('set', { rates: "#{t('votes', n: @match.rates.count)}", space: false, readOnly: false });
   });
 
 - if user_signed_in? && match.videos.any? && match.available?

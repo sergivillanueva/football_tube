@@ -17,6 +17,7 @@
   sign_in_to_comment: "<a href=\"%{url}\" title=\"Sign in\">Loggen Sie sich ein</a> um zu kommentieren"
   full_match: Ganzes Spiel
   password: Passwort
+  votes: "%{n} stimmen"
 
   pages:
     home:

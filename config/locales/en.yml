@@ -17,6 +17,7 @@
   sign_in_to_comment: "<a href=\"%{url}\" title=\"Sign in\">Sign in</a> to comment"
   full_match: full match
   password: Password
+  votes: "%{n} votes"
 
   pages:
     home:
