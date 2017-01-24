@@ -114,7 +114,7 @@
       match_info: Information
       lineups: Formations
       navigate_through_files: "Ce match est divisé en %{n} fichiers. Vous pouvez naviguer entre eux avec les flèches du player."
-      share_this_match: "Vous aimez ce match ? Partagez-le !"
+      share_this_match: "Vous aimez ce match ? <b>Partagez-le !</b>"
     meta:
       uploaded_by: "Par %{name}"
       comments: "%{n} Commentaires"

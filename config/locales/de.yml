@@ -114,7 +114,7 @@
       match_info: Informationen
       lineups: Aufstellungen
       navigate_through_files: "Dieses Spiel ist in %{n} Dateien unterteilt. Sie können mit den Pfeilen auf dem Player durch sie navigieren."
-      share_this_match: "Gefällt Ihnen dieses Spiel? Teilen Sie es!"
+      share_this_match: "Gefällt Ihnen dieses Spiel? <b>Teilen Sie es!</b>"
     meta:
       uploaded_by: "Von %{name}"
       comments: "%{n} Kommentare"
