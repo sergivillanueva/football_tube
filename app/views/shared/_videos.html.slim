@@ -58,7 +58,7 @@ javascript:
 javascript:
   $(document).ready(function(){
     $(".toggle_player_size").on("click", function (e) {
-      var width, height;
+      var width, height, opacity;
 
       $("#match .video").toggleClass("medium_size");
 
@@ -66,7 +66,8 @@ javascript:
       height = $("#match .video").height();
       jwplayer("jwplayer").resize(width, height);
 
-      $("#match .side-col").fadeToggle(100);
+      opacity = $("#match .side-col").css('opacity');
+      $("#match .side-col").fadeTo(100, opacity == 1 ? 0 : 1);
 
       e.preventDefault();
     });
