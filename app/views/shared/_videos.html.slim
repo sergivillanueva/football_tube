@@ -29,7 +29,7 @@
           client: "vast",
           tag: "http://adserver.com/vastTag.xml"
         },
-        playlist: #{raw videos.map{|v| { image: "#{preview_image_match_path(match)}", file: v.source_file.url}}.to_json}
+        playlist: #{raw videos.map{|v| { image: "#{preview_image_match_path(match)}", file: v.source_file.url }}.to_json}
       });
     });
 
@@ -58,16 +58,16 @@ javascript:
 javascript:
   $(document).ready(function(){
     $(".toggle_player_size").on("click", function (e) {
-      if ($(jwplayer("jwplayer").getContainer()).width() == 640) {
-        jwplayer("jwplayer").resize(800,450);
-        $("#match .video").addClass("medium_size");
-        $("#match .side-col").fadeTo("fast", 0);
-      }
-      else {
-        jwplayer("jwplayer").resize(640,360);
-        $("#match .video").removeClass("medium_size");
-        $("#match .side-col").fadeTo("fast", 1);
-      }
+      var width, height;
+
+      $("#match .video").toggleClass("medium_size");
+
+      width = $("#match .video").width();
+      height = $("#match .video").height();
+      jwplayer("jwplayer").resize(width, height);
+
+      $("#match .side-col").fadeToggle(100);
+
       e.preventDefault();
     });
   });
