@@ -1,7 +1,10 @@
 table.table
   thead
     tr
-      th = "Match"
+      th = "Match Id"
+      th = "Home team"
+      th = "Result"
+      th = "Away team"
       th = "Name"
       th = "Created At"
       th
@@ -11,14 +14,17 @@ javascript:
     $('.table').dataTable( {
       "ajax": "#{videos_path(format: :json)}",
       "columns": [
-        { "data": "match" },
+        { "data": "id" },
+        { "data": "home_team" },
+        { "data": "result", orderable: false },
+        { "data": "away_team" },
         { "data": "name" },
         { "data": "created_at" },
         { "data": "delete_link", "orderable": false }
       ],
       "pageLength": 50,
       "deferRender": true,
-      "order": [2, "desc"],
+      "order": [5, "desc"],
       "sDom": 'lfiprtip'
     });
   });

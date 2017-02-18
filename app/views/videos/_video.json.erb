@@ -1,5 +1,8 @@
 {
-  "match": <%= raw(video.match.present? ? link_to(video.match.decorate.result_with_logos, video.match).to_json : "Match not found".to_json) %>,
+  "id": <%= video.match.id %>,
+  "home_team": <%= raw "#{video.match.home_team.name} #{video.match.home_team.decorate.logo("mini")}".to_json %>,
+  "result": <%= raw link_to(video.match.decorate.result, video.match, target: "_blank").to_json %>,
+  "away_team": <%= raw "#{video.match.away_team.name} #{video.match.away_team.decorate.logo("mini")}".to_json %>,
   "name": "<%= video.source_file.to_s %>",
   "created_at": "<%= l video.created_at, format: :long %>",
   "delete_link": <%= raw link_to('', video_path(video), method: :delete, class: 'ui-icon ui-icon-trash', :"data-confirm" => "Are you sure you want to delete video #{video.source_file.to_s}?", title: 'delete').to_json %>  
