@@ -9,6 +9,7 @@
   "videos_count": <%= raw match.videos.count > 0 ? match.videos.count : content_tag(:span, "Not found", { class: "text-danger" }).to_json %>,
   "visits_counter": <%= match.visits_counter %>,
   "visualizations_counter": <%= match.visualizations_counter %>,
+  "average_rating": <%= match.object.average_rating %>,
   "created_at": "<%= match.created_at %>",
   "user": "<%= match.object.user.try(:email) %>",
   "publish_link": <%= raw match.object.published? ? "".to_json : link_to('', "#", class: 'ui-icon ui-icon-check publish', title: 'publish', :"data-url" => "#{publish_match_path(match)}").to_json %>,

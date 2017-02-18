@@ -13,6 +13,7 @@ table.table
       th = "Video files"
       th = "Visits"
       th = "Plays"      
+      th = "Rating"
       th = "Uploaded"
       th = "User"
       th
@@ -34,6 +35,7 @@ javascript:
         { "data": "videos_count" },
         { "data": "visits_counter" },
         { "data": "visualizations_counter" },
+        { "data": "average_rating" },
         { "data": "created_at" },
         { "data": "user" },
         { "data": "publish_link", "orderable": false },
@@ -42,7 +44,7 @@ javascript:
       ],
       "pageLength": 50,
       "deferRender": true,
-      "order": [10, 'desc'],
+      "order": [11, 'desc'],
       "sDom": 'lfiprtip'
     });
     

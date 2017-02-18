@@ -140,4 +140,10 @@ class Match < ActiveRecord::Base
     Match.find(self.first_leg_id).update_column(:second_leg_id, self.id) if self.first_leg_id.present?
   end
 
+  def average_rating
+    rc = RatingCache.find_by(cacheable: self)
+    return 0 if rc.nil?
+    rc.avg
+  end
+
 end
