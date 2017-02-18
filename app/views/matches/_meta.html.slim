@@ -10,8 +10,8 @@
       = mobile? ? @match.root_comments.count : t(".comments", n: @match.root_comments.count)
 
   span.visualizations
-    i.fa.fa-play
-    = mobile? ? match.visualizations_counter : t(".visualizations", n: match.visualizations_counter)
+    i.fa.fa-eye
+    = mobile? ? match.visits_counter : t(".visualizations", n: match.visits_counter)
 
   span.language
     i.fa.fa-volume-up
