@@ -1,7 +1,10 @@
 table.table
   thead
     tr
-      th = "Rateable"
+      th = "Match Id"
+      th = "Home team"
+      th = "Result"
+      th = "Away team"
       th = "Rater"
       th = "Stars"
       th = "Created At"
@@ -11,14 +14,17 @@ javascript:
     $('.table').dataTable( {
       "ajax": "#{rates_path(format: :json)}",
       "columns": [
-        { "data": "rateable", "orderable": false },
+        { "data": "id" },
+        { "data": "home_team" },
+        { "data": "result", "orderable": false },
+        { "data": "away_team" },
         { "data": "rater" },
         { "data": "stars" },
         { "data": "created_at" },
       ],
       "pageLength": 50,
       "deferRender": true,
-      "order": [3, "desc"],
+      "order": [6, "desc"],
       "sDom": 'lfiprtip'
     });
   });
