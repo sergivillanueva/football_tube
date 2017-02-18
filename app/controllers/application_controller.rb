@@ -58,6 +58,13 @@ class ApplicationController < ActionController::Base
     session[:previous_url] || root_path
   end
 
+  def increment_visits_counter item
+    key = "#{item.class.name.downcase}_#{item.id}_last_visit"
+    last_visit = session[key]
+    return if last_visit && Time.at(last_visit.to_i) > 60.second.ago
+    item.increment!(:visits_counter) && session[key] = Time.now.to_i.to_s
+  end
+
   protected
 
   def configure_permitted_parameters

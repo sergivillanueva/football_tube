@@ -75,8 +75,8 @@ class MatchesController < ApplicationController
     else
       @match = Match.published.friendly.find(params[:id])
     end
-    @match.increment!(:visits_counter)
     @related_matches = @match.related_matches
+    increment_visits_counter @match
   end
 
   def edit
@@ -125,9 +125,9 @@ class MatchesController < ApplicationController
       render json: { status: :error, code: 0 }
     end
   end
-  
+
   private
-  
+
   def match_params
     params.require(:match).permit(
       :home_score, 
