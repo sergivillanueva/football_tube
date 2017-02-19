@@ -126,4 +126,8 @@ class MatchDecorator < ApplicationDecorator
   def banned?
     object.banned?
   end
+
+  def average_rating
+    object.average_rating.round(2)
+  end
 end
