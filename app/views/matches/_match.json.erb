@@ -5,7 +5,6 @@
   "competition": "<%= match.competition_name %>",
   "stage": "<%= match.stage %>",
   "playing_date": "<%= match.playing_date %>",
-  "language": "<%= match.language %>",
   "videos_count": <%= raw match.videos.count > 0 ? match.videos.count : content_tag(:span, "Not found", { class: "text-danger" }).to_json %>,
   "visits_counter": <%= match.visits_counter %>,
   "visualizations_counter": <%= match.visualizations_counter %>,
