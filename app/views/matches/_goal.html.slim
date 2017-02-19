@@ -1,6 +1,6 @@
 div class="goal #{goal.side}"
   span title=goal.player.full_name
-    = goal.player.name
+    = link_to_if goal.seekable?, goal.player.name, "#", { :"data-video-id" => goal.video_id, :"data-video-start-position" => goal.video_start_position }
   span = "#{goal.minute}'"
   - if goal.own_goal?
     span = "(#{t(".own_goal")})"

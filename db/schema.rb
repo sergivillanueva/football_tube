@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161217181211) do
+ActiveRecord::Schema.define(version: 20170219160428) do
 
   create_table "average_caches", force: true do |t|
     t.integer  "rater_id"
@@ -77,8 +77,13 @@ ActiveRecord::Schema.define(version: 20161217181211) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "player_id"
-    t.boolean  "own_goal",   default: false
+    t.boolean  "own_goal",             default: false
+    t.integer  "video_id"
+    t.integer  "video_start_position"
+    t.integer  "video_end_position"
   end
+
+  add_index "goals", ["video_id"], name: "index_goals_on_video_id", using: :btree
 
   create_table "matches", force: true do |t|
     t.integer  "home_score",             limit: 1,                 null: false

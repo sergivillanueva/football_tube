@@ -1,6 +1,7 @@
 class Goal < ActiveRecord::Base
   belongs_to :player
   belongs_to :match
+  belongs_to :video
 
   def own_goal?
   	self.own_goal == true
@@ -12,5 +13,9 @@ class Goal < ActiveRecord::Base
   	else
   	  self.own_goal? ? "home" : "away"
   	end
+  end
+
+  def seekable?
+    self.video.present? && self.video_start_position.present?
   end
 end

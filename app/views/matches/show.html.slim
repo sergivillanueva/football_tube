@@ -240,6 +240,24 @@ javascript:
     });
 
     $(".star").raty('set', { rates: "#{t('votes', n: @match.rates.count)}", space: false, readOnly: false });
+
+    $(".goals .goal a").on("click", function (e) {
+      var videoId = $(this).data("video-id");
+      var videoPosition = $(this).data("video-start-position");
+      var mediaIds = $.map(jwplayer().getPlaylist(), function (n) { return n.mediaid });
+      var index = $.inArray(videoId, mediaIds);
+
+      if (index > -1 && videoPosition) {
+        $('html, body').animate({
+          scrollTop: $(".video").offset().top
+        }, 1000, function () {
+          jwplayer().playlistItem(index);
+          jwplayer().seek(videoPosition);
+        });
+      }
+
+      e.preventDefault();
+    });
   });
 
 - if user_signed_in? && match.videos.any? && match.available?

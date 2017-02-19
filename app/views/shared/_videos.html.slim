@@ -13,7 +13,8 @@
           client: "vast",
           tag: "http://adserver.com/vastTag.xml"
         },
-        file: "#{videos.first.source_file.url}"
+        file: "#{videos.first.source_file.url}",
+        mediaid: #{videos.first.id}
       });
     });
 
@@ -29,7 +30,7 @@
           client: "vast",
           tag: "http://adserver.com/vastTag.xml"
         },
-        playlist: #{raw videos.map{|v| { image: "#{preview_image_match_path(match)}", file: v.source_file.url }}.to_json}
+        playlist: #{raw videos.map{|v| { mediaid: v.id, image: "#{preview_image_match_path(match)}", file: v.source_file.url }}.to_json}
       });
     });
 
