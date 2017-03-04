@@ -20,6 +20,7 @@
   votes: "%{n} votes"
   done: Fait!
   sign_in_to_vote: "<a href=\"%{url}\" title=\"Connectez-vous\">Connectez-vous</a> pour voter"
+  new: Nouveau!
 
   pages:
     home:
@@ -115,6 +116,7 @@
       lineups: Formations
       navigate_through_files: "Ce match est divisé en %{n} fichiers. Vous pouvez naviguer entre eux avec les flèches du player."
       share_this_match: "Vous aimez ce match ? <b>Partagez-le !</b>"
+      watch_the_goals: "Regardez les buts de ce match en montrant le résultat dans la <a href=\"#\" class=\"lineups_shortcut\">section des formations.</a>"
     meta:
       uploaded_by: "Par %{name}"
       comments: "%{n} Commentaires"

@@ -20,6 +20,7 @@ it:
   votes: "%{n} voti"
   done: Fatto!
   sign_in_to_vote: "<a href=\"%{url}\" title=\"Accedi\">Accedi</a> per votare"
+  new: Nuovo!
 
   pages:
     home:
@@ -115,6 +116,7 @@ it:
       lineups: Schieramento
       navigate_through_files: "Questa partita è divisa tra %{n} file. Puoi navigare tra loro con le frecce del player."
       share_this_match: "Ti piace questa partita? <b>Condividila!</b>"
+      watch_the_goals: "Guarda i gol di questa partita mostrando il risultato nella <a href=\"#\" class=\"lineups_shortcut\">sezione di schieramenti.</a>"
     meta:
       uploaded_by: "Da %{name}"
       comments: "%{n} Commenti"

@@ -65,6 +65,11 @@
             i.fa.fa-info-circle
             span.m-l-xs = t(".navigate_through_files", n: match.videos.count)
 
+        - if match.has_seekable_goals?
+          .m-b-xs
+            span.label.label-success = t("new")
+            span.m-l-xs = t(".watch_the_goals").html_safe
+
         p.m-b-xs = t(".share_this_match").html_safe
 
         = render "share_links"

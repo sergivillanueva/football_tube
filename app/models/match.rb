@@ -146,4 +146,8 @@ class Match < ActiveRecord::Base
     rc.avg
   end
 
+  def has_seekable_goals?
+    self.goals.map(&:seekable?).include? true
+  end
+
 end

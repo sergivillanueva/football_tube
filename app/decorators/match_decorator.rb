@@ -130,4 +130,8 @@ class MatchDecorator < ApplicationDecorator
   def average_rating
     object.average_rating.round(2)
   end
+
+  def has_seekable_goals?
+    object.has_seekable_goals?
+  end
 end
