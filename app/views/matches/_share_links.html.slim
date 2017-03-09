@@ -3,7 +3,7 @@ ul.page-links.hlinks.hlinks-icons.color-icons-borders.color-icons-bg.color-icons
     a href="https://www.facebook.com/sharer/sharer.php?u=#{match_url(@match)}" target="_blank"
       i.icon.fa.fa-facebook
   li
-    a href="https://twitter.com/share?text=#{match.title}" target="_blank"
+    a href="https://twitter.com/share?text=#{match.title} #{match.competition_name} #{match.season} #{t('full_match')} @footballiaweb" target="_blank"
       i.icon.fa.fa-twitter
   li
     a href="https://plus.google.com/share?url=#{match_url(@match)}"
