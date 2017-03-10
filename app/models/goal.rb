@@ -3,10 +3,6 @@ class Goal < ActiveRecord::Base
   belongs_to :match
   belongs_to :video
 
-  def own_goal?
-  	self.own_goal == true
-  end
-
   def side
   	if self.match.home_players.map(&:player).include?(self.player)
   	  self.own_goal? ? "away" : "home"
