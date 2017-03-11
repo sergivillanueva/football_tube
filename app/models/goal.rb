@@ -3,6 +3,13 @@ class Goal < ActiveRecord::Base
   belongs_to :match
   belongs_to :video
 
+  before_save :set_source_file, if: Proc.new { |goal| goal.video_start_position_changed? || goal.video_end_position_changed? || goal.video_id_changed? }
+
+  # TODO move this to cron
+  after_save :remove_tmp_file
+
+  mount_uploader :source_file, VideoUploader
+
   def side
   	if self.match.home_players.map(&:player).include?(self.player)
   	  self.own_goal? ? "away" : "home"
@@ -13,5 +20,14 @@ class Goal < ActiveRecord::Base
 
   def seekable?
     self.video.present? && self.video_start_position.present?
+  end
+
+  def set_source_file
+    path = GoalTrimmer.new(self).generate_source_file
+    self.source_file = File.open path
+  end
+
+  def remove_tmp_file
+    GoalTrimmer.new(self).remove_tmp_file
   end
 end
