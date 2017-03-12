@@ -378,7 +378,7 @@
       generic: "Matches complets, matchs complets, matches online, matchs online, matches historiques, matchs historiques, matches de la Ligue des Champions, matchs de la Ligue des Champions, matches de la Champions League, matchs de la Champions League, matchs de la Coupe du Monde, matches de la Coupe du Monde"
       head_to_head: "Cherchez tête à tête"
     description:
-      match: "Voyez le match complet %{title] de %{title} de la %{competition} de %{season} joué à %{venue} sur Footballia"
+      match: "Voyez le match complet %{title} de %{stage} de la %{competition} de %{season} joué à %{venue} sur Footballia"
       home: "Footballia a plus de 3.000 matches pour les voir online et une base de données de plus de 18.000 footballeurs de tout le monde"
       search: "Voyez des matches de football de %{name} online sur Footballia"
       head_to_head: "Cherchez des concurrences directes de tous les temps entre les deux équipes choisies"
