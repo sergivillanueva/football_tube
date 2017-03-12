@@ -116,7 +116,7 @@
       lineups: Aufstellungen
       navigate_through_files: "Dieses Spiel ist in %{n} Dateien unterteilt. Sie können mit den Pfeilen auf dem Player durch sie navigieren."
       share_this_match: "Gefällt Ihnen dieses Spiel? <b>Teilen Sie es!</b>"
-      watch_the_goals: "Sehen Sie die Tore dieses Spiel, indem Sie das Ergebnis im Bereich <a href=\"#\" class=\"lineups_shortcut\">Aufstellungen anzeigen.</a>"
+      watch_the_goals: "Sehen Sie die Tore dieses Spiels, indem Sie das Ergebnis im Bereich <a href=\"#\" class=\"lineups_shortcut\">Aufstellungen anzeigen.</a>"
     meta:
       uploaded_by: "Von %{name}"
       comments: "%{n} Kommentare"
