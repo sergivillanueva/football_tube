@@ -17,8 +17,9 @@
     .rating.product-rating
       = rating_for @last_match_with_video, nil, noRatedMsg: t("rating.not_rated")
 
-  .embedded_ad
-    <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
+  - if Rails.env.production?
+    .embedded_ad
+      <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
 
   .last_matches.section-title
     - @last_matches_with_video.reverse.in_groups_of(mobile? ? 2 : 3, false).each do |matches|
@@ -34,8 +35,9 @@
 
 = render "shared/social_links"
 
-.embedded_ad
-  <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
+- if Rails.env.production?
+  .embedded_ad
+    <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
 
 .separator
 
