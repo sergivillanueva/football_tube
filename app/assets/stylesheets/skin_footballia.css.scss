@@ -117,3 +117,21 @@ ul.ul-toggle > li {
 .side-col .side-widget {
   padding-left: 0px;
 }
+
+.modal-backdrop {
+  z-index: 9998;
+}
+
+.modal {
+  z-index: 9999;
+}
+
+.modal-donate .promo-img {
+  background: asset-url("text_logo.png", image) no-repeat 50% 50%;
+  background-size: auto !important;
+}
+
+.modal-promo .modal-dialog form img {
+  width: auto;
+  height: auto;
+}

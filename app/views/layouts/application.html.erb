@@ -41,7 +41,7 @@
     <header class="header-block">
       <%= render "shared/header" %>    
       <%= render "shared/menu" %>
-      <%= render "shared/ads"%>
+      <%= render "shared/ads" if Rails.env.production? %>
       <div class="container m-t m-b">
         <%= breadcrumbs pretext: "", separator: " &rsaquo; ", semantic: true %>
       </div>
@@ -61,30 +61,37 @@
         <% end %>
         <%= yield %>
       </div>
-      <div class="embedded_ad">
-        <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
-      </div>
+      <% if Rails.env.production? %>
+        <div class="embedded_ad">
+          <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
+        </div>
+      <% end %>
     </div>
 
     <%= render "shared/footer" %>
+    <%= render "shared/donate" %>
+
   </div> <!-- Page Wrapper -->
-  <!-- advertising C/cDp511fDk6Mfkk1aSNeGOMwN1gqyDF87t5CcQ319U= -->
-  <script data-cfasync="false" type="text/javascript">
-    (function (document, window) {
-      var c = document.createElement("script");
-      c.type = "text/javascript";
-      c.async = !0;
-      c.src = "//onlinesupaads.com/scripts/3a41fdfe67e05e6cb72f58f00fc58c40.min.js?20160905=" + Math.floor((new Date).getTime());
-      var a = !1;
-      try {
-        a = parent.document.getElementsByTagName("script")[0] || document.getElementsByTagName("script")[0];
-      } catch (e) {
-        a = !1;
-      }
-      a || ( a = document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]);
-      a.parentNode.insertBefore(c, a);
-    })(document, window);
-  </script>
-  <!-- end advertising -->
+
+  <% if Rails.env.production? %>
+    <!-- advertising C/cDp511fDk6Mfkk1aSNeGOMwN1gqyDF87t5CcQ319U= -->
+    <script data-cfasync="false" type="text/javascript">
+      (function (document, window) {
+        var c = document.createElement("script");
+        c.type = "text/javascript";
+        c.async = !0;
+        c.src = "//onlinesupaads.com/scripts/3a41fdfe67e05e6cb72f58f00fc58c40.min.js?20160905=" + Math.floor((new Date).getTime());
+        var a = !1;
+        try {
+          a = parent.document.getElementsByTagName("script")[0] || document.getElementsByTagName("script")[0];
+        } catch (e) {
+          a = !1;
+        }
+        a || ( a = document.getElementsByTagName("head")[0] || document.getElementsByTagName("body")[0]);
+        a.parentNode.insertBefore(c, a);
+      })(document, window);
+    </script>
+    <!-- end advertising -->
+  <% end %>
 </body>
 </html>

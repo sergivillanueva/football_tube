@@ -21,6 +21,8 @@
   done: Fertig!
   sign_in_to_vote: "<a href=\"%{url}\" title=\"Loggen Sie sich ein\">Loggen Sie sich ein</a> um abzustimmen"
   new: Neu!
+  donation_successful: Vielen Dank für ihren Beitrag!
+  donation_canceled: Die Spende wurde nicht durchgeführt. Wir hoffen, dass Sie uns beim nächsten Mal helfen können.
 
   pages:
     home:
@@ -241,6 +243,9 @@
       head_to_head: direkte Begegnungen
       about: Über
       contact: Kontaktieren Sie uns
+    donate:
+      help_footballia: HELFEN SIE UNS DABEI FOOTBALLIA ZU ERHALTEN!
+      why_donate: Wir sind ein eigenständiges Projekt mit begrenzten Ressourcen. Footballia zu erhalten, verschlingt viel Zeit und Geld. Mit Ihrer Hilfe wird es uns möglich sein, noch mehr Arbeit in Footballia zu investieren, sodass dieses Projekt weiter wachsen und immer besser werden kann.
 
   search:
     search: Suchen
@@ -379,7 +384,7 @@
       head_to_head: "direkte Begegnung suchen"
     description:
       match: "Sehen Sie das %{season} %{title} %{competition} %{stage} ganze Spiel in %{venue} auf Footballia"
-      home: "Sehen sie ganze Fußballspiele aus allen Epochen, von den frühen 50ern Jahren bis zur Gegenwart. Footballia hat mehr als 3000 Spiele online und eine Datenbank mit 20000 Spielern."
+      home: "Sehen sie ganze Fußballspiele aus allen Epochen, von den frühen 50ern Jahren bis zur Gegenwart. Footballia hat mehr als 4000 Spiele online und eine Datenbank mit 20000 Spielern."
       search: "Sehen Sie ganze %{name} Fußballspiele online auf Footballia"
       head_to_head: "Finden Sie alle direkte Duelle zwischen zwei Teams"
       about: "Auf Footballia können Sie ganze Fußballspiele gratis anschauen: überall und jederzeit."

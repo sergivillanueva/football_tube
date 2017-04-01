@@ -21,6 +21,8 @@
   done: ¡Hecho!
   sign_in_to_vote: "<a href=\"%{url}\" title=\"Inicia sesión\">Inicia la sesión</a> para votar"
   new: ¡Nuevo!
+  donation_successful: ¡Muchas gracias por tu aportación! Tu ayuda nos hará crecer etc.
+  donation_canceled: No se ha procesado la donación. Esperamos tu ayuda en un futuro!
 
   pages:
     home:
@@ -241,7 +243,10 @@
       head_to_head: Cara a cara
       about: Quiénes somos
       contact: Contacto
-      
+    donate:
+      help_footballia: ¡AYÚDANOS A MANTENER FOOTBALLIA!
+      why_donate: Somos un proyecto independiente con recursos limitados. Mantener Footballia para que todos la podáis seguir disfrutando requiere un gran número de horas de trabajo y recursos financieros. Con tu ayuda podremos tener una mayor dedicación y así seguir creciendo para que Footballia sea cada vez mejor.
+
   search:
     search: Buscar
     full_matches: "Partidos completos de %{term}"
@@ -379,7 +384,7 @@
       head_to_head: "Búsqueda de Cara a Cara"
     description:
       match: "Revive el partido completo %{title} de %{stage} de la %{competition} de %{season} celebrado en %{venue} en Footballia"
-      home: "Footballia tiene más de 4.000 partidos para ver online y una base de datos de más de 18.000 futbolistas de todo el mundo."
+      home: "Footballia tiene más de 4.000 partidos para ver online y una base de datos de más de 20.000 futbolistas de todo el mundo."
       search: "Revive partidos de fútbol completos de %{name} en Footballia. Partidos de fútbol online gratis."
       head_to_head: "Busca enfrentamientos directos de todos los tiempos entre los dos equipos que elijas"
       about: "En Footballia puedes ver partidos de fútbol completos gratis en cualquier momento y en cualquier lugar"

@@ -21,6 +21,8 @@
   done: Done!
   sign_in_to_vote: "<a href=\"%{url}\" title=\"Sign in\">Sign in</a> to vote"
   new: New!
+  donation_successful: Thanks a lot for your contribution!
+  donation_canceled: The donation didn't come through. We hope you can help next time!
 
   pages:
     home:
@@ -241,7 +243,10 @@
       head_to_head: Head to Head
       about: About
       contact: Contact us
-  
+    donate:
+      help_footballia: HELP US SUSTAIN FOOTBALLIA!
+      why_donate: We are an independent project with limited resources. Sustaining Footballia so you can all keep enjoying it requires many hours of dedication and economic resources. With your help we'll be able to dedicate more hours and keep growing so Footballia gets better and better.
+
   search:
     search: Search
     full_matches: "%{term} full matches"
@@ -379,7 +384,7 @@
       head_to_head: "Head to head search"
     description:
       match: "Watch the %{season} %{title} %{competition} %{stage} full match held at %{venue} on Footballia"
-      home: "Watch full football matches from all times, from the early 50's to nowadays. Footballia has more than 4,000 matches to watch online and a database of 18,000 football players around the world"
+      home: "Watch full football matches from all times, from the early 50's to nowadays. Footballia has more than 4,000 matches to watch online and a database of 20,000 football players around the world"
       search: "Watch full %{name} football matches online on Footballia"
       head_to_head: "Find all-time head-to-head matches between any two teams"
       about: "On Footballia you can watch full football matches for free anytime, anywhere"

@@ -21,6 +21,8 @@ it:
   done: Fatto!
   sign_in_to_vote: "<a href=\"%{url}\" title=\"Accedi\">Accedi</a> per votare"
   new: Nuovo!
+  donation_successful: Grazie mille per il tuo apporto!
+  donation_canceled: La donazione non si è effettuata. Speriamo che potrai aiutarci la prossima volta!
 
   pages:
     home:
@@ -241,6 +243,9 @@ it:
       head_to_head: Testa a testa
       about: Chi siamo?
       contact: Contatto
+    donate:
+      help_footballia: AIUTACI A MANTENERE FOOTBALLIA!
+      why_donate: Siamo un progetto indipendente con risorse limitate. Mantenere Footballia perché tutti possiate continuare a goderne richiede molte ore di dedizione e risorse economiche. Con il tuo aiuto saremo in grado di dedicarci più ore e così continuare a crescere perché Footballia diventi sempre migliore.
 
   search:
     search: Cerca
@@ -380,7 +385,7 @@ it:
       head_to_head: "Cerca testa a testa"
     description:
       match: "Guarda la partita completa di %{title} della %{competition} di %{season} giocato a %{venue} su Footballia"
-      home: "Footballia ha oltre 3.500 partite per guardarle online e una banca dati de oltre 18.000 giocatori di tutto il mondo"
+      home: "Footballia ha oltre 4.000 partite per guardarle online e una banca dati de oltre 20.000 giocatori di tutto il mondo"
       search: "Guarda delle partite di calcio di %{name} online su Footballia"
       head_to_head: "Cerca delle concorrenze dirette di tutti i tempi tra le due squadre scelte"
       about: "Su Footballia puoi guardare delle partite complete gratis in qualsiasi momento e posto"
