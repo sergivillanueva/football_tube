@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170310193822) do
+ActiveRecord::Schema.define(version: 20170401200649) do
 
   create_table "average_caches", force: true do |t|
     t.integer  "rater_id"
@@ -82,6 +82,9 @@ ActiveRecord::Schema.define(version: 20170310193822) do
     t.integer  "video_start_position"
     t.integer  "video_end_position"
     t.string   "source_file"
+    t.boolean  "header"
+    t.boolean  "free_kick"
+    t.boolean  "outside_the_box"
   end
 
   add_index "goals", ["video_id"], name: "index_goals_on_video_id", using: :btree

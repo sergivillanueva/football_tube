@@ -17,6 +17,15 @@
         .col-xs-2
           = g.input :video_end_position, input_html: { style: "width:100%;" }
 
+    - if current_user.admin?
+      .row.m-b style="border-bottom: 1px solid #ddd"
+        .col-xs-2.own_goal
+          = g.input :header, as: :boolean, inline_label: true, label: false
+        .col-xs-2.own_goal
+          = g.input :outside_the_box, as: :boolean, inline_label: true, label: false
+        .col-xs-2.own_goal
+          = g.input :free_kick, as: :boolean, inline_label: true, label: false
+
   .row.videos
     .col-xs-12
       h3 = t(".upload_files")
