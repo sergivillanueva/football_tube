@@ -384,7 +384,7 @@
       head_to_head: "direkte Begegnung suchen"
     description:
       match: "Sehen Sie das %{season} %{title} %{competition} %{stage} ganze Spiel in %{venue} auf Footballia"
-      home: "Sehen sie ganze Fußballspiele aus allen Epochen, von den frühen 50ern Jahren bis zur Gegenwart. Footballia hat mehr als 3000 Spiele online und eine Datenbank mit 20000 Spielern."
+      home: "Sehen sie ganze Fußballspiele aus allen Epochen, von den frühen 50ern Jahren bis zur Gegenwart. Footballia hat mehr als 4000 Spiele online und eine Datenbank mit 20000 Spielern."
       search: "Sehen Sie ganze %{name} Fußballspiele online auf Footballia"
       head_to_head: "Finden Sie alle direkte Duelle zwischen zwei Teams"
       about: "Auf Footballia können Sie ganze Fußballspiele gratis anschauen: überall und jederzeit."

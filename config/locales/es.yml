@@ -384,7 +384,7 @@
       head_to_head: "Búsqueda de Cara a Cara"
     description:
       match: "Revive el partido completo %{title} de %{stage} de la %{competition} de %{season} celebrado en %{venue} en Footballia"
-      home: "Footballia tiene más de 4.000 partidos para ver online y una base de datos de más de 18.000 futbolistas de todo el mundo."
+      home: "Footballia tiene más de 4.000 partidos para ver online y una base de datos de más de 20.000 futbolistas de todo el mundo."
       search: "Revive partidos de fútbol completos de %{name} en Footballia. Partidos de fútbol online gratis."
       head_to_head: "Busca enfrentamientos directos de todos los tiempos entre los dos equipos que elijas"
       about: "En Footballia puedes ver partidos de fútbol completos gratis en cualquier momento y en cualquier lugar"

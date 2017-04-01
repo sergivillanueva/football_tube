@@ -384,7 +384,7 @@
       head_to_head: "Cherchez tête à tête"
     description:
       match: "Voyez le match complet %{title} de %{stage} de la %{competition} de %{season} joué à %{venue} sur Footballia"
-      home: "Footballia a plus de 4.000 matches pour les voir online et une base de données de plus de 18.000 footballeurs de tout le monde"
+      home: "Footballia a plus de 4.000 matches pour les voir online et une base de données de plus de 20.000 footballeurs de tout le monde"
       search: "Voyez des matches de football de %{name} online sur Footballia"
       head_to_head: "Cherchez des concurrences directes de tous les temps entre les deux équipes choisies"
       about: "Sur Footballia vous pouvez voir des matches de football complets gratis n'importe où et quand"

@@ -384,7 +384,7 @@
       head_to_head: "Head to head search"
     description:
       match: "Watch the %{season} %{title} %{competition} %{stage} full match held at %{venue} on Footballia"
-      home: "Watch full football matches from all times, from the early 50's to nowadays. Footballia has more than 4,000 matches to watch online and a database of 18,000 football players around the world"
+      home: "Watch full football matches from all times, from the early 50's to nowadays. Footballia has more than 4,000 matches to watch online and a database of 20,000 football players around the world"
       search: "Watch full %{name} football matches online on Footballia"
       head_to_head: "Find all-time head-to-head matches between any two teams"
       about: "On Footballia you can watch full football matches for free anytime, anywhere"
