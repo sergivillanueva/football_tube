@@ -21,6 +21,8 @@ it:
   done: Fatto!
   sign_in_to_vote: "<a href=\"%{url}\" title=\"Accedi\">Accedi</a> per votare"
   new: Nuovo!
+  donation_successful: Grazie mille per il tuo apporto!
+  donation_canceled: La donazione non si è effettuata. Speriamo che potrai aiutarci la prossima volta!
 
   pages:
     home:
@@ -241,6 +243,9 @@ it:
       head_to_head: Testa a testa
       about: Chi siamo?
       contact: Contatto
+    donate:
+      help_footballia: AIUTACI A MANTENERE FOOTBALLIA!
+      why_donate: Siamo un progetto indipendente con risorse limitate. Mantenere Footballia perché tutti possiate continuare a goderne richiede molte ore di dedizione e risorse economiche. Con il tuo aiuto saremo in grado di dedicarci più ore e così continuare a crescere perché Footballia diventi sempre migliore.
 
   search:
     search: Cerca

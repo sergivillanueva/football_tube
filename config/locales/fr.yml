@@ -21,6 +21,8 @@
   done: Fait!
   sign_in_to_vote: "<a href=\"%{url}\" title=\"Connectez-vous\">Connectez-vous</a> pour voter"
   new: Nouveau!
+  donation_successful: Merci beaucoup de votre apport!
+  donation_canceled: La donation ne s'est pas effectuée. On espère que vous pouvez nous aider à la prochaine fois !
 
   pages:
     home:
@@ -241,7 +243,10 @@
       head_to_head: Tête à tête
       about: Qui sommes-nous ?
       contact: Contact
-      
+    donate:
+      help_footballia: AIDEZ-NOUS ENTRETENIR FOOTBALLIA !
+      why_donate: Nous sommes un projet indépendant avec des ressources limitées. Entretenir Footballia afin que vous puissiez tous continuer à en jouir néccesite un grand nombre d’heures de travail et des ressources financières. Avec votre aide, nous pourrons y dédier encore plus d’heures et continuer à grandir afin que Footballia devienne toujours meilleur.
+
   search:
     search: Chercher
     full_matches: "Matches complets de %{term}"

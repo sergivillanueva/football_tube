@@ -31,6 +31,8 @@ FootballTube::Application.routes.draw do
     get "/about" => "pages#about", as: :about
     get "/contact" => "pages#contact", as: :contact
     get "/privacy_policy" => "pages#privacy_policy", as: :privacy_policy
+    get "/paypal_donation_ok" => "pages#paypal_donation_ok"
+    get "/paypal_donation_ko" => "pages#paypal_donation_ko"
     get "/" => "pages#home", as: :home
   end
 

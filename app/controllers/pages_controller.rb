@@ -22,5 +22,12 @@ class PagesController < ApplicationController
   def contact
     @contact = Contact.new
   end
-      
+
+  def paypal_donation_ok
+    redirect_to home_path, notice: t("donation_successful")
+  end
+
+  def paypal_donation_ko
+    redirect_to home_path, alert: t("donation_canceled")
+  end
 end

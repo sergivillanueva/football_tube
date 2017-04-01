@@ -1,0 +1,22 @@
+<div class="modal fade modal-promo modal-donate">
+  <!-- Dialog -->
+  <div class="modal-dialog">
+
+    <!-- Promo Image (use background image to allow scaling) -->
+    <div class="promo-img bg-cover"></div>
+
+    <!-- Text Col -->
+    <div class="text-col">
+      <div class="text">
+        <h5><%= t(".help_footballia")%></h5>
+        <img src="<%=asset_path('text_logo.png')%>" alt="" class="visible-xs mgb-20" />
+        <p><%= t(".why_donate") %></p>
+        <div class="text-center"><%= render "donate_buttons/big_button_#{I18n.locale}" %></div>
+      </div>
+    </div>
+    <!-- /Text Col -->
+
+    <button type="button" class="btn-close btn btn-base" data-dismiss="modal"><i class="fa fa-close"></i></button>
+  </div>
+  <!-- /Dialog -->
+</div>

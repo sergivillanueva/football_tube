@@ -21,6 +21,8 @@
   done: Done!
   sign_in_to_vote: "<a href=\"%{url}\" title=\"Sign in\">Sign in</a> to vote"
   new: New!
+  donation_successful: Thanks a lot for your contribution!
+  donation_canceled: The donation didn't come through. We hope you can help next time!
 
   pages:
     home:
@@ -241,7 +243,10 @@
       head_to_head: Head to Head
       about: About
       contact: Contact us
-  
+    donate:
+      help_footballia: HELP US SUSTAIN FOOTBALLIA!
+      why_donate: We are an independent project with limited resources. Sustaining Footballia so you can all keep enjoying it requires many hours of dedication and economic resources. With your help we'll be able to dedicate more hours and keep growing so Footballia gets better and better.
+
   search:
     search: Search
     full_matches: "%{term} full matches"
