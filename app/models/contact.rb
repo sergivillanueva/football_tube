@@ -10,7 +10,7 @@ class Contact < MailForm::Base
     {
       :subject => "Footballia Contact Form",
       :to => "info@footballia.net",
-      :bcc => "wislabe@gmail.com; sergi.villanueva@gmail.com;",
+      :bcc => FootballTube::Application.config.admin_emails,
       :from => %("#{name}" <#{email}>)
     }
   end

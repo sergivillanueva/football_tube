@@ -20,5 +20,6 @@ module FootballTube
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
     config.middleware.use 'Utf8Sanitizer'
+    config.admin_emails = ENV['ADMIN_EMAILS']
   end
 end

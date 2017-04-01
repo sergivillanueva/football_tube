@@ -102,8 +102,7 @@ class Match < ActiveRecord::Base
   end
 
   def banned?
-    #self.competition_id == 1 || self.competition_id == 44
-    self.competition_id == 34 || self.competition_id == 78 || self.competition_id == 144
+    false
   end
 
   def available?
