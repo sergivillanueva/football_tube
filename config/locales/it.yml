@@ -379,7 +379,7 @@ it:
       generic: "Partite complete, partite online, partite storiche, partite di Champions League, partite della Coppa del Mondo, partite dei Mondiali"
       head_to_head: "Cerca testa a testa"
     description:
-      match: "Guarda la partita completa %{title] di %{title} della %{competition} di %{season} giocato a %{venue} su Footballia"
+      match: "Guarda la partita completa di %{title} della %{competition} di %{season} giocato a %{venue} su Footballia"
       home: "Footballia ha oltre 3.500 partite per guardarle online e una banca dati de oltre 18.000 giocatori di tutto il mondo"
       search: "Guarda delle partite di calcio di %{name} online su Footballia"
       head_to_head: "Cerca delle concorrenze dirette di tutti i tempi tra le due squadre scelte"
