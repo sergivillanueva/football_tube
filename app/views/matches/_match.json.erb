@@ -6,6 +6,7 @@
   "stage": "<%= match.stage %>",
   "playing_date": "<%= match.playing_date %>",
   "videos_count": <%= raw match.videos.count > 0 ? match.videos.count : content_tag(:span, "Not found", { class: "text-danger" }).to_json %>,
+  "has_seekable_goals": <%= raw content_tag(:i, "", class: "fa fa-circle #{match.has_seekable_goals? ? 'text-success' : 'text-danger'}").to_json %>,
   "visits_counter": <%= match.visits_counter %>,
   "visualizations_counter": <%= match.visualizations_counter %>,
   "average_rating": <%= match.average_rating %>,

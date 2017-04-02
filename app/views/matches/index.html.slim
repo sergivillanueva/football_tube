@@ -10,6 +10,7 @@ table.table
       th = "Stage"
       th = "Playing date"
       th = "Video files"
+      th = "Seekable goals"
       th = "Visits"
       th = "Plays"
       th = "Rating"
@@ -21,6 +22,12 @@ table.table
 
 javascript:
   $(document).ready(function() {
+    $.fn.dataTableExt.oSort['has-seekable-goals-desc'] = function(x,y) {
+      return ((x < y) ?  1 : ((x > y) ? -1 : 0));
+    };
+    $.fn.dataTableExt.oSort['has-seekable-goals-asc'] = function(x,y) {
+      return ((x < y) ?  -1 : ((x > y) ? 1 : 0));
+    };
     $('.table').dataTable( {
       "ajax": "#{matches_path(format: :json)}",
       "columns": [
@@ -31,6 +38,9 @@ javascript:
         { "data": "stage" },
         { "data": "playing_date" },
         { "data": "videos_count" },
+        { "data": "has_seekable_goals",
+          "sType": "has-seekable-goals",
+        },
         { "data": "visits_counter" },
         { "data": "visualizations_counter" },
         { "data": "average_rating" },
@@ -42,7 +52,7 @@ javascript:
       ],
       "pageLength": 50,
       "deferRender": true,
-      "order": [10, 'desc'],
+      "order": [11, 'desc'],
       "sDom": 'lfiprtip'
     });
     
