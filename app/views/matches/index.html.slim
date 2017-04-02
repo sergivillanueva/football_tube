@@ -10,7 +10,7 @@ table.table
       th = "Stage"
       th = "Playing date"
       th = "Video files"
-      th = "Seekable goals"
+      th = "Pending goals"
       th = "Visits"
       th = "Plays"
       th = "Rating"
@@ -22,10 +22,10 @@ table.table
 
 javascript:
   $(document).ready(function() {
-    $.fn.dataTableExt.oSort['has-seekable-goals-desc'] = function(x,y) {
+    $.fn.dataTableExt.oSort['has-pending-seekable-goals-desc'] = function(x,y) {
       return ((x < y) ?  1 : ((x > y) ? -1 : 0));
     };
-    $.fn.dataTableExt.oSort['has-seekable-goals-asc'] = function(x,y) {
+    $.fn.dataTableExt.oSort['has-pending-seekable-goals-asc'] = function(x,y) {
       return ((x < y) ?  -1 : ((x > y) ? 1 : 0));
     };
     $('.table').dataTable( {
@@ -38,8 +38,8 @@ javascript:
         { "data": "stage" },
         { "data": "playing_date" },
         { "data": "videos_count" },
-        { "data": "has_seekable_goals",
-          "sType": "has-seekable-goals",
+        { "data": "has_pending_seekable_goals",
+          "sType": "has-pending-seekable-goals",
         },
         { "data": "visits_counter" },
         { "data": "visualizations_counter" },

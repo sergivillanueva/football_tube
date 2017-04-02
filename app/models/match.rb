@@ -145,4 +145,8 @@ class Match < ActiveRecord::Base
     self.goals.map(&:seekable?).include? true
   end
 
+  def has_pending_seekable_goals?
+    self.total_score > 0 && !self.has_seekable_goals?
+  end
+
 end

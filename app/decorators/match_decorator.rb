@@ -134,4 +134,8 @@ class MatchDecorator < ApplicationDecorator
   def has_seekable_goals?
     object.has_seekable_goals?
   end
+
+  def has_pending_seekable_goals?
+    object.has_pending_seekable_goals?
+  end
 end
