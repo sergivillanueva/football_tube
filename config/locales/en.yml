@@ -145,7 +145,7 @@
         goals: Goals
         player: Player
         upload_files: Upload files
-        video_format_instructions: Video files must be encoded using the H264 video codec and the AAC coding for audio and preferably no larger than 800 Mb.
+        video_format_instructions: Video files must be encoded using the H264 video codec and the AAC coding for audio. The full match should preferably not exceed 800 Mb.
   competitions:
     edit:
       edit_competition: Edit competition

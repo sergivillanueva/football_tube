@@ -145,7 +145,7 @@ it:
         goals: Reti
         player: Giocatore
         upload_files: Caricare il file
-        video_format_instructions: I files di video devono essere codificati con il codec di video H264 e la codificazione di audio AAC, e non dovrebbero sorpassare gli 800 Mb.
+        video_format_instructions: I files di video devono essere codificati con il codec di video H264 e la codificazione di audio AAC. La partita completa preferibilmente non dovrebbe superare i 800 Mb.
   competitions:
     edit:
       edit_competition: Modificare la competizione
