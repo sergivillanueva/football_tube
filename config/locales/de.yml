@@ -145,7 +145,7 @@
         goals: Tore
         player: Spieler
         upload_files: Datei hochladen
-        video_format_instructions: Video-Dateien müssen damit codiert werden, die H264-Codec und der AAC-Codierung für Audio und vorzugsweise nicht größer als 800 MB.
+        video_format_instructions: Video-Dateien müssen damit codiert werden, die H264-Codec und der AAC-Codierung für Audio. Das ganzes Spiel sollte vorzugsweise 800 Mb nicht überschreiten.
   competitions:
     edit:
       edit_competition: Wettbewerb editieren

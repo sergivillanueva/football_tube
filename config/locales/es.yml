@@ -145,7 +145,7 @@
         goals: Goles
         player: Jugador
         upload_files: Subir archivos
-        video_format_instructions: Los archivos de vídeo deben ser codificados usando el códec de vídeo H264 y la codificación de audio AAC, y no deberían superar los 800 Mb.
+        video_format_instructions: Los archivos de vídeo deben ser codificados usando el códec de vídeo H264 y la codificación de audio AAC. El partido completo preferiblemente no debería superar los 800 Mb.
   competitions:
     edit:
       edit_competition: Editar competición
