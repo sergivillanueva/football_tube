@@ -27,6 +27,6 @@ class GoalTrimmer
   end
 
   def remove_tmp_file
-    File.delete(output_file)
+    File.delete(output_file) if File.exist?(output_file)
   end
 end
