@@ -33,6 +33,17 @@
                   = match.decorate.title unless mobile?
                 .competition.text-center = "#{match.decorate.competition_name} #{match.decorate.season}"
 
+- if user_signed_in? && current_user.admin?
+  .best_goals.section-title.line-pcolor.product-details
+    h2 = t(".our_best_goals", default: "Our best goals")
+    .video
+      = jwplayer({ id: "jwplayer_goals",
+          height: "100%",
+          width: "100%",
+          flashplayer: "#{asset_path('flash.swf')}",
+          playlist: Goal.trimmed.where(super_goal: true).map{|g| { file: g.source_file.url }},
+        })
+
 = render "shared/social_links"
 
 - if Rails.env.production?
