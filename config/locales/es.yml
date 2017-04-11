@@ -21,7 +21,7 @@
   done: ¡Hecho!
   sign_in_to_vote: "<a href=\"%{url}\" title=\"Inicia sesión\">Inicia la sesión</a> para votar"
   new: ¡Nuevo!
-  donation_successful: ¡Muchas gracias por tu aportación! Tu ayuda nos hará crecer etc.
+  donation_successful: ¡Muchas gracias por tu aportación!
   donation_canceled: No se ha procesado la donación. Esperamos tu ayuda en un futuro!
 
   pages:
