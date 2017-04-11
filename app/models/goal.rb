@@ -8,6 +8,8 @@ class Goal < ActiveRecord::Base
   # TODO move this to cron
   after_save :remove_tmp_file
 
+  scope :trimmed, -> { where.not(source_file: nil) }
+
   mount_uploader :source_file, VideoUploader
 
   def side
@@ -29,5 +31,9 @@ class Goal < ActiveRecord::Base
 
   def remove_tmp_file
     GoalTrimmer.new(self).remove_tmp_file
+  end
+
+  # TODO
+  def team
   end
 end
