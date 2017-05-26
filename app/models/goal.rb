@@ -2,7 +2,9 @@ class Goal < ActiveRecord::Base
   belongs_to :player
   belongs_to :match
   belongs_to :video
+  belongs_to :team
 
+  before_save :set_team_id, if: Proc.new { |goal| goal.player_id_changed? }
   before_save :set_source_file, if: Proc.new { |goal| goal.video_start_position_changed? || goal.video_end_position_changed? || goal.video_id_changed? }
 
   # TODO move this to cron
@@ -33,7 +35,7 @@ class Goal < ActiveRecord::Base
     GoalTrimmer.new(self).remove_tmp_file
   end
 
-  # TODO
-  def team
+  def set_team_id
+    self.team_id = self.side == 'home' ? self.match.home_team_id : self.match.away_team_id
   end
 end

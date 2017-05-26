@@ -1,9 +1,10 @@
 class Team < ActiveRecord::Base
   has_many :home_matches, foreign_key: :home_team_id, class_name: Match
   has_many :away_matches, foreign_key: :away_team_id, class_name: Match
+  has_many :goals
 
   belongs_to :country
-  
+
   mount_uploader :logo, LogoUploader
 
   extend FriendlyId

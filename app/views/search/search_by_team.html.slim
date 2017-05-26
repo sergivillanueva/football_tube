@@ -8,16 +8,54 @@
 
   - # TODO search by player name: use different search results views?
 
-  table class="table table-striped table-condensed table-search table-responsive"
-    thead
-      tr
-        th.hidden-xs = t(".playing_date")
-        th = t(".match")
-        th.hidden-xs = t(".competition")
-        th.hidden-xs = t("activerecord.attributes.match.stage")
-        th = t(".season")
+  ul.nav.nav-tabs
+    li class="active"
+      = link_to t("pages.home.matches").capitalize, "#matches", "data-toggle" => 'tab'
+    - if @team.goals.trimmed.any?
+      li
+        = link_to "#goals", { :"data-toggle" => 'tab' } do
+          span.label.label-success = t("new")
+          span.m-l-xs = "#{@goals.trimmed.count} #{t("pages.home.goals").capitalize}"
 
-    tbody
-      = render partial: "search/match", collection: @matches
+  .tab-content
+    #matches.tab-pane.fade class="active in"
+      .tab-content
+        table class="table table-striped table-condensed table-search table-responsive"
+          thead
+            tr
+              th.hidden-xs = t(".playing_date")
+              th = t(".match")
+              th.hidden-xs = t(".competition")
+              th.hidden-xs = t("activerecord.attributes.match.stage")
+              th = t(".season")
 
-  = will_paginate @matches, renderer: BootstrapPagination::Rails, next_label: "»", previous_label: "«"
+          tbody
+            = render partial: "search/match", collection: @matches
+
+        = will_paginate @matches, renderer: BootstrapPagination::Rails, next_label: "»", previous_label: "«"
+
+    - if @goals.trimmed.any?
+      #goals.tab-pane.fade
+        .tab-content
+          .video style="width:100%;"
+            = jwplayer
+
+- if @goals.trimmed.any?
+  javascript:
+    $(document).ready(function () {
+      /* Video player */
+      jwplayer("jwplayer").setup({
+        height: "100%",
+        width: "100%",
+        flashplayer: "#{asset_path('flash.swf')}",
+        advertising: {
+          client: "vast",
+          tag: "http://adserver.com/vastTag.xml"
+        },
+        playlist: #{raw @goals.trimmed.map{|g| { mediaid: g.id, image: PreviewImageGenerator.new(g.match).relative_path, title: g.match.decorate.title, description: g.match.decorate.playing_date, file: g.source_file.url }}.to_json},
+        listbar: {
+          position: "right",
+          size: "35%"
+        }
+      });
+    });

@@ -26,7 +26,8 @@ module ApplicationHelper
   def jwplayer_needed?
     controller.controller_name == "pages" && controller.action_name == "home" ||
     controller.controller_name == "matches" && controller.action_name == "show" ||
-    controller.controller_name == "players" &&  controller.action_name == "show" && @player.goals.trimmed.any?
+    controller.controller_name == "players" &&  controller.action_name == "show" && @goals.trimmed.any? ||
+    controller.controller_name == "teams" &&  controller.action_name == "show" && @goals.trimmed.any?
   end
 
   def datatables_needed?
