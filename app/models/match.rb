@@ -16,7 +16,7 @@ class Match < ActiveRecord::Base
   
   has_many :player_participations, dependent: :destroy
   has_many :players, through: :player_participations
-  has_many :goals
+  has_many :goals, dependent: :destroy
 
   has_many :videos
 
