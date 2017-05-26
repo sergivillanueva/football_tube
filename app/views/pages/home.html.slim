@@ -41,7 +41,7 @@
           height: "100%",
           width: "100%",
           flashplayer: "#{asset_path('flash.swf')}",
-          playlist: Goal.trimmed.where(super_goal: true).map{|g| { file: g.source_file.url }},
+          playlist: Goal.trimmed.where(super_goal: true).map{|g| { image: asset_path("text_logo.png"), file: g.source_file.url }},
         })
 
 = render "shared/social_links"
