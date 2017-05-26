@@ -16,6 +16,11 @@
       = link_to t(".player", n: player_participations_as_player.count), "#matches_as_player", "data-toggle" => "#{'tab' if player_participations_as_player.any?}" 
     li class="#{'active' if player_participations_as_player.blank?} #{'disabled' if player_participations_as_coach.blank?}"
       = link_to t(".coach", n: player_participations_as_coach.count), "#matches_as_coach", "data-toggle" => "#{'tab' if player_participations_as_coach.any?}" 
+    - if @player.goals.trimmed.any?
+      li
+        = link_to "#goals", { :"data-toggle" => 'tab' } do
+          span.label.label-success = t("new")
+          span.m-l-xs = "#{@goals.trimmed.count} #{t("pages.home.goals").capitalize}"
 
   .tab-content
     #matches_as_player.tab-pane.fade class="#{'active in' if player_participations_as_player.any?}"
@@ -25,3 +30,29 @@
     #matches_as_coach.tab-pane.fade class="#{'active in' unless player_participations_as_player.any?}"
       .tab-content
         = render partial: "search/player_participations", locals: { coach: true, player_participations: player_participations_as_coach }
+
+    - if @goals.trimmed.any?
+      #goals.tab-pane.fade
+        .tab-content
+          .video style="width:100%;"
+            = jwplayer
+
+- if @goals.trimmed.any?
+  javascript:
+    $(document).ready(function () {
+      /* Video player */
+      jwplayer("jwplayer").setup({
+        height: "100%",
+        width: "100%",
+        flashplayer: "#{asset_path('flash.swf')}",
+        advertising: {
+          client: "vast",
+          tag: "http://adserver.com/vastTag.xml"
+        },
+        playlist: #{raw @goals.trimmed.map{|g| { mediaid: g.id, image: PreviewImageGenerator.new(g.match).relative_path, title: g.match.decorate.title, description: g.match.decorate.playing_date, file: g.source_file.url }}.to_json},
+        listbar: {
+          position: "right",
+          size: "35%"
+        }
+      });
+    });

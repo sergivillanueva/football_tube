@@ -1,8 +1,8 @@
 class PreviewImageGenerator
-  @@matches_folder = "#{Rails.public_path}/cache/matches/"
+  @@matches_folder = "/cache/matches/"
   @@size = "640x360"
 
-  @@mini_matches_folder = "#{Rails.public_path}/cache/matches/mini/"
+  @@mini_matches_folder = "/cache/matches/mini/"
   @@mini_size = "146x82"
 
   def initialize(match)
@@ -21,13 +21,17 @@ class PreviewImageGenerator
     return draw image_path
   end
 
+  # Needed for goals playlist image thumbnails
+  def relative_path version = "big"
+    path version, true
+  end
+
   private
 
-  def path version = "big"
+  def path version = "big", relative_path = false
     folder = version == "big" ? @@matches_folder : @@mini_matches_folder
     image_name = Digest::MD5.hexdigest "#{@match.home_team.name}#{@match.home_team.id}#{@match.away_team.name}#{@match.away_team.id}"
-    image_path = "#{folder}#{image_name}.png"
-    image_path
+    relative_path ? "#{folder}#{image_name}.png" : "#{Rails.public_path}#{folder}#{image_name}.png"
   end
 
   def draw image_path, version = "big"
