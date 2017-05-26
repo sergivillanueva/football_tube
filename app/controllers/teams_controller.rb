@@ -41,7 +41,7 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.friendly.find params[:id]
-    @goals = @team.goals
+    @goals = @team.goals.trimmed
     @term = params[:term] && params[:term].sub(" football matches", "") || @team.name
     @matches = Match.published.where("home_team_id = ? OR away_team_id = ?", @team.id, @team.id) #TODO find a better way to to this
     if params[:from_year].present? && params[:to_year].present?
