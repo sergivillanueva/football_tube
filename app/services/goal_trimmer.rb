@@ -5,7 +5,7 @@ class GoalTrimmer
   end
 
   def output_file
-    "/tmp/#{@goal.player.full_name.parameterize}-#{@goal.id}.mp4"
+    "/tmp/#{@goal.player.full_name.try(:parameterize) || @goal.player.name.parameterize}-#{@goal.id}.mp4"
   end
 
   def start_time
