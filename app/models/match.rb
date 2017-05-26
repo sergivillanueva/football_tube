@@ -122,7 +122,8 @@ class Match < ActiveRecord::Base
   end
 
   def possible_legs
-    self.competition.matches.by_head_to_head([self.home_team_id, self.away_team_id]).where.not(id: self.id).by_season(self.season)
+    return [] if !self.competition.present?
+    self.competition.matches.published.by_head_to_head([self.home_team_id, self.away_team_id]).where.not(id: self.id).by_season(self.season)
   end
 
   def set_first_leg
