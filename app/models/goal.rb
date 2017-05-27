@@ -29,8 +29,11 @@ class Goal < ActiveRecord::Base
   end
 
   def set_source_file
+    return unless self.video.present? && self.video_start_position.present? && self.video_end_position.present?
     path = GoalTrimmer.new(self).generate_source_file
     self.source_file = File.open path
+  rescue Errno::ENOENT
+    puts "File not found #{self.video.source_file.url}"
   end
 
   def remove_tmp_file
