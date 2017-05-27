@@ -6,15 +6,9 @@ module Tools
   end
 
   def self.assign_teams_to_goals
+    # It will assign competition too on save
     Goal.all.each do |g|
       g.set_team_id
-      g.save
-    end
-  end
-
-  def self.assign_competitions_to_goals
-    Goal.all.each do |g|
-      g.set_competition_id
       g.save
     end
   end
