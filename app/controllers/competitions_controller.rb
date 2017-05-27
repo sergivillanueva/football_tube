@@ -10,6 +10,7 @@ class CompetitionsController < ApplicationController
 
   def show
     @competition = Competition.friendly.find params[:id]
+    @goals = @competition.goals.trimmed
     @term = params[:term] || @competition.name
     @matches = @competition.matches.published
     @matches = @matches.where(stage: params[:stages].split(";")) if params[:stages].present?

@@ -1,5 +1,6 @@
 class Competition < ActiveRecord::Base
   has_many :matches
+  has_many :goals
   belongs_to :country
 
   scope :completed, -> { where.not(kind: nil) }

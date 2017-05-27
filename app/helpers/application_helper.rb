@@ -27,7 +27,8 @@ module ApplicationHelper
     controller.controller_name == "pages" && controller.action_name == "home" ||
     controller.controller_name == "matches" && controller.action_name == "show" ||
     controller.controller_name == "players" &&  controller.action_name == "show" && @goals.any? ||
-    controller.controller_name == "teams" &&  controller.action_name == "show" && @goals.any?
+    controller.controller_name == "teams" &&  controller.action_name == "show" && @goals.any? ||
+    controller.controller_name == "competitions" &&  controller.action_name == "show" && @goals.any?
   end
 
   def datatables_needed?

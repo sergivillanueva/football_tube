@@ -26,6 +26,7 @@ class Match < ActiveRecord::Base
 
   after_save :set_first_leg, if: :second_leg_id_changed?
   after_save :set_second_leg, if: :first_leg_id_changed?
+  after_update :update_goals_competition_id, if: :competition_id_changed?
 
   validates :home_score, presence: true
   validates :away_score, presence: true
@@ -148,6 +149,11 @@ class Match < ActiveRecord::Base
 
   def has_pending_seekable_goals?
     self.total_score > 0 && !self.has_seekable_goals?
+  end
+
+  def update_goals_competition_id
+    # TODO There must be a better way to do this
+    self.goals.each(&:save)
   end
 
 end
