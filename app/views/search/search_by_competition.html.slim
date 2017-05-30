@@ -41,7 +41,7 @@
       - if @goals.any?
         #goals.tab-pane.fade
           .tab-content
-            .video style="width:100%;"
+            .video style="height:420px;width:100%;"
               = jwplayer
 
 - if @goals.any?
@@ -58,8 +58,8 @@
         },
         playlist: #{raw @goals.map{|g| { mediaid: g.id, image: PreviewImageGenerator.new(g.match).relative_path, title: g.match.decorate.title, description: g.match.decorate.playing_date, file: g.source_file.url }}.to_json},
         listbar: {
-          position: "right",
-          size: "35%"
+          position: "#{mobile? ? 'bottom' : 'right'}",
+          size: "32%"
         }
       });
     });
