@@ -10,7 +10,7 @@ class CompetitionsController < ApplicationController
 
   def show
     @competition = Competition.friendly.find params[:id]
-    @goals = @competition.goals.trimmed.sort_by{|g| g.match.playing_date} # TODO use sql order instead
+    @goals = @competition.goals.trimmed.sort_by{|g| g.match.playing_date, g.minute} # TODO use sql order instead
     @term = params[:term] || @competition.name
     @matches = @competition.matches.published
     @matches = @matches.where(stage: params[:stages].split(";")) if params[:stages].present?

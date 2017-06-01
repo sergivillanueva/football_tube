@@ -16,7 +16,7 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.friendly.find params[:id]
-    @goals = @player.goals.where(own_goal: false).trimmed.sort_by{|g| g.match.playing_date} # TODO use sql order instead
+    @goals = @player.goals.where(own_goal: false).trimmed.sort_by{|g| [g.match.playing_date, g.minute]} # TODO use sql order instead
     @term = @player.name
     @player_participations = @player.player_participations.joins(:match).where(:"matches.published" => true) #PlayerParticipation.joins(:match).where(player_id: params[:player_id])
     if params[:from_year].present? && params[:to_year].present?
