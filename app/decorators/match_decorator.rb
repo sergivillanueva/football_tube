@@ -138,4 +138,20 @@ class MatchDecorator < ApplicationDecorator
   def has_pending_seekable_goals?
     object.has_pending_seekable_goals?
   end
+
+  def sorted_home_starters
+    object.home_starters[1..-1].sort_by{|p| p.team_number}.prepend(object.home_starters[0])
+  end
+
+  def sorted_away_starters
+    object.away_starters[1..-1].sort_by{|p| p.team_number}.prepend(object.away_starters[0])
+  end
+
+  def sorted_home_reserves
+    object.home_reserves.sort_by{|p| p.team_number}
+  end
+
+  def sorted_away_reserves
+    object.away_reserves.sort_by{|p| p.team_number}
+  end
 end
