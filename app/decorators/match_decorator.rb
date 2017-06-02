@@ -140,18 +140,20 @@ class MatchDecorator < ApplicationDecorator
   end
 
   def sorted_home_starters
-    object.home_starters[1..-1].sort_by{|p| p.team_number}.prepend(object.home_starters[0])
+    return if object.home_starters.size == 0
+    object.home_starters[1..-1].sort_by{|p| p.team_number || 99}.prepend(object.home_starters[0])
   end
 
   def sorted_away_starters
-    object.away_starters[1..-1].sort_by{|p| p.team_number}.prepend(object.away_starters[0])
+    return if object.away_starters.size == 0
+    object.away_starters[1..-1].sort_by{|p| p.team_number || 99}.prepend(object.away_starters[0])
   end
 
   def sorted_home_reserves
-    object.home_reserves.sort_by{|p| p.team_number}
+    object.home_reserves.sort_by{|p| p.team_number || 99}
   end
 
   def sorted_away_reserves
-    object.away_reserves.sort_by{|p| p.team_number}
+    object.away_reserves.sort_by{|p| p.team_number || 99}
   end
 end
