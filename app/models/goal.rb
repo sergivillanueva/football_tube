@@ -16,6 +16,17 @@ class Goal < ActiveRecord::Base
 
   mount_uploader :source_file, VideoUploader
 
+  validate :video_position_values_order
+
+  def video_position_values_order
+    return unless self.video_start_position.present? && self.video_end_position.present?
+
+    unless self.video_end_position > self.video_start_position
+      self.errors.add :video_end_position, "Video end position value must be greater than video start value."
+      self.errors.add :video_start_position, "Video end position value must be greater than video start value."
+    end
+  end
+
   def side
   	if self.match.home_players.map(&:player).include?(self.player)
   	  self.own_goal? ? "away" : "home"
@@ -33,7 +44,8 @@ class Goal < ActiveRecord::Base
     path = GoalTrimmer.new(self).generate_source_file
     self.source_file = File.open path
   rescue Errno::ENOENT
-    puts "File not found #{self.video.source_file.url}"
+    self.errors.add :video_id, "Video not found."
+    return false
   end
 
   def remove_tmp_file

@@ -46,6 +46,9 @@
 
     .side-col.side-col-padded.col-xs-12.col-md-5.hidden-xs
       .side-widget
+        - if user_signed_in? && current_user.admin?
+          = render "admin_goals"
+
         <h5 class="boxed-title">#{t(".match_info")}</h5>
         ul.ul-toggle.m-b
           li
