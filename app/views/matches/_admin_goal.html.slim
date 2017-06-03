@@ -1,0 +1,42 @@
+.admin_goal.m-b style="padding-bottom: 10px; border-bottom: 1px solid #ddd;"
+  .row.m-b-xs
+    .col-xs-8
+      = link_to "#", class: "toggle_controls" do
+        i.fa.fa-chevron-down.m-r-xs
+        span = "#{goal.player.name} #{goal.minute}'"
+      span.positions.m-l
+        span.padder class="#{'bg-success' if goal.previous_changes.keys.include? 'video_start_position'} #{'bg-danger' if goal.errors.keys.include? :video_start_position}"
+          = goal.video_start_position
+        span = " - "
+        span.padder class="#{'bg-success' if goal.previous_changes.keys.include? 'video_end_position'} #{'bg-danger' if goal.errors.keys.include? :video_end_position}"
+          = goal.video_end_position
+
+    .col-xs-4
+      - if goal.previous_changes.any?
+        .text-success = "Saved!"
+      - if goal.errors.keys.any?
+        .text-danger = "Error!"
+
+  .controls
+    .row.m-b
+      .col-xs-10
+        = select_tag :video_id, options_from_collection_for_select(goal.match.videos, "id", "source_file", goal.video_id), include_blank: true
+      .col-xs-2
+        = link_to "Set", goal_set_video_id_path(goal), class: "set_video_id btn btn-success"
+
+    .row.m-b
+      .col-xs-3
+        = text_field_tag :video_start_position, "", style: "width:100%;"
+      .col-xs-3
+        = link_to "Start", goal_set_video_start_position_path(goal), :"data-position-kind" => "start", class: "set_video_position btn btn-success btn-block"
+      .col-xs-3
+        = text_field_tag :video_end_position, "", style: "width:100%;"
+      .col-xs-3
+        = link_to "End", goal_set_video_end_position_path(goal), :"data-position-kind" => "end", class: "set_video_position btn btn-success btn-block"
+
+    .row
+      - %w(super_goal header outside_the_box free_kick).each do |kind|
+        .col-xs-6.m-b-xs
+          span.fa.fa-circle class="#{goal.send(kind) ? 'text-success' : 'text-danger'}"
+          span.m-l-xs.m-r-xs = kind.humanize
+          = link_to "Toggle", goal_toggle_kind_path(goal), :"data-kind" => kind, class: "toggle_kind btn btn-success btn-xs"

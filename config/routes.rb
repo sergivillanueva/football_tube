@@ -21,6 +21,12 @@ FootballTube::Application.routes.draw do
     resources :videos, only: [:index, :destroy]
     resources :contacts, only: [:new, :create]
     resources :rates, only: [:index], controller: :rater
+    resources :goals, only: [] do
+      post "set_video_start_position"
+      post "set_video_end_position"
+      post "toggle_kind"
+      post "set_video_id"
+    end
 
     get "/profile/:id" => "profiles#show", as: :profile
 

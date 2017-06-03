@@ -1,0 +1,80 @@
+<h5 class="boxed-title">admin</h5>
+
+= render partial: "admin_goal", collection: @match.goals, as: :goal
+
+javascript:
+  $(document).ready(function () {
+
+    $(document).on("click", ".toggle_controls", function (e) {
+      $(this).closest(".admin_goal").find(".controls").toggle();
+      e.preventDefault();
+    });
+
+    $(".toggle_controls").click();
+
+    $(document).on("click", ".set_video_position", function (e) {
+      var url = $(this).attr("href");
+      var kind = $(this).data("position-kind");
+      var inputVal = $(this).closest(".admin_goal").find("input[name='video_" + kind + "_position']").val();
+      var position = inputVal ? inputVal : jwplayer().getPosition();
+      var element = $(this).closest(".admin_goal");
+
+      if (position > 0) {
+        $.ajax({
+          url: url,
+          type: "post",
+          data: { position: position },
+          beforeSend: function () {
+            $(element).fadeOut("slow", function () {
+              $(element).show().html("Wait...");
+            });
+          },
+          success: function (response) {
+            $(element).replaceWith(response.view);
+          }
+        });
+      }
+
+      e.preventDefault();
+    });
+
+    $(document).on("click", ".toggle_kind", function (e) {
+      var url = $(this).attr("href");
+      var kind = $(this).data("kind");
+      var element = $(this).closest(".admin_goal");
+
+      $.ajax({
+        url: url,
+        type: "post",
+        data: { kind: kind },
+        success: function (response) {
+          $(element).replaceWith(response.view);
+        }
+      });
+
+      e.preventDefault();
+    });
+
+    $(document).on("click", ".set_video_id", function (e) {
+      var url = $(this).attr("href");
+      var self = this;
+      var videoId = $(this).closest(".admin_goal").find("select[name='video_id']").val();
+      var element = $(this).closest(".admin_goal");
+
+      $.ajax({
+        url: url,
+        type: "post",
+        data: { video_id: videoId },
+        beforeSend: function () {
+          $(element).fadeOut("slow", function () {
+            $(element).show().html("Wait...");
+          });
+        },
+        success: function (response) {
+          $(element).replaceWith(response.view);
+        }
+      });
+
+      e.preventDefault();
+    });
+  });
