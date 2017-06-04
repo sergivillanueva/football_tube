@@ -62,7 +62,7 @@
         <% end %>
         <%= yield %>
       </div>
-      <% if Rails.env.production? %>
+      <% if Rails.env.production? && !home_page?%>
         <div class="embedded_ad">
           <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
         </div>

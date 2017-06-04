@@ -24,12 +24,16 @@ module ApplicationHelper
   end
 
   def jwplayer_needed?
-    controller.controller_name == "pages" && controller.action_name == "home" ||
+    home_page? ||
     controller.controller_name == "matches" && controller.action_name == "show" ||
     controller.controller_name == "players" &&  controller.action_name == "show" && @goals.any? ||
     controller.controller_name == "teams" &&  controller.action_name == "show" && @goals.any? ||
     controller.controller_name == "competitions" &&  controller.action_name == "show" && @goals.any?
   end
+
+  def home_page?
+    controller.controller_name == "pages" && controller.action_name == "home"
+  end 
 
   def datatables_needed?
     controller.action_name == "index" && %w(players competitions teams matches videos rater).include?(controller.controller_name)

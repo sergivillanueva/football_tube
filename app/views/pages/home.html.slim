@@ -33,6 +33,10 @@
                   = match.decorate.title unless mobile?
                 .competition.text-center = "#{match.decorate.competition_name} #{match.decorate.season}"
 
+- if Rails.env.production?
+  .embedded_ad
+    <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
+
 - if user_signed_in? && current_user.admin?
   .best_goals.section-title.line-pcolor.product-details
     h2 = t(".our_best_goals", default: "Our best goals")
@@ -41,14 +45,10 @@
           height: "100%",
           width: "100%",
           flashplayer: "#{asset_path('flash.swf')}",
-          playlist: @best_goals.map{|g| { image: asset_path("text_logo.png"), file: g.source_file.url }},
+          playlist: @best_goals.map{|g| { image: preview_image_match_path(g.match), file: g.source_file.url }},
         })
 
 = render "shared/social_links"
-
-- if Rails.env.production?
-  .embedded_ad
-    <script type="text/javascript">document.write('<scr'+'ipt type="text/javascript" src="http://adserver.adtech.de/addyn/3.0/2974/6301164/0/170/ADTECH;kvad=false;loc=100;target=_blank;misc='+new Date().getTime()+'"></scri'+'pt>');</script>
 
 .separator
 
