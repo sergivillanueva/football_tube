@@ -1,12 +1,18 @@
-<h5 class="boxed-title">admin</h5>
+= link_to "#", class: "toggle_admin_goals" do
+  h5.boxed-title = "Admin goals"
 
-= render partial: "admin_goal", collection: @match.goals, as: :goal
+.admin_goals style="display:none;"
+  = render partial: "admin_goal", collection: @match.goals, as: :goal
 
 javascript:
   $(document).ready(function () {
+    $(document).on("click", ".toggle_admin_goals", function (e) {
+      $(this).next().toggle("slow");
+      e.preventDefault();
+    });
 
     $(document).on("click", ".toggle_controls", function (e) {
-      $(this).closest(".admin_goal").find(".controls").toggle();
+      $(this).closest(".admin_goal").find(".controls").toggle("slow");
       e.preventDefault();
     });
 
