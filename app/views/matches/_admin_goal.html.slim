@@ -20,7 +20,7 @@
   .controls
     .row.m-b
       .col-xs-10
-        = select_tag :video_id, options_from_collection_for_select(goal.match.videos, "id", "source_file", goal.video_id), include_blank: true
+        = select_tag :video_id, options_from_collection_for_select(goal.match.videos, "id", "source_file", goal.video_id), include_blank: true, style: "width:100%;"
       .col-xs-2
         = link_to "Set", goal_set_video_id_path(goal), class: "set_video_id btn btn-success"
 
