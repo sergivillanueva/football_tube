@@ -1,0 +1,9 @@
+{
+  "email": "<%= user.email %>",
+  "nick_name": "<%= user.nick_name %>",
+  "sign_in_count": "<%= user.sign_in_count %>",
+  "current_sign_in_at": "<%= user.current_sign_in_at %>",
+  "last_sign_in_at": "<%= user.last_sign_in_at %>",
+  "favourite_team": <%= raw((user.favourite_team.present? ? user.favourite_team.name + "<br />" + image_tag(user.favourite_team.logo.thumb.url, alt: user.favourite_team.name, title: user.favourite_team.name) : "").to_json) %>,
+  "created_at": "<%= l user.created_at, format: :long %>"
+}
