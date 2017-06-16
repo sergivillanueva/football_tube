@@ -16,13 +16,13 @@ class PlayersController < ApplicationController
 
   def show
     @player = Player.friendly.find params[:id]
-    @goals = @player.goals.where(own_goal: false).trimmed.sort_by{|g| [g.match.playing_date, g.minute]} # TODO use sql order instead
     @term = @player.name
     @player_participations = @player.player_participations.joins(:match).where(:"matches.published" => true) #PlayerParticipation.joins(:match).where(player_id: params[:player_id])
     if params[:from_year].present? && params[:to_year].present?
       seasons = (params[:from_year]..params[:to_year]).to_a.map{|year| [year, "#{year}-#{year.to_i + 1}"]}.flatten.prepend("#{params[:from_year].to_i - 1}-#{params[:from_year]}" )
       @player_participations = @player_participations.where(season: seasons)
     end
+    @goals = @player.goals.trimmed.joins(:match).where(own_goal: false).where(match_id: @player_participations.map(&:match_id)).order("matches.playing_date, matches.id, goals.minute")
     @player_participations = @player_participations.order("matches.playing_date").decorate
     increment_visits_counter @player
     render "search/search_by_player"

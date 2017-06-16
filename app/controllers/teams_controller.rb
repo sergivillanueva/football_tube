@@ -41,13 +41,13 @@ class TeamsController < ApplicationController
 
   def show
     @team = Team.friendly.find params[:id]
-    @goals = @team.goals.trimmed.sort_by{|g| [g.match.playing_date, g.minute]} # TODO use sql order instead
     @term = params[:term] && params[:term].sub(" football matches", "") || @team.name
     @matches = Match.published.where("home_team_id = ? OR away_team_id = ?", @team.id, @team.id) #TODO find a better way to to this
     if params[:from_year].present? && params[:to_year].present?
       seasons = (params[:from_year]..params[:to_year]).to_a.map{|year| [year, "#{year}-#{year.to_i + 1}"]}.flatten.prepend("#{params[:from_year].to_i - 1}-#{params[:from_year]}" )
       @matches = @matches.where(season: seasons)
     end
+    @goals = @team.goals.trimmed.joins(:match).where(match_id: @matches.map(&:id)).order("matches.playing_date, matches.id, goals.minute")
     @matches = @matches.order("playing_date").paginate(:per_page => 20, :page => params[:page]).decorate
     increment_visits_counter @team
     render "search/search_by_team"

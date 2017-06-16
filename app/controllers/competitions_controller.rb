@@ -10,10 +10,10 @@ class CompetitionsController < ApplicationController
 
   def show
     @competition = Competition.friendly.find params[:id]
-    @goals = @competition.goals.trimmed.sort_by{|g| [g.match.playing_date, g.minute]} # TODO use sql order instead
     @term = params[:term] || @competition.name
     @matches = @competition.matches.published
     @matches = @matches.where(stage: params[:stages].split(";")) if params[:stages].present?
+    @goals = @competition.goals.trimmed.joins(:match).where(match_id: @matches.map(&:id)).order("matches.playing_date, matches.id, goals.minute")
     @matches = @matches.order("playing_date").paginate(:per_page => 20, :page => params[:page]).decorate
     render "search/search_by_competition"
   end
