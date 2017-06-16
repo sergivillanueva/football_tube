@@ -1,0 +1,30 @@
+table.table
+  thead
+    tr
+      th = "Email"
+      th = "Nick name"
+      th = "Sign in count"
+      th = "Current sign in at"
+      th = "Last sign in at"
+      th = "Favourite team"
+      th = "Registered at"
+
+javascript:
+  $(document).ready(function() {
+    $('.table').dataTable( {
+      "ajax": "#{users_path(format: :json)}",
+      "columns": [
+        { "data": "email" },
+        { "data": "nick_name" },
+        { "data": "sign_in_count" },
+        { "data": "current_sign_in_at" },
+        { "data": "last_sign_in_at" },
+        { "data": "favourite_team" },
+        { "data": "created_at" },
+      ],
+      "pageLength": 50,
+      "deferRender": true,
+      "order": [6, "desc"],
+      "sDom": 'lfiprtip'
+    });
+  });

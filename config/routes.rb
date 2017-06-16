@@ -27,6 +27,7 @@ FootballTube::Application.routes.draw do
       post "toggle_kind"
       post "set_video_id"
     end
+    resources :users, only: [:index]
 
     get "/profile/:id" => "profiles#show", as: :profile
 

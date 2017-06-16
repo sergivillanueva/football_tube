@@ -63,7 +63,7 @@ class MatchesController < ApplicationController
     respond_to do |format|
       format.html
       format.json do
-        @matches = Match.includes(:away_team).includes(:home_team).includes(:competition).decorate
+        @matches = Match.includes(:away_team).includes(:home_team).includes(:competition).includes(:videos).includes(:user).includes(:goals => :video).decorate
         render "matches/index"
       end
     end
