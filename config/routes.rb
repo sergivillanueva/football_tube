@@ -43,6 +43,8 @@ FootballTube::Application.routes.draw do
     get "/" => "pages#home", as: :home
   end
 
+  resources :charts, only: [:index]
+
   root 'pages#home'
 
   # Direct search routes

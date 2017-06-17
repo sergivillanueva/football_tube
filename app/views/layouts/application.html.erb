@@ -12,6 +12,10 @@
     <script type="text/javascript" charset="utf8" src="//cdn.datatables.net/1.10.4/js/jquery.dataTables.js"></script>
   <% end %>
 
+  <% if google_charts_needed? %>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+  <% end %>
+
   <%= favicon_link_tag '/favicon.ico' %>
   <%= csrf_meta_tags %>
 
