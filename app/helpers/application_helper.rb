@@ -39,6 +39,10 @@ module ApplicationHelper
     controller.action_name == "index" && %w(players competitions teams matches videos rater users).include?(controller.controller_name)
   end
 
+  def google_charts_needed?
+    controller.controller_name == "charts"
+  end
+
   def keywords specific_keywords = ""
     generic_keywords = I18n.t("meta_tags.keywords.generic")
     [specific_keywords, generic_keywords].compact.reject(&:empty?).join(", ")
